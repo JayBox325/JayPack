@@ -1,15 +1,48 @@
-var webpack = require('webpack');
+// webpack v4
+const path = require('path');
 
-var config = {
-    context: __dirname + '/_src', // `__dirname` is root of project and `src` is source
-    entry: {
-        app: './scripts/app.js',
-    },
-    output: {
-        path: __dirname + '/dist', // `dist` is the destination
-        publicPath: "/assets/",
-        filename: 'bundle.js',
-    },
+// Sass
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+// HTML
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: { main: './_src/index.js' },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+            'style-loader',
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+            'postcss-loader',
+            'sass-loader'
+        ]
+      }
+    ]
+  },
+  plugins: [ 
+    new MiniCssExtractPlugin({
+      filename: "/assets/styles.css"
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      hash: true,
+      template: './_src/index.html',
+      filename: 'index.html'
+    })
+  ]
 };
-
-module.exports = config;
