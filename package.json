@@ -11,9 +11,7 @@
         "url": "https://github.com/JayBox325/JayPack.git"
     },
     "scripts": {
-        "start": "gulp --env development",
-        "build": "gulp build --env development",
-        "package": "gulp build --env production"
+        "dev": "gulp"
     },
     "license": "MIT",
     "dependencies": {},
@@ -22,6 +20,8 @@
         "@babel/preset-env": "^7.3.1",
         "@babel/register": "^7.0.0",
         "autoprefixer": "^9.4.6",
+        "babel-loader": "^8.0.5",
+        "browser-sync": "^2.26.3",
         "fs": "^0.0.1-security",
         "gulp": "^4.0.0",
         "gulp-changed": "^3.2.0",
@@ -33,6 +33,7 @@
         "gulp-imagemin": "^5.0.3",
         "gulp-notify": "^3.2.0",
         "gulp-nunjucks-render": "^2.2.2",
+        "gulp-plumber": "^1.2.1",
         "gulp-postcss": "^8.0.0",
         "gulp-sass": "^4.0.2",
         "gulp-sourcemaps": "^2.6.4",
@@ -40,6 +41,10 @@
         "gulp-version-number": "^0.2.3",
         "gulp-watch": "^5.0.1",
         "postcss-input-range": "^4.0.0",
-        "require-dir": "^1.2.0"
+        "require-dir": "^1.2.0",
+        "webpack": "^4.29.0",
+        "webpack-cli": "^3.2.1",
+        "webpack-dev-middleware": "^3.5.1",
+        "webpack-stream": "^5.2.1"
     }
 }

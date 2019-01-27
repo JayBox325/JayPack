@@ -20,20 +20,20 @@ import nunjucksRender from 'gulp-nunjucks-render'
 
 // Nunjucks task
 gulp.task('nunjucks', () => {
-    return gulp.src(paths.html.njks.src)
+    return gulp.src(paths.njks.src)
         .pipe(data(function() {
-            return JSON.parse(fs.readFileSync(paths.html.njks.data));
+            return JSON.parse(fs.readFileSync(paths.njks.data));
         }))
         .on('error', handleErrors)
         .pipe(nunjucksRender({
-            path: paths.html.njks.render,
+            path: paths.njks.render,
             ext: '.html'
         }))
         .on('error', handleErrors)
         .pipe(versionNumber(config.version))
         .pipe(production(htmlmin({collapseWhitespace: true})))
         .pipe(development(htmlbeautify()))
-        .pipe(gulp.dest(paths.html.njks.dest))
+        .pipe(gulp.dest(paths.njks.dest))
         .pipe(notify({
             title: "👍 JayPack - success",
             message: "Nunjucks generated",

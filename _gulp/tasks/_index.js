@@ -6,7 +6,6 @@ requireDir('./', {recurse: true})
 import config from '../config'
 
 // Build then watch - this doesn't move fonts
-
 if (config.project == 'static') {
 	gulp.task('default', gulp.parallel(
 		'move-favicons',
