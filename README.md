@@ -46,3 +46,9 @@ There are three commands to run for this boilerplate as follows:
 * `npm build` - this builds all your source files, but still in your development environment so sourcemaps will be included and nothing will be minified.
 * `npm package` - this is your command for pushing code live. This will remove all the sourcemaps and minify everything ready for launch.
 
+
+## Config
+
+This boilerplate can be used for static HTML websites built with Nunjucks, or it can be used for CraftCMS projects. The configuration for this is set in the `_gulp/config.js` file.
+
+If the project is set to `static` the nunjucks commands will be run. If it's set to `craft` then we let some CraftCMS plugins take care of the asset versioning.
