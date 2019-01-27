@@ -1,0 +1,96 @@
+/*
+
+    Breakpoints (for use with media query mixins)
+    Alternate points as inspired by:https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+*/
+/* Bootstrap media queries
+/* Breakpoint min/max are set in the _vars.scss file
+
+/* Mixin: Media Min Width
+Usage:
+.foo {
+	@include media-breakpoint-up(sm) {
+		color: #f00;
+	}
+}
+*/
+/* Mixin: Media Max Width
+Usage:
+.foo {
+	@include media-breakpoint-down(md) {
+		color: #f00;
+	}
+}
+*/
+/* Mixin: Media Single Breakpoint
+Usage:
+.foo {
+	@include media-breakpoint-only(md) {
+		color: #f00;
+	}
+}
+*/
+/* Mixin: Media Between Breakpoints
+Usage:
+.foo {
+	@include media-breakpoint-between(sm, lg) {
+		color: #f00;
+	}
+}
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+img {
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+  display: block; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9jb3JlL3ZhcmlhYmxlcy9icmVha3BvaW50cy5zY3NzIiwic3R5bGVzLmNzcyIsIl9jb3JlL21peGlucy9tZWRpYS1xdWVyaWVzLnNjc3MiLCJfY29yZS9iYXNlL3Jlc2V0LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7Ozs7Q0NHQztBQ1lEOzs7Ozs7Ozs7O0NEREM7QUN3QkQ7Ozs7Ozs7Q0RoQkM7QUNvQ0Q7Ozs7Ozs7Q0Q1QkM7QUM0Q0Q7Ozs7Ozs7Q0RwQ0M7QUV2Q0Q7OztDRjJDQztBRXRDRDs7Ozs7Ozs7Ozs7OztFQWFDLFNBQVM7RUFDVCxVQUFVO0VBQ1YsU0FBUztFQUNULGVBQWU7RUFDZixhQUFhO0VBQ2Isd0JBQXdCLEVBQUE7O0FBRXpCLGdEQUFBO0FBQ0E7O0VBRUMsY0FBYyxFQUFBOztBQUVmO0VBQ0MsY0FBYyxFQUFBOztBQUVmO0VBQ0MsZ0JBQWdCLEVBQUE7O0FBRWpCO0VBQ0MsWUFBWSxFQUFBOztBQUViOztFQUVDLFdBQVc7RUFDWCxhQUFhLEVBQUE7O0FBRWQ7RUFDQyx5QkFBeUI7RUFDekIsaUJBQWlCLEVBQUE7O0FBSWxCO0VBQ0Msa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixZQUFZO0VBQ1osY0FBYyxFQUFBIiwiZmlsZSI6InN0eWxlcy5jc3MifQ== */
+
+/*# sourceMappingURL=styles.css.map */

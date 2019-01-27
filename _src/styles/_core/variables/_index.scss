@@ -1,3 +1,6 @@
-@import 'colours/base';
-@import 'colours/social';
-@import 'colours/brand';
+@import 'colours/_index';
+@import 'breakpoints';
+
+
+// Max wrapper width, XL breakpoint
+$max-wrapper: map-get($breakpoints, xl);

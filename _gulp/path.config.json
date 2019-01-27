@@ -1,0 +1,7 @@
+{
+	"sass": {
+        "src": "_src/styles/*.scss",
+        "dest": "build/assets/styles",
+        "watch": "_src_styles/**/*.scss"
+    }
+}

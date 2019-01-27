@@ -1,0 +1,15 @@
+
+/*
+
+    Breakpoints (for use with media query mixins)
+    Alternate points as inspired by:https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+*/
+
+$breakpoints: (
+	xs: 0,
+	sm: 400px,
+	md: 600px,
+	lg: 900px,
+	xl: 1200px,
+	xxl: 1800px
+) !default;

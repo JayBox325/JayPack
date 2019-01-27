@@ -1,35 +1,32 @@
 {
-  "name": "JayPack",
-  "description": "JayPack. Webpack project scaffolding.",
-  "version": "0.0.1",
-  "author": "Jay Collett",
-  "email": "hello@jaycollett.co",
-  "url": "//jaycollett.co",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JayBox325/JayPack.git"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "autoprefixer": "^9.4.4",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.5",
-    "babel-preset-env": "^1.7.0",
-    "css-loader": "^2.1.0",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.11.0",
-    "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.28.1",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
-  },
-  "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production"
-  }
+    "name": "JayPack",
+    "description": "Gulp 4 and Webpack boilerplate.",
+    "version": "0.0.1",
+    "main": "_gulp/gulpfile.babel.js",
+    "author": "Jay Collett",
+    "email": "hello@jaycollett.co",
+    "url": "//jaycollett.co",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JayBox325/JayPack.git"
+    },
+    "scripts": {
+        "gulp": "gulp"
+    },
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.3.1",
+        "@babel/register": "^7.0.0",
+        "autoprefixer": "^9.4.6",
+        "gulp": "^4.0.0",
+        "gulp-environments": "^0.1.2",
+        "gulp-notify": "^3.2.0",
+        "gulp-postcss": "^8.0.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-sourcemaps": "^2.6.4",
+        "postcss-input-range": "^4.0.0",
+        "require-dir": "^1.2.0"
+    }
 }
