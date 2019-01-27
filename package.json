@@ -28,6 +28,7 @@
         "gulp-postcss": "^8.0.0",
         "gulp-sass": "^4.0.2",
         "gulp-sourcemaps": "^2.6.4",
+        "gulp-svgmin": "^2.1.0",
         "postcss-input-range": "^4.0.0",
         "require-dir": "^1.2.0"
     }

@@ -16,23 +16,23 @@ import changed from 'gulp-changed'
 
 // minify and move images
 gulp.task('images', () => {
-    return gulp.src(paths.images.src)
-        .pipe(changed(paths.images.src))
+    return gulp.src(paths.assets.images.src)
+        .pipe(changed(paths.assets.images.src))
         .pipe(imagemin())
         .on('error', handleErrors)
-        .pipe(gulp.dest(paths.images.dest))
+        .pipe(gulp.dest(paths.assets.images.dest))
         .on('error', handleErrors)
         .pipe(notify({
             title: "👍 JayPack - success",
-            message: "Images minified and moved",
+            message: "Images minified",
             onLast: true
         }))
 })
 
 // Move videos
-gulp.task('move-videos', function() {
-    return gulp.src(paths.images.videos)
-        .pipe(gulp.dest(paths.images.dest))
+gulp.task('move-videos', () => {
+    return gulp.src(paths.assets.videos.src)
+        .pipe(gulp.dest(paths.assets.videos.dest))
         .on('error', handleErrors)
         .pipe(notify({
             title: "👍 JayPack - success",
@@ -42,9 +42,9 @@ gulp.task('move-videos', function() {
 })
 
 // Move favicons
-gulp.task('move-favicons', function() {
-    return gulp.src(paths.favicons.src)
-        .pipe(gulp.dest(paths.favicons.dest))
+gulp.task('move-favicons', () => {
+    return gulp.src(paths.assets.favicons.src)
+        .pipe(gulp.dest(paths.assets.favicons.dest))
         .on('error', handleErrors)
         .pipe(notify({
             title: "👍 JayPack - success",

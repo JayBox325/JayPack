@@ -5,12 +5,6 @@
         "watch": "_src/styles/**/*.scss"
     },
 
-    "fonts": {
-        "src": "_src/assets/fonts/*.*",
-        "dest": "build/assets/fonts",
-        "watch": "_src/assets/fonts/*.*"
-    },
-
     "assets": {
         "images": {
             "src": "_src/assets/images/*.*",
@@ -26,6 +20,16 @@
             "src": "_src/assets/favicons/*.*",
             "dest": "build/assets/favicons",
             "watch": "_src/assets/favicons/*.*"
+        },
+        "svg": {
+            "src": "_src/assets/svg/*.svg",
+            "dest": "build/assets/svg",
+            "watch": "_src/assets/svg/*.svg"
+        },
+        "fonts": {
+            "src": "_src/assets/fonts/*.*",
+            "dest": "build/assets/fonts",
+            "watch": "_src/assets/fonts/*.*"
         }
     }
 }
