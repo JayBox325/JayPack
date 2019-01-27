@@ -1,17 +1,14 @@
 import gulp from 'gulp'
 import notify from 'gulp-notify'
 
-
 // Config
 import paths from '../path.config'
-import config from '../config'
 import handleErrors from '../utils/handleErrors'
 
 // SVG packages
 import svgmin from 'gulp-svgmin';
 
-gulp.task('svgs', () => {
-
+gulp.task('svg', () => {
     return gulp.src(paths.assets.svg.src)
         .pipe(svgmin({
             plugins: [{

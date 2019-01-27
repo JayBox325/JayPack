@@ -37,10 +37,12 @@ gulp.task('styles', () => {
 
         .pipe(development(notify({
             title: "👍 JayPack - success",
-            message: "Sass compiled with sourcemaps"
+            message: "Sass compiled with sourcemaps",
+            onLast: true
         })))
         .pipe(production(notify({
             title: "👍 JayPack - success",
-            message: "Sass compiled & minified for production"
+            message: "Sass compiled & minified for production",
+            onLast: true
         })))
 })
