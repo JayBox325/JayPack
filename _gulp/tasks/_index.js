@@ -12,6 +12,7 @@ if (config.project == 'static') {
 		'move-fonts',
 		'move-videos',
 		'images',
+		'scripts',
 		'svg',
 		'styles',
 		'nunjucks',
@@ -23,6 +24,7 @@ if (config.project == 'static') {
 		'move-fonts',
 		'move-videos',
 		'images',
+		'scripts',
 		'svg',
 		'styles',
 		'watch'
@@ -36,6 +38,7 @@ if (config.project == 'static') {
 		'move-fonts',
 		'move-videos',
 		'nunjucks',
+		'scripts',
 		'images',
 		'svg',
 		'styles'
@@ -46,6 +49,7 @@ if (config.project == 'static') {
 		'move-fonts',
 		'move-videos',
 		'images',
+		'scripts',
 		'svg',
 		'styles'
 	))
