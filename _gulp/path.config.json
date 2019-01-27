@@ -4,19 +4,28 @@
         "dest": "build/assets/styles",
         "watch": "_src/styles/**/*.scss"
     },
-    "images": {
-        "src": "_src/assets/images/*.*",
-        "dest": "build/assets/images",
-        "watch": "_src/assets/images/*.*"
+
+    "fonts": {
+        "src": "_src/assets/fonts/*.*",
+        "dest": "build/assets/fonts",
+        "watch": "_src/assets/fonts/*.*"
     },
-    "videos": {
-        "src": "_src/assets/videos/*.*",
-        "dest": "build/assets/videos",
-        "watch": "_src/assets/videos/*.*"
-    },
-    "favicons": {
-        "src": "_src/assets/favicons/*.*",
-        "dest": "build/assets/favicons",
-        "watch": "_src/assets/favicons/*.*"
+
+    "assets": {
+        "images": {
+            "src": "_src/assets/images/*.*",
+            "dest": "build/assets/images",
+            "watch": "_src/assets/images/*.*"
+        },
+        "videos": {
+            "src": "_src/assets/videos/*.*",
+            "dest": "build/assets/videos",
+            "watch": "_src/assets/videos/*.*"
+        },
+        "favicons": {
+            "src": "_src/assets/favicons/*.*",
+            "dest": "build/assets/favicons",
+            "watch": "_src/assets/favicons/*.*"
+        }
     }
 }

@@ -24,7 +24,7 @@ gulp.task('images', () => {
         .on('error', handleErrors)
         .pipe(notify({
             title: "👍 JayPack - success",
-            message: "Images successfully minified and moved",
+            message: "Images minified and moved",
             onLast: true
         }))
 })
@@ -36,7 +36,7 @@ gulp.task('move-videos', function() {
         .on('error', handleErrors)
         .pipe(notify({
             title: "👍 JayPack - success",
-            message: "Videos successfully moved",
+            message: "Videos moved",
             onLast: true
         }))
 })
@@ -48,7 +48,7 @@ gulp.task('move-favicons', function() {
         .on('error', handleErrors)
         .pipe(notify({
             title: "👍 JayPack - success",
-            message: "Favicons successfully moved",
+            message: "Favicons moved",
             onLast: true
         }))
 })
