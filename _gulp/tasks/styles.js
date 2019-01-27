@@ -1,4 +1,5 @@
 import gulp from 'gulp'
+import notify from 'gulp-notify'
 
 // Config
 import paths from '../path.config'
@@ -13,7 +14,6 @@ const production = config.env.production
 import sass from 'gulp-sass'
 import sourcemaps from 'gulp-sourcemaps'
 import autoprefixer from 'autoprefixer'
-import notify from 'gulp-notify'
 import postcss from 'gulp-postcss'
 import range from 'postcss-input-range'
 
@@ -36,11 +36,11 @@ gulp.task('styles', () => {
         .on('error', handleErrors)
 
         .pipe(development(notify({
-            title: "👍 Sass compiled",
+            title: "👍 JayPack - success",
             message: "Sass successfully compiled with sourcemaps"
         })))
         .pipe(production(notify({
-            title: "👍 Sass compiled",
+            title: "👍 JayPack - success",
             message: "Sass successfully compiled & minified for production"
         })))
 })
