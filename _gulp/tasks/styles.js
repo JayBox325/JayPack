@@ -16,8 +16,6 @@ import autoprefixer from 'autoprefixer'
 import notify from 'gulp-notify'
 import postcss from 'gulp-postcss'
 import range from 'postcss-input-range'
-import gulpif from 'gulp-if'
-
 
 gulp.task('styles', () => {
     return gulp.src(paths.sass.src)
@@ -29,12 +27,20 @@ gulp.task('styles', () => {
             range()
         ]))
 
-        // Sourcemaps
+        // Sourcemaps for production
         .pipe(development(sourcemaps.write({includeContent: false})))
         .pipe(development(sourcemaps.init({loadMaps: true})))
         .pipe(development(sourcemaps.write('./')))
 
         .pipe(gulp.dest(paths.sass.dest))
         .on('error', handleErrors)
-        .pipe(notify("Sass compiled"))
+
+        .pipe(development(notify({
+            title: "👍 Sass compiled",
+            message: "Sass successfully compiled with sourcemaps"
+        })))
+        .pipe(production(notify({
+            title: "👍 Sass compiled",
+            message: "Sass successfully compiled & minified for production"
+        })))
 })

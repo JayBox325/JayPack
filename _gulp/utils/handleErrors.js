@@ -5,7 +5,7 @@ export default function() {
 
     // Send error to notification center with gulp-notify
     notify.onError({
-        title: "Compile Error",
+        title: "❌ Compile Error",
         message: "<%= error.message %> in <%= error.reason %>"
     }).apply(this, args)
 
