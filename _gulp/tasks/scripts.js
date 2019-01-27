@@ -10,15 +10,16 @@ import handleErrors from '../utils/handleErrors'
 import webpack from 'webpack'
 import webpackStream from 'webpack-stream'
 
-gulp.task('scripts', () => {
+gulp.task('scripts', (cb) => {
     gulp.src(paths.js.app)
         .pipe(webpackStream(webpackConfig), webpack)
-        // .on('error', handleErrors)
-        // .pipe(gulp.dest(paths.js.dest))
-        // .on('error', handleErrors)
-        // .pipe(notify({
-        //     title: "👍 JayPack - success",
-        //     message: "Javascript bundled",
-        //     onLast: true
-        // }))
+        .on('error', handleErrors)
+        .pipe(gulp.dest(paths.js.dest))
+        .on('error', handleErrors)
+        .pipe(notify({
+            title: "👍 JayPack - success",
+            message: "Javascript bundled",
+            onLast: true
+        }));
+    cb()
 })

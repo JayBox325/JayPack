@@ -11,12 +11,16 @@
         "url": "https://github.com/JayBox325/JayPack.git"
     },
     "scripts": {
-        "dev": "gulp"
+        "start": "gulp --env development",
+        "build": "gulp build --env development",
+        "package": "gulp build --env production"
     },
     "license": "MIT",
     "dependencies": {},
     "devDependencies": {
+        "@babel/cli": "^7.2.3",
         "@babel/core": "^7.2.2",
+        "@babel/node": "^7.2.2",
         "@babel/preset-env": "^7.3.1",
         "@babel/register": "^7.0.0",
         "autoprefixer": "^9.4.6",
@@ -44,7 +48,6 @@
         "require-dir": "^1.2.0",
         "webpack": "^4.29.0",
         "webpack-cli": "^3.2.1",
-        "webpack-dev-middleware": "^3.5.1",
         "webpack-stream": "^5.2.1"
     }
 }

@@ -14,7 +14,7 @@
     },
 
     "js": {
-        "app": "_src/scripts/app.js",
+        "app": "./_src/scripts/app.js",
         "dest": "build/assets/scripts"
     },
 
