@@ -31,5 +31,15 @@
             "dest": "build/assets/fonts",
             "watch": "_src/assets/fonts/*.*"
         }
+    },
+
+    "html": {
+        "njks": {
+            "render": "_src/html",
+            "src": "_src/html/*.njk",
+            "dest": "build",
+            "watch": "_src/html/**/*.*",
+            "data": "_src/html/__data/data.json"
+        }
     }
 }
