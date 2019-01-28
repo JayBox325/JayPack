@@ -5,6 +5,7 @@
     width: 100vw;
     height: 50px;
     border-bottom: 1px solid map-get($colors, 'grey');
+    z-index: z('header');
 
     &__wrapper,
     &__inner {
