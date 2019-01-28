@@ -1,9 +1,11 @@
 import environments from 'gulp-environments'
 
+import projectConfig from '../project.config'
+
 // Config rules
 const config = {
-    // Project variable - either 'craft' or 'static'.
-    project: 'static',
+    // Project variable - either 'craft' or 'static'. Set in the root project config file.
+    project: projectConfig.project,
 
 
     // Environment variables - can be 'development' or 'production'
@@ -23,10 +25,10 @@ const config = {
             server: {
                 baseDir: "build"
             },
-            port: 8080
+            port: projectConfig.port
         },
         craft: {
-            proxy: 'local.whatever.mamp'
+            proxy: projectConfig.siteUrl
         }
     }
 }
