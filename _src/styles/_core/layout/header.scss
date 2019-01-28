@@ -25,12 +25,17 @@
         position: absolute;
         top: 50%;
 
-        &--menu {
+        &--left {
+            left: 0;
+            transform: translate3d(0, -50%, 0);
+        }
+
+        &--right {
             right: 0;
             transform: translate3d(0, -50%, 0);
         }
 
-        &--logo {
+        &--middle {
             left: 50%;
             transform: translate3d(-50%, -50%, 0);
         }

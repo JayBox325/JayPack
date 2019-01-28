@@ -50,9 +50,5 @@
             "dest": "build/assets/fonts",
             "watch": "_src/assets/fonts/*.*"
         }
-    },
-
-    "sizereport": {
-        "dest": "build/assets/**/*"
     }
 }
