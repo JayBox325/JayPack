@@ -26,6 +26,7 @@ gulp.task('nunjucks', () => {
             return JSON.parse(fs.readFileSync(paths.njks.data));
         }))
         .on('error', handleErrors)
+        .on('error', handleErrors)
         .pipe(nunjucksRender({
             path: paths.njks.render,
             ext: '.html'

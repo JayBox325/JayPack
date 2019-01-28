@@ -6,7 +6,6 @@ const config = {
     // Project variable - either 'craft' or 'static'.
     project: 'static',
 
-
     // Environment variables - can be 'development' or 'production'
     env: {
         production: environments.production,

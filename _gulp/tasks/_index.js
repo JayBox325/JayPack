@@ -44,7 +44,8 @@ if (config.project == 'static') {
 		'scripts',
 		'images',
 		'svg',
-		'styles'
+		'styles',
+		'sizereport'
 	))
 } else {
 	gulp.task('build', gulp.parallel(
@@ -54,6 +55,7 @@ if (config.project == 'static') {
 		'images',
 		'scripts',
 		'svg',
-		'styles'
+		'styles',
+		'sizereport'
 	))
 }

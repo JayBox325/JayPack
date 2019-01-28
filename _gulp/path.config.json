@@ -2,6 +2,7 @@
 	"sass": {
         "src": "_src/styles/*.scss",
         "dest": "build/assets/styles",
+        "mini": "build/assets/styles/*.min.css",
         "watch": "_src/styles/**/*.scss"
     },
 
@@ -49,5 +50,9 @@
             "dest": "build/assets/fonts",
             "watch": "_src/assets/fonts/*.*"
         }
+    },
+
+    "sizereport": {
+        "dest": "build"
     }
 }

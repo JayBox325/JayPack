@@ -15,11 +15,16 @@ const production = config.env.production
 // Scripts packages
 import webpack from 'webpack'
 import webpackStream from 'webpack-stream'
+import rename from 'gulp-rename'
 
 gulp.task('scripts', (cb) => {
     gulp.src(paths.js.app)
         .pipe(webpackStream(webpackConfig), webpack)
         .on('error', handleErrors)
+
+        // Minification name change
+        .pipe(production(rename({ suffix: '.min' })))
+
         .pipe(gulp.dest(paths.js.dest))
         .on('error', handleErrors)
         // .pipe(notify({
@@ -27,6 +32,7 @@ gulp.task('scripts', (cb) => {
         //     message: "Javascript bundled",
         //     onLast: true
         // }))
+        
         .pipe(development(browserSync.reload({ stream: true })));
     cb()
 })

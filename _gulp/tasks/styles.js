@@ -17,6 +17,8 @@ import sourcemaps from 'gulp-sourcemaps'
 import autoprefixer from 'autoprefixer'
 import postcss from 'gulp-postcss'
 import range from 'postcss-input-range'
+import rename from 'gulp-rename'
+import cssnano from 'gulp-cssnano'
 
 gulp.task('styles', () => {
     return gulp.src(paths.sass.src)
@@ -27,6 +29,10 @@ gulp.task('styles', () => {
             autoprefixer({browsers: config.autoprefixerVersions}),
             range()
         ]))
+
+        // Minify in production
+        .pipe(production(cssnano()))
+        .pipe(production(rename({ suffix: '.min' })))
 
         // Sourcemaps for production
         .pipe(development(sourcemaps.write({includeContent: false})))
@@ -41,10 +47,10 @@ gulp.task('styles', () => {
         //     message: "Sass compiled with sourcemaps",
         //     onLast: true
         // })))
-        .pipe(production(notify({
-            title: "👍 JayPack - success",
-            message: "Sass compiled & minified for production",
-            onLast: true
-        })))
+        // .pipe(production(notify({
+        //     title: "👍 JayPack - success",
+        //     message: "Sass compiled & minified for production",
+        //     onLast: true
+        // })))
         .pipe(development(browserSync.reload({ stream: true })))
 })

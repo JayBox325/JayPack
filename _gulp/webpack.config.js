@@ -1,8 +1,17 @@
 import paths from './path.config'
+import environments from 'gulp-environments'
 import path from 'path'
 
+var development = environments.development
+var production = environments.production
+
+const env = production() ? 'production' : 'development'
+
+// Webpack packages
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
+
 const config = {
-    mode: 'production',
+    mode: env,
     entry: {
         app: paths.js.app,
     },
@@ -28,6 +37,9 @@ const config = {
                 ]
             },
         ],
+    },
+    optimization: {
+        minimizer: [new UglifyJsPlugin()],
     }
 }
 
