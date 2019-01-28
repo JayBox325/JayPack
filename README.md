@@ -57,5 +57,4 @@ If the project is set to `static` the nunjucks commands will be run. If it's set
 
 * Test Craft BrowserSync functionality.
 * Import reused HTML, Scss and JS modules from projects.
-* Update Package.json with project details.
 * ~~Minify Scss and JS~~ and update the source strings in the .html (from nunjucks) or .twig (Craft) files.

@@ -1,11 +1,10 @@
 import gulp from 'gulp'
 import requireDir from 'require-dir'
+
 requireDir('./', {recurse: true})
 
 // Config
 import config from '../config'
-
-import { browserSync, browserSyncReload } from './serve.js'
 
 // Build then watch - this doesn't move fonts
 if (config.project == 'static') {

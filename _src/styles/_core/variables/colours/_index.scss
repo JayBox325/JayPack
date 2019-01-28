@@ -2,16 +2,15 @@
 @import 'social';
 @import 'brand';
 
-// $colors: () !default;
+$colors: () !default;
 
-// $colors: map-merge((
-//     'primary':    $primary,
-//     'secondary':  $secondary,
-//     'success':    $success,
-//     'info':       $info,
-//     'warning':    $warning,
-//     'danger':     $danger,
-//     'grey':       $grey,
-//     'white':      $black,
-//     'black':      $black
-// ), $colors);
+$colors: map-merge((
+    'primary':    $primary,
+    'secondary':  $secondary,
+    'success':    $success,
+    'info':       $info,
+    'warning':    $warning,
+    'grey':       $grey-light,
+    'white':      $white,
+    'black':      $black
+), $colors);

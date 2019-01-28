@@ -1,0 +1,56 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50px;
+    border-bottom: 1px solid map-get($colors, 'grey');
+
+    &__wrapper,
+    &__inner {
+        position: relative;
+        height: 100%;
+    }
+
+    @include media-breakpoint-up(sm) {
+        height: 70px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        height: 100px;
+    }
+
+    &__item {
+        position: absolute;
+        top: 50%;
+
+        &--menu {
+            right: 0;
+            transform: translate3d(0, -50%, 0);
+        }
+
+        &--logo {
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+    }
+
+    &__logo {
+        height: 40px;
+        display: block;
+
+        @include media-breakpoint-up(sm) {
+            height: 50px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: 70px;
+        }
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+
+    }
+}

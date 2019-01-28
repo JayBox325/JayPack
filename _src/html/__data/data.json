@@ -1,6 +1,13 @@
 {
     "site": {
-        "title": "JayPack 2xxx",
+        "title": "JayPack",
         "email": "hello@jaycollett.co"
+    },
+
+    "SEO": {
+        "title": "SEO Title",
+        "description": "SEO Description",
+        "canonical": "//jaycollett.co",
+        "twitter": "JayBox325"
     }
 }
