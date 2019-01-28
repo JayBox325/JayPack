@@ -13,6 +13,7 @@ if (config.project == 'static') {
 		'svg',
 		'styles',
 		'scripts',
+		'move-scripts',
 		'nunjucks',
 		'serve',
 		'watch'
@@ -21,6 +22,7 @@ if (config.project == 'static') {
 	gulp.task('default', gulp.parallel(
 		'scripts',
 		'styles',
+		'move-scripts',
 		'svg',
 		'watch'
 	))
@@ -32,6 +34,7 @@ if (config.project == 'static') {
 		'styles',
 		'scripts',
 		'move-favicons',
+		'move-scripts',
 		'move-fonts',
 		'move-videos',
 		'images',
@@ -43,6 +46,7 @@ if (config.project == 'static') {
 		'styles',
 		'scripts',
 		'move-favicons',
+		'move-scripts',
 		'move-fonts',
 		'move-videos',
 		'images',

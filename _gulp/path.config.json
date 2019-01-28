@@ -21,7 +21,8 @@
     "js": {
         "app": "./_src/scripts/app.js",
         "dest": "build/assets/scripts",
-        "watch": "_src/scripts/**/*.*"
+        "watch": "_src/scripts/**/*.*",
+        "vendor": "./_src/scripts/vendor/*"
     },
 
     "assets": {

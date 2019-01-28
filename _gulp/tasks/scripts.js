@@ -28,3 +28,9 @@ gulp.task('scripts', (cb) => {
         .pipe(development(browserSync.reload({ stream: true })));
     cb()
 })
+
+gulp.task('move-scripts', () => {
+    return gulp.src(paths.js.vendor)
+        .pipe(gulp.dest(paths.js.dest))
+        .on('error', handleErrors)
+})

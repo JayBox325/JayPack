@@ -9,8 +9,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    {# Include SEO markup for static sites #}
-    {% include '_layout/seo.njk' %}
+    {# Include SEO markup -- uncomment for static sites #}
+    {# {% include '_layout/seo.njk' %} #}
 
     {# Include favicons links #}
     {% include '_layout/favicons.njk' %}
@@ -32,7 +32,12 @@
     </div>
     
     {# Javascript #}
-    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/assets/scripts/jQuery.3.3.1.min.js">\x3C/script>')</script>
+
     <script src="/assets/scripts/bundle.js"></script>
 </body>
 </html>
