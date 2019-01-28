@@ -56,6 +56,6 @@ If the project is set to `static` the nunjucks commands will be run. If it's set
 ## TODO
 
 * Test Craft BrowserSync functionality.
-* Remove individual task notifications and only show one notification on server boot and server refresh.
 * Import reused HTML, Scss and JS modules from projects.
 * Update Package.json with project details.
+* ~~Minify Scss and JS~~ and update the source strings in the .html (from nunjucks) or .twig (Craft) files.

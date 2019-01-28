@@ -14,14 +14,17 @@ import sizereport from 'gulp-sizereport'
 
 gulp.task('sizereport', () => {
     return gulp.src(paths.sizereport.dest)
-        .pipe(production(sizereport({
-            gzip: true,
-            minifier: function (contents, filepath) {
-                if (filepath.match(/\.min\./g)) {
-                    return contents
-                }
-            }
-        })))
+
+        // Currently not working Ticket: https://github.com/jaysalvat/gulp-sizereport/issues/16
+
+        // .pipe(production(sizereport({
+        //     gzip: true,
+        //     minifier: function (contents, filepath) {
+        //         if (filepath.match(/\.min\./g)) {
+        //             return contents
+        //         }
+        //     }
+        // })))
         .pipe(development(notify({
             title: "👍 JayPack - built",
             message: "Assets compiled and moved",

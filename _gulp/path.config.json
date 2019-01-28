@@ -53,6 +53,6 @@
     },
 
     "sizereport": {
-        "dest": "build"
+        "dest": "build/assets/**/*"
     }
 }
