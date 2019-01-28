@@ -1,24 +1,15 @@
 import environments from 'gulp-environments'
-import paths from './path.config'
 
 // Config rules
 const config = {
     // Project variable - either 'craft' or 'static'.
     project: 'static',
 
+
     // Environment variables - can be 'development' or 'production'
     env: {
         production: environments.production,
         development: environments.development
-    },
-
-    // Versioning
-    version: {
-        value: '%MDS%',
-        append: {
-            key: 'v',
-            to: ['css', 'js']
-        }
     },
 
 

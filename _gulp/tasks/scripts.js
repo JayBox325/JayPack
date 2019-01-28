@@ -22,16 +22,8 @@ gulp.task('scripts', (cb) => {
         .pipe(webpackStream(webpackConfig), webpack)
         .on('error', handleErrors)
 
-        // Minification name change
-        .pipe(production(rename({ suffix: '.min' })))
-
         .pipe(gulp.dest(paths.js.dest))
         .on('error', handleErrors)
-        // .pipe(notify({
-        //     title: "👍 JayPack - success",
-        //     message: "Javascript bundled",
-        //     onLast: true
-        // }))
         
         .pipe(development(browserSync.reload({ stream: true })));
     cb()

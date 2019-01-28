@@ -23,11 +23,6 @@ gulp.task('images', () => {
         .on('error', handleErrors)
         .pipe(gulp.dest(paths.assets.images.dest))
         .on('error', handleErrors)
-        // .pipe(notify({
-        //     title: "👍 JayPack - success",
-        //     message: "Images minified",
-        //     onLast: true
-        // }))
         .pipe(development(browserSync.reload({ stream: true })))
 })
 
@@ -36,11 +31,6 @@ gulp.task('move-videos', () => {
     return gulp.src(paths.assets.videos.src)
         .pipe(gulp.dest(paths.assets.videos.dest))
         .on('error', handleErrors)
-        .pipe(notify({
-            title: "👍 JayPack - success",
-            message: "Videos moved",
-            onLast: true
-        }))
         .pipe(development(browserSync.reload({ stream: true })))
 })
 
@@ -49,10 +39,5 @@ gulp.task('move-favicons', () => {
     return gulp.src(paths.assets.favicons.src)
         .pipe(gulp.dest(paths.assets.favicons.dest))
         .on('error', handleErrors)
-        .pipe(notify({
-            title: "👍 JayPack - success",
-            message: "Favicons moved",
-            onLast: true
-        }))
         .pipe(development(browserSync.reload({ stream: true })))
 })

@@ -6,55 +6,60 @@ requireDir('./', {recurse: true})
 // Config
 import config from '../config'
 
-// Build then watch - this doesn't move fonts
+// Build then watch, but this doesn't move or optimise assets such as images, videos etc.
 if (config.project == 'static') {
-	gulp.task('default', gulp.parallel(
-		'move-favicons',
-		'move-fonts',
-		'move-videos',
-		'images',
-		'scripts',
-		'svg',
-		'styles',
-		'nunjucks',
+	gulp.task('default', gulp.series(
+		'clean',
+		gulp.parallel(
+			'svg',
+			'styles',
+			'scripts',
+			'nunjucks',
+		),
 		'serve',
 		'watch'
 	))
 } else {
-	gulp.task('default', gulp.parallel(
-		'move-favicons',
-		'move-fonts',
-		'move-videos',
-		'images',
-		'scripts',
-		'svg',
-		'styles',
+	gulp.task('default', gulp.series(
+		'clean',
+		gulp.parallel(
+			'scripts',
+			'styles',
+			'svg'
+		),
 		'watch'
 	))
 }
 
 // Build
 if (config.project == 'static') {
-	gulp.task('build', gulp.parallel(
-		'move-favicons',
-		'move-fonts',
-		'move-videos',
-		'nunjucks',
-		'scripts',
-		'images',
-		'svg',
-		'styles',
+	gulp.task('build', gulp.series(
+		'clean',
+		gulp.parallel(
+			'styles',
+			'scripts',
+			'move-favicons',
+			'move-fonts',
+			'move-videos',
+			'images',
+			'svg',
+			'nunjucks'
+		),
 		'sizereport'
 	))
 } else {
-	gulp.task('build', gulp.parallel(
-		'move-favicons',
-		'move-fonts',
-		'move-videos',
-		'images',
-		'scripts',
-		'svg',
-		'styles',
-		'sizereport'
+	gulp.task('build', gulp.series(
+		'clean',
+		gulp.parallel(
+			'styles',
+			'scripts',
+			'move-favicons',
+			'move-fonts',
+			'move-videos',
+			'images',
+			'svg',
+			'inject-assets',
+			'sizereport'
+		)
 	))
 }
