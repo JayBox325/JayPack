@@ -70,4 +70,6 @@ There are three commands to run for this boilerplate as follows:
     * Accessible nested menu drawer
     * Footer
     * Base CSS Grid system
-* Typography scaling
+    * Form fields
+    * Basic buttons setup
+    * Typography scaling
