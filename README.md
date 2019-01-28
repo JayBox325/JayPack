@@ -44,11 +44,18 @@ There are three commands to run for this boilerplate as follows:
 
 * `npm start` - this will compile everything then start watching all the source files.
 * `npm build` - this builds all your source files, but still in your development environment so sourcemaps will be included and nothing will be minified.
-* `npm package` - this is your command for pushing code live. This will remove all the sourcemaps and minify everything ready for launch.
+* `npm package` - this is the command for pushing code live. This will remove all the sourcemaps and minify everything ready for launch.
 
 
 ## Config
 
 This boilerplate can be used for static HTML websites built with Nunjucks, or it can be used for CraftCMS projects. The configuration for this is set in the `_gulp/config.js` file.
 
-If the project is set to `static` the nunjucks commands will be run. If it's set to `craft` then we let some CraftCMS plugins take care of the asset versioning.
+If the project is set to `static` the nunjucks commands will be run. If it's set to `craft` then we let some CraftCMS plugins take care of the asset versioning. But also, browsersync will serve your static HTML files, whereas Craft just refreshes your Twig files if files are changed.
+
+## TODO
+
+* Test Craft BrowserSync functionality.
+* Remove individual task notifications and only show one notification on server boot and server refresh.
+* Import reused HTML, Scss and JS modules from projects.
+* Update Package.json with project details.

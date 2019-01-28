@@ -1,7 +1,41 @@
-# Core
-/node_modules
+# OS generated files #
+.cache
 .DS_Store
-yarn-error.log
+.idea
+.project
+.settings
+*.esproj
+*.sublime-workspace
+*.sublime-project
+*.tmproj
+*.tmproject
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+config.codekit3
+prepros-6.config
 
-# Dist assets
-/dist
+# Caches #
+sized/
+thumbs/
+_thumbs/
+
+# Project #
+yarn-error.log
+npm-debug.log
+
+# Assets #
+.sass-cache
+node_modules
+*.map
+reports
+
+# Craft #
+/build/vendor
+/build/.env.php
+/build/.env.sh
+/build/.env
+/build/storage/*
+/build/public/resources/*
