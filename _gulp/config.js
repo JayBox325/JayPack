@@ -1,4 +1,5 @@
 import environments from 'gulp-environments'
+import paths from './path.config'
 
 // Config rules
 const config = {
@@ -23,7 +24,21 @@ const config = {
 
 
     // Sass variables
-    autoprefixerVersions: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3']
+    autoprefixerVersions: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3'],
+
+
+    // Browsersync
+    browserSync: {
+        static: {
+            server: {
+                baseDir: "build"
+            },
+            port: 8080
+        },
+        craft: {
+            proxy: 'local.whatever.mamp'
+        }
+    }
 }
 
 export default config

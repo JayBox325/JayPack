@@ -5,6 +5,8 @@ requireDir('./', {recurse: true})
 // Config
 import config from '../config'
 
+import { browserSync, browserSyncReload } from './serve.js'
+
 // Build then watch - this doesn't move fonts
 if (config.project == 'static') {
 	gulp.task('default', gulp.parallel(
@@ -16,6 +18,7 @@ if (config.project == 'static') {
 		'svg',
 		'styles',
 		'nunjucks',
+		'serve',
 		'watch'
 	))
 } else {

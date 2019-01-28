@@ -1,5 +1,6 @@
 import gulp from 'gulp'
 import notify from 'gulp-notify'
+import browserSync from 'browser-sync'
 
 // Config
 import paths from '../path.config'
@@ -34,11 +35,12 @@ gulp.task('nunjucks', () => {
         .pipe(production(htmlmin({collapseWhitespace: true})))
         .pipe(development(htmlbeautify()))
         .pipe(gulp.dest(paths.njks.dest))
-        .pipe(notify({
-            title: "👍 JayPack - success",
-            message: "Nunjucks generated",
-            onLast: true
-        }))
+        // .pipe(notify({
+        //     title: "👍 JayPack - success",
+        //     message: "Nunjucks generated",
+        //     onLast: true
+        // }))
+        .pipe(development(browserSync.reload({ stream: true })))
 })
 
 

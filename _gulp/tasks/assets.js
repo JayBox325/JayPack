@@ -1,5 +1,6 @@
 import gulp from 'gulp'
 import notify from 'gulp-notify'
+import browserSync from 'browser-sync'
 
 // Config
 import paths from '../path.config'
@@ -22,11 +23,12 @@ gulp.task('images', () => {
         .on('error', handleErrors)
         .pipe(gulp.dest(paths.assets.images.dest))
         .on('error', handleErrors)
-        .pipe(notify({
-            title: "👍 JayPack - success",
-            message: "Images minified",
-            onLast: true
-        }))
+        // .pipe(notify({
+        //     title: "👍 JayPack - success",
+        //     message: "Images minified",
+        //     onLast: true
+        // }))
+        .pipe(development(browserSync.reload({ stream: true })))
 })
 
 // Move videos
@@ -39,6 +41,7 @@ gulp.task('move-videos', () => {
             message: "Videos moved",
             onLast: true
         }))
+        .pipe(development(browserSync.reload({ stream: true })))
 })
 
 // Move favicons
@@ -51,4 +54,5 @@ gulp.task('move-favicons', () => {
             message: "Favicons moved",
             onLast: true
         }))
+        .pipe(development(browserSync.reload({ stream: true })))
 })

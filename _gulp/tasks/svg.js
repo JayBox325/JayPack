@@ -1,9 +1,15 @@
 import gulp from 'gulp'
 import notify from 'gulp-notify'
+import browserSync from 'browser-sync'
 
 // Config
 import paths from '../path.config'
+import config from '../config'
 import handleErrors from '../utils/handleErrors'
+
+// Environment config
+const development = config.env.development
+const production = config.env.production
 
 // SVG packages
 import svgmin from 'gulp-svgmin';
@@ -73,9 +79,10 @@ gulp.task('svg', () => {
         }))
         .pipe(gulp.dest(paths.assets.svg.dest))
         .on('error', handleErrors)
-        .pipe(notify({
-            title: "👍 JayPack - success",
-            message: "SVGs optimised",
-            onLast: true
-        }))
+        // .pipe(notify({
+        //     title: "👍 JayPack - success",
+        //     message: "SVGs optimised",
+        //     onLast: true
+        // }))
+        .pipe(development(browserSync.reload({ stream: true })))
 })

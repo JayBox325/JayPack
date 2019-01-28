@@ -1,5 +1,6 @@
 import gulp from 'gulp'
 import notify from 'gulp-notify'
+import browserSync from 'browser-sync'
 
 // Config
 import paths from '../path.config'
@@ -35,14 +36,15 @@ gulp.task('styles', () => {
         .pipe(gulp.dest(paths.sass.dest))
         .on('error', handleErrors)
 
-        .pipe(development(notify({
-            title: "👍 JayPack - success",
-            message: "Sass compiled with sourcemaps",
-            onLast: true
-        })))
+        // .pipe(development(notify({
+        //     title: "👍 JayPack - success",
+        //     message: "Sass compiled with sourcemaps",
+        //     onLast: true
+        // })))
         .pipe(production(notify({
             title: "👍 JayPack - success",
             message: "Sass compiled & minified for production",
             onLast: true
         })))
+        .pipe(development(browserSync.reload({ stream: true })))
 })

@@ -13,6 +13,10 @@
         "data": "_src/html/__data/data.json"
     },
 
+    "twig": {
+        "watch": "build/templates/**/*.twig"
+    },
+
     "js": {
         "app": "./_src/scripts/app.js",
         "dest": "build/assets/scripts",
