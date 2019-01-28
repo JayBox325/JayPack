@@ -45,10 +45,13 @@ This boilerplate can be used for static HTML websites built with Nunjucks, or it
 
 If the project is set to `static` the nunjucks commands will be run. If it's set to `craft` then we let some CraftCMS plugins take care of the asset versioning. But also, browsersync will serve your static HTML files, whereas Craft just refreshes your Twig files if files are changed.
 
-### CraftCMS Site url
+### CraftCMS site url
 
 If you are running a CraftCMS site, you will need to set your weburl (e.g. local.project.com) in the `project.config.js` file.
 
+### Static site port number
+
+However, if you're running a static site, you should set a new port number in the same `project.config.js` file to save any clashes with other projects.
 
 ## Commands
 
@@ -60,6 +63,11 @@ There are three commands to run for this boilerplate as follows:
 
 ## TODO
 
-* Test Craft BrowserSync functionality.
-* Import reused HTML, Scss and JS modules from projects. - ongoing
-* ~~Minify Scss and JS~~ and update the source strings in the .html (from nunjucks) or .twig (Craft) files.
+* Test Craft BrowserSync functionality
+* Import reused HTML, Scss and JS modules from projects - ongoing
+    * Header - in progress
+    * Hamburger
+    * Accessible nested menu drawer
+    * Footer
+    * Base CSS Grid system
+* Typography scaling
