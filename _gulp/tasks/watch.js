@@ -9,7 +9,7 @@ gulp.task('watch', () => {
 	
 	notify({
 		title: "👀 JayPack - Started",
-		message: "Watching for changes"
+		message: "Watching for changes..."
 	}).write('')
 
 	// Watch styles

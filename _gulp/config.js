@@ -1,6 +1,11 @@
 import environments from 'gulp-environments'
-
 import projectConfig from '../project.config'
+
+if (projectConfig.project == 'static') {
+    var distAssets = './build/assets'
+} else {
+    var distAssets = './build/public/assets'
+}
 
 // Config rules
 const config = {
@@ -13,6 +18,10 @@ const config = {
         production: environments.production,
         development: environments.development
     },
+
+
+    // Root directory for assets produced in Gulp
+    distRoot: distAssets,
 
 
     // Sass variables

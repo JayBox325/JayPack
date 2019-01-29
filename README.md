@@ -45,6 +45,8 @@ This boilerplate can be used for static HTML websites built with Nunjucks, or it
 
 If the project is set to `static` the nunjucks commands will be run. If it's set to `craft` then we let some CraftCMS plugins take care of the asset versioning. But also, browsersync will serve your static HTML files, whereas Craft just refreshes your Twig files if files are changed.
 
+> *Note:* Your assets will be saved in different locations depending on if you are running a `static` or `craft` project. Static projects have their assets in `/build/assets`, whereas Craft projects need them to be saved into `/build/public/assets`.
+
 ### CraftCMS site url
 
 If you are running a CraftCMS site, you will need to set your weburl (e.g. local.project.com) in the `project.config.js` file.
@@ -60,6 +62,36 @@ There are three commands to run for this boilerplate as follows:
 * `npm start` - this will compile everything then start watching all the source files.
 * `npm build` - this builds all your source files, but still in your development environment so sourcemaps will be included and nothing will be minified.
 * `npm package` - this is the command for pushing code live. This will remove all the sourcemaps and minify everything ready for launch.
+
+## Craft project setup
+
+Before you begin, setup a database on your local MySQL and make a note of the name, user and password! You'll need these shortly.
+
+Once you've setup a database and updated the variables in the `project.config` file, you are ready to get started with Craft. Start by downloading Craft via Composer inside the `/build` directory:
+
+```
+composer create-project craftcms/craft /build
+```
+
+However, Craft downloads everything inside a `/craft` directory within our build directory, which isn't what we want so you need to do the following steps:
+
+1 Rename the `/craft` directory to anything else (e.g. `/_craft`)
+2 Move the contents of `/craft` into the `/build` directory. We had to rename the `/craft` folder above because one of the files we downloaded via Composer has the same name.
+
+Once this has been done, from inside the `/build` directory run the CraftCMS setup wizard:
+
+```
+./craft setup
+```
+Run through the database setup which is where you'll need the database details from the start. Following that, you'll be asked to install Craft. Yes is the correcy answer.
+
+Here you'll setup login details for the admin and the site URL (which should match your MAMP server when you set one up).
+
+> *Optional:* Rename the `/web` directory to `/public`.
+
+You should now have a Craft 3 instance on your local machine ready to start development!
+
+
 
 ## TODO
 

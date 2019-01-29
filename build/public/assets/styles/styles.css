@@ -1,0 +1,205 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+img {
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+  display: block; }
+
+.u-rel {
+  position: relative; }
+
+.u-static {
+  position: static; }
+
+.u-center {
+  text-align: center; }
+
+.u-right {
+  text-align: right; }
+
+/*
+
+    Breakpoints (for use with media query mixins)
+    Alternate points as inspired by:https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+*/
+/* Bootstrap media queries
+/* Breakpoint min/max are set in the _vars.scss file
+
+/* Mixin: Media Min Width
+Usage:
+.foo {
+	@include media-breakpoint-up(sm) {
+		color: #f00;
+	}
+}
+*/
+/* Mixin: Media Max Width
+Usage:
+.foo {
+	@include media-breakpoint-down(md) {
+		color: #f00;
+	}
+}
+*/
+/* Mixin: Media Single Breakpoint
+Usage:
+.foo {
+	@include media-breakpoint-only(md) {
+		color: #f00;
+	}
+}
+*/
+/* Mixin: Media Between Breakpoints
+Usage:
+.foo {
+	@include media-breakpoint-between(sm, lg) {
+		color: #f00;
+	}
+}
+*/
+/*
+
+    USE:
+
+    @include input-placeholder {
+        ...
+    }
+
+*/
+/*
+
+    USE:
+    
+    @include clearfix;
+    
+*/
+/*
+
+    USE:
+    
+    @include opacity(.4);
+    
+*/
+/*
+
+    USE:
+
+    .header {
+        z-index: z('header');
+    }
+
+*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  border-bottom: 1px solid gainsboro;
+  z-index: 1; }
+  .header__wrapper, .header__inner {
+    position: relative;
+    height: 100%; }
+  @media (min-width: 400px) {
+    .header {
+      height: 70px; } }
+  @media (min-width: 900px) {
+    .header {
+      height: 100px; } }
+  .header__item {
+    position: absolute;
+    top: 50%; }
+    .header__item--left {
+      left: 0;
+      -webkit-transform: translate3d(0, -50%, 0);
+              transform: translate3d(0, -50%, 0); }
+    .header__item--right {
+      right: 0;
+      -webkit-transform: translate3d(0, -50%, 0);
+              transform: translate3d(0, -50%, 0); }
+    .header__item--middle {
+      left: 50%;
+      -webkit-transform: translate3d(-50%, -50%, 0);
+              transform: translate3d(-50%, -50%, 0); }
+  .header__logo {
+    height: 40px;
+    display: block; }
+    @media (min-width: 400px) {
+      .header__logo {
+        height: 50px; } }
+    @media (min-width: 900px) {
+      .header__logo {
+        height: 70px; } }
+    .header__logo img {
+      height: 100%;
+      width: auto; }
+
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem; }
+
+.skip-main {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999; }
+  .skip-main:focus, .skip-main:active {
+    z-index: 999;
+    left: 20px;
+    top: 20px;
+    width: auto;
+    height: auto; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9jb3JlL2Jhc2UvcmVzZXQuc2NzcyIsInN0eWxlcy5jc3MiLCJfY29yZS9iYXNlL3V0aWxzLnNjc3MiLCJfY29yZS92YXJpYWJsZXMvYnJlYWtwb2ludHMuc2NzcyIsIl9jb3JlL21peGlucy9tZWRpYS1xdWVyaWVzLnNjc3MiLCJfY29yZS9taXhpbnMvcGxhY2Vob2xkZXIuc2NzcyIsIl9jb3JlL21peGlucy9jbGVhcmZpeC5zY3NzIiwiX2NvcmUvbWl4aW5zL29wYWNpdHkuc2NzcyIsIl9jb3JlL21peGlucy96LWluZGV4LnNjc3MiLCJfY29yZS9sYXlvdXQvaGVhZGVyLnNjc3MiLCJfY29yZS92YXJpYWJsZXMvY29sb3Vycy9iYXNlLnNjc3MiLCJfY29yZS9sYXlvdXQvc3RydWN0dXJlLnNjc3MiLCJfY29yZS92YXJpYWJsZXMvX2luZGV4LnNjc3MiLCJfY29yZS9hY2Nlc3NpYmlsaXR5L3NraXAtbWFpbi5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Q0NHQztBREVEOzs7Ozs7Ozs7Ozs7O0VBYUMsU0FBUztFQUNULFVBQVU7RUFDVixTQUFTO0VBQ1QsZUFBZTtFQUNmLGFBQWE7RUFDYix3QkFBd0IsRUFBQTs7QUFFekIsZ0RBQUE7QUFDQTs7RUFFQyxjQUFjLEVBQUE7O0FBRWY7RUFDQyxjQUFjLEVBQUE7O0FBRWY7RUFDQyxnQkFBZ0IsRUFBQTs7QUFFakI7RUFDQyxZQUFZLEVBQUE7O0FBRWI7O0VBRUMsV0FBVztFQUNYLGFBQWEsRUFBQTs7QUFFZDtFQUNDLHlCQUF5QjtFQUN6QixpQkFBaUIsRUFBQTs7QUFJbEI7RUFDQyxrQkFBa0I7RUFDbEIsZUFBZTtFQUNmLFlBQVk7RUFDWixjQUFjLEVBQUE7O0FFcERmO0VBQ0ksa0JBQWtCLEVBQUE7O0FBRXRCO0VBQ0ksZ0JBQWdCLEVBQUE7O0FBS3BCO0VBQ0ksa0JBQWtCLEVBQUE7O0FBRXRCO0VBQ0ksaUJBQWlCLEVBQUE7O0FDZHJCOzs7O0NGb0VDO0FHckREOzs7Ozs7Ozs7O0NIZ0VDO0FHekNEOzs7Ozs7O0NIaURDO0FHN0JEOzs7Ozs7O0NIcUNDO0FHckJEOzs7Ozs7O0NINkJDO0FJeEdEOzs7Ozs7OztDSmlIQztBS2pIRDs7Ozs7O0NMd0hDO0FNeEhEOzs7Ozs7Q04rSEM7QU8vSEQ7Ozs7Ozs7O0NQd0lDO0FReElEO0VBQ0ksZUFBZTtFQUNmLE1BQU07RUFDTixPQUFPO0VBQ1AsWUFBWTtFQUNaLFlBQVk7RUFDWixrQ0NKbUI7RURLbkIsVURRK0IsRUFBQTtFQ04vQjtJQUVJLGtCQUFrQjtJQUNsQixZQUFZLEVBQUE7RUxrQmxCO0lLOUJGO01BZ0JRLFlBQVksRUFBQSxFQTZDbkI7RUwvQkM7SUs5QkY7TUFvQlEsYUFBYSxFQUFBLEVBeUNwQjtFQXRDRztJQUNJLGtCQUFrQjtJQUNsQixRQUFRLEVBQUE7SUFFUjtNQUNJLE9BQU87TUFDUCwwQ0FBa0M7Y0FBbEMsa0NBQWtDLEVBQUE7SUFHdEM7TUFDSSxRQUFRO01BQ1IsMENBQWtDO2NBQWxDLGtDQUFrQyxFQUFBO0lBR3RDO01BQ0ksU0FBUztNQUNULDZDQUFxQztjQUFyQyxxQ0FBcUMsRUFBQTtFQUk3QztJQUNJLFlBQVk7SUFDWixjQUFjLEVBQUE7SUxmcEI7TUthRTtRQUtRLFlBQVksRUFBQSxFQVluQjtJTDlCSDtNS2FFO1FBU1EsWUFBWSxFQUFBLEVBUW5CO0lBakJBO01BYU8sWUFBWTtNQUNaLFdBQVcsRUFBQTs7QUV6RHZCO0VBQ0ksaUJSV087RVFWUCxZQUFZO0VBQ1osZUNPUyxFQUFBOztBQ1ZiO0VBQ0ksWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsVUFBVTtFQUNWLFdBQVc7RUFDWCxnQkFBZ0I7RUFDaEIsYUFBYSxFQUFBO0VBUGpCO0lBV1EsWUFBWTtJQUNaLFVBQVU7SUFDVixTQUFTO0lBQ1QsV0FBVztJQUNYLFlBQVksRUFBQSIsImZpbGUiOiJzdHlsZXMuY3NzIn0= */
+
+/*# sourceMappingURL=styles.css.map */

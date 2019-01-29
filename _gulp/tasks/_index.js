@@ -1,6 +1,5 @@
 import gulp from 'gulp'
 import requireDir from 'require-dir'
-import notify from 'gulp-notify'
 
 requireDir('./', {recurse: true})
 
