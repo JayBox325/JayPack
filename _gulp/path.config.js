@@ -54,7 +54,12 @@ const paths = {
             watch: `_src/assets/fonts/*.*`,
             dest: `${assets}/fonts`
         }
-    }
+    },
+
+    clean: [
+        `build/assets`,
+        `build/*.html`
+    ]
 }
 
 export default paths
