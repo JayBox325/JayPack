@@ -8,8 +8,8 @@
         background: color('grey');
         height: 100%;
         z-index: 3;
-        padding: $gutter;
-
+        padding: ($gutter * 6) ($gutter * 2) ($gutter * 2);
+        
         // Transition
         display: none;
         transform: translate3d(110%,0,0);
@@ -25,10 +25,6 @@
 
         &__skip {
             display: none;
-        }
-
-        @include media-breakpoint-up(sm) {
-            padding-top: $gutter * 4;
         }
     }
 

@@ -29,6 +29,7 @@
         &--right {
             right: $gutter;
             transform: translate3d(0, -50%, 0);
+            z-index: z('hamburger');
         }
 
         &--middle {

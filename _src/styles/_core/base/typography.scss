@@ -4,42 +4,106 @@ html {
     color: color('black');
 }
 
+strong, bold {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
 a {
     color: color('black');
 }
 
 p {
     @include resp-font-size(16, 16, 18);
+    line-height: 1.4;
+
+    a {
+        text-decoration: underline;
+        text-underline-position: under;
+        transition: color .2s ease-in-out;
+        
+        &:hover {
+            color: color('primary')
+        }
+    }
 }
+
+blockquote {
+    font-weight: bold;
+    @include resp-font-size(18, 18, 20);
+    font-style: italic;
+    position: relative;
+    padding: $gutter ($gutter * 2) $gutter $gutter;
+    border-left: 3px solid color('primary');
+}
+
+
+del {
+    text-decoration: line-through;
+}
+
+sup { 
+    vertical-align: super;
+    font-size: smaller;
+}
+
+cite {
+    position: relative;
+    @include resp-font-size(16, 16, 18);
+    display: block;
+    margin-top: $gutter * .5;
+    font-style: normal;
+    font-weight: normal;
+    color: color('primary');
+
+    &::before {
+        content: '- ';
+    }
+}
+
+sub { 
+    vertical-align: sub;
+    font-size: smaller;
+}
+
 
 h1,
 .h1 {
     @include resp-font-size(24, 30, 36, 40, 46);
+    line-height: 1.3;
 }
 
 h2,
 .h2 {
     @include resp-font-size(22, 24, 26, 28, 30);
+    line-height: 1.3;
 }
 
 h3,
 .h3 {
     @include resp-font-size(18, 20, 22, 24, 26);
+    line-height: 1.3;
 }
 
 h4,
 .h4 {
     @include resp-font-size(18, 18, 20, 20, 22);
+    line-height: 1.3;
 }
 
 h5,
 .h5 {
     @include resp-font-size(18, 18, 18, 20, 20);
+    line-height: 1.3;
 }
 
 h6,
 .h6 {
     @include resp-font-size(16, 16, 18);
+    line-height: 1.3;
     font-weight: bold;
 }
 
@@ -47,8 +111,28 @@ h6,
 
 // WYSIWYG Content
 .w-content {
+
+    a {
+        text-decoration: underline;
+        text-underline-position: under;
+        transition: color .2s ease-in-out;
+
+        &:hover {
+            color: color('primary')
+        }
+    }
+
     p, li {
         @include resp-font-size(16, 16, 18);
+    }
+
+    ul, ol {
+        margin-left: $gutter * 3;
+    }
+
+    li {
+        list-style-type: disc;
+        margin-bottom: $gutter * .5;
     }
 
     h1,h2,h3,h4,h5,h6 {

@@ -10,9 +10,9 @@
     &:focus,
     &:active {
         z-index: 999;
-        left: 20px;
-        top: 20px;
+        left: $gutter * 2;
+        top: $gutter * 2;
         width: auto;
-        height: auto;
+        height: 60px;
     }
 }

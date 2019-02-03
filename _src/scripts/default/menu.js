@@ -2,6 +2,7 @@
 
 // Misc elements
 const $body = $('html')
+const $siteWrap = $('.site-wrap')
 
 // Mobile menu elements
 const $hamburger = $('[data-hamburger]')
@@ -13,6 +14,7 @@ const $menuLink = $('[data-menu-link]')
 
 // Classes
 const bodyMenuClass = 'is-hidden'
+const activeMenuClass = 'menu-is-active'
 const activeClass = 'is-active'
 const visibleClass = 'is-visible'
 
@@ -24,6 +26,7 @@ const visibleClass = 'is-visible'
 function closeMenu() {
 	$body.removeClass(bodyMenuClass)
     $hamburger.removeClass(activeClass)
+    $siteWrap.removeClass(activeMenuClass)
 	
 	// Hide the menu drawer
     $menu.removeClass(visibleClass)
@@ -39,7 +42,9 @@ function closeMenu() {
 function openMenu() {
     $body.addClass(bodyMenuClass)
     $menu.addClass(activeClass)
+
     setTimeout(function () {
+        $siteWrap.addClass(activeMenuClass)
         $menu.addClass(visibleClass)
         $hamburger.addClass(activeClass)
     }, 50)
@@ -54,6 +59,12 @@ $hamburger.click(function() {
         openMenu()
     }
 
+})
+
+$siteWrap.on('click', function() {
+    if ($(this).hasClass(activeMenuClass)) {
+        closeMenu()
+    }
 })
 
 
@@ -96,19 +107,19 @@ $('[data-back]').on('click', function() {
 
 
 // // Making the submenus inactive when another top item is focussed
-$(".menu__link--top").focus(function() {
-    if ($(window).width() > 767) {
-        $('.submenu[data-level="2"]').removeClass(activeClass)
-        $('.submenu[data-level="2"]').removeClass(visibleClass)
-    }
-})
+// $(".menu__link--top").focus(function() {
+//     if ($(window).width() > 767) {
+//         $('.submenu[data-level="2"]').removeClass(activeClass)
+//         $('.submenu[data-level="2"]').removeClass(visibleClass)
+//     }
+// })
 
 
-// On hover remove any 'is-active' classes added by JS when user is tabbing.
+// // On hover remove any 'is-active' classes added by JS when user is tabbing.
 
-$(".menu__item--top").mouseover(function() {
-    if ($(window).width() > 767) {
-        $('.submenu[data-level="2"]').removeClass(activeClass)
-        $('.submenu[data-level="2"]').removeClass(visibleClass)
-    }
-})
+// $(".menu__item--top").mouseover(function() {
+//     if ($(window).width() > 767) {
+//         $('.submenu[data-level="2"]').removeClass(activeClass)
+//         $('.submenu[data-level="2"]').removeClass(visibleClass)
+//     }
+// })

@@ -4,14 +4,14 @@
         {% set parent = 'item1' %}
 
         <li class="menu__item menu__item--top" data-parent="item1">
-            <a href="#" class="menu__link menu__link--top" data-menu-link>Item</a>
+            <a href="#" class="menu__link menu__link--top" data-menu-link>Menu Item 1</a>
 
             {# Children #}
             <button class="menu__more menu__more--top" data-more>View more</button>
             <div class="submenu" data-level="2" data-submenu="item1">
 
                 {# Back button for mobile #}
-                <button class="menu__link menu__link--back" aria-label="Back" data-back>Back</button>
+                <button class="menu__link menu__link--back" aria-label="Back" data-back>Menu Item 1</button>
 
                 <ul class="menu__list menu__list--sub">
 
@@ -25,13 +25,13 @@
                         <div class="submenu" data-level="3" data-submenu="item2">
 
                             {# Back button for mobile #}
-                            <button class="menu__link menu__link--back" aria-label="Back" data-back>Back</button>
+                            <button class="menu__link menu__link--back" aria-label="Back" data-back>Item Child</button>
 
                             <ul class="menu__list menu__list--sub">
 
                                 <li class="menu__item menu__item--sub">
                                     <a href="#" class="menu__link menu__link--sub menu__link--title" data-menu-link>
-                                        Item child
+                                        Item child level 3
                                     </a>
 
                                     {# More children here if needed #}

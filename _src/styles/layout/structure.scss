@@ -5,7 +5,14 @@ body {
 }
 
 .site-wrap {
-    margin-top: 70px;
+	margin-top: 70px;
+	transition: filter .4s cubic-bezier(1,0,0,1);
+	filter: blur(0);
+
+	&.menu-is-active {
+		filter: blur(4px);
+	}
+
     @include media-breakpoint-up(lg) {
         margin-top: 100px;
     }
