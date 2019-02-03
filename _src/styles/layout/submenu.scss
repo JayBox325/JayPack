@@ -1,6 +1,6 @@
 .submenu {
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
         position: fixed;
         top: 0;
         left: 0;
@@ -32,7 +32,7 @@
         }
     }
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
 
         &[data-level="2"] {
             padding: ($gutter * 2) 0;
