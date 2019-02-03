@@ -1,0 +1,68 @@
+html {
+    font-size: 62.5%;
+    font-family: helvetica, arial, sans-serif;
+    
+    * {
+        color: color('black');
+    }
+}
+
+p {
+    @include resp-font-size(16, 16, 18);
+}
+
+h1,
+.h1 {
+    @include resp-font-size(24, 30, 36, 40, 46);
+}
+
+h2,
+.h2 {
+    @include resp-font-size(22, 24, 26, 28, 30);
+}
+
+h3,
+.h3 {
+    @include resp-font-size(18, 20, 22, 24, 26);
+}
+
+h4,
+.h4 {
+    @include resp-font-size(18, 18, 20, 20, 22);
+}
+
+h5,
+.h5 {
+    @include resp-font-size(18, 18, 18, 20, 20);
+}
+
+h6,
+.h6 {
+    @include resp-font-size(16, 16, 18);
+    font-weight: bold;
+}
+
+
+
+// WYSIWYG Content
+.w-content {
+    p, li {
+        @include resp-font-size(16, 16, 18);
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        margin-top: $gutter * 2;
+    }
+
+    > * {
+        margin-bottom: $gutter;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}

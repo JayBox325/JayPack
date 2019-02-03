@@ -4,7 +4,7 @@
 
 
 // Max wrapper width, XL breakpoint
-$max-wrapper: map-get($grid-breakpoints, xl);
+$max-wrapper: map-get($breakpoints, xl);
 
 
 // Default gutter

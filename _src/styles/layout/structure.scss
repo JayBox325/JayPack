@@ -1,3 +1,16 @@
+.site-wrap {
+    margin-top: 50px;
+
+    @include media-breakpoint-up(sm) {
+        margin-top: 70px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 100px;
+    }
+
+}
+
 .wrapper {
     max-width: $max-wrapper;
     margin: auto;

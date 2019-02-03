@@ -24,9 +24,9 @@
     <a class="skip-main btn" href="#main">Skip to main content</a>
 
     <div class="site" id="barba-wrapper">
+        {% include '_layout/header.njk' %}
         <div class="site-wrap barba-container" id="main">
             {% block content %}{% endblock %}
-            {% include '_layout/header.njk' %}
             {% include '_layout/footer.njk' %}
         </div>
     </div>

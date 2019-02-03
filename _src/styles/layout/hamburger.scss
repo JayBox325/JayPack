@@ -55,7 +55,7 @@
 
         &__bar {
             height: 1px;
-            background: $black;
+            background: color('black');
             width: 25px;
             left: 0;
             position: absolute;
@@ -63,7 +63,7 @@
             transition: width .25s ease-in-out .25s;
 
             &:nth-child(1) {
-                top: 9px;
+                top: 10px;
                 transform: translate3d(0, 0, 0);
             }
 
@@ -73,7 +73,7 @@
             }
 
             &:nth-child(3) {
-                bottom: 9px;
+                bottom: 10px;
                 transform: translate3d(0, 0, 0);
             }
 
