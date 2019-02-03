@@ -1,0 +1,95 @@
+.hamburger {
+    text-indent: -999px;
+    font-size: 0;
+    
+    @include media-breakpoint-down(md) {
+        background: none;
+        width: 25px;
+        height: 36px;
+        appearance: none;
+        border: none;
+        border-radius: 5px;
+        display: block;
+        z-index: 990;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate3d(0, -50%, 0);
+
+        @include media-breakpoint-up(sm) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::before,
+        &::after {
+            height: 1px;
+            width: 0;
+            background: $black;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            content: '';
+            display: block;
+            transform-origin: 50% 50%;
+            transition: width .25s ease-in-out;
+        }
+
+        &::before {
+            transform: translate3d(-50%, -50%, 0) rotate(45deg);
+        }
+
+        &::after {
+            transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+        }
+
+
+        &.is-active {
+            &::before,
+            &::after {
+                width: 25px;
+                transition-delay: .25s;
+            }
+        }
+
+        &__bar {
+            height: 1px;
+            background: $black;
+            width: 25px;
+            left: 0;
+            position: absolute;
+            display: block;
+            transition: width .25s ease-in-out .25s;
+
+            &:nth-child(1) {
+                top: 9px;
+                transform: translate3d(0, 0, 0);
+            }
+
+            &:nth-child(2) {
+                top: 50%;
+                transform: translate3d(0, -50%, 0);
+            }
+
+            &:nth-child(3) {
+                bottom: 9px;
+                transform: translate3d(0, 0, 0);
+            }
+
+            .is-active & {
+                width: 0;
+                transition-delay: 0s;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+
+
+.z-hamburger {
+    z-index: z('hamburger');
+}

@@ -1,0 +1,206 @@
+.menu {
+
+    /*
+
+        This file is split into two large breakpoints instead of many smaller breakpoint changes on each class. Means repeated classes, but it's clearer where all the mobile and desktop styles are together.
+
+    */
+
+    @include media-breakpoint-down(md) {
+        position: fixed;
+        background: color('primary');
+        top: 0;
+        right: 0;
+        width: 100%;
+        text-align: left;
+        height: 100%;
+        padding: $gutter;
+        z-index: z('menu');
+
+        // Transition
+        display: none;
+        transform: translate3d(110%,0,0);
+        transition: transform .6s cubic-bezier(1,0,0,1); 
+
+        &.is-active {
+            display: block;
+        }
+
+        &.is-visible {
+            transform: translate3d(0,0,0);
+        }
+
+        &__item {
+            display: block;
+            border-bottom: 1px solid BLACK;
+            position: relative;
+        }
+
+        &__link {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 10px 0;
+            max-width: calc(100% - 40px);
+            text-decoration: none;
+
+            &--back {
+                position: absolute;
+                top: $gutter / 2;
+                left: $gutter;
+                padding: 0;
+                text-align: left;
+                appearance: none;
+                border: none;
+                background: none;
+
+                &:focus {
+                    outline: 1px dotted; // Default focus is not showing for some reason
+                }
+                
+                @include media-breakpoint-up(sm) {
+                    margin-top: $gutter;
+                }
+            }
+        }
+
+        &__more {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate3d(0, -50%, 0);
+            appearance: none;
+            border: none;
+            background: none;
+
+            &:focus {
+                outline: 1px dotted; // Default focus is not showing for some reason
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-top: $gutter * .5;
+
+        &__list {
+            &--top {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &--sub,
+            &--shop {
+                display: grid;
+                width: 100%;
+                grid-template-columns: repeat(12, 1fr);
+                grid-column-gap: $gutter / 2;
+            }
+        }
+
+        &__item {
+
+            &--sub{
+                grid-column: span 3;
+            }
+
+            &--top {
+                margin-right: $gutter * .9;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    .submenu[data-level='2'] {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &__link {
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color .2s ease-in-out;
+
+            &.is-active {
+                text-decoration: underline;
+                text-underline-position: under;
+            }
+
+            &:hover {
+                color: color('primary');
+            }
+            
+
+            @include media-breakpoint-up(lg) {
+                letter-spacing: 1px;
+            }
+
+            &--back {
+                display: none;
+            }
+
+            &--child {
+                line-height: 1.4;
+                display: inline-block;
+                margin-bottom: 5px;
+            }
+
+            &--title {
+                font-weight: 600;
+                margin-bottom: $gutter / 2;
+            }
+
+            &--top {
+                &:focus {
+                    + .submenu[data-level='2'] {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &__more {
+            display: none;
+
+            &--top {
+                display: inline;
+                padding: 0;
+                width: 0;
+                border: 0;
+                appearance: none;
+                position: relative;
+                left: -9999px;
+
+                &:focus {
+                    left: 0;
+                }
+            }
+        }
+
+        .menu-hide--md-only {
+            @include media-breakpoint-only(md) {
+                display: none;
+            }
+        }
+        .menu-hide--md-up {
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+        }
+    }
+
+
+    @include media-breakpoint-between(md, lg) {
+        &__list {
+            @include media-breakpoint-up(xl) {
+                justify-content: flex-start;
+            }
+        }
+    }
+}

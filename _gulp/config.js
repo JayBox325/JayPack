@@ -38,7 +38,8 @@ const config = {
         },
         craft: {
             proxy: projectConfig.siteUrl
-        }
+        },
+        notify: false
     }
 }
 

@@ -1,0 +1,11 @@
+/*
+
+    USE:
+    
+    color('primary');
+    
+*/
+
+@function color($color) {
+    @return map-get($colors, $color)
+}

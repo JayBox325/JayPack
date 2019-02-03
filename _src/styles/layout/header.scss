@@ -9,7 +9,6 @@
 
     &__wrapper,
     &__inner {
-        position: relative;
         height: 100%;
     }
 
@@ -26,12 +25,12 @@
         top: 50%;
 
         &--left {
-            left: 0;
+            left: $gutter;
             transform: translate3d(0, -50%, 0);
         }
 
         &--right {
-            right: 0;
+            right: $gutter;
             transform: translate3d(0, -50%, 0);
         }
 

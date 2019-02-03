@@ -6,9 +6,15 @@
                     <img src="//placehold.it/200x60" alt="JayPack" height="" width="">
                 </a>
             </div>
-            <div class="header__item header__item--right">
-                <button class="hamburger">Open menu</button>
+            <div class="header__item header__item--right z-hamburger">
+                <button class="hamburger" data-hamburger>
+                    Open menu
+                    <span class="hamburger__bar"></span>
+                    <span class="hamburger__bar"></span>
+                    <span class="hamburger__bar"></span>
+                </button>
             </div>
+            {% include '_layout/menu.njk' %}
         </div>
     </div>
 </header>

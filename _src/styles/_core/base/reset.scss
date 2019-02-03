@@ -54,3 +54,11 @@ img {
 	height: auto;
 	display: block;
 }
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
