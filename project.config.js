@@ -1,6 +1,6 @@
 const projectConfig = {
     // Static or CraftCMS build?
-    project: 'craft',
+    project: 'static',
 
     // Site URL (if project is CraftCMS)
     siteUrl: 'local.jaypack.com',
