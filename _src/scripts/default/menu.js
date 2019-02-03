@@ -23,6 +23,7 @@ const visibleClass = 'is-visible'
 
 function closeMenu() {
 	$body.removeClass(bodyMenuClass)
+    $hamburger.removeClass(activeClass)
 	
 	// Hide the menu drawer
     $menu.removeClass(visibleClass)
@@ -32,10 +33,7 @@ function closeMenu() {
 		// Hide submenu
 		$submenu.removeClass(activeClass)
 		$submenu.removeClass(visibleClass)
-	}, 200)
-	
-	// Revert the hamburger to normal
-    $hamburger.removeClass(activeClass)
+	}, 400)
 }
 
 function openMenu() {
@@ -43,8 +41,8 @@ function openMenu() {
     $menu.addClass(activeClass)
     setTimeout(function () {
         $menu.addClass(visibleClass)
-    }, 200)
-    $hamburger.addClass(activeClass)
+        $hamburger.addClass(activeClass)
+    }, 50)
 }
 
 

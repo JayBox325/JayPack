@@ -1,0 +1,63 @@
+.btn {
+    $b: &;
+
+    height: 40px;
+	text-decoration: none;
+    white-space: pre;
+	padding: 0 $gutter;
+	display: inline-flex;
+	align-items: center;
+    justify-content: center;
+    color: color('white');
+    cursor: pointer;
+    vertical-align: middle;
+    @include resp-font-size(16, 16, 16, 18);
+
+    @include media-breakpoint-only(xs) {
+        display: flex;
+        width: 100%;
+
+		+ #{$b} {
+			margin-top: $gutter;
+		}
+    }
+
+    @include media-breakpoint-up(sm) {
+		+ #{$b} {
+			margin-left: $gutter;
+		}
+    }
+
+    &__icon {
+        margin-right: $gutter * .5;
+        height: 18px;
+    }
+
+	&:disabled {
+		cursor: not-allowed;
+    }
+    
+	&--fullwidth {
+		width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    &--lrg {
+        height: 50px;
+        padding: 0 ($gutter * 1.5);
+        @include resp-font-size(16, 18, 18, 20);
+
+        #{$b}__icon {
+            height: 25px;
+            margin-right: $gutter * .75;
+        }
+    }
+}
+
+
+@each $name, $value in $colors {
+    .btn--#{$name} {
+        background: color($name);
+    }
+}

@@ -2,9 +2,7 @@
 @import 'social';
 @import 'brand';
 
-$colors: () !default;
-
-$colors: map-merge((
+$colors: (
     'primary':    $primary,
     'secondary':  $secondary,
     'success':    $success,
@@ -13,4 +11,4 @@ $colors: map-merge((
     'grey':       $grey-light,
     'white':      $white,
     'black':      $black
-), $colors);
+);

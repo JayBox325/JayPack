@@ -7,10 +7,6 @@
     }
 
 */
-
-
-
-
 @function z($name) {
     @if index($z-indexes, $name) {
         @return (length($z-indexes) - index($z-indexes, $name)) + 1;
@@ -18,4 +14,14 @@
         @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
         @return null;
     }
+}
+
+
+
+.z-hamburger {
+    z-index: z('hamburger');
+}
+
+.z-header-logo {
+    z-index: z('header-logo');
 }

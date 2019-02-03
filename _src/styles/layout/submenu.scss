@@ -5,7 +5,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        background: $white;
+        background: color('grey');
         height: 100%;
         z-index: 3;
         padding: $gutter;
@@ -35,9 +35,10 @@
     @include media-breakpoint-up(md) {
 
         &[data-level="2"] {
-            padding: $gutter 0;
+            padding: ($gutter * 2) 0;
+            min-height: 30vh;
             display: none;
-            background: $white;
+            background: color('grey');
             position: absolute;
             top: 100%;
             z-index: 980;
@@ -50,7 +51,7 @@
                 top: 0;
                 height: 100%;
                 width: 400px;
-                background: $white;
+                background: color('grey');
                 content: '';
                 display: block;
             }
@@ -66,9 +67,6 @@
             &.is-active {
                 display: block;
             }
-        }
-
-        &[data-level="3"] {
         }
     }
 }

@@ -17,10 +17,14 @@
         padding: ($gutter * 5) $gutter $gutter $gutter;
         z-index: z('menu');
 
+        @include media-breakpoint-up(sm) {
+            width: 320px;
+        }
+
         // Transition
         display: none;
-        transform: translate3d(110%,0,0);
-        transition: transform .6s cubic-bezier(1,0,0,1); 
+        transform: translate3d(100%,0,0);
+        transition: transform .4s cubic-bezier(1,0,0,1); 
 
         &.is-active {
             display: block;
@@ -28,6 +32,7 @@
 
         &.is-visible {
             transform: translate3d(0,0,0);
+            transition: transform .6s cubic-bezier(1,0,0,1); 
         }
 
         &__item {
@@ -98,7 +103,11 @@
     }
 
     @include media-breakpoint-up(lg) {
-        margin-top: $gutter * .5;
+        z-index: z('menu');
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
 
         &__list {
             &--top {
@@ -106,11 +115,10 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-end;
             }
 
-            &--sub,
-            &--shop {
+            &--sub{
                 display: grid;
                 width: 100%;
                 grid-template-columns: repeat(12, 1fr);
@@ -125,11 +133,7 @@
             }
 
             &--top {
-                margin-right: $gutter * .9;
-
-                &:last-child {
-                    margin-right: 0;
-                }
+                height: 100%;
 
                 &:hover {
                     .submenu[data-level='2'] {
@@ -140,18 +144,21 @@
         }
 
         &__link {
-            font-size: 1rem;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: color .2s ease-in-out;
+            &--top {
+                padding: 0 $gutter * .5;
 
-            &.is-active {
-                text-decoration: underline;
-                text-underline-position: under;
+                @include resp-font-size(14);
+                text-decoration: none;
+
+                &:focus {
+                    + .submenu[data-level='2'] {
+                        display: block;
+                    }
+                }
             }
 
-            &:hover {
-                color: color('primary');
+            &.is-active {
+                font-weight: bold;
             }
             
 
@@ -174,13 +181,6 @@
                 margin-bottom: $gutter / 2;
             }
 
-            &--top {
-                &:focus {
-                    + .submenu[data-level='2'] {
-                        display: block;
-                    }
-                }
-            }
         }
 
         &__more {

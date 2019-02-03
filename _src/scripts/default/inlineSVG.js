@@ -2,8 +2,7 @@
 import inlineSVG from 'inline-svg'
 
 inlineSVG.init({
-    svgSelector: 'img.svg',
-    initClass: 'js-inlinesvg',
+    svgSelector: 'img.js-inlinesvg'
 }, function () {
     console.log('All SVGs inlined')
 })
