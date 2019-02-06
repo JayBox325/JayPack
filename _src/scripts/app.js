@@ -1,6 +1,5 @@
-import inlineSVG from './default/inlineSVG'
-import slider from './default/slick-slider'
+// Default modules
 import menu from './default/menu'
-
-
-import test from './default/helloWorld'
+import inlineSVG from './default/inlineSVG'
+import slider from './default/slickSlider'
+import fontLoader from './default/fontLoader'
