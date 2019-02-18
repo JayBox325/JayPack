@@ -12,7 +12,7 @@ const paths = {
     njks: {
         render: `_src/html`,
         src: `_src/html/*.njk`,
-        watch: `_src/html/**/*.*`,
+        watch: `_src/html/**/*.njk`,
         data: `_src/html/__data/data.json`,
         dest: `build`
     },
@@ -23,20 +23,20 @@ const paths = {
 
     js: {
         app: `./_src/scripts/app.js`,
-        watch: `_src/scripts/**/*.*`,
-        vendor: `./_src/scripts/vendor/*`,
+        watch: `_src/scripts/**/*.js`,
+        vendor: `./_src/scripts/vendor/*.js`,
         dest: `${assets}/scripts`
     },
 
     assets: {
         images: {
-            src: `_src/assets/images/*.*`,
-            watch: `_src/assets/images/*.*`,
+            src: `_src/assets/images/*.{png,gif,jpg}`,
+            watch: `_src/assets/images/*.{png,gif,jpg}`,
             dest: `${assets}/images`
         },
         videos: {
-            src: `_src/assets/videos/*.*`,
-            watch: `_src/assets/videos/*.*`,
+            src: `_src/assets/videos/*.{mp4,.webm}`,
+            watch: `_src/assets/videos/*.{mp4,.webm}`,
             dest: `${assets}/videos`
         },
         favicons: {
