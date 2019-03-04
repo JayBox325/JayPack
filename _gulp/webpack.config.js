@@ -8,7 +8,7 @@ var production = environments.production
 const env = production() ? 'production' : 'development'
 
 // Webpack packages
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
+import TerserPlugin from 'terser-webpack-plugin'
 
 const config = {
     mode: env,
@@ -39,35 +39,8 @@ const config = {
         ],
     },
     optimization: {
-        minimizer: [new UglifyJsPlugin()],
+        minimizer: [new TerserPlugin()],
     }
 }
 
 module.exports = config
-
-// module.exports = {
-//     entry: {
-//         app: paths.js.app,
-//     },
-//     output: {
-//         path: path.resolve(__dirname, 'app'),
-//         filename: 'bundle.js',
-//     },
-//     module: {
-//         rules: [
-//             {
-//                 test: /\.(js)$/,
-//                 exclude: /(node_modules)/,
-//                 use: [
-//                     {
-//                         loader: 'babel-loader',
-//                         options: {
-//                             presets: ['@babel/preset-env']
-//                         }
-//                     }
-//                 ]
-//             },
-//         ],
-//     },
-//     devtool: 'source-map'
-// };

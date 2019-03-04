@@ -30,7 +30,6 @@ if (config.project == 'static') {
 // Build
 if (config.project == 'static') {
 	gulp.task('build', gulp.parallel(
-		'clean-html',
 		'styles',
 		'scripts',
 		'move-favicons',

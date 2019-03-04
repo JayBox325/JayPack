@@ -25,7 +25,7 @@ gulp.task('styles', () => {
         .pipe(sass())
         .on('error', handleErrors)
         .pipe(postcss([
-            autoprefixer({browsers: config.autoprefixerVersions}),
+            autoprefixer({browsers: config.autoprefixerVersions, grid: true}),
             range()
         ]))
 
