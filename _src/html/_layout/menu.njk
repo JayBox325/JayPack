@@ -1,13 +1,20 @@
 <div class="menu" data-menu="main">
     <nav class="menu__list menu__list--top">
 
+        <li class="menu__item menu__item--top" data-parent="home">
+            <div>
+                <a href="/" class="menu__link menu__link--top" data-menu-link>Home</a>
+            </div>
+        </li>
+
         <li class="menu__item menu__item--top" data-parent="about">
-            <a href="#" class="menu__link menu__link--top" data-menu-link>About</a>
+            <div>
+                <a href="/page2.html" class="menu__link menu__link--top" data-menu-link>About</a>
 
-            {# Children #}
-            <button class="menu__more menu__more--top" data-more="about">View more</button>
-
-            <div class="submenu" data-menu="about">
+                {# Children #}
+                <button class="menu__more menu__more--top" data-more="about">View more</button>
+            </div>
+            <div class="submenu" data-level="2" data-menu="about">
 
                 {# Back button for mobile #}
                 <button class="menu__link menu__link--back" aria-label="Back" data-back='about'>About</button>
@@ -20,9 +27,9 @@
                         </a>
                         
                         {# Children #}
-                        <button class="menu__more menu__more--top" data-more="team">View more</button>
+                        <button class="menu__more menu__more--child" data-more="team">View more</button>
                         
-                        <div class="submenu" data-menu="team">
+                        <div class="submenu" data-level="3" data-menu="team">
 
                             {# Back button for mobile #}
                             <button class="menu__link menu__link--back" aria-label="Back" data-back="team">Team</button>
@@ -49,6 +56,64 @@
                 </ul>
             </div>
             {# End children #}
+        </li>
+
+
+        <li class="menu__item menu__item--top" data-parent="articles">
+            <div>
+                <a href="#" class="menu__link menu__link--top" data-menu-link>Articles</a>
+
+                {# Children #}
+                <button class="menu__more menu__more--top" data-more="articles">View more</button>
+            </div>
+            <div class="submenu" data-level="2" data-menu="articles">
+
+                {# Back button for mobile #}
+                <button class="menu__link menu__link--back" aria-label="Back" data-back='articles'>Articles</button>
+
+                <ul class="menu__list menu__list--sub">
+
+                    <li class="menu__item menu__item--sub" data-parent="things">
+                        <a href="#" class="menu__link menu__link--sub menu__link--title" data-menu-link>
+                            Things
+                        </a>
+                        
+                        {# Children #}
+                        <button class="menu__more menu__more--child" data-more="things">View more</button>
+                        
+                        <div class="submenu" data-level="3" data-menu="things">
+
+                            {# Back button for mobile #}
+                            <button class="menu__link menu__link--back" aria-label="Back" data-back="things">Things</button>
+
+                            <ul class="menu__list menu__list--sub">
+
+                                <li class="menu__item menu__item--sub">
+                                    <a href="#" class="menu__link menu__link--sub menu__link--title" data-menu-link>
+                                        Article 1
+                                    </a>
+                                </li>
+
+                                <li class="menu__item menu__item--sub">
+                                    <a href="#" class="menu__link menu__link--sub menu__link--title" data-menu-link>
+                                        Article 2
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        {# End children #}
+                    </li>
+                    
+                </ul>
+            </div>
+            {# End children #}
+        </li>
+
+        <li class="menu__item menu__item--top" data-parent="contact">
+            <div>
+                <a href="#" class="menu__link menu__link--top" data-menu-link>Contact</a>
+            </div>
         </li>
 
     </nav>

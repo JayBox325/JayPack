@@ -86,19 +86,19 @@ $menuLink.on('click', function(e) {
 
 
 // Close menu on esc key
-// $(document).on('keydown', function(e) {
-//     if (e.keyCode === 27) { // ESC
-//         if ($(window).width() > 979) {
-//             if ($submenu.hasClass(activeClass)) {
-//                 $submenu.removeClass(activeClass)
-//             }
-//         } else {
-//             $submenu.removeClass(activeClass)
-//             $submenu.removeClass(visibleClass)
-//             closeMenu()
-//         }
-//     }
-// })
+$(document).on('keydown', function(e) {
+    if (e.keyCode === 27) { // ESC
+        if ($(window).width() > 900) {
+            if ($submenu.hasClass(activeClass)) {
+                $submenu.removeClass(activeClass)
+            }
+        } else {
+            $submenu.removeClass(activeClass)
+            $submenu.removeClass(visibleClass)
+            closeMenu()
+        }
+    }
+})
 
 
 // Open submenu
@@ -112,7 +112,9 @@ function openSubmenu(target) {
     setTimeout(function () {
         $targetMenu.addClass(visibleClass)
         
-        setFocus($targetMenu)
+        if ($(window).width() < 900) {
+            setFocus($targetMenu)
+        }
     }, 20)
 }
 
@@ -121,8 +123,6 @@ function closeSubmenu(target) {
     // Get the target menu
     const $targetMenu = $(`[data-menu='${target}']`)
     const $parentMenu = $(`[data-parent='${target}']`).closest('[data-menu]')
-
-    console.log($parentMenu)
 
     $targetMenu.removeClass(visibleClass)
 
@@ -150,20 +150,20 @@ $('[data-back]').on('click', function(e) {
 
 // Making the submenus inactive when another top item is focussed
 $(".menu__link--top").focus(function() {
-    if ($(window).width() > 767) {
+    if ($(window).width() > 600) {
         $('.submenu[data-level="2"]').removeClass(activeClass)
         $('.submenu[data-level="2"]').removeClass(visibleClass)
     }
 })
 
 
-// On hover remove any 'is-active' classes added by JS when user is tabbing. -- REMOVED DUE TO CLOSING SUBMENU ON MOBILE
-// $(".menu__item--top").mouseover(function() {
-//     if ($(window).width() > 767) {
-//         $('.submenu[data-level="2"]').removeClass(activeClass)
-//         $('.submenu[data-level="2"]').removeClass(visibleClass)
-//     }
-// })
+// On hover remove any 'is-active' classes added by JS when user is tabbing.
+$(".menu__item--top").mouseover(function() {
+    if ($(window).width() > 900) {
+        $('.submenu[data-level="2"]').removeClass(activeClass)
+        $('.submenu[data-level="2"]').removeClass(visibleClass)
+    }
+})
 
 
 

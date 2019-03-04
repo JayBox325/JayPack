@@ -24,12 +24,29 @@
         &--left {
             left: $gutter;
             transform: translate3d(0, -50%, 0);
+            z-index: z('header-logo');
+
+            @include media-breakpoint-up(sm) {
+                left: $gutter * 2;
+            }
+
+            @include media-breakpoint-up(xl) {
+                left: 0;
+            }
         }
 
         &--right {
             right: $gutter;
             transform: translate3d(0, -50%, 0);
             z-index: z('hamburger');
+            
+            @include media-breakpoint-up(sm) {
+                right: $gutter * 2;
+            }
+
+            @include media-breakpoint-up(xl) {
+                right: 0;
+            }
         }
 
         &--middle {

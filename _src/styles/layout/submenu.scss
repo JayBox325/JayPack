@@ -1,5 +1,4 @@
 .submenu {
-
     @include media-breakpoint-down(md) {
         position: fixed;
         top: 0;
@@ -31,7 +30,7 @@
     @include media-breakpoint-up(lg) {
 
         &[data-level="2"] {
-            padding: ($gutter * 2) 0;
+            padding: $gutter * 2;
             min-height: 30vh;
             display: none;
             background: color('grey');
