@@ -1,40 +1,44 @@
-<div class="menu" data-menu>
+<div class="menu" data-menu="main">
     <nav class="menu__list menu__list--top">
 
-        {% set parent = 'item1' %}
-
-        <li class="menu__item menu__item--top" data-parent="item1">
-            <a href="#" class="menu__link menu__link--top" data-menu-link>Menu Item 1</a>
+        <li class="menu__item menu__item--top" data-parent="about">
+            <a href="#" class="menu__link menu__link--top" data-menu-link>About</a>
 
             {# Children #}
-            <button class="menu__more menu__more--top" data-more>View more</button>
-            <div class="submenu" data-level="2" data-submenu="item1">
+            <button class="menu__more menu__more--top" data-more="about">View more</button>
+
+            <div class="submenu" data-menu="about">
 
                 {# Back button for mobile #}
-                <button class="menu__link menu__link--back" aria-label="Back" data-back>Menu Item 1</button>
+                <button class="menu__link menu__link--back" aria-label="Back" data-back='about'>About</button>
 
                 <ul class="menu__list menu__list--sub">
 
-                    <li class="menu__item menu__item--sub" data-parent="item2">
+                    <li class="menu__item menu__item--sub" data-parent="team">
                         <a href="#" class="menu__link menu__link--sub menu__link--title" data-menu-link>
-                            Item child
+                            Team
                         </a>
                         
                         {# Children #}
-                        <button class="menu__more menu__more--top" data-more>View more</button>
-                        <div class="submenu" data-level="3" data-submenu="item2">
+                        <button class="menu__more menu__more--top" data-more="team">View more</button>
+                        
+                        <div class="submenu" data-menu="team">
 
                             {# Back button for mobile #}
-                            <button class="menu__link menu__link--back" aria-label="Back" data-back>Item Child</button>
+                            <button class="menu__link menu__link--back" aria-label="Back" data-back="team">Team</button>
 
                             <ul class="menu__list menu__list--sub">
 
                                 <li class="menu__item menu__item--sub">
                                     <a href="#" class="menu__link menu__link--sub menu__link--title" data-menu-link>
-                                        Item child level 3
+                                        Person 1
                                     </a>
+                                </li>
 
-                                    {# More children here if needed #}
+                                <li class="menu__item menu__item--sub">
+                                    <a href="#" class="menu__link menu__link--sub menu__link--title" data-menu-link>
+                                        Person 2
+                                    </a>
                                 </li>
                                 
                             </ul>

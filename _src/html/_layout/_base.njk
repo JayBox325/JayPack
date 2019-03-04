@@ -23,11 +23,13 @@
 <body>
     <a href="#main" class="skip-main btn btn--lrg btn--primary">Skip to main content</a>
 
-    <div class="site" id="barba-wrapper">
+    <div class="site">
         {% include '_layout/header.njk' %}
-        <div class="site-wrap barba-container" id="main">
-            {% block content %}{% endblock %}
-            {% include '_layout/footer.njk' %}
+        <div data-router-wrapper>
+            <div class="site-wrap" data-router-view="{% block title %}{% endblock %}" id="main">
+                {% block content %}{% endblock %}
+                {% include '_layout/footer.njk' %}
+            </div>
         </div>
     </div>
     

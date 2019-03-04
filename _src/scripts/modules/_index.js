@@ -1,4 +1,4 @@
-function modulesJS() {
+function moduleJS() {
     
 }
 

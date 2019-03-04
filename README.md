@@ -98,7 +98,6 @@ You should now have a Craft 3 instance on your local machine ready to start deve
 * Test Craft BrowserSync functionality
 * Import reused HTML, Scss and JS modules from projects - ongoing
     * Header - in progress
-    * Hamburger
     * Accessible nested menu drawer
     * Footer
     * Base CSS Grid system

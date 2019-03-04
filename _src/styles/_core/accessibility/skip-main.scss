@@ -2,8 +2,6 @@
     left: -999px;
     position: absolute;
     top: auto;
-    width: 1px;
-    height: 1px;
     overflow: hidden;
     z-index: -999;
 
@@ -12,7 +10,5 @@
         z-index: 999;
         left: $gutter * 2;
         top: $gutter * 2;
-        width: auto;
-        height: 60px;
     }
 }

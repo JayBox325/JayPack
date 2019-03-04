@@ -1,6 +1,7 @@
 .hamburger {
     text-indent: -999px;
     font-size: 0;
+    cursor: pointer;
     
     @include media-breakpoint-down(md) {
         background: none;
