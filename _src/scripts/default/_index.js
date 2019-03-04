@@ -1,5 +1,5 @@
-import svg from './default/inlineSVG'
-import slider from './default/slickSlider'
+import svg from './inlineSVG'
+import slider from './slickSlider'
 
 function defaultJS() {
     svg.svg()
