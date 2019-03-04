@@ -24,7 +24,7 @@
 
         &::before,
         &::after {
-            height: 1px;
+            height: 2px;
             width: 0;
             background: $black;
             top: 50%;
@@ -54,7 +54,7 @@
         }
 
         &__bar {
-            height: 1px;
+            height: 2px;
             background: color('black');
             width: 25px;
             left: 0;

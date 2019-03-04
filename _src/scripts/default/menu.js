@@ -1,7 +1,7 @@
 //const find = require("jspolyfill-array.prototype.find")
 
 // Misc elements
-const $body = $('html')
+const $body = $('body')
 const $siteWrap = $('.site-wrap')
 
 // Mobile menu elements
@@ -26,7 +26,7 @@ const visibleClass = 'is-visible'
 function closeMenu() {
 	$body.removeClass(bodyMenuClass)
     $hamburger.removeClass(activeClass)
-    $siteWrap.removeClass(activeMenuClass)
+    $body.removeClass(activeMenuClass)
 	
 	// Hide the menu drawer
     $menu.removeClass(visibleClass)
@@ -44,7 +44,7 @@ function openMenu() {
     $menu.addClass(activeClass)
 
     setTimeout(function () {
-        $siteWrap.addClass(activeMenuClass)
+        $body.addClass(activeMenuClass)
         $menu.addClass(visibleClass)
         $hamburger.addClass(activeClass)
     }, 50)
@@ -61,65 +61,18 @@ $hamburger.click(function() {
 
 })
 
-$siteWrap.on('click', function() {
-    if ($(this).hasClass(activeMenuClass)) {
+$menu.on('click', function(e) {
+    e.stopPropagation()
+});
+
+$(document).on('click', function (e) {
+    if ($body.hasClass(activeMenuClass)) {
         closeMenu()
     }
 })
-
-
 
 
 // Menu link click event
 $menuLink.on('click', function(e) {
-    if ($(window).width() < 1100) {
-        closeMenu()
-    }
+    closeMenu()
 })
-
-
-
-
-// Open child menu
-$('[data-more]').on('click', function(e) {
-	e.preventDefault()
-
-    // Get the target menu
-    const target = $(this).parent().attr('data-parent')
-    
-    // Show the target item
-    $(`[data-submenu='${target}']`).addClass(activeClass)
-
-    setTimeout(function () {
-        $(`[data-submenu='${target}']`).addClass(visibleClass)
-    }, 20)
-    
-})
-
-// Submenu back button
-$('[data-back]').on('click', function() {
-    $(this).closest('.submenu').removeClass(visibleClass)
-
-    $(this).closest('.submenu').one('transitionend', function(e) {
-        $(this).closest('.submenu').removeClass(activeClass)
-    })
-})
-
-
-// // Making the submenus inactive when another top item is focussed
-// $(".menu__link--top").focus(function() {
-//     if ($(window).width() > 767) {
-//         $('.submenu[data-level="2"]').removeClass(activeClass)
-//         $('.submenu[data-level="2"]').removeClass(visibleClass)
-//     }
-// })
-
-
-// // On hover remove any 'is-active' classes added by JS when user is tabbing.
-
-// $(".menu__item--top").mouseover(function() {
-//     if ($(window).width() > 767) {
-//         $('.submenu[data-level="2"]').removeClass(activeClass)
-//         $('.submenu[data-level="2"]').removeClass(visibleClass)
-//     }
-// })
