@@ -1,5 +1,17 @@
-// Default modules
+// Loaded once on initial page load
 import menu from './default/menu'
-import inlineSVG from './default/inlineSVG'
-import slider from './default/slickSlider'
 import fontLoader from './default/fontLoader'
+
+// Other JS functions are fired in Highway
+
+import defaultJS from './default/_index.js'
+import moduleJS from './modules/_index.js'
+
+defaultJS.defaultJS()
+moduleJS.moduleJS()
+
+// Highway page transitions
+import highway from './highway/index.js' 
+
+
+
