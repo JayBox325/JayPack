@@ -3,8 +3,10 @@ body {
 		overflow: hidden;
 	}
 	
-	&.menu-is-active {
-		overflow: hidden;
+	@include media-breakpoint-down(md) {
+		&.menu-is-active {
+			overflow: hidden;
+		}
 	}
 
 	&.is-transitioning {
@@ -23,11 +25,14 @@ body {
 .site-wrap {
 	background: color('white');
 	min-height: 100vh;
-	transition: opacity .4s ease-in-out;
-	opacity: 1;
 
-	.menu-is-active & {
-		opacity: 0.3;
+	@include media-breakpoint-down(md) {
+		transition: opacity .4s ease-in-out;
+		opacity: 1;
+
+		.menu-is-active & {
+			opacity: 0.3;
+		}
 	}
 
 	&--fixed-header {
