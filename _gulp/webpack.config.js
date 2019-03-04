@@ -19,11 +19,15 @@ const config = {
         path: path.resolve(__dirname, 'app'),
         filename: 'bundle.js',
     },
-    externals: {
-        jquery: 'jQuery'
-    },
     module: {
         rules: [
+            {
+                test: require.resolve('jquery'),
+                use: [{
+                    loader: 'expose-loader',
+                    options: '$'
+                }]
+            },
             {
                 test: /\.(js)$/,
                 exclude: /(node_modules)/,
@@ -40,7 +44,7 @@ const config = {
     },
     optimization: {
         minimizer: [new TerserPlugin()],
-    }
+    },
 }
 
 module.exports = config

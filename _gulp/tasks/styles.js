@@ -16,8 +16,16 @@ import sourcemaps from 'gulp-sourcemaps'
 import autoprefixer from 'autoprefixer'
 import postcss from 'gulp-postcss'
 import range from 'postcss-input-range'
-import rename from 'gulp-rename'
-import cssnano from 'gulp-cssnano'
+import cssnano from 'cssnano'
+import version from 'gulp-version-number'
+
+const versionConfig = {
+    'value': '%MDS%',
+    'append': {
+        'key': 'v',
+        'to': ['css', 'js']
+    }
+}
 
 gulp.task('styles', () => {
     return gulp.src(paths.sass.src)
@@ -30,9 +38,9 @@ gulp.task('styles', () => {
         ]))
 
         // Minify in production
-        .pipe(production(cssnano()))
+        .pipe(production(postcss([cssnano])))
 
-        // Sourcemaps for production
+        // Sourcemaps for development
         .pipe(development(sourcemaps.write({includeContent: false})))
         .pipe(development(sourcemaps.init({loadMaps: true})))
         .pipe(development(sourcemaps.write('./')))
@@ -40,4 +48,12 @@ gulp.task('styles', () => {
         .pipe(gulp.dest(paths.sass.dest))
         .on('error', handleErrors)
         .pipe(development(browserSync.reload({ stream: true })))
+})
+
+gulp.task('build-styles', (cb) => {
+    gulp.src('build/*.html')
+        .pipe(version(versionConfig))
+        .on('error', handleErrors)
+        .pipe(gulp.dest('build/'))
+    cb()
 })

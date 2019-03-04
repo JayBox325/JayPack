@@ -15,12 +15,16 @@ const production = config.env.production
 // Scripts packages
 import webpack from 'webpack'
 import webpackStream from 'webpack-stream'
-import rename from 'gulp-rename'
+import sourcemaps from 'gulp-sourcemaps'
 
 gulp.task('scripts', (cb) => {
     gulp.src(paths.js.app)
+        .pipe(development(sourcemaps.init({loadMaps: true})))
         .pipe(webpackStream(webpackConfig), webpack)
         .on('error', handleErrors)
+
+        // Sourcemaps for development
+        .pipe(development(sourcemaps.write('./')))
 
         .pipe(gulp.dest(paths.js.dest))
         .on('error', handleErrors)

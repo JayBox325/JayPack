@@ -38,7 +38,8 @@ if (config.project == 'static') {
 		'move-videos',
 		'images',
 		'svg',
-		'nunjucks'
+		'nunjucks',
+		'build-styles'
 	))
 } else {
 	gulp.task('build', gulp.parallel(
@@ -50,6 +51,7 @@ if (config.project == 'static') {
 		'move-fonts',
 		'move-videos',
 		'images',
-		'svg'
+		'svg',
+		'build-styles'
 	))
 }
