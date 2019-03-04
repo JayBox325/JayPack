@@ -15,16 +15,14 @@ const production = config.env.production
 // Scripts packages
 import webpack from 'webpack'
 import webpackStream from 'webpack-stream'
-import sourcemaps from 'gulp-sourcemaps'
+import uglify from 'gulp-uglify'
 
 gulp.task('scripts', (cb) => {
     gulp.src(paths.js.app)
-        .pipe(development(sourcemaps.init({loadMaps: true})))
         .pipe(webpackStream(webpackConfig), webpack)
         .on('error', handleErrors)
 
-        // Sourcemaps for development
-        .pipe(development(sourcemaps.write('./')))
+        // .pipe(production(uglify()))
 
         .pipe(gulp.dest(paths.js.dest))
         .on('error', handleErrors)

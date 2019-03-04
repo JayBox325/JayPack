@@ -1,6 +1,6 @@
-import jquery from 'jquery'
-window.jQuery = jquery
-window.$ = jquery
+// import jquery from 'jquery'
+// window.jQuery = jquery
+// window.$ = jquery
 
 // Loaded once on initial page load
 import menu from './default/menu'

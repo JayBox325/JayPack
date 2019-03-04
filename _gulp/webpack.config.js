@@ -9,6 +9,7 @@ const env = production() ? 'production' : 'development'
 
 // Webpack packages
 import TerserPlugin from 'terser-webpack-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 const config = {
     mode: env,
@@ -19,15 +20,11 @@ const config = {
         path: path.resolve(__dirname, 'app'),
         filename: 'bundle.js',
     },
+    externals: {
+        jquery: 'jQuery'
+    },
     module: {
         rules: [
-            {
-                test: require.resolve('jquery'),
-                use: [{
-                    loader: 'expose-loader',
-                    options: '$'
-                }]
-            },
             {
                 test: /\.(js)$/,
                 exclude: /(node_modules)/,
@@ -41,10 +38,7 @@ const config = {
                 ]
             },
         ],
-    },
-    optimization: {
-        minimizer: [new TerserPlugin()],
-    },
+    }
 }
 
 module.exports = config
