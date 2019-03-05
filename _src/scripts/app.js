@@ -6,8 +6,6 @@
 import menu from './default/menu'
 import fontLoader from './default/fontLoader'
 
-conosellog()
-
 // Other JS functions are fired in Highway
 
 import defaultJS from './default/_index.js'
