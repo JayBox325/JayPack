@@ -17,15 +17,6 @@ import autoprefixer from 'autoprefixer'
 import postcss from 'gulp-postcss'
 import range from 'postcss-input-range'
 import cssnano from 'cssnano'
-import version from 'gulp-version-number'
-
-const versionConfig = {
-    'value': '%MDS%',
-    'append': {
-        'key': 'v',
-        'to': ['css', 'js']
-    }
-}
 
 gulp.task('styles', () => {
     return gulp.src(paths.sass.src)
@@ -48,12 +39,4 @@ gulp.task('styles', () => {
         .pipe(gulp.dest(paths.sass.dest))
         .on('error', handleErrors)
         .pipe(development(browserSync.reload({ stream: true })))
-})
-
-gulp.task('build-styles', (cb) => {
-    gulp.src('build/*.html')
-        .pipe(version(versionConfig))
-        .on('error', handleErrors)
-        .pipe(gulp.dest('build/'))
-    cb()
 })

@@ -32,14 +32,14 @@ if (config.project == 'static') {
 	gulp.task('build', gulp.parallel(
 		'styles',
 		'scripts',
+		'nunjucks',
 		'move-favicons',
 		'move-scripts',
 		'move-fonts',
 		'move-videos',
 		'images',
 		'svg',
-		'nunjucks',
-		'build-styles'
+		'version-static'
 	))
 } else {
 	gulp.task('build', gulp.parallel(
@@ -52,6 +52,6 @@ if (config.project == 'static') {
 		'move-videos',
 		'images',
 		'svg',
-		'build-styles'
+		'version-craft'
 	))
 }

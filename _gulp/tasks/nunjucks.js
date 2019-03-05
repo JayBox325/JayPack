@@ -31,7 +31,7 @@ gulp.task('nunjucks', () => {
             ext: '.html'
         }))
         .on('error', handleErrors)
-        // .pipe(production(htmlmin({collapseWhitespace: true})))
+        .pipe(production(htmlmin({collapseWhitespace: true})))
         .pipe(development(htmlbeautify()))
         .pipe(gulp.dest(paths.njks.dest))
         .pipe(development(browserSync.reload({ stream: true })))
