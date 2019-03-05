@@ -127,8 +127,12 @@ h6,
         @include resp-font-size(16, 16, 18);
     }
 
-    ul, ol {
+    ul, ol, dt, dd {
         margin-left: $gutter * 3;
+        
+        > * {
+            line-height: 1.4;
+        }
     }
 
     li {
