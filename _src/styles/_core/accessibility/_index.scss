@@ -1,5 +1,12 @@
 
 @import 'ie';
 @import 'print';
-
 @import 'skip-main';
+
+
+// Better mozilla focus rings
+*:-moz-focusring {
+    outline-color: #FF5F00;
+    outline-style: dotted;
+    outline-width: 3px;
+}
