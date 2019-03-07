@@ -20,6 +20,7 @@
     @each $name, $value in $colors {
         &--bg-#{$name} {
             background: color($name);
+			color: set-text-color($value);
         }
     }
 }
