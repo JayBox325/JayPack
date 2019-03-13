@@ -4,8 +4,6 @@
 
     <main>
 
-
-
         <section class="row row--white">
             <div class="wrapper">
                 <form class="form form--grey">
@@ -13,7 +11,8 @@
                     {% include 'partials/form/input.njk' %}
                     {% include 'partials/form/input.njk' %}
                     {% include 'partials/form/input.njk' %}
-                    {% include 'partials/form/option.njk' %}
+                    {% include 'partials/form/checkbox.njk' %}
+                    {% include 'partials/form/radio.njk' %}
                     {% include 'partials/form/input.njk' %}
 
                 </form>
@@ -56,16 +55,26 @@
 
         <section class="row row--grey">
             <div class="wrapper">
-                <button class="btn btn--secondary"><img src="/assets/svg/social-facebook.svg" class="js-inlinesvg btn__icon">Small button with icon</button>
-                <button class="btn btn--black">Small button</button>
-                <a href="#" class="btn btn--primary">Small Anchor</a>
+                <button class="btn btn--secondary btn--icon"><img src="/assets/svg/social-facebook.svg" class="js-inlinesvg btn__icon">Small button with icon and long text</button>
+                <button class="btn btn--black" data-overlay-btn="overlay">Small open overlay</button>
+                <a href="#" class="btn btn--primary">Small Anchor with long text lorem set amet</a>
                 <button class="btn btn--white">Small button</button>
             </div>
         </section>
 
+        <div class="overlay-dialog overlay-dialog--middle" data-overlay="overlay">
+            <div class="overlay-dialog__inner">
+                <div class="w-content">
+                    <h3 class="overlay-dialog__title">Overlay test here</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolor itaque assumenda repellat laboriosam! Cupiditate, expedita explicabo aliquam provident quia et ad? Omnis quia corrupti veniam quam alias magnam atque?</p>
+                </div>
+            </div>
+            <button data-overlay-close class="button overlay-dialog__close">Close</button>
+        </div>
+
         <section class="row row--white">
             <div class="wrapper">
-                <button class="btn btn--secondary btn--lrg"><img src="/assets/svg/social-facebook.svg" class="js-inlinesvg btn__icon">Large button with icon</button>
+                <button class="btn btn--secondary btn--lrg btn--icon"><img src="/assets/svg/social-facebook.svg" class="js-inlinesvg btn__icon">Large button with icon</button>
                 <button class="btn btn--success btn--lrg">Large button</button>
                 <a href="#" class="btn btn--lrg btn--primary">Large Anchor</a>
 

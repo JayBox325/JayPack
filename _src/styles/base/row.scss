@@ -1,15 +1,37 @@
 .row {
-    padding-top: $gutter;
-    padding-bottom: $gutter;
+	$r: &;
+
+    padding-top: $gutter * 1.75;
+    padding-bottom: $gutter * 1.75;
 
 	@include media-breakpoint-up(md) {
-		padding-bottom: $gutter * 2;
-		padding-top: $gutter * 2;
+		padding-bottom: $gutter * 2.5;
+		padding-top: $gutter * 2.5;
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding-bottom: $gutter * 3;
+		padding-top: $gutter * 3;
 	}
 
 	@include media-breakpoint-up(xl) {
-		padding-bottom: $gutter * 3;
-		padding-top: $gutter * 3;
+		padding-bottom: $gutter * 3.5;
+		padding-top: $gutter * 3.5;
+
+		&--short {
+			padding-bottom: $gutter * 2;
+			padding-top: $gutter * 2;
+		}
+	}
+	
+	&--nopad {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		padding-bottom: $gutter * 4;
+		padding-top: $gutter * 4;
 
 		&--short {
 			padding-bottom: $gutter * 2;
@@ -18,9 +40,12 @@
     }
     
     @each $name, $value in $colors {
-        &--bg-#{$name} {
-            background: color($name);
-			color: set-text-color($value);
+        &--#{$name} {
+			background: color($name);
+			
+			+ #{$r}--#{$name} {
+				padding-top: 0;
+			}
         }
     }
 }

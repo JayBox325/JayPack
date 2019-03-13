@@ -1,3 +1,5 @@
+import setFocus from './keyboardTrap'
+
 // Misc elements
 const $body = $('body')
 const $siteWrap = $('.site-wrap')
@@ -49,7 +51,7 @@ function openMenu() {
         $menu.addClass(visibleClass)
         $hamburger.addClass(activeClass)
 
-        setFocus($menu)
+        setFocus.setFocus($menu)
 
     }, 50)
 }
@@ -128,7 +130,7 @@ function closeSubmenu(target) {
 
     $targetMenu.one('transitionend', function(e) {
         $targetMenu.removeClass(activeClass)
-        setFocus($parentMenu)
+        setFocus.setFocus($parentMenu)
     })
 }
 
@@ -164,64 +166,3 @@ $(".menu__item--top").mouseover(function() {
         $('.submenu[data-level="2"]').removeClass(visibleClass)
     }
 })
-
-
-
-// Trap key JS
-function setFocus($target) {
-    $target.find(
-        'a',
-        'button',
-        'input'
-    ).filter(':visible:first').focus()
-
-    $target.keydown(function(event) {
-        trapTabKey($(this), event)
-    })
-}
-
-
-
-function trapTabKey(obj, evt) {
-
-    // if tab or shift-tab pressed
-    if (evt.which == 9) {
-
-        // get list of all children elements in given object
-        var o = obj.find('*');
-
-        // get list of focusable items
-        var focusableItems;
-        focusableItems = o.filter(focusableElementsString).filter(':visible')
-
-        // get currently focused item
-        var focusedItem;
-        focusedItem = jQuery(':focus');
-
-        // get the number of focusable items
-        var numberOfFocusableItems;
-        numberOfFocusableItems = focusableItems.length
-
-        // get the index of the currently focused item
-        var focusedItemIndex;
-        focusedItemIndex = focusableItems.index(focusedItem);
-
-        if (evt.shiftKey) {
-            //back tab
-            // if focused on first item and user preses back-tab, go to the last focusable item
-            if (focusedItemIndex == 0) {
-                focusableItems.get(numberOfFocusableItems - 1).focus();
-                evt.preventDefault();
-            }
-
-        } else {
-            //forward tab
-            // if focused on the last item and user preses tab, go to the first focusable item
-            if (focusedItemIndex == numberOfFocusableItems - 1) {
-                focusableItems.get(0).focus();
-                evt.preventDefault();
-            }
-        }
-    }
-
-}
