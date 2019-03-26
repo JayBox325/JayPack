@@ -1,0 +1,60 @@
+.plyr {
+    $p: &;
+
+    &__controls {
+        padding-top: 10px !important;
+    }
+
+    &__control {
+        &:hover,
+        &:focus {
+            background: color('primary') !important;
+        }
+
+        &--overlaid {
+            background: color('primary');
+            
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 100%;
+                background: color('primary');
+                z-index: -1;
+                content: '';
+                transition: width .15s ease-in-out, height .15s ease-in-out;
+                transform: translate3d(-50%, -50%, 0);
+                border-radius: 50%;
+            }
+            
+            &:hover,
+            &:focus {
+                &::before {
+                    width: calc(100% + (#{$gutter} * .33));
+                    height: calc(100% + (#{$gutter} * .33));
+                }
+            }
+        }
+    }
+    &--full-ui {
+        input[type='range'] {
+            color: color('primary');
+        }
+    }
+    &__tab-focus {
+        box-shadow: 0px;
+    }
+    &--paused {
+        background: black;
+
+        #{$p}__poster {
+            display: none;
+        }
+    }
+    &--stopped {
+        #{$p}__poster {
+            display: block;
+        }
+    }
+}
