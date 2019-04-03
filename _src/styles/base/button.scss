@@ -79,5 +79,12 @@
         &:hover {
             background: set-bg-hover($name, $value);
         }
+
+        @if ($name == 'primary') {
+            &:focus,
+            &:-moz-focusring {
+                outline-color: color('black');
+            }
+        }
     }
 }
