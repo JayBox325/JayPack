@@ -63,7 +63,7 @@ const paths = {
 
     versionPaths: {
         craft: {
-            src: 'build/templates/_layout/_base.twig',
+            src: 'build/templates/_layout/base.twig',
             dest: 'build/templates/_layout/'
         },
         static: {

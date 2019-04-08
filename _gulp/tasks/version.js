@@ -25,7 +25,7 @@ gulp.task('version-static', (done) => {
 })
 
 gulp.task('version-craft', (done) => {
-    gulp.src('build/templates/_layout/_base.twig')
+    gulp.src('build/templates/_layout/base.twig')
         .pipe(version(versionConfig))
         .on('error', handleErrors)
         .pipe(gulp.dest('build/templates/_layout/'))

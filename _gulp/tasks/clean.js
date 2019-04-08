@@ -15,6 +15,7 @@ gulp.task('clean-html', (cb) => {
             if (!err) {
                 return gulp.src(paths.clean, {read: false})
                     .pipe(clean())
+                    .pipe(cb())
             } else {
                 cb()
             }
