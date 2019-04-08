@@ -28,6 +28,10 @@ const H = new Highway.Core({
 
 // At end of navigation
 H.on('NAVIGATE_END', ({ from, to, location }) => {
+    // Fire page JS
+    defaultJS.defaultJS()
+    moduleJS.moduleJS()
+
     // Update Analytics
     if (typeof gtag !== 'undefined') {
         gtag('config', id, {
@@ -43,9 +47,6 @@ H.on('NAVIGATE_END', ({ from, to, location }) => {
 
 // In transition
 .on('NAVIGATE_IN', ({ location, trigger }) => {
-    // Fire page JS
-    defaultJS.defaultJS()
-    moduleJS.moduleJS()
 
     // Check Active Link in Navigation
     for (let i = 0; i < navLinks.length; i++) {
