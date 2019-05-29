@@ -9,7 +9,7 @@ module.exports = {
       md: '600px',
       lg: '900px',
       xl: '1200px',
-      xxl: '1800px'
+      '2xl': '1800px'
     },
     colors: {
       transparent: 'transparent',
@@ -410,6 +410,7 @@ module.exports = {
       full: '100%',
       screen: '100vw',
     }),
+    
     zIndex: {
       auto: 'auto',
       '0': '0',
@@ -443,6 +444,7 @@ module.exports = {
     scale: { // defaults to {}
       '90': '0.9',
       '100': '1',
+      '102': '1.02',
       '105': '1.05',
       '110': '1.1',
       '-100': '-1',
@@ -476,7 +478,53 @@ module.exports = {
       'bl': 'bottom left',
       'l': 'left',
       'tl': 'top left',
-    }
+    },
+
+    // tailwindcss-transitions
+    transitionProperty: { // defaults to these values
+      'none': 'none',
+      'all': 'all',
+      'color': 'color',
+      'bg': 'background-color',
+      'border': 'border-color',
+      'colors': ['color', 'background-color', 'border-color'],
+      'opacity': 'opacity',
+      'transform': 'transform',
+    },
+    transitionDuration: { // defaults to these values
+      'default': '250ms',
+      '0': '0ms',
+      '100': '100ms',
+      '200': '200ms',
+      '250': '250ms',
+      '500': '500ms',
+      '750': '750ms',
+      '1000': '1000ms',
+    },
+    transitionTimingFunction: { // defaults to these values
+      'default': 'ease',
+      'linear': 'linear',
+      'ease': 'ease',
+      'ease-in': 'ease-in',
+      'ease-out': 'ease-out',
+      'ease-in-out': 'ease-in-out',
+    },
+    transitionDelay: { // defaults to these values
+      'default': '0ms',
+      '0': '0ms',
+      '100': '100ms',
+      '250': '250ms',
+      '500': '500ms',
+      '750': '750ms',
+      '1000': '1000ms',
+    },
+    willChange: { // defaults to these values
+      'auto': 'auto',
+      'scroll': 'scroll-position',
+      'contents': 'contents',
+      'opacity': 'opacity',
+      'transform': 'transform',
+    },
   },
   variants: {
     alignContent: ['responsive'],
@@ -554,12 +602,20 @@ module.exports = {
     perspective: ['responsive'],
     perspectiveOrigin: ['responsive'],
     transformStyle: ['responsive'],
-    backfaceVisibility: ['responsive']
+    backfaceVisibility: ['responsive'],
+
+    // tailwindcss-transitions
+    transitionProperty: ['responsive'],
+    transitionDuration: ['responsive'],
+    transitionTimingFunction: ['responsive'],
+    transitionDelay: ['responsive'],
+    willChange: ['responsive']
   },
   corePlugins: {},
   plugins: [
     require('tailwindcss-transforms')({
       '3d': false, // defaults to false
     }),
+    require('tailwindcss-transitions')()
   ],
 }

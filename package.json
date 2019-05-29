@@ -16,9 +16,7 @@
         "package": "gulp build --env production"
     },
     "license": "MIT",
-    "dependencies": {
-        "tailwindcss-transforms": "^2.1.0"
-    },
+    "dependencies": {},
     "devDependencies": {
         "@babel/cli": "^7.2.3",
         "@babel/core": "^7.2.2",
@@ -63,7 +61,8 @@
         "require-dir": "^1.2.0",
         "slick-carousel": "^1.8.1",
         "tailwindcss": "^1.0.2",
-        "tailwindcss-grid": "^1.2.1",
+        "tailwindcss-transforms": "^2.1.0",
+        "tailwindcss-transitions": "^2.0.1",
         "terser-webpack-plugin": "^1.2.3",
         "uglify-js": "^3.4.9",
         "webfontloader": "^1.6.28",

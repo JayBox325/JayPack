@@ -1,13 +1,15 @@
 .card {
-    @apply block overflow-hidden p-6;
+    @apply overflow-hidden p-6 h-full;
 
     @screen md {
         @apply p-8;
-        transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
-        transform: scale(1);
 
-        &:hover {
-            transform: scale(1.025);
+        &.is-link {
+            @apply will-change-transform transition-all scale-100;
+
+            &:hover {
+                @apply scale-102 shadow-lg;
+            }
         }
     }
 

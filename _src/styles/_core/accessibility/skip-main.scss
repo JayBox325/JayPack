@@ -1,0 +1,10 @@
+.skip-main {
+    @apply absolute;
+    display: none !important;
+    top: $gutter;
+    left: $gutter;
+
+    &:focus {
+        display: inline-flex !important;
+    }
+}

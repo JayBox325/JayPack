@@ -1,0 +1,31 @@
+h1,.h1 {
+    @apply font-bold text-6xl;
+}
+
+h2,.h2 {
+    @apply font-bold leading-none text-2xl;
+
+    @screen md {
+        @apply text-4xl;
+    }
+
+    @screen 2xl {
+        @apply text-5xl;
+    }
+}
+
+h3,.h3 {
+    
+}
+
+h4,.h4 {
+    
+}
+
+h5,.h5 {
+    
+}
+
+h6,.h6 {
+    
+}

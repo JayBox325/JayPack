@@ -1,5 +1,6 @@
 .container {
     @apply px-4 mx-auto max-w-full;
+    min-width: 300px;
 
     @screen xs {
         @apply max-w-6xl;
