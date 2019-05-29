@@ -1,13 +1,18 @@
+// Importing Tailwind
+// @import 'tailwindcss/base.css';
+// @import 'tailwindcss/components.css';
+// @import 'tailwindcss/utilities.css';
+
+// Tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 // Core
-@import '_core/variables/_index';
-@import '_core/mixins/_index';
-@import '_core/config/_index';
-@import '_core/accessibility/_index';
-@import '_core/packages/_index';
+@import '_core/_index';
 
 // Layout
 @import 'layout/_index';
 
 // Components
-@import 'base/_index';
 @import 'components/_index';

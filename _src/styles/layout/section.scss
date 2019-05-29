@@ -1,0 +1,13 @@
+.section {
+    @apply py-6;
+
+    @screen md {
+        @apply py-12;
+    }
+    @screen lg {
+        @apply py-16;
+    }
+    @screen xl {
+        @apply py-20;
+    }
+}

@@ -14,6 +14,7 @@ const production = config.env.production
 import sass from 'gulp-sass'
 import sourcemaps from 'gulp-sourcemaps'
 import autoprefixer from 'autoprefixer'
+import tailwindcss from 'tailwindcss'
 import postcss from 'gulp-postcss'
 import range from 'postcss-input-range'
 import cssnano from 'cssnano'
@@ -24,7 +25,8 @@ gulp.task('styles', () => {
         .pipe(sass())
         .on('error', handleErrors)
         .pipe(postcss([
-            autoprefixer({browsers: config.autoprefixerVersions, grid: true}),
+            tailwindcss('./_gulp/tailwind.config.js'),
+            autoprefixer({browsers: config.autoprefixerVersions}),
             range()
         ]))
 

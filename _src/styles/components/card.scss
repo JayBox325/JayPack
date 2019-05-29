@@ -1,0 +1,17 @@
+.card {
+    @apply block overflow-hidden p-6;
+
+    @screen md {
+        @apply p-8;
+        transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+        transform: scale(1);
+
+        &:hover {
+            transform: scale(1.025);
+        }
+    }
+
+    @screen xl {
+        @apply p-12;
+    }
+}

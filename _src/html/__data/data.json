@@ -9,5 +9,20 @@
         "description": "SEO Description",
         "canonical": "//jaycollett.co",
         "twitter": "JayBox325"
-    }
+    },
+
+    "blog": [
+        {
+            "title": "Reactions from the first Being Seen in London",
+            "date": "2 June 2019"
+        },
+        {
+            "title": "Jay’s thoughts on the first Being Seen",
+            "date": "19 May 2019"
+        },
+        {
+            "title": "Mike’s direct impact from Being Seen",
+            "date": "14 May 2019"
+        }
+    ]
 }

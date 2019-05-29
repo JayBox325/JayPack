@@ -1,0 +1,15 @@
+.container {
+    @apply px-4 mx-auto max-w-full;
+
+    @screen xs {
+        @apply max-w-6xl;
+    }
+
+    @screen md {
+        @apply px-8;
+    }
+
+    @screen lg {
+        @apply px-10;
+    }
+}
