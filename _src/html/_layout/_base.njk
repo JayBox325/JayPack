@@ -24,9 +24,9 @@
     {# <div class="overlay-mask" aria-hidden="true" data-overlay-mask=""></div> #}
     
     <a href="#main" class="skip-main btn btn--primary">Skip to main content</a>
+    {% include '_layout/header.njk' %}
 
-    {# {% include '_layout/header.njk' %} #}
-    <div class="site" data-router-wrapper>
+    <div class="site pt-16 lg:pt-24 " data-router-wrapper>
         <div class="site-wrap" data-router-view="{% block title %}{% endblock %}" id="main">
             {% block content %}{% endblock %}
             {# {% include '_layout/footer.njk' %} #}

@@ -1,4 +1,55 @@
-<header class="header">
+<header class="fixed shadow w-full z-50 h-16 lg:h-24 bg-white">
+    <div class="container h-full">
+        <div class="flex items-center h-full justify-between items-center">
+
+            {# Logo #}
+            <div class="h-10 lg:h-16">
+                <img src="//placehold.it/180x60" alt="Company logo" class="h-full">
+            </div>
+
+            <details class="absolute top-0">
+
+                {# Hamburger #}
+                <summary class="fixed flex z-50 mr-4 items-center top-0 right-0 h-16 lg:h-24">
+                    <button class="">Menu</button>
+                </summary>
+
+                {# Menu #}
+                <div class="fixed h-full z-40 w-screen h-screen bg-white -mx-4 p-4">
+                    <nav class="">
+                        <li class="">
+                            <a href="#" class="">Menu item</a>
+                            
+                            {# Child menu #}
+                            <details class="">
+                                <summary role="button" class="">More</summary>
+                                <div class="">
+                                    <nav class="">
+                                        <li class="">
+                                            <a href="#" class="">Child menu item</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="#" class="">Child menu item</a>
+                                        </li>
+                                    </nav>
+                                </div>
+                            </details>
+                        </li>
+                        <li class="">
+                            <a href="#" class="">Menu item</a>
+                        </li>
+                        <li class="">
+                            <a href="#" class="">Menu item</a>
+                        </li>
+                    </nav>
+                </div>
+            </details>
+            
+        </div>
+    </div>
+</header>
+
+{# <header class="header">
     <div class="wrapper header__wrapper u-rel">
         <div class="header__inner">
             <div class="header__item header__item--left z-headerlogo">
@@ -17,4 +68,4 @@
             {% include '_layout/menu.njk' %}
         </div>
     </div>
-</header>
+</header> #}

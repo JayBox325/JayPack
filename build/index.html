@@ -26,14 +26,65 @@
 
 
     <a href="#main" class="skip-main btn btn--primary">Skip to main content</a>
+    <header class="fixed shadow w-full z-50 h-16 lg:h-24 bg-white">
+        <div class="container h-full">
+            <div class="flex items-center h-full justify-between items-center">
 
 
-    <div class="site" data-router-wrapper>
+                <div class="h-10 lg:h-16">
+                    <img src="//placehold.it/180x60" alt="Company logo" class="h-full">
+                </div>
+
+                <details class="absolute top-0">
+
+
+                    <summary class="fixed flex z-50 mr-4 items-center top-0 right-0 h-16 lg:h-24">
+                        <button class="">Menu</button>
+                    </summary>
+
+
+                    <div class="fixed h-full z-40 w-screen h-screen bg-white -mx-4 p-4">
+                        <nav class="">
+                            <li class="">
+                                <a href="#" class="">Menu item</a>
+
+
+                                <details class="">
+                                    <summary role="button" class="">More</summary>
+                                    <div class="">
+                                        <nav class="">
+                            <li class="">
+                                <a href="#" class="">Child menu item</a>
+                            </li>
+                            <li class="">
+                                <a href="#" class="">Child menu item</a>
+                            </li>
+                        </nav>
+                    </div>
+                </details>
+                </li>
+                <li class="">
+                    <a href="#" class="">Menu item</a>
+                </li>
+                <li class="">
+                    <a href="#" class="">Menu item</a>
+                </li>
+                </nav>
+            </div>
+            </details>
+
+        </div>
+        </div>
+    </header>
+
+
+
+    <div class="site pt-16 lg:pt-24 " data-router-wrapper>
         <div class="site-wrap" data-router-view="Index" id="main">
 
 
             <main role="main">
-                <section class="section section--primary" aria-labelledby="latestNews">
+                <section class="row row--primary lg:pb-56" aria-labelledby="latestNews">
                     <div class="container">
 
                         <h2 class="mb-4 md:mb-8 md:mb-10 text-blue-800" id="latestNews">Latest news</h2>
@@ -65,11 +116,11 @@
                     </div>
                 </section>
 
-                <section class="section bg-white" aria-labelledby="titleHere">
+                <section class="row row--white" aria-labelledby="titleHere">
                     <div class="container">
 
                         <div class="flex">
-                            <div class="card card--hover w-full lg:w-9/12 lg:ml-auto bg-gray-300">
+                            <div class="card card--hover w-full lg:w-9/12 lg:ml-auto bg-gray-300 lg:-mt-56">
                                 <h2 class="flex-1 will-change-transform mb-2 md:mb-4 lg:mb-8" id="titleHere">Title here</h2>
                                 <p class="text-gray-700 text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero error facilis beatae similique dolore consectetur quod pariatur, rem deleniti aperiam temporibus numquam, nisi optio dolorem, suscipit repellat ducimus quaerat quae?</p>
                             </div>
@@ -77,35 +128,9 @@
                     </div>
                 </section>
 
-                <section class="section section--gray" aria-labelledby="latestNews">
+                <section class="row row--white" aria-labelledby="latestNews">
                     <div class="container">
-
-                        <h2 class="mb-4 md:mb-8 md:mb-10 text-blue-800" id="latestNews">Latest news</h2>
-
-                        <ul class="flex flex-wrap -mx-2 lg:-mx-4 -mt-4" aria-labelledby="latestNews">
-
-                            <li class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
-                                <a href="#" class="card is-link flex flex-col bg-white">
-                                    <h3 class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
-                                    <p class="text-gray-700 text-base">2 June 2019</p>
-                                </a>
-                            </li>
-
-                            <li class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
-                                <a href="#" class="card is-link flex flex-col bg-white">
-                                    <h3 class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Dolorum voluptates asperiores</h3>
-                                    <p class="text-gray-700 text-base">19 May 2019</p>
-                                </a>
-                            </li>
-
-                            <li class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
-                                <a href="#" class="card is-link flex flex-col bg-white">
-                                    <h3 class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Quae eos fugit perferendis eligendi</h3>
-                                    <p class="text-gray-700 text-base">14 May 2019</p>
-                                </a>
-                            </li>
-
-                        </ul>
+                        <blockquote class="h2 italic text-center text-blue-700 lg:m-auto lg:w-9/12">Suscipit totam architecto eum accusantium autem voluptatem, libero doloremque.</blockquote>
                     </div>
                 </section>
             </main>
