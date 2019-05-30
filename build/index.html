@@ -23,65 +23,95 @@
 </head>
 
 <body>
-    <div class="overlay-mask" data-overlay-mask=""></div>
+
 
     <a href="#main" class="skip-main btn btn--primary">Skip to main content</a>
 
-    <div class="site">
 
-        <div data-router-wrapper>
-            <div class="site-wrap" data-router-view="" id="main">
+    <div class="site" data-router-wrapper>
+        <div class="site-wrap" data-router-view="Index" id="main">
 
 
-                <main>
-                    <div class="section bg-gray-300">
-                        <div class="container">
+            <main role="main">
+                <section class="section section--primary" aria-labelledby="latestNews">
+                    <div class="container">
 
-                            <h2 class="mb-4 md:mb-8 md:mb-10 text-blue-800">Latest news</h2>
+                        <h2 class="mb-4 md:mb-8 md:mb-10 text-blue-800" id="latestNews">Latest news</h2>
 
-                            <div class="flex flex-wrap -mx-2 lg:-mx-4 -mt-4">
+                        <ul class="flex flex-wrap -mx-2 lg:-mx-4 -mt-4" aria-labelledby="latestNews">
 
-                                <div class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
-                                    <a href="#" class="card is-link flex flex-col bg-white">
-                                        <div class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Reactions from the first Being Seen in London</div>
-                                        <p class="text-gray-700 text-base">2 June 2019</p>
-                                    </a>
-                                </div>
+                            <li class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
+                                <a href="#" class="card is-link flex flex-col bg-white">
+                                    <h3 class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
+                                    <p class="text-gray-700 text-base">2 June 2019</p>
+                                </a>
+                            </li>
 
-                                <div class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
-                                    <a href="#" class="card is-link flex flex-col bg-white">
-                                        <div class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Jay’s thoughts on the first Being Seen</div>
-                                        <p class="text-gray-700 text-base">19 May 2019</p>
-                                    </a>
-                                </div>
+                            <li class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
+                                <a href="#" class="card is-link flex flex-col bg-white">
+                                    <h3 class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Dolorum voluptates asperiores</h3>
+                                    <p class="text-gray-700 text-base">19 May 2019</p>
+                                </a>
+                            </li>
 
-                                <div class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
-                                    <a href="#" class="card is-link flex flex-col bg-white">
-                                        <div class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Mike’s direct impact from Being Seen</div>
-                                        <p class="text-gray-700 text-base">14 May 2019</p>
-                                    </a>
-                                </div>
+                            <li class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
+                                <a href="#" class="card is-link flex flex-col bg-white">
+                                    <h3 class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Quae eos fugit perferendis eligendi</h3>
+                                    <p class="text-gray-700 text-base">14 May 2019</p>
+                                </a>
+                            </li>
 
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section bg-white" aria-labelledby="titleHere">
+                    <div class="container">
+
+                        <div class="flex">
+                            <div class="card card--hover w-full lg:w-9/12 lg:ml-auto bg-gray-300">
+                                <h2 class="flex-1 will-change-transform mb-2 md:mb-4 lg:mb-8" id="titleHere">Title here</h2>
+                                <p class="text-gray-700 text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero error facilis beatae similique dolore consectetur quod pariatur, rem deleniti aperiam temporibus numquam, nisi optio dolorem, suscipit repellat ducimus quaerat quae?</p>
                             </div>
                         </div>
                     </div>
+                </section>
 
-                    <div class="section bg-white">
-                        <div class="container">
+                <section class="section section--gray" aria-labelledby="latestNews">
+                    <div class="container">
 
-                            <div class="flex">
-                                <div class="card card--hover w-full lg:w-9/12 lg:ml-auto bg-gray-300">
-                                    <h2 class="flex-1 will-change-transform mb-2 md:mb-4 lg:mb-8">Title here</h2>
-                                    <p class="text-gray-700 text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero error facilis beatae similique dolore consectetur quod pariatur, rem deleniti aperiam temporibus numquam, nisi optio dolorem, suscipit repellat ducimus quaerat quae?</p>
-                                </div>
-                            </div>
-                        </div>
+                        <h2 class="mb-4 md:mb-8 md:mb-10 text-blue-800" id="latestNews">Latest news</h2>
+
+                        <ul class="flex flex-wrap -mx-2 lg:-mx-4 -mt-4" aria-labelledby="latestNews">
+
+                            <li class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
+                                <a href="#" class="card is-link flex flex-col bg-white">
+                                    <h3 class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
+                                    <p class="text-gray-700 text-base">2 June 2019</p>
+                                </a>
+                            </li>
+
+                            <li class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
+                                <a href="#" class="card is-link flex flex-col bg-white">
+                                    <h3 class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Dolorum voluptates asperiores</h3>
+                                    <p class="text-gray-700 text-base">19 May 2019</p>
+                                </a>
+                            </li>
+
+                            <li class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
+                                <a href="#" class="card is-link flex flex-col bg-white">
+                                    <h3 class="flex-1 will-change-transform font-bold text-lg mb-2 md:mb-4">Quae eos fugit perferendis eligendi</h3>
+                                    <p class="text-gray-700 text-base">14 May 2019</p>
+                                </a>
+                            </li>
+
+                        </ul>
                     </div>
-                </main>
+                </section>
+            </main>
 
 
 
-            </div>
         </div>
     </div>
 

@@ -7,7 +7,8 @@
         &.is-link {
             @apply will-change-transform transition-all scale-100;
 
-            &:hover {
+            &:hover,
+            &:focus {
                 @apply scale-102 shadow-lg;
             }
         }

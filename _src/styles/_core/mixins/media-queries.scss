@@ -1,0 +1,90 @@
+@function breakpoint-next($name, $breakpoints: $breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+	$n: index($breakpoint-names, $name);
+	@return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoints: $breakpoints) {
+	$min: map-get($breakpoints, $name);
+	@return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $breakpoints) {
+	$next: breakpoint-next($name, $breakpoints);
+	@return if($next, breakpoint-min($next, $breakpoints) - 1px, null);
+}
+
+
+/* Bootstrap media queries
+/* Breakpoint min/max are set in the _vars.scss file
+
+/* Mixin: Media Min Width
+Usage:
+.foo {
+	@include media-breakpoint-up(sm) {
+		color: #f00;
+	}
+}
+*/
+@mixin media-breakpoint-up($name, $breakpoints: $breakpoints) {
+	$min: breakpoint-min($name, $breakpoints);
+	@if $min {
+		@media (min-width: $min) {
+			@content;
+		}
+	}
+	@else {
+		@content;
+	}
+}
+
+/* Mixin: Media Max Width
+Usage:
+.foo {
+	@include media-breakpoint-down(md) {
+		color: #f00;
+	}
+}
+*/
+@mixin media-breakpoint-down($name, $breakpoints: $breakpoints) {
+	$max: breakpoint-max($name, $breakpoints);
+	@if $max {
+		@media (max-width: $max) {
+			@content;
+		}
+	}
+	@else {
+		@content;
+	}
+}
+
+/* Mixin: Media Single Breakpoint
+Usage:
+.foo {
+	@include media-breakpoint-only(md) {
+		color: #f00;
+	}
+}
+*/
+@mixin media-breakpoint-only($name, $breakpoints: $breakpoints) {
+	@include media-breakpoint-up($name, $breakpoints) {
+		@include media-breakpoint-down($name, $breakpoints) {
+			@content;
+		}
+	}
+}
+
+/* Mixin: Media Between Breakpoints
+Usage:
+.foo {
+	@include media-breakpoint-between(sm, lg) {
+		color: #f00;
+	}
+}
+*/
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $breakpoints) {
+	@include media-breakpoint-up($lower, $breakpoints) {
+		@include media-breakpoint-down($upper, $breakpoints) {
+			@content;
+		}
+	}
+}

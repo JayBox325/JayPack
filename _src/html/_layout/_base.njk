@@ -21,17 +21,15 @@
 </head>
 
 <body>
-    <div class="overlay-mask" data-overlay-mask=""></div>
+    {# <div class="overlay-mask" aria-hidden="true" data-overlay-mask=""></div> #}
     
     <a href="#main" class="skip-main btn btn--primary">Skip to main content</a>
 
-    <div class="site">
-        {# {% include '_layout/header.njk' %} #}
-        <div data-router-wrapper>
-            <div class="site-wrap" data-router-view="{% block title %}{% endblock %}" id="main">
-                {% block content %}{% endblock %}
-                {# {% include '_layout/footer.njk' %} #}
-            </div>
+    {# {% include '_layout/header.njk' %} #}
+    <div class="site" data-router-wrapper>
+        <div class="site-wrap" data-router-view="{% block title %}{% endblock %}" id="main">
+            {% block content %}{% endblock %}
+            {# {% include '_layout/footer.njk' %} #}
         </div>
     </div>
 

@@ -10,4 +10,16 @@
     @screen xl {
         @apply py-20;
     }
+
+    &--white {
+        @apply bg-white;
+    }
+
+    &--primary {
+        @apply bg-blue-200;
+    }
+
+    &--gray {
+        @apply bg-gray-300;
+    }
 }

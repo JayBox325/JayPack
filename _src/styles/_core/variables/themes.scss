@@ -1,0 +1,44 @@
+/*
+
+    Colour classes are all defined in TailwindCSS with classes such as 'bg-blue-200'.
+    This is the list of colours used for this project.
+
+*/
+
+
+// White            white
+// Black            gray-800
+// Primary          blue-200
+// Secondary        blue-500
+// Gray             gray-300
+
+
+// Project brand colours
+$primary:           #bee3f8; // blue-200
+$secondary:         #2b6cb0; // blue-700
+
+// Base colours
+$black:             #2d3748; // gray-800
+$white:             #ffffff; // white
+$gray:              #e2e8f0; // gray-300
+$success:           #2f855a; // green-700
+$warning:           #c53030; // red-700
+$info:              #d69e2e; // yellow-600
+
+// Social media brand colours
+$facebook:          #3b5998;
+$twitter:           #1da1f2;
+$instagram:         #c13584;
+$pinterest:         #bd081c;
+
+// Colour map used with color('primary')
+$colors: (
+    'primary':      $primary,
+    'secondary':    $secondary,
+    'success':      $success,
+    'info':         $info,
+    'warning':      $warning,
+    'gray':         $gray,
+    'white':        $white,
+    'black':        $black
+);
