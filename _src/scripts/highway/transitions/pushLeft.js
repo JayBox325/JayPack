@@ -3,6 +3,10 @@ import Highway from '@dogstudio/highway'
 // GSAP Library
 import Tween from 'gsap'
 
+// Import Site JS
+import defaultJS from '../../default/_index.js'
+import moduleJS from '../../modules/_index.js'
+
 // Overlap
 class PushLeft extends Highway.Transition {
     in({ from, to, done }) {
@@ -28,6 +32,11 @@ class PushLeft extends Highway.Transition {
       
                   // Remove Old View
                   from.remove()
+
+                  // Fire page JS
+                  defaultJS()
+                  moduleJS()
+
                   done()
               }
           }

@@ -1,5 +1,78 @@
 import setFocus from './keyboardTrap'
+import { TimelineLite, TweenLite } from "gsap"
 
+export default function menu() {
+    // Elements
+    const $body = $('body')
+    const $hamburger = $('[data-hamburger]')
+    const $menuWrap = $('[data-menu-wrap]')
+    const $mainMenu = $('[data-menu]')
+
+    // Timeline
+    const tl = new TimelineLite()
+
+    // OPEN MENU FUNCTION
+    function openMenu() {
+        $hamburger.attr('data-hamburger', 'open')
+        $menuWrap.removeAttr('open')
+
+        TweenLite.fromTo($mainMenu, .5,
+            {x: '100%'},
+            {
+                x: '0%',
+                ease: Expo.easeInOut
+            }
+        )
+
+        setFocus($mainMenu)
+    }
+
+    // CLOSE MENU FUNCTION
+    function closeMenu(e) {
+        e.preventDefault()
+        $hamburger.attr('data-hamburger', 'closed')
+
+        TweenLite.fromTo($mainMenu, .5,
+            {x: '0%'},
+            {
+                x: '100%',
+                ease: Expo.easeInOut,
+                onComplete: () => {
+                    $menuWrap.removeAttr('open')
+                }
+            }
+        )
+    }
+
+    // Hamburger click function
+    $hamburger.on('click', function(e) {
+        const menuState = $(this).attr('data-hamburger')
+
+        if (menuState == 'closed') {
+            openMenu()
+        } else {
+            closeMenu(e)
+        }
+    })
+
+    // Close menu on esc key
+    $(document).on('keydown', function(e) {
+        if (e.keyCode === 27) { // ESC
+            // if ($(window).width() > 900) {
+            //     if ($submenu.hasClass(activeClass)) {
+            //         $submenu.removeClass(activeClass)
+            //     }
+            // } else {
+                // $submenu.removeClass(activeClass)
+                // $submenu.removeClass(visibleClass)
+                closeMenu(e)
+            // }
+        }
+    })
+}
+
+
+/*
 // Misc elements
 const $body = $('body')
 const $siteWrap = $('.site-wrap')
@@ -56,17 +129,6 @@ function openMenu() {
     }, 50)
 }
 
-
-// Hamburger click event
-$hamburger.click(function() {
-    if ($body.hasClass(bodyMenuClass)) {
-        closeMenu()
-    } else {
-        openMenu()
-    }
-
-})
-
 // Don't close the menu when you click the mask (countering below)
 $menu.on('click', function(e) {
     e.stopPropagation()
@@ -86,21 +148,6 @@ $menuLink.on('click', function(e) {
     closeMenu()
 })
 
-
-// Close menu on esc key
-$(document).on('keydown', function(e) {
-    if (e.keyCode === 27) { // ESC
-        if ($(window).width() > 900) {
-            if ($submenu.hasClass(activeClass)) {
-                $submenu.removeClass(activeClass)
-            }
-        } else {
-            $submenu.removeClass(activeClass)
-            $submenu.removeClass(visibleClass)
-            closeMenu()
-        }
-    }
-})
 
 
 // Open submenu
@@ -166,3 +213,6 @@ $(".menu__item--top").mouseover(function() {
         $('.submenu[data-level="2"]').removeClass(visibleClass)
     }
 })
+
+
+*/

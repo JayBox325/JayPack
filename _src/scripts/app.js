@@ -7,8 +7,8 @@ import fontLoader from './default/fontLoader'
 import defaultJS from './default/_index.js'
 import moduleJS from './modules/_index.js'
 
-defaultJS.defaultJS()
-moduleJS.moduleJS()
+defaultJS()
+moduleJS()
 
 // Highway page transitions
 import highway from './highway/index.js' 

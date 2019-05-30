@@ -1,13 +1,14 @@
-import svg from './inlineSVG'
-import slider from './slickSlider'
-import player from './player'
-import overlay from './overlay'
+// import svg from './inlineSVG'
+// import overlay from './overlay'
 
-function defaultJS() {
-    svg.svg()
-    overlay.overlay()
-    player.player()
-    slider.slider()
+import noJs from './noJs'
+import menu from './menu'
+
+export default function defaultJS() {
+    noJs()
+    menu()
+
+
+    // svg.svg()
+    // overlay.overlay()
 }
-
-export default { defaultJS }

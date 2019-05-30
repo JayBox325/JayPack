@@ -1,5 +1,5 @@
 
-function setFocus($target) {
+export default function setFocus($target) {
 
     setTimeout(function() {
         const $focusElement = $target.find('a,input,button').eq(0).filter(':visible:first')
@@ -16,7 +16,7 @@ function trapTabKey(obj, evt) {
 
     // Trapped tabbing
     let focusedElementBeforeModal
-    var focusableElementsString = "a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]"
+    var focusableElementsString = "a[href], area[href], input:not([disabled]), summary, select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]"
 
     // if tab or shift-tab pressed
     if (evt.which == 9) {
@@ -59,5 +59,3 @@ function trapTabKey(obj, evt) {
     }
 
 }
-
-export default { setFocus }

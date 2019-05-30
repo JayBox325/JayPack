@@ -1,10 +1,6 @@
 // Imports
 import Highway from '@dogstudio/highway'
 
-// Javascript imports
-import defaultJS from '../default/_index.js'
-import moduleJS from '../modules/_index.js'
-
 // Importing Transitions
 import PushLeft from './transitions/pushLeft.js'
 // import Fade from './transitions/fade.js'
@@ -28,9 +24,6 @@ const H = new Highway.Core({
 
 // At end of navigation
 H.on('NAVIGATE_END', ({ from, to, location }) => {
-    // Fire page JS
-    defaultJS.defaultJS()
-    moduleJS.moduleJS()
 
     // Update Analytics
     if (typeof gtag !== 'undefined') {

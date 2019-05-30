@@ -22,52 +22,61 @@
 
 </head>
 
-<body>
+<body class="no-js">
 
 
     <a href="#main" class="skip-main btn btn--primary">Skip to main content</a>
-    <header class="fixed shadow w-full z-50 h-16 lg:h-24 bg-white">
+    <header class="relative shadow w-full h-16 lg:h-24 bg-white">
         <div class="container h-full">
-            <div class="flex items-center h-full justify-between items-center">
+            <div class="flex h-full justify-between items-center">
 
 
                 <div class="h-10 lg:h-16">
-                    <img src="//placehold.it/180x60" alt="Company logo" class="h-full">
+                    <a href="/" aria-label="Link to home">
+                        <img src="//placehold.it/180x60" alt="Company logo" class="h-full">
+                    </a>
                 </div>
 
-                <details class="absolute top-0">
+                <details class="top-0 h-16 lg:h-24 bg-red-500" data-menu-wrap>
 
 
-                    <summary class="fixed flex z-50 mr-4 items-center top-0 right-0 h-16 lg:h-24">
-                        <button class="">Menu</button>
+                    <summary class="hamburger" role="button" aria-label="Open Menu" data-hamburger="closed">
+                        <div class="hamburger__bar"></div>
+                        <div class="hamburger__bar"></div>
+                        <div class="hamburger__bar"></div>
                     </summary>
 
 
-                    <div class="fixed h-full z-40 w-screen h-screen bg-white -mx-4 p-4">
-                        <nav class="">
-                            <li class="">
-                                <a href="#" class="">Menu item</a>
+                    <div class="menu menu--main" data-menu>
+                        <nav class="list-none mt-10">
+                            <li class="relative">
+                                <a href="#" class="inline-block h-8 inline-flex items-center">Menu item</a>
+
 
 
                                 <details class="">
-                                    <summary role="button" class="">More</summary>
-                                    <div class="">
-                                        <nav class="">
+                                    <summary role="button" class="inline-flex items-center h-8 absolute right-0 top-0">More</summary>
+                                    <div class="menu menu--child">
+                                        <nav class="pl-4">
                             <li class="">
-                                <a href="#" class="">Child menu item</a>
+                                <a href="#" class="inline-block h-8 inline-flex items-center">Menu item</a>
+
                             </li>
                             <li class="">
-                                <a href="#" class="">Child menu item</a>
+                                <a href="#" class="inline-block h-8 inline-flex items-center">Menu item</a>
+
                             </li>
                         </nav>
                     </div>
                 </details>
                 </li>
                 <li class="">
-                    <a href="#" class="">Menu item</a>
+                    <a href="#" class="inline-block h-8 inline-flex items-center">Menu item</a>
+
                 </li>
                 <li class="">
-                    <a href="#" class="">Menu item</a>
+                    <a href="#" class="inline-block h-8 inline-flex items-center">Menu item</a>
+
                 </li>
                 </nav>
             </div>
@@ -79,8 +88,8 @@
 
 
 
-    <div class="site pt-16 lg:pt-24 " data-router-wrapper>
-        <div class="site-wrap" data-router-view="Index" id="main">
+    <div class="site" data-router-wrapper>
+        <div class="site-wrap" data-router-view="index" id="main">
 
 
             <main role="main">

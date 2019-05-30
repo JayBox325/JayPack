@@ -436,6 +436,7 @@ module.exports = {
       'tl': 'top left',
     },
     translate: { // defaults to {}
+      '0': '0',
       '1/2': '50%',
       'full': '100%',
       'right-up': ['100%', '-100%'],

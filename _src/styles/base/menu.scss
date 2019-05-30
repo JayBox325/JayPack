@@ -1,0 +1,16 @@
+.menu {
+
+    &--main {
+        @apply fixed right-0 top-0 h-full z-40 w-screen h-screen bg-white p-4;
+
+        @screen sm {
+            @apply max-w-xs;
+        }
+        @screen md {
+            // @apply w-1/2;
+        }
+        @screen lg {
+            // @apply w-1/3;
+        }
+    }
+}
