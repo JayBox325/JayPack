@@ -13,8 +13,17 @@
         transition: width .2s ease-in-out .25s, transform .2s ease-in-out .25s, top .2s ease-in-out .25s;
         transform: translate3d(-50%, -50%, 0) rotate(0deg);
 
+        @screen lg {
+            @apply w-6;
+            height: 3px;
+        }
+
         &:nth-child(1) {
             top: 33.3333%;
+
+            @screen lg {
+                top: 29%;
+            }
 
             [data-hamburger=open] & {
                 top: 50%;
@@ -32,6 +41,10 @@
 
         &:nth-child(3) {
             top: 66.6666%;
+
+            @screen lg {
+                top: 71%;
+            }
 
             [data-hamburger=open] & {
                 top: 50%;

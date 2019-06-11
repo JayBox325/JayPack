@@ -4,7 +4,7 @@
 
             {# Logo #}
             <div class="h-10 lg:h-16">
-                <a href="/" aria-label="Link to home">
+                <a href="/" aria-label="Link to home" class="inline-block h-full">
                     <img src="//placehold.it/180x60" alt="Company logo" class="h-full">
                 </a>
             </div>
@@ -12,23 +12,23 @@
             <details class="top-0 h-16 lg:h-24 bg-red-500" data-menu-wrap>
 
                 {# Hamburger #}
-                <summary class="hamburger" role="button" aria-label="Open Menu" data-hamburger="closed">
+                <summary class="hamburger" role="button" aria-haspopup="true" aria-label="Open Menu" data-hamburger="closed">
                     <div class="hamburger__bar"></div>
                     <div class="hamburger__bar"></div>
                     <div class="hamburger__bar"></div>
                 </summary>
 
                 {# Menu #}
-                <div class="menu menu--main" data-menu>
-                    <nav class="list-none mt-10">
+                <div class="menu menu--main" aria-hidden="true" data-menu>
+                    <nav class="list-none">
                         <li class="relative">
                             {% include 'partials/menu-link.njk' %}
                             
                             {# Child menu #}
-                            <details class="">
-                                <summary role="button" class="inline-flex items-center h-8 absolute right-0 top-0">More</summary>
+                            <details class="" data-child-wrap>
+                                <summary role="button" class="inline-flex items-center h-8 absolute right-0 top-0" data-more>More</summary>
                                 <div class="menu menu--child">
-                                    <nav class="pl-4">
+                                    <nav class="">
                                         <li class="">
                                             {% include 'partials/menu-link.njk' %}
                                         </li>
