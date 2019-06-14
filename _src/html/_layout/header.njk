@@ -1,53 +1,87 @@
-<header class="relative shadow w-full h-16 lg:h-24 bg-white">
+<header class="relative shadow w-full h-16 lg:h-24 bg-white-500">
     <div class="container h-full">
-        <div class="flex h-full justify-between items-center">
+        <div class="flex h-full justify-between items-center lg:relative">
 
             {# Logo #}
-            <div class="h-10 lg:h-16">
+            <div class="h-10 z-40 lg:h-16">
                 <a href="/" aria-label="Link to home" class="inline-block h-full">
                     <img src="//placehold.it/180x60" alt="Company logo" class="h-full">
                 </a>
             </div>
 
-            <details class="top-0 h-16 lg:h-24 bg-red-500" data-menu-wrap>
+            <div class="menu-wrap ">
+
+                <input id="hamburger" class="hamburger__checkbox" type="checkbox">
 
                 {# Hamburger #}
-                <summary class="hamburger" role="button" aria-haspopup="true" aria-label="Open Menu" data-hamburger="closed">
+                <label class="hamburger__icon" for="hamburger" role="button" aria-haspopup="true" aria-label="Open Menu">
                     <div class="hamburger__bar"></div>
                     <div class="hamburger__bar"></div>
                     <div class="hamburger__bar"></div>
-                </summary>
+                </label>
 
                 {# Menu #}
-                <div class="menu menu--main" aria-hidden="true" data-menu>
-                    <nav class="list-none">
-                        <li class="relative">
+                <div class="menu menu--main" aria-hidden="true">
+                    <nav class="menu__items menu__items--top">
+                        <li class="menu__item">
                             {% include 'partials/menu-link.njk' %}
                             
+                            {# Child menu button #}
+                            <input id="child1" class="menu-more__checkbox" type="checkbox">
+                            <label for="child1" role="button" aria-haspopup="true" aria-label="Open child Menu" class="menu-more__label">+</label>
+
                             {# Child menu #}
-                            <details class="" data-child-wrap>
-                                <summary role="button" class="inline-flex items-center h-8 absolute right-0 top-0" data-more>More</summary>
-                                <div class="menu menu--child">
-                                    <nav class="">
-                                        <li class="">
-                                            {% include 'partials/menu-link.njk' %}
-                                        </li>
-                                        <li class="">
-                                            {% include 'partials/menu-link.njk' %}
-                                        </li>
-                                    </nav>
-                                </div>
-                            </details>
+                            <div class="menu menu--child">
+                                <nav class="menu__items menu__items--child">
+                                    <li class="menu__item">
+                                        {% include 'partials/menu-link.njk' %}
+                                    </li>
+                                    <li class="menu__item">
+                                        {% include 'partials/menu-link.njk' %}
+                                        
+                                        {# Child menu button #}
+                                        <input id="child1-1" class="menu-more__checkbox" type="checkbox">
+                                        <label for="child1-1" role="button" aria-haspopup="true" aria-label="Open child Menu" class="menu-more__label">+</label>
+
+                                        {# Child menu #}
+                                        <div class="menu menu--child">
+                                            <nav class="menu__items menu__items--child">
+                                                <li class="menu__item">
+                                                    {% include 'partials/menu-link.njk' %}
+                                                </li>
+                                                <li class="menu__item">
+                                                    {% include 'partials/menu-link.njk' %}
+                                                </li>
+                                            </nav>
+                                        </div>
+                                    </li>
+                                </nav>
+                            </div>
                         </li>
-                        <li class="">
+
+                        <li class="menu__item">
                             {% include 'partials/menu-link.njk' %}
-                        </li>
-                        <li class="">
-                            {% include 'partials/menu-link.njk' %}
+                            
+                            {# Child menu button #}
+                            <input id="child2" class="menu-more__checkbox" type="checkbox">
+                            <label for="child2" role="button" aria-haspopup="true" aria-label="Open child Menu" class="menu-more__label">+</label>
+
+                            {# Child menu #}
+                            <div class="menu menu--child">
+                                <nav class="menu__items menu__items--child">
+                                    <li class="menu__item">
+                                        {% include 'partials/menu-link.njk' %}
+                                    </li>
+                                    <li class="menu__item">
+                                        {% include 'partials/menu-link.njk' %}
+                                    </li>
+                                </nav>
+                            </div>
                         </li>
                     </nav>
                 </div>
-            </details>
+
+            </div>
             
         </div>
     </div>
