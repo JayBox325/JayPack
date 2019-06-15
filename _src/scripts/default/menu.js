@@ -33,6 +33,7 @@ export default function menu() {
     */
     function openMenu() {
         console.log('open menu')
+        $body.addClass("is-hidden")
         $hamburgerCheckbox.attr('data-menu-state', 'open')
         $menu.css('visibility', 'visible')
         TweenLite.fromTo($menu, .5,
@@ -41,7 +42,7 @@ export default function menu() {
                 x: '0%',
                 ease: Expo.easeInOut,
                 onComplete: () => {
-                    setFocus($menu)
+                    setFocus($('.menu-wrap'))
                 }
             }
         )
@@ -65,6 +66,8 @@ export default function menu() {
                     console.log('completed')
                     $hamburgerCheckbox.attr('data-menu-state', 'closed')
                     $menu.css('visibility', 'hidden')
+                    $body.removeClass("is-hidden")
+                    $hamburgerCheckbox.focus()
                 }
             }
         )

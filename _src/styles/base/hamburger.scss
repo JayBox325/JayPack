@@ -7,13 +7,9 @@
     }
 
     &__checkbox {
-        @apply absolute block z-50 right-0 mr-4 h-8 w-8;
+        @apply absolute block z-50 right-0 mr-4 h-8 w-8 appearance-none;
         top: 50%;
         transform: translate3d(0,-50%,0);
-        
-        @screen lg {
-            @apply hidden;
-        }
 
         &:checked {
             + #{$h}__icon {
@@ -44,10 +40,6 @@
         top: 50%;
         transform: translate3d(0,-50%,0);
         cursor: pointer;
-
-        @screen lg {
-            @apply hidden;
-        }
     }
 
     &__bar {
