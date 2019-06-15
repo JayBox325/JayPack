@@ -1,4 +1,4 @@
-<header class="relative shadow w-full h-16 lg:h-24 bg-white-500">
+<header class="header">
     <div class="container h-full">
         <div class="flex h-full justify-between items-center lg:relative">
 
@@ -9,26 +9,41 @@
                 </a>
             </div>
 
-            <div class="menu-wrap ">
-
-                <input id="hamburger" class="hamburger__checkbox" type="checkbox">
+            <div class="menu-wrap">
 
                 {# Hamburger #}
-                <label class="hamburger__icon" for="hamburger" role="button" aria-haspopup="true" aria-label="Open Menu">
+                <input id="hamburger" class="hamburger__checkbox" type="checkbox" data-menu-state="closed">
+            
+                <label class="hamburger__icon" role="button" for="hamburger" role="button" data-hamburger aria-haspopup="true" aria-expanded="false" aria-label="Open Menu">
                     <div class="hamburger__bar"></div>
                     <div class="hamburger__bar"></div>
                     <div class="hamburger__bar"></div>
                 </label>
 
                 {# Menu #}
+                <div class="menu" data-menu>
+                    <nav class="menu__list">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Menu item</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Menu item</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Menu item</a>
+                        </li>
+                    </nav>
+                </div>
+
+            <!--
                 <div class="menu menu--main" aria-hidden="true">
                     <nav class="menu__items menu__items--top">
-                        <li class="menu__item">
+                        <li class="menu__item menu__item--top">
                             {% include 'partials/menu-link.njk' %}
                             
                             {# Child menu button #}
-                            <input id="child1" class="menu-more__checkbox" type="checkbox">
-                            <label for="child1" role="button" aria-haspopup="true" aria-label="Open child Menu" class="menu-more__label">+</label>
+                            <input id="child1" class="menu-more__checkbox menu-more__checkbox--top" type="checkbox">
+                            <label for="child1" role="button" aria-haspopup="true" aria-label="Open child Menu" class="menu-more__label menu-more__label--top">+</label>
 
                             {# Child menu #}
                             <div class="menu menu--child">
@@ -40,11 +55,11 @@
                                         {% include 'partials/menu-link.njk' %}
                                         
                                         {# Child menu button #}
-                                        <input id="child1-1" class="menu-more__checkbox" type="checkbox">
-                                        <label for="child1-1" role="button" aria-haspopup="true" aria-label="Open child Menu" class="menu-more__label">+</label>
+                                        <input id="child1-1" class="menu-more__checkbox menu-more__checkbox--child" type="checkbox">
+                                        <label for="child1-1" role="button" aria-haspopup="true" aria-label="Open child Menu" class="menu-more__label menu-more__label--child">+</label>
 
                                         {# Child menu #}
-                                        <div class="menu menu--child">
+                                        <div class="menu menu--child menu--grandchild">
                                             <nav class="menu__items menu__items--child">
                                                 <li class="menu__item">
                                                     {% include 'partials/menu-link.njk' %}
@@ -59,12 +74,12 @@
                             </div>
                         </li>
 
-                        <li class="menu__item">
+                        <li class="menu__item menu__item--top">
                             {% include 'partials/menu-link.njk' %}
                             
                             {# Child menu button #}
-                            <input id="child2" class="menu-more__checkbox" type="checkbox">
-                            <label for="child2" role="button" aria-haspopup="true" aria-label="Open child Menu" class="menu-more__label">+</label>
+                            <input id="child2" class="menu-more__checkbox menu-more__checkbox--child" type="checkbox">
+                            <label for="child2" role="button" aria-haspopup="true" aria-label="Open child Menu" class="menu-more__label menu-more__label--child">+</label>
 
                             {# Child menu #}
                             <div class="menu menu--child">
@@ -80,6 +95,8 @@
                         </li>
                     </nav>
                 </div>
+
+                -->
 
             </div>
             

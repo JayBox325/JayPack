@@ -1,3 +1,7 @@
 .header {
-    
+    @apply relative shadow w-full h-16 bg-white;
+
+    @screen lg {
+        @apply h-24;
+    }
 }

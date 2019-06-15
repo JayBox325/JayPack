@@ -1,57 +1,88 @@
-// import setFocus from './keyboardTrap'
-// import { TimelineLite, TweenLite } from "gsap"
+import setFocus from './keyboardTrap'
+import { TimelineLite, TweenLite } from "gsap"
 
-// export default function menu() {
-//     // Elements
-//     const $body = $('body')
-//     const $hamburger = $('[data-hamburger]')
-//     const $menuWrap = $('[data-menu-wrap]')
-//     const $menuMain = $('[data-menu]')
-//     const $menuMore = $('[data-more]')
-//     const $menuMask = $('[data-menu-mask]')
+// Elements
+const $body = $('body')
+const $menu = $('[data-menu]')
+const $hamburger = $('[data-hamburger]')
+const $hamburgerCheckbox = $('#hamburger')
 
-//     // Other
-//     const activeClass = 'is-active'
-//     const tl = new TimelineLite()
+// Other
+const activeClass = 'is-active'
+const tl = new TimelineLite()
+
+export default function menu() {
+
+    /*
+        HAMBURGER CLICK EVENT ----------------------------------------------------
+    */
+
+    $hamburgerCheckbox.on('change', function(e) {
+        e.preventDefault()
+        
+        if (this.checked) {
+            console.log('opening')
+            openMenu()
+        } else {
+            closeMenu()
+        }
+    })
+
+    /*
+        OPEN MENU FUNCTION ----------------------------------------------------
+    */
+    function openMenu() {
+        console.log('open menu')
+        $hamburgerCheckbox.attr('data-menu-state', 'open')
+        $menu.css('visibility', 'visible')
+        TweenLite.fromTo($menu, .5,
+            {x: '100%'},
+            {
+                x: '0%',
+                ease: Expo.easeInOut,
+                onComplete: () => {
+                    setFocus($menu)
+                }
+            }
+        )
+    }
 
 
 
-//     /*
-//         HAMBURGER CLICK EVENT ----------------------------------------------------
-//     */
-//     $hamburger.on('click', function(e) {
-//         const menuState = $(this).attr('data-hamburger')
 
-//         // If Hamburger menu state is 'closed', open the menu, and vice versa.
-//         if (menuState == 'closed') {
-//             openMenu()
-//         } else {
-//             closeMenu(e)
-//         }
-//     })
+    /*
+        CLOSE MENU FUNCTION ----------------------------------------------------
+    */
+    function closeMenu() {
+        console.log('close menu')
 
-
-
-
-//     /*
-//         OPEN MENU FUNCTION ----------------------------------------------------
-//     */
-//     function openMenu() {
-//         // Mark the hamburger as open
-//         $hamburger.attr('data-hamburger', 'open')
-//     }
+        TweenLite.fromTo($menu, .5,
+            {x: '0%'},
+            {
+                x: '100%',
+                ease: Expo.easeInOut,
+                onComplete: () => {
+                    console.log('completed')
+                    $hamburgerCheckbox.attr('data-menu-state', 'closed')
+                    $menu.css('visibility', 'hidden')
+                }
+            }
+        )
+    }
 
 
 
+    /*
+        ESC KEY FUNCTION ----------------------------------------------------
+    */
+    $(document).on('keydown', function(e) {
+        if (e.keyCode === 27) {
+            closeMenu()
+            $hamburgerCheckbox.prop('checked', false)
+        }
+    })
 
-//     /*
-//         CLOSE MENU FUNCTION ----------------------------------------------------
-//     */
-//     function closeMenu(e) {
-//         e.preventDefault()
-//         // Mark the hamburger as open
-//         $hamburger.attr('data-hamburger', 'closed')
-//     }
+}
 
 
 // /*
@@ -132,21 +163,7 @@
 //         openMenuDrawer($submenu)
 //     })
 
-//     // Close menu on esc key
-//     $(document).on('keydown', function(e) {
-//         if (e.keyCode === 27) { // ESC
-//             // if ($(window).width() > 900) {
-//             //     if ($submenu.hasClass(activeClass)) {
-//             //         $submenu.removeClass(activeClass)
-//             //     }
-//             // } else {
-//                 // $submenu.removeClass(activeClass)
-//                 // $submenu.removeClass(visibleClass)
-//             // }
 
-//             closeMenu(e)
-//         }
-//     })
 // }
 
 

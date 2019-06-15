@@ -8,13 +8,12 @@
 
     &__checkbox {
         @apply absolute block z-50 right-0 mr-4 h-8 w-8;
-        appearance: none;
         top: 50%;
         transform: translate3d(0,-50%,0);
         
         @screen lg {
             @apply hidden;
-    }
+        }
 
         &:checked {
             + #{$h}__icon {
@@ -32,10 +31,10 @@
                     }
                 }
             }
-
-            ~ .menu--main {
-                transform: translate3d(0,0,0);
-                visibility: visible;
+            .no-js & {
+                ~ .menu {
+                    @apply visible;
+                }
             }
         }
     }
@@ -83,37 +82,4 @@
             }
         }
     }
-
-/*
-    &__checkbox {
-        &[checked] {
-
-        }
-    }
-
-    
-
-    // No js close symbol animation
-    // [open] & {
-    //     .no-js & {
-    //         &__bar {
-
-    //             &:nth-child(1) {
-    //                 top: 50%;
-    //                 transform: translate3d(-50%, -50%, 0) rotate(45deg);
-    //             }
-
-    //             &:nth-child(2) {
-    //                 @apply w-0;
-    //             }
-
-    //             &:nth-child(3) {
-    //                 top: 50%;
-    //                 transform: translate3d(-50%, -50%, 0) rotate(-45deg);
-    //             }
-    //         }
-    //     }
-    // }
-
-    */
 }

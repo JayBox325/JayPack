@@ -1,111 +1,30 @@
-.menu {
-    $m: &;
-    // The menu is revealed in the hamburger.scss styles.
+/*
+    MOBILE MENU
+*/
 
-    &-wrap {
-        @apply w-screen;
-    }
-
-    &--main {
-        @apply fixed block z-30 bg-white top-0 invisible right-0 h-screen w-screen p-6 pt-16;
-        transform: translate3d(100%,0,0);
-        transition: transform .4s ease-in-out;
-
+@media screen and (max-width: 599px) {
+    .menu {
+        @apply fixed shadow top-0 right-0 h-screen w-full z-40 p-4 bg-white invisible;
+        
         @screen sm {
-            @apply max-w-xs;
+            @apply max-w-xs p-6;
         }
 
-        @screen md {
-            @apply max-w-sm;
+        &__list {
+            @apply list-none;
         }
 
-        @screen lg {
-            @apply absolute bottom-0 right-0 visible h-8 w-full max-w-full p-0 bg-blue-500;
-            transform: translate3d(0,0,0);
-            left: auto;
-            top: auto;
+        &__item {
+            @apply mb-2
         }
-    }
 
-    &--child {
-        @apply invisible h-0 w-full;
-
-        @screen lg {
-            @apply fixed left-0 w-full p-4 bg-red-300;
-            top: 100%;
+        &__link {
+            @apply font-bold leading-none text-2xl;
         }
     }
+}
 
-    &__items {
-        @apply list-none;
 
-        @screen lg {
-            @apply flex;
+@media screen and (min-width: 600px) {
 
-            &--top {
-                @apply justify-end;
-
-                #{$m} {
-                    &__item {
-                        @apply ml-4;
-    
-                        &:first-child {
-                            @apply ml-0;
-                        }
-                    }
-                }
-            }
-
-            &--child {
-                @apply w-full flex flex-wrap;
-    
-                > *#{$m} {
-                    &__item {
-                        @apply ml-0;
-                        flex: 1 0 100%;
-                    }
-                }
-            }
-        }
-    }
-
-    &__item {
-        @apply relative flex flex-wrap items-center mb-2;
-
-        &:last-child {
-            @apply mb-0;
-        }
-
-        @screen lg {
-            @apply m-0 inline-flex;
-        }
-    }
-
-    &-more {
-        &__label {
-            @apply h-6 w-6 text-center ml-2 relative;
-        }
-        &__checkbox {
-            appearance: none;
-            left: -999px;
-            @apply h-0 w-0 top-0 absolute;
-
-            &:checked {
-                ~ .menu--child {
-                    @apply visible pl-8 pt-2 pb-6;
-                    transform: translate3d(0,0,0);
-                    height: auto;
-                }
-            }
-
-            &:focus,
-            &:-moz-focusring {
-                + .menu-more__label {
-                    outline-color: color('secondary');
-                    outline-style: solid;
-                    outline-width: 3px;
-                }
-            }
-        }
-    }
 }
