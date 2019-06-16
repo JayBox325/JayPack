@@ -26,7 +26,7 @@ gulp.task('styles', () => {
         .on('error', handleErrors)
         .pipe(postcss([
             tailwindcss('./_gulp/tailwind.config.js'),
-            autoprefixer({browsers: config.autoprefixerVersions}),
+            autoprefixer({overrideBrowserslist: config.autoprefixerVersions}),
             range()
         ]))
 

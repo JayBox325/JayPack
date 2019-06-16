@@ -25,7 +25,12 @@ const config = {
 
 
     // Sass variables
-    autoprefixerVersions: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3'],
+    autoprefixerVersions: [
+        "last 1 version",
+        "> 1%",
+        "maintained node versions",
+        "not dead"
+    ],
 
 
     // Browsersync
