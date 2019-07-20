@@ -1,0 +1,20 @@
+@mixin text-shadow($color) {
+    $value: ();
+    @for $i from 1 through 450 {
+        $num: $i + px;
+        $num2: (-$i) + px;
+        $pct: $i / 100;
+        $black: 1 - $pct;
+        $theShadow:$num2 $num color($color);
+        $value: append($value, $theShadow, comma)
+    }
+    text-shadow: $value;
+}
+
+.textshadow {
+    @each $name, $value in $colors {
+        &--#{$name} {
+            @include text-shadow($name);
+        }
+    }
+}

@@ -5,7 +5,7 @@ A Webpack & Gulp 4 framework for projects in 2019. The evolution from the [JayBo
 
 ## Installation 
 
-This is a Gulp 4 boilerplate, so the first thing to do is remove any current versions of Gulp you have installed globally. This will break other projects on older versions of Gulp, but it's something the guys at Gulp recommend you do first.
+This is a Gulp 4 boilerplate, so the first thing to do is remove any current versions of Gulp you have installed globally. This will break other projects on older versions of Gulp and it's something the guys at Gulp recommend you do first.
 
 ```
 npm rm --global gulp
@@ -38,22 +38,6 @@ yarn
 ```
 
 ## Config
-
-### Static or CraftCMS 🧐
-
-This boilerplate can be used for static HTML websites built with Nunjucks, or it can be used for CraftCMS projects. The configuration for this is set in the `project.config.js` file.
-
-If the project is set to `static` the nunjucks commands will be run. If it's set to `craft` then we let some CraftCMS plugins take care of the asset versioning. But also, browsersync will serve your static HTML files, whereas Craft just refreshes your Twig files if files are changed.
-
-> *Note:* Your assets will be saved in different locations depending on if you are running a `static` or `craft` project. Static projects have their assets in `/build/assets`, whereas Craft projects need them to be saved into `/build/public/assets`.
-
-### CraftCMS site url
-
-If you are running a CraftCMS site, you will need to set your weburl (e.g. local.project.com) in the `project.config.js` file.
-
-### Static site port number
-
-However, if you're running a static site, you should set a new port number in the same `project.config.js` file to save any clashes with other projects.
 
 ## Commands
 
@@ -93,7 +77,9 @@ You should now have a Craft 3 instance on your local machine ready to start deve
 
 
 
-## TODO
+
+"stylelint": "^10.1.0",
+"stylelint-config-recommended": "^2.2.0",
 
 * Test Craft BrowserSync functionality
 * Import reused HTML, Scss and JS modules from projects - ongoing

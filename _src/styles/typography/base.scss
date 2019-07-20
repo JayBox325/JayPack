@@ -1,3 +1,38 @@
-html {
-    @apply text-gray-800;
+body {
+    @apply text-gray-800 leading-relaxed text-base font-body;
+
+    @screen md {
+        @apply text-lg;
+    }
+
+    @screen lg {
+        @apply text-xl;
+    }
+}
+
+.w-content {
+    > * {
+        @apply mb-4;
+
+        &:first-child {
+            @apply mt-0
+        }
+
+        &:last-child {
+            @apply mb-0
+        }
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        @apply mt-8;
+    }
+
+    a {
+        @apply text-teal-800 transition-bg transition-ease transition-100;
+        border-bottom: 1px solid;
+
+        &:hover {
+            @apply bg-blue-200;
+        }
+    }
 }

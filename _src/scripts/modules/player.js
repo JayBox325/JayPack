@@ -1,6 +1,6 @@
 import Plyr from 'plyr'
 
-function player() {
+export default function player() {
     const $video = $('.js-player')
 
     if ($video.length) {
@@ -12,5 +12,3 @@ function player() {
         })
     }
 }
-
-export default { player }

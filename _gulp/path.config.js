@@ -57,11 +57,6 @@ const paths = {
         }
     },
 
-    clean: [
-        `build/assets`,
-        `build/*.html`
-    ],
-
     versionPaths: {
         craft: {
             src: 'build/templates/_layout/base.twig',

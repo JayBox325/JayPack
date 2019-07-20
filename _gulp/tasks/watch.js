@@ -48,14 +48,14 @@ gulp.task('watch', () => {
 			}).write('')
 		})
 
-	if (config.project == 'static') {
-		gulp.watch(paths.njks.watch, gulp.series('nunjucks-watch'))
-			.on('change', function () {
-				notify({
-					title: "👍 JayPack - Reloaded",
-					message: "Nunjucks compiled"
-				}).write('')
-			})
-	}
+	// Watch Twig
+	gulp.watch(paths.twig.watch, gulp.series('twig-watch'))
+		.on('change', function () {
+			notify({
+				title: "👍 JayPack - Reloaded",
+				message: "Twig changed"
+			}).write('')
+		})
+
 
 })

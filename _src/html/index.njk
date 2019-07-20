@@ -5,39 +5,195 @@
 
 {% block content %}
 
-    <main role="main">
-        <section class="row row--primary lg:pb-56" aria-labelledby="latestNews">
-            <div class="container">
+    <main role="main" class="overflow-hidden bg-blue-200">
+        <div class="site__inner">
+            <section class="row row--transparent hero h-screen80 lg:h-screen70 relative overflow-hidden">
+                <div class="container lg:relative">
+                    <div class="circle circle--hero bg-white" data-parallax data-rellax-speed="-1"></div>
 
-                <h2 class="mb-4 md:mb-8 md:mb-10 text-blue-800" id="latestNews">Latest news</h2>
-                
-                <ul class="flex flex-wrap -mx-2 lg:-mx-4 -mt-4" aria-labelledby="latestNews">
-                    {% for item in blog %}
-                        <li class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
-                            {% include 'partials/card.njk' %}
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </section>
+                    <div class="relative z-10 pt-4 sm:pt-8">
+                        <h1>
+                            <span class="block">Being</span>
+                            <span class="block">Seen</span>
+                        </h1>
+                    <div>
+                </div>
+            </section>
 
-        <section class="row row--white" aria-labelledby="titleHere">
-            <div class="container">
-                
-                <div class="flex">
-                    <div class="card card--hover w-full lg:w-9/12 lg:ml-auto bg-gray-300 lg:-mt-56">
-                        <h2 class="flex-1 will-change-transform mb-2 md:mb-4 lg:mb-8" id="titleHere">Title here</h2>
-                        <p class="text-gray-700 text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero error facilis beatae similique dolore consectetur quod pariatur, rem deleniti aperiam temporibus numquam, nisi optio dolorem, suscipit repellat ducimus quaerat quae?</p>
+            <div style="background-image:linear-gradient(#ffffff, #edf2f7);" class="relative">
+
+                <section class="row row--transparent z-10">
+                    <div class="container -mt-56 md:-mt-80 xl:-mt-88 2xl:-mt-96 relative">
+                        
+                        <div class="mb-6 md:w-1/2 xl:w-1/3 xl:mb-10 md:ml-auto">
+                            <h2 class="h4 mb-1">Next workshop:</h2>
+                            <a href="#nextWorkshop" title="View next workshop" class="inline-block next-workshop">
+                                <span class="h3">
+                                    2 June 2019<br>
+                                    Notting Hill, London
+                                <span><br/>
+                                <span class="next-workshop__btn ul-hover text-base text-teal-800 font-bold pt-2">Read more <span aria-hidden="true">&rarr;</span></span>
+                            </a>
+                        </div>
+
+                        <div class="flex">
+                            <div class="card card--lg w-full lg:w-2/3 lg:ml-auto bg-gray-200">
+                                <h2 class="flex-1 mb-2 md:mb-4 lg:mb-8" id="titleHere">Developing More Connection and Impact</h2>
+                                <div class="w-content">
+                                    <p>Welcome to a space of non-judgment. Here we experience more ease, more impact and more connection with ourself and others.</p>
+                                    <p>Being Seen is a simple yet powerful process that helps us to feel more comfortable - whether we’re speaking in front of a group or just wanting to express ourselves in a more confident and authentic way in any situation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="row row--transparent" aria-label="Testimonial from Being Seen participant">
+                    <div class="container pt-8 pb-8 lg:pt-20 lg:pb-20">
+                        <img src="/assets/svg/quote.svg" alt="" class="js-inlinesvg quote__icon">
+                        <blockquote aria-label="Testimonial from Being Seen participant" class="h3 italic text-center text-teal-800 md:m-auto md:w-9/12 relative z-10">Suscipit totam architecto eum accusantium autem voluptatem, libero doloremque.</blockquote>
+                        <div class="circle circle--quote bg-white" data-parallax data-rellax-speed="-1"></div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="row row--white" aria-labelledby="latestNews">
-            <div class="container">
-                <blockquote class="h2 italic text-center text-blue-700 lg:m-auto lg:w-9/12">Suscipit totam architecto eum accusantium autem voluptatem, libero doloremque.</blockquote>
+                <section class="row row--transparent" aria-labelledby="titleHere">
+                    <div class="container relative">
+
+                        <div class="flex flex-wrap -mx-2 lg:-mx-4 -mt-4 relative z-10">
+
+                            <div class="w-full lg:w-2/3 px-2 lg:px-4 mt-4">
+                                <div class="card card--lg w-full bg-white">
+                                    <h1 class="h2 text-teal-800 flex-1 mb-2 md:mb-4 lg:mb-8" id="titleHere">What is being seen?</h1>
+                                    <div class="w-content">
+                                        <p>When we feel free to ‘Be Who We Really Are’ supported by unconditional positive regard from others, magic can happen.</p>
+                                        <p>The workshop is about love. It’s about loving ourselves more unconditionally, loving others more and loving life more.</p>
+                                        <p>It’s about shedding the layers we may have built up over many days and years and maybe even lifetimes that have led us to where we are now.</p>
+                                        <p>What makes us uncomfortable being open in front of others? Often we think there’s something wrong with us. We’re not good enough. In our minds we don’t compare well or measure up; that’s the lie we’ve bought into.</p>
+                                        <p><strong>Andy Collett, Creator of Being Seen</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="w-full md:w-7/12 md:ml-1/12 lg:ml-0 lg:w-1/3 px-2 lg:px-4 mt-12 lg:mt-0 lg:mb-8 xl:mb-12 2xl:mb-16">
+                                <div class="flex h-full items-end">
+                                    <div class="w-full">
+                                        <h2 class="h4 mb-4">Previous workshops</h2>
+                                        <ul class="border-b-2 border-gray-800">
+                                            <li class="border-t-2 border-gray-800">
+                                                <a href="/event.html" class="accordion__title" title="Kings Cross, London. Hosted 12 May 2019">
+                                                    <h3 class="h5">Kings Cross, London</h3>
+                                                    <p>12 May 2019</p>
+                                                    <span class="accordion__icon" aria-hidden="true">&rarr;</span>
+                                                </a>
+                                            </li>
+                                            <li class="border-t-2 border-gray-800">
+                                                <a href="/event.html" class="accordion__title" aria-label="Canal Street, Manchester. Hosted 18 March 2019">
+                                                    <h3 class="h5">Canal Street, Manchester</h3>
+                                                    <p>18 March 2019</p>
+                                                    <span class="accordion__icon" aria-hidden="true">&rarr;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="block mt-4">
+                                            <a href="/calendar.html" class="btn btn--plain btn--sml ul-hover">
+                                                View full calendar
+                                                <span aria-hidden="true">&rarr;</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="circle circle--main bg-blue-200" data-parallax data-rellax-speed="-1"></div>
+                    </div>
+                </section>
+
             </div>
-        </section>
+
+            <section class="row row--white" aria-label="Next workshop" id="nextWorkshop">
+                <div class="container relative">
+
+                    {% include 'partials/next-event.njk' %}
+
+                </div>
+            </section>
+
+            <section class="row row--white">
+                <div class="container">
+
+                    {% set cardTheme = 'gray-200' %}
+                    {% include 'partials/next-event-purchase.njk' %}
+
+                </div>
+            </section>
+
+            <section class="row row--white">
+                <div class="container">
+                    <div class="lg:w-10/12 lg:ml-1/12 py-6 lg:my-0 relative z-10">
+                        
+                        <div class="md:flex md:flex-wrap md:items-baseline mb-4 md:mb-8 lg:mb-10">
+                            <h1 class="h2 flex-grow">Coming up</h1>
+                            <div class="mt-2 md:mt-0">
+                                <a href="/calendar.html" class="btn btn--plain ul-hover">Full calendar <span aria-hidden="true">&rarr;</span></a>
+                            </div>
+                        </div>
+                        
+                        <ul class="border-b-2 border-gray-800">
+                            <li class="border-t-2 border-gray-800">
+                                <a href="/event.html" class="accordion__title">
+                                    <div class="block relative md:flex md:flex-wrap md:items-center md:-mx-2">
+                                        <h2 class="h5 md:px-2 flex-1">Kings Cross, London</h2>
+                                        <p class="md:px-2 flex-1">Sunday 12 July 2019</p>
+                                        <span class="accordion__icon" aria-hidden="true">&rarr;</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="border-t-2 border-gray-800">
+                                <a href="/event.html" class="accordion__title">
+                                    <div class="block relative md:flex md:flex-wrap md:items-center md:-mx-2">
+                                        <h2 class="h5 md:px-2 flex-1">Kings Cross, London</h2>
+                                        <p class="md:px-2 flex-1">Sunday 12 August 2019</p>
+                                        <span class="accordion__icon" aria-hidden="true">&rarr;</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="border-t-2 border-gray-800">
+                                <a href="/event.html" class="accordion__title">
+                                    <div class="block relative md:flex md:flex-wrap md:items-center md:-mx-2">
+                                        <h2 class="h5 md:px-2 flex-1">Kings Cross, London</h2>
+                                        <p class="md:px-2 flex-1">12-13 September 2019</p>
+                                        <span class="accordion__icon" aria-hidden="true">&rarr;</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="circle circle--coming-up bg-blue-200" data-parallax></div>
+                </div>
+            </section>
+
+            <section class="row row--gray z-10" aria-label="Latest news">
+                <div class="container">
+
+                    <div class="md:flex md:flex-wrap md:items-baseline mb-4 md:mb-8 lg:mb-10">
+                        <h1 class="h2 flex-grow">Latest news</h1>
+                        <div class="mt-2 md:mt-0">
+                            <a href="/news.html" class="btn btn--plain ul-hover">See all news <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                    
+                    <ul class="flex flex-wrap -mx-2 lg:-mx-4 -mt-4" aria-label="Latest news listing">
+                        {% for item in blog %}
+                            <li class="w-full sm:w-1/2 md:w-1/3 px-2 lg:px-4 mt-4">
+                                {% include 'partials/card.njk' %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+        </div>
     </main>
 
 {% endblock %}

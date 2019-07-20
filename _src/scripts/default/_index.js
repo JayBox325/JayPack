@@ -1,14 +1,16 @@
-// import svg from './inlineSVG'
-// import overlay from './overlay'
-
 import noJs from './noJs'
-import menu from './menu'
+import svg from './inlineSVG'
+import social from './social'
+import smoothScroll from './smoothScroll'
+import showPage from './showPage'
+import fontLoader from './fontLoader'
+
+// import menu from './menu'
 
 export default function defaultJS() {
-    noJs()
-    menu()
-
-
-    // svg.svg()
-    // overlay.overlay()
+    noJs() // Removing no-js class
+    smoothScroll() // Smooth scrolling anchor links
+    svg() // Inline svg function
+    social() // Social opening in new window
+    showPage() // fade in content
 }

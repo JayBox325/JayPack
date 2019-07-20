@@ -10,11 +10,11 @@ import moduleJS from '../../modules/_index.js'
 // Overlap
 class PushLeft extends Highway.Transition {
     in({ from, to, done }) {
-  
+
       // Animation
       Tween.fromTo(to, .7,
           {
-            x: '100%'
+            x: '-100%'
           },
           {
               x: '0%',
@@ -46,13 +46,11 @@ class PushLeft extends Highway.Transition {
   
       // Animation
       Tween.fromTo(from, .7,
+        { x: '0',
+        alpha: '1'},
         {
-          x: '0',
-          // alpha: '1'
-        },
-        {
-            x: '-30%',
-            // alpha: '0',
+            x: '30%',
+            alpha: '0',
             ease: Expo.easeOut,
             onComplete: () => {  
               // Remove Old View
@@ -62,9 +60,9 @@ class PushLeft extends Highway.Transition {
       )
     }
   
-    out({ from, done }) {
-        done()
-    }
+      out({ from, done }) {
+          done()
+      }
   }
   
   export default PushLeft

@@ -16,7 +16,6 @@ import sourcemaps from 'gulp-sourcemaps'
 import autoprefixer from 'autoprefixer'
 import tailwindcss from 'tailwindcss'
 import postcss from 'gulp-postcss'
-import range from 'postcss-input-range'
 import cssnano from 'cssnano'
 
 gulp.task('styles', () => {
@@ -26,8 +25,7 @@ gulp.task('styles', () => {
         .on('error', handleErrors)
         .pipe(postcss([
             tailwindcss('./_gulp/tailwind.config.js'),
-            autoprefixer({overrideBrowserslist: config.autoprefixerVersions}),
-            range()
+            autoprefixer({overrideBrowserslist: config.autoprefixerVersions})
         ]))
 
         // Minify in production
