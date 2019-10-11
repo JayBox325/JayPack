@@ -10,8 +10,5 @@ import moduleJS from './modules/_index.js'
 defaultJS()
 moduleJS()
 
-// Highway page transitions
-import highway from './highway/index.js' 
-
 
 

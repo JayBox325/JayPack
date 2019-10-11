@@ -26,5 +26,4 @@ gulp.task('build', gulp.parallel(
 	'move-videos',
 	'images',
 	'svg',
-	// 'version-craft'
 ))

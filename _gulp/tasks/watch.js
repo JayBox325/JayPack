@@ -49,7 +49,7 @@ gulp.task('watch', () => {
 		})
 
 	// Watch Twig
-	gulp.watch(paths.twig.watch, gulp.series('twig-watch'))
+	gulp.watch(paths.twig.watch, gulp.series('twig'))
 		.on('change', function () {
 			notify({
 				title: "👍 JayPack - Reloaded",

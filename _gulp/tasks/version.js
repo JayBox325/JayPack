@@ -6,7 +6,7 @@ import config from '../config'
 import handleErrors from '../utils/handleErrors'
 
 // Version packages
-import version from 'gulp-version-number'
+// import version from 'gulp-version-number'
 
 const versionConfig = {
     'value': '%MDS%',
