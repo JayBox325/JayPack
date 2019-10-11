@@ -39,7 +39,6 @@
         "gulp-sourcemaps": "^2.6.4",
         "gulp-svgmin": "^2.1.0",
         "gulp-uglify": "^3.0.2",
-        "gulp-version-number": "^0.2.3",
         "gulp-watch": "^5.0.1",
         "plyr": "^3.5.2",
         "rellax": "^1.10.0",
