@@ -22,7 +22,7 @@ gulp.task('scripts', (cb) => {
         .pipe(webpackStream(webpackConfig), webpack)
         .on('error', handleErrors)
 
-        // .pipe(production(uglify()))
+        .pipe(production(uglify()))
 
         .pipe(gulp.dest(paths.js.dest))
         .on('error', handleErrors)
