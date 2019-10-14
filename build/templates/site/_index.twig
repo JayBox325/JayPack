@@ -1,0 +1,6 @@
+{% extends "_layout/_base.twig" %}
+
+{% block content %}
+    {# Fetch correct template based on entry type. #}
+    {% include 'pages/' ~ entry.type %}
+{% endblock %}
