@@ -1,17 +1,15 @@
 # JayPack 🍾
 A CraftCMS & Frontend boilterplate using Webpack & Gulp 4.
 
-## Installation 
-To setup the frontend stack use Yarn using `yarn`. Install Yarn first if you haven't already.
+> Read me to come. Promise
 
-To install CraftCMS ...
+## Installation
+...
 
 ## Setup
+...
 
-## Config
-
-## Commands
-
+## Working
 There are three commands to run for this boilerplate as follows:
 
 * `npm start` - this will compile everything then start watching all the source files.
