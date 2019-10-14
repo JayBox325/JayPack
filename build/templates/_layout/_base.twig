@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if lt IE 9 ]><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="ie">    <![endif]-->
+<!--[if IE 9 ]><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="ie9">    <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" class="no-js"><!--<![endif]-->
+
+    <head>
+        {# Analytics #}
+        {# Insert GTM markup here #}
+
+        {# SEO #}
+        {# Insert SEO hook here #}
+
+        {# CSS #}
+        <link rel="stylesheet" href="/assets/styles/styles.css">
+
+        {# Favicons #}
+        {# Insert favicons markup here#}
+    </head>
+
+    <body>
+        {# Insert GTM markup here #}
+
+        <a class="skip-main btn" href="#main">Skip to main content</a>
+
+        <div class="site">
+            {% include '_layout/header' %}
+            <div>
+                <div class="site-wrap" id="main">
+                    {% block content %}{% endblock %}
+                    {% include '_layout/footer' %}
+                </div>
+            </div>
+        </div>
+
+        {# Javascript #}
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="/public/assets/scripts/jQuery.3.3.1.min.js">\x3C/script>')</script>
+
+        <script src="/assets/scripts/bundle.js"></script>
+
+    </body>
+
+</html>

@@ -23,6 +23,7 @@
 # CRAFT STORAGE
 /craft/storage/*
 /storage/*
+/public/cpresrouces/
 
 # ASSETS
 /public/assets/*
