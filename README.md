@@ -1,6 +1,9 @@
 # JayPack 🍾
 A CraftCMS & Frontend boilterplate using Webpack & Gulp 4.
 
+Step 1 - set up JayPack
+Step 2 - install JayCraft inside the build directory.
+
 > Read me to come. Promise
 
 ## Installation
