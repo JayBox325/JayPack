@@ -9,5 +9,5 @@ import handleErrors from '../utils/handleErrors'
 gulp.task('twig', () => {
     return gulp.src(paths.twig.watch)
         .on('error', handleErrors)
-        .pipe(development(browserSync.reload({ stream: true })))
+        .pipe(browserSync.reload({ stream: true }))
 })
