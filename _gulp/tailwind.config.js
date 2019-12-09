@@ -382,6 +382,16 @@ module.exports = {
     }),
     minWidth: {
       '0': '0',
+      xs: '10rem',
+      sm: '14rem',
+      md: '18rem',
+      lg: '22rem',
+      xl: '26rem',
+      '2xl': '32rem',
+      '3xl': '38rem',
+      '4xl': '46rem',
+      '5xl': '54rem',
+      '6xl': '62rem',
       full: '100%',
     },
     objectPosition: {
