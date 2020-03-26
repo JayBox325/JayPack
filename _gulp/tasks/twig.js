@@ -5,7 +5,7 @@ import browserSync from 'browser-sync'
 import paths from '../path.config'
 import handleErrors from '../utils/handleErrors'
 
-// Move font files to build directory
+// Refresh if Twig files updated
 gulp.task('twig', () => {
     return gulp.src(paths.twig.watch)
         .on('error', handleErrors)

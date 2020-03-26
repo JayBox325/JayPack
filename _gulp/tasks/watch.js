@@ -3,14 +3,9 @@ import notify from 'gulp-notify'
 
 // Config
 import paths from '../path.config'
-import config from '../config'
+import projectConfig from '../../project.config'
 
 gulp.task('watch', () => {
-	
-	notify({
-		title: "👀 JayPack - Started",
-		message: "Watching for changes..."
-	}).write('')
 
 	// Watch styles
 	gulp.watch(paths.sass.watch, gulp.series('styles'))
@@ -49,13 +44,29 @@ gulp.task('watch', () => {
 		})
 
 	// Watch Twig
-	gulp.watch(paths.twig.watch, gulp.series('twig'))
-		.on('change', function () {
-			notify({
-				title: "👍 JayPack - Reloaded",
-				message: "Twig changed"
-			}).write('')
-		})
+	if (projectConfig.craft) {
+		gulp.watch(paths.twig.watch, gulp.series('twig'))
+			.on('change', function () {
+				notify({
+					title: "👍 JayPack - Reloaded",
+					message: "Twig changed"
+				}).write('')
+			})
+	}
 
-
+	// Watch Nunjucks
+	if (projectConfig.craft == false) {
+		gulp.watch(paths.njks.watch, gulp.series('nunjucks'))
+			.on('change', function () {
+				notify({
+					title: "👍 JayPack - Reloaded",
+					message: "Nunjucks changed"
+				}).write('')
+			})
+	}
+	
+	notify({
+		title: "👀 JayPack - Started",
+		message: `Watching for changes...`
+	}).write('')
 })

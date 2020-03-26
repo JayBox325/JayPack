@@ -1,17 +1,17 @@
 # JayPack 🍾
 A CraftCMS & Frontend boilterplate using Webpack & Gulp 4.
 
-JayPack is the front end framework for use with [JayCraft](https://github.com/JayBox325/JayCraft), a CraftCMS boilerplate. This framework will be converted to work for static sites built with Nunjucks in the future, but for now, it's just a CraftCMS framework.
-
-Once you have JayPack set up, you will need to clone JayCraft into the `build` directory.
+JayPack is the front end framework for use with [JayCraft](https://github.com/JayBox325/JayCraft) or as a static site builder with Nunjucks.
 
 ## Installation
 To install JayPack, you will need to have NPM or Yarn installed. I prefer yarn, but both do the job. Simply run `npm i` if you use NPM or run `yarn` to install all the front end dependencies.
 
 ## Setup
-Firstly, to set up this project to work with CraftCMS, you will need to clone the JayCraft boilerplate using composer. This is documented in the [JayCraft README](https://github.com/JayBox325/JayCraft).
+Firstly, decide if your project is going to be static or with a CraftCMS instance behind it. from here, the only configuration you need to make is in the `./project.config.js` file. Set `craft` to true or false depending on your needs.
 
-Once you have a local CraftCMS instance running, I use MAMP, we need to tell JayPack's Browsersync where your local CraftCMS instance is pointing (e.g. local.projectname.com). To do this, edit the Browsersync config inside the `./_gulp/config.js` file. This will set up live refresh for your CraftCMS site when you make front end changes.
+If you have a Craft site, you need to populate where your local craft instance is to point browserstack for live refreshing to work with Twig.
+
+Once these tasks are done, to set up this project to work with CraftCMS, you will need to clone the JayCraft boilerplate using composer into the `./build` directory. This is documented in the [JayCraft README](https://github.com/JayBox325/JayCraft).
 
 ## TailwindCSS
 JayPack uses TailwindCSS, because it rules. To get your project started you will need to set up your project theme colours in the `./_gulp/tailind.config.js` file on line 20 (at time of README writing...).
