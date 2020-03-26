@@ -6,6 +6,7 @@ var development = environments.development
 var production = environments.production
 
 const env = production() ? 'production' : 'development'
+const isProd = env === 'production'
 
 // Webpack packages
 import TerserPlugin from 'terser-webpack-plugin'
@@ -13,6 +14,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 const config = {
     mode: env,
+    devtool: isProd ? false : 'source-map',
     entry: {
         app: paths.js.app,
     },

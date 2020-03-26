@@ -17,6 +17,7 @@ gulp.task('build', gulp.parallel(
 	'move-fonts',
 	'move-videos',
 	'images',
+	'clean'
 ))
 
 // Build then watch, but this doesn't move or optimise assets such as images, videos etc.

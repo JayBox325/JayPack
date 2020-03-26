@@ -17,6 +17,16 @@ module.exports = {
       black: '#000',
       white: '#fff',
 
+      // Custom theme colours here. Example below:
+      // blue: '#2e2c86',
+
+      // Social brand colours
+      facebook: '#3b5998',
+      twitter: '#1da1f2',
+      pinterest: '#bd081c',
+      instagram: '#c13584',
+      linkedin: '#0077b5',
+
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
