@@ -8,10 +8,8 @@ const config = {
         development: environments.development
     },
 
-
     // Root directory for assets produced in Gulp
     distRoot: './build/public/assets',
-
 
     // Sass variables
     autoprefixerVersions: [
@@ -21,12 +19,11 @@ const config = {
         "not dead"
     ],
 
-
     // Browsersync
     browserSync: {
         open: 'external',
-        host: 'local.being-seen.build',
-        proxy: "local.being-seen.build",
+        host: 'local.xx.build',
+        proxy: "local.xx.build",
         port: 3000,
         notify: false
     }

@@ -31,13 +31,13 @@ gulp.task('watch', () => {
 		})
 
 	// Watch svgs
-	gulp.watch(paths.assets.svg.watch, gulp.series('svg'))
-		.on('change', function () {
-			notify({
-				title: "👍 JayPack - Reloaded",
-				message: "SVGs optimised"
-			}).write('')
-		})
+	gulp.watch(paths.assets.svg.watch, gulp.series(['svg', 'symbols']))
+	.on('change', function () {
+		notify({
+			title: "👍 JayPack - Reloaded",
+			message: "SVGs optimised"
+		}).write('')
+	})
 
 	// Watch scripts
 	gulp.watch(paths.js.watch, gulp.series('scripts'))

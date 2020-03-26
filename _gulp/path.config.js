@@ -57,16 +57,9 @@ const paths = {
         }
     },
 
-    versionPaths: {
-        craft: {
-            src: 'build/templates/_layout/base.twig',
-            dest: 'build/templates/_layout/'
-        },
-        static: {
-            src: 'build/*.html',
-            dest: 'build/'
-        }
-    }
+    symbols: {
+        dest: `build/templates/_layout`
+    },
 }
 
 export default paths

@@ -28,7 +28,7 @@ body {
     }
 
     a {
-        @apply text-teal-800 transition-bg transition-ease transition-100;
+        @apply text-teal-800;
         border-bottom: 1px solid;
 
         &:hover {
