@@ -31,18 +31,6 @@
     @screen 2xl {
         @apply py-32;
     }
-
-    &--nopad {
-		@apply p-0;
-    }
-    
-    &--primary {
-        @apply bg-orange-500;
-
-        + #{$r}--primary {
-            padding-top: 0;
-        }
-    }
     
     &--white {
         @apply bg-white;
