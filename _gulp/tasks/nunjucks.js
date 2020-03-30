@@ -22,9 +22,15 @@ gulp.task('nunjucks', () => {
         .pipe(browserSync.reload({ stream: true }))
 })
 
-gulp.task('nunjucks-move', () => {
-    // if (!fs.access('./_src/html/_layout/_base.njk')) {
-        return gulp.src('_gulp/html/**', {base: './_gulp'})
-            .pipe(gulp.dest('_src'))
-    // }
+gulp.task('nunjucks-move', (done) => {
+    fs.access('./_src/html/_layout/_base.njk', fs.R_OK, function(err) {
+        if (err) {
+            console.log('here is no error')
+            return gulp.src('_gulp/html/**', {base: './_gulp'})
+                .pipe(gulp.dest('_src'))
+        } else {
+            console.log('here is error')
+        }
+    })
+    done()
 })
