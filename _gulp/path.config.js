@@ -33,8 +33,8 @@ const paths = {
 
     assets: {
         images: {
-            src: `_src/assets/images/*.{png,gif,jpg}`,
-            watch: `_src/assets/images/*.{png,gif,jpg}`,
+            src: `_src/assets/images/*.{png,gif,jpg,svg}`,
+            watch: `_src/assets/images/*.{png,gif,jpg,svg}`,
             dest: `${assets}/images`
         },
         videos: {
