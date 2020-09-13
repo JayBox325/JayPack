@@ -1,5 +1,5 @@
-import player from 'player'
-import slider from 'slider'
+import player from './player'
+import slider from './slider'
 
 export default function modulesJS() {
     // player()
