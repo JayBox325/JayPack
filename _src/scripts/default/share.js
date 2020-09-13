@@ -1,6 +1,7 @@
-export default function social() {
+// Open social share links in small new windows.
 
-    if ($('[data-social]').length > 0) {
+export default function share() {
+    if ($('[data-share]').length > 0) {
         const $socialWindow = $('[data-social]')
 
         $socialWindow.on('click', function(e) {

@@ -1,4 +1,5 @@
 import config from './config'
+import projectConfig from '../project.config'
 
 const assets = config.distRoot
 
@@ -12,10 +13,11 @@ const paths = {
 
     njks: {
         render: `_src/html`,
-        src: `_src/html/*.njk`,
+        src: `_src/html/pages/*.njk`,
         watch: `_src/html/**/*.njk`,
         data: `_src/html/__data/data.json`,
-        dest: `build`
+        dest: `build`,
+        storage: `_gulp/html`
     },
 
     twig: {
@@ -31,8 +33,8 @@ const paths = {
 
     assets: {
         images: {
-            src: `_src/assets/images/*.{png,gif,jpg}`,
-            watch: `_src/assets/images/*.{png,gif,jpg}`,
+            src: `_src/assets/images/*.{png,gif,jpg,svg}`,
+            watch: `_src/assets/images/*.{png,gif,jpg,svg}`,
             dest: `${assets}/images`
         },
         videos: {
@@ -57,16 +59,9 @@ const paths = {
         }
     },
 
-    versionPaths: {
-        craft: {
-            src: 'build/templates/_layout/base.twig',
-            dest: 'build/templates/_layout/'
-        },
-        static: {
-            src: 'build/*.html',
-            dest: 'build/'
-        }
-    }
+    symbols: {
+        dest: projectConfig.craft ? `build/templates/_layout` : `_src/html/_layout`
+    },
 }
 
 export default paths

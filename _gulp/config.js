@@ -1,4 +1,5 @@
 import environments from 'gulp-environments'
+import projectConfig from '../project.config'
 
 // Config rules
 const config = {
@@ -8,10 +9,10 @@ const config = {
         development: environments.development
     },
 
+    type: projectConfig.type,
 
     // Root directory for assets produced in Gulp
-    distRoot: './build/public/assets',
-
+    distRoot: projectConfig.craft ? './build/public/assets' : './build/assets',
 
     // Sass variables
     autoprefixerVersions: [
@@ -21,14 +22,17 @@ const config = {
         "not dead"
     ],
 
-
     // Browsersync
-    browserSync: {
+    browserSync: projectConfig.craft ? {
         open: 'external',
-        host: 'local.being-seen.build',
-        proxy: "local.being-seen.build",
+        host: projectConfig.domain,
+        proxy: projectConfig.domain,
         port: 3000,
         notify: false
+    } : {
+        server: {
+            baseDir: './build'
+        }
     }
 }
 
