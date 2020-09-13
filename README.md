@@ -28,3 +28,6 @@ There are three commands to run for this boilerplate as follows:
 * `npm start` - Compile everything then start watching all the source files.
 * `npm build` - Build all your source files, but still in your development environment so sourcemaps will be included and nothing will be minified.
 * `npm package` - Package your project. This will remove all the sourcemaps and minify everything ready for launch.
+
+## First run
+After setting up a project for the first time, you will need to run `npm build` so JayPack structures the project directories.
