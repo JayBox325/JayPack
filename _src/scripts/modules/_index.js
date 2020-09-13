@@ -1,3 +1,6 @@
+import player from 'player'
+
 export default function modulesJS() {
-    console.log('here')
+    player()
+    slider()
 }

@@ -1,9 +1,13 @@
 // Source: https://github.com/kenwheeler/slick
 import slick from 'slick-carousel'
 
-expot default function slider() {
+// This may not work first time, need to confirm
+
+export default function slider() {
     const $slider = $('[data-slick]')
-
-    $slider.slick({})
-
+    if ($slider.length) {
+        $slider.each(function(i, el) {
+            el.slick({})
+        })
+    }
 }
