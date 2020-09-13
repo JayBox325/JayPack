@@ -1,7 +1,7 @@
 # JayPack 🍾
 A CraftCMS & Frontend boilterplate using Webpack & Gulp 4.
 
-JayPack is the front end framework for use with [JayCraft](https://github.com/JayBox325/JayCraft) or as a static site builder with Nunjucks.
+JayPack is the front end framework for use with [JayCraft](https://packagist.org/packages/jaybox325/jaycraft) or as a static site builder with Nunjucks.
 
 ## Installation
 Simply run `npm i` to install all the front end dependencies in the root directory.
@@ -13,6 +13,14 @@ Configure the project in `./project.config.js`. Set `craft` to true or false dep
 If you have a CraftCMS site, populate your local MAMP instance to direct browserstack for live refreshing.
 
 Once these tasks are done, you will then need to create a new `/build` directory in the root of the project and run `composer create-project JayBox325/JayCraft .` BEFORE you run the initial `npm run build` command - CraftCMS won't install the project if the `/build` directory has contents.
+
+Composer will then download and install a JayCraft instace from Packagist with a lot of pre-defined config. The only configuration you need to do on install is:
+
+1. Populate the `/build/.env` file with your details (Security Key, DB password, DB name and your Default site URL)
+2. Set up a local MAMP instance that matches the details from your env file.
+3. Create a DB
+4. Create a new storage directory in `/build/storage`
+5. Run `./craft install` from the `/build` directory
 
 ### Static
 Once `craft` is set to `false`, you can get started by building the project in the `_src/html` directory. HTML templates will generated and exported to a `build` directory.
