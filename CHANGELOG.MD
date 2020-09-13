@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 2.1.2
 ### Changed
+- Streamlined JS modules
+- Updated NPM packages
+- Improved README.
+
+### Removed
+- Yarn config, NPM does the same job now!
+
+## 2.1.2
+### Changed
 - Fixed Nunjucks move Gulp task
 
 ## 2.1.1
