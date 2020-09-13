@@ -17,10 +17,8 @@ Once these tasks are done, you will then need to create a new `/build` directory
 Composer will then download and install a JayCraft instace from Packagist with a lot of pre-defined config. The only configuration you need to do on install is:
 
 1. Populate the `/build/.env` file with your details (Security Key, DB password, DB name and your Default site URL)
-2. Set up a local MAMP instance that matches the details from your env file.
-3. Create a DB
-4. Create a new storage directory in `/build/storage`
-5. Run `./craft install` from the `/build` directory
+2. Set up a local MAMP instance and Database that matches the details from your env file.
+4. Import the initial Database located in `/_db` to your local environment.
 
 ### Static
 Once `craft` is set to `false`, you can get started by building the project in the `_src/html` directory. HTML templates will generated and exported to a `build` directory.
