@@ -12,7 +12,7 @@ Configure the project in `./project.config.js`. Set `craft` to true or false dep
 ### CraftCMS
 If you have a CraftCMS site, populate your local MAMP instance to direct browserstack for live refreshing.
 
-Once these tasks are done,you will need to clone the JayCraft boilerplate using composer into the `./build` directory. This is documented in the [JayCraft README](https://github.com/JayBox325/JayCraft).
+Once these tasks are done, you will then need to create a new `/build` directory in the root of the project and run `composer create-project JayBox325/JayCraft .` BEFORE you run the initial `npm run build` command - CraftCMS won't install the project if the `/build` directory has contents.
 
 ### Static
 Once `craft` is set to `false`, you can get started by building the project in the `_src/html` directory. HTML templates will generated and exported to a `build` directory.
