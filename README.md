@@ -37,3 +37,20 @@ There are three commands to run for this boilerplate as follows:
 
 ## First run
 After setting up a project for the first time, you will need to run `npm build` so JayPack structures the project directories.
+
+## TODO
+- Build Jquery into Webpack/Bundle
+- Update base Twig templates for modern workflow
+    - Remove 'no-js' stuff
+    - Update language tag based on Craft's language setting
+    - Set up the Free SEO hook out the box
+    - Set up initial Favicon
+    - Remove Reveal CSS
+    - Embed Jquery into webpack/bundle
+    - Set up craft css/js template versioning
+    - Set up site structure to work with Barba.js
+    - Update forms templating from D** project
+    - Update 'pages' to be 'site'
+    - Set up 'errors' template dir
+    - Set up default assets in CMS
+    - Set up base menu and header
