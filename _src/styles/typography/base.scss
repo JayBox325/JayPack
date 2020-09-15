@@ -1,5 +1,5 @@
 body {
-    @apply text-gray-800 leading-relaxed text-base font-body;
+    @apply text-gray-800 leading-relaxed text-base font-sans;
 
     @screen md {
         @apply text-lg;

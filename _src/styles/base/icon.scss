@@ -6,12 +6,12 @@
         width: 1rem;
         height: 1rem;
 
-        @screen sm {
+        @screen xs {
             width: 1.3rem;
             height: 1.3rem;
         }
 
-        @screen lg {
+        @screen sm {
             width: 1.5rem;
             height: 1.5rem;
         }
@@ -20,12 +20,12 @@
         width: 1.2rem;
         height: 1.2rem;
 
-        @screen sm {
+        @screen xs {
             width: 1.5rem;
             height: 1.5rem;
         }
         
-        @screen 2xl {
+        @screen sm {
             width: 1.8rem;
             height: 1.8rem;
         }
@@ -34,12 +34,12 @@
         width: 1.6rem;
         height: 1.6rem;
 
-        @screen sm {
+        @screen xs {
             width: 1.7rem;
             height: 1.7rem;
         }
         
-        @screen 2xl {
+        @screen lg {
             width: 2rem;
             height: 2rem;
         }
@@ -48,9 +48,14 @@
         width: 1.8rem;
         height: 1.8rem;
 
-        @screen sm {
+        @screen xs {
             width: 2.2rem;
             height: 2.2rem;
+        }
+        
+        @screen sm {
+            width: 3rem;
+            height: 3rem;
         }
         
         @screen md {
@@ -59,45 +64,35 @@
         }
         
         @screen lg {
-            width: 3rem;
-            height: 3rem;
-        }
-        
-        @screen xl {
             width: 3.6rem;
             height: 3.6rem;
-        }
-        
-        @screen 2xl {
-            width: 4.2rem;
-            height: 4.2rem;
         }
     }
     &--xl {
         width: 4rem;
         height: 4rem;
 
-        @screen sm {
+        @screen xs {
             width: 4.2rem;
             height: 4.2rem;
         }
         
-        @screen md {
+        @screen sm {
             width: 4.5rem;
             height: 4.5rem;
         }
         
-        @screen lg {
+        @screen md {
             width: 5rem;
             height: 5rem;
         }
         
-        @screen xl {
+        @screen lg {
             width: 6.5rem;
             height: 6.5rem;
         }
         
-        @screen 2xl {
+        @screen xl {
             width: 8rem;
             height: 8rem;
         }

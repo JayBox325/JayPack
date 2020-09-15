@@ -38,22 +38,18 @@ There are three commands to run for this boilerplate as follows:
 ## First run
 After setting up a project for the first time, you will need to run `npm build` so JayPack structures the project directories.
 
-## TODO
-- Build Jquery into Webpack/Bundle
-- Update base Twig templates for modern workflow
-    - Update language tag based on Craft's language setting
+## JayPack todos
     - Set up initial Favicon
-    - Embed Jquery into webpack/bundle
-    - Set up craft css/js template versioning (craft-asset-rev)
     - Set up site structure to work with Barba.js
     - Update forms templating from D** project
-    - Set up 'errors' template dir
     - Set up base menu and header
     - Set up darkmode CSS styles
-    - Add IMAGER to JayCraft
-    - Remove Tailwind transitions and transforms modules, it's built into TW 1.2 - See [breaking TW changes](https://tailwindcss.com/docs/upcoming-changes)
-    - Include a DB setup command
     - Include SVG symbol example markup
     - Remove colour vars
-    - Move Row into Layout
-    - Add elements CSS to styles
+
+## JayCraft todos
+    - Update language tag based on Craft's language setting
+    - Set up craft css/js template versioning (craft-asset-rev)
+    - Set up 'errors' template dir
+    - Add IMAGER to JayCraft
+    - Include a DB setup command

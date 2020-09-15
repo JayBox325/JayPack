@@ -1,5 +1,5 @@
 h1,.h1 {
-    @apply font-bold leading-none text-5xl font-display;
+    @apply font-bold leading-none text-5xl font-sans;
 
     @screen sm {
         @apply text-6xl;
