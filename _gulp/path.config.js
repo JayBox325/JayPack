@@ -62,6 +62,12 @@ const paths = {
     symbols: {
         dest: projectConfig.craft ? `build/templates/_layout` : `_src/html/_layout`
     },
+
+    rev: {
+        styles: `${assets}/**/*.css`,
+        scripts: `${assets}/**/*.js`,
+        dist: `${assets}`,
+    }
 }
 
 export default paths

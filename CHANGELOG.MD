@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Added
 - Gulp Sass Glob
+- Darkmode file
 
 ### Removed
 - Redundant dev packages
@@ -32,6 +33,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 2.1.2
 ### Changed
 - Fixed Nunjucks move Gulp task
+
+### Added
+- IE stylesheet
 
 ## 2.1.1
 ### Added

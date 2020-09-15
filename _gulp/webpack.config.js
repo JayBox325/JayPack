@@ -18,9 +18,9 @@ const config = {
         path: path.resolve(__dirname, 'app'),
         filename: 'bundle.js',
     },
-    externals: {
-        jquery: 'jQuery'
-    },
+    // externals: {
+    //     jquery: 'jQuery'
+    // },
     module: {
         rules: [
             {

@@ -45,9 +45,6 @@ After setting up a project for the first time, you will need to run `npm build` 
     - Set up base menu and header
 
 ## JayCraft todos
-    - Update language tag based on Craft's language setting
     - Set up craft css/js template versioning (craft-asset-rev)
-    - Set up 'errors' template dir
     - Add IMAGER to JayCraft
     - Include a DB setup command
-    - Include SVG symbol example markup
