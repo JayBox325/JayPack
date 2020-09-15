@@ -28,7 +28,6 @@
         "babel-loader": "^8.0.5",
         "browser-sync": "^2.26.12",
         "cssnano": "^4.1.10",
-        "del": "^5.1.0",
         "expose-loader": "^0.7.5",
         "fs": "^0.0.1-security",
         "gsap": "^2.0.2",
@@ -48,20 +47,12 @@
         "gulp-uglify": "^3.0.2",
         "gulp-watch": "^5.0.1",
         "plyr": "^3.6.2",
-        "rellax": "^1.10.0",
         "require-dir": "^1.2.0",
         "slick-carousel": "^1.8.1",
-        "stylelint": "^11.1.1",
-        "stylelint-config-recommended": "^2.2.0",
         "tailwindcss": "^1.8.9",
-        "tailwindcss-transforms": "^2.1.0",
-        "tailwindcss-transitions": "^2.0.1",
-        "terser-webpack-plugin": "^1.4.5",
         "webfontloader": "^1.6.28",
         "webpack": "^4.44.1",
-        "webpack-bundle-analyzer": "^3.8.0",
         "webpack-cli": "^3.3.12",
-        "webpack-stream": "^5.2.1",
-        "zenscroll": "^4.0.2"
+        "webpack-stream": "^5.2.1"
     }
 }
