@@ -43,9 +43,6 @@ After setting up a project for the first time, you will need to run `npm build` 
     - Set up site structure to work with Barba.js
     - Update forms templating from D** project
     - Set up base menu and header
-    - Set up darkmode CSS styles
-    - Include SVG symbol example markup
-    - Remove colour vars
 
 ## JayCraft todos
     - Update language tag based on Craft's language setting
@@ -53,3 +50,4 @@ After setting up a project for the first time, you will need to run `npm build` 
     - Set up 'errors' template dir
     - Add IMAGER to JayCraft
     - Include a DB setup command
+    - Include SVG symbol example markup
