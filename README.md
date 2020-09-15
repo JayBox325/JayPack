@@ -54,3 +54,6 @@ After setting up a project for the first time, you will need to run `npm build` 
     - Remove Tailwind transitions and transforms modules, it's built into TW 1.2 - See [breaking TW changes](https://tailwindcss.com/docs/upcoming-changes)
     - Include a DB setup command
     - Include SVG symbol example markup
+    - Remove colour vars
+    - Move Row into Layout
+    - Add elements CSS to styles
