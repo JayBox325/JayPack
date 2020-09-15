@@ -31,30 +31,19 @@
     @screen xl {
         @apply py-32;
     }
-    
-    &--white {
-        @apply bg-white;
 
-        + #{$r}--white {
-            padding-top: 0;
-        }
-    }
-    
-    &--gray {
-        @apply bg-gray-200;
+    @each $name, $hex in $colors {
+        &--#{$name} {
+            // Setting the text colour based on how dark/light the bg is.
+            // color: set-text-color($hex);
 
-        + #{$r}--gray {
-            padding-top: 0;
-        }
-    }
-    
-    &--transparent {
-        &:before {
-            background: transparent;
-        }
+            &:before {
+                background-color: $hex;
+            }
 
-        + #{$r}--transparent {
-            padding-top: 0;
+            + .row--#{$name} {
+                padding-top: 0;
+            }
         }
     }
 }

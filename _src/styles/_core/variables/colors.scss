@@ -1,0 +1,36 @@
+/*
+
+    Colour classes are all defined in TailwindCSS with classes such as 'bg-blue-200'.
+    This is the list of colours used for this project to allow Sass to loop over themes and generate multiple themes. e.g. rows.
+
+*/
+
+// Project brand colours
+$primary:           theme('colors.orange.500');
+$secondary:         theme('colors.blue.500');
+
+// Base colours
+$black:             theme('colors.gray.800');
+$white:             theme('colors.white');
+$gray:              theme('colors.gray.200');
+$success:           theme('colors.green.700');
+$warning:           theme('colors.red.700');
+$info:              theme('colors.yellow-600');
+
+// Social media brand colours
+$facebook:          theme('colors.facebook');
+$twitter:           theme('colors.twitter');
+$instagram:         theme('colors.instagram');
+$pinterest:         theme('colors.pinterest');
+
+// Colour map used with color('primary')
+$colors: (
+    'primary':      $primary,
+    'secondary':    $secondary,
+    'success':      $success,
+    'info':         $info,
+    'warning':      $warning,
+    'gray':         $gray,
+    'white':        $white,
+    'black':        $black
+);
