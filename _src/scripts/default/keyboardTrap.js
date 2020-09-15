@@ -1,6 +1,8 @@
+import $ from 'jquery'
+
+// Keep a keyboard user where we want them to be
 
 export default function setFocus($target) {
-
     setTimeout(function() {
         const $focusElement = $target.find('a,input,button').eq(0).filter(':visible:first')
         $focusElement.focus()

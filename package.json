@@ -17,6 +17,7 @@
     },
     "license": "MIT",
     "dependencies": {
+        "jquery": "^3.5.1",
         "minimist": "^1.2.5"
     },
     "devDependencies": {

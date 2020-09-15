@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Changed licence to an 'unlicence'
 - Updated README
+- Updated Tailwind config
+
+### Removed
+- Redundant dev packages
 
 ## 2.1.3
 ### Changed

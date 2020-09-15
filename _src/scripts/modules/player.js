@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import Plyr from 'plyr'
 
 export default function player() {

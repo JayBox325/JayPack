@@ -1,17 +1,18 @@
+import $ from 'jquery'
 import setFocus from './keyboardTrap'
-import { TimelineLite, TweenLite } from "gsap"
+import { TimelineLite, TweenLite } from 'gsap'
 
-// Elements
-const $body = $('body')
-const $menu = $('[data-menu]')
-const $hamburger = $('[data-hamburger]')
-const $hamburgerCheckbox = $('#hamburger')
-
-// Other
-const activeClass = 'is-active'
-const tl = new TimelineLite()
+// Main menu JS
 
 export default function menu() {
+    const $body = $('body')
+    const $menu = $('[data-menu]')
+    const $hamburger = $('[data-hamburger]')
+    const $hamburgerCheckbox = $('#hamburger')
+    
+    // Other
+    const activeClass = 'is-active'
+    const tl = new TimelineLite()
 
     /*
         HAMBURGER CLICK EVENT ----------------------------------------------------
