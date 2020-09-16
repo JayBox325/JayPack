@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed licence to an 'unlicence'
 - Updated README
 - Updated Tailwind config
+- Modified Colour vars
+- Changed dev command from `start` to `watch` to mirror Laravel Mix for ease of familiarity
 
 ## Added
 - Gulp Sass Glob
@@ -16,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 - Redundant dev packages
+- Asset rev attempts
 
 ## 2.1.3
 ### Changed
