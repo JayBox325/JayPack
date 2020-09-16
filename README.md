@@ -39,15 +39,12 @@ There are three commands to run for this boilerplate as follows:
 After setting up a project for the first time, you will need to run `npm build` so JayPack structures the project directories.
 
 ## JayPack todos
-    - Set up initial Favicon
-    - Set up site structure to work with Barba.js
-    - Update forms templating from D** project
+    - Add barba.js module
     - Set up base menu and header
-    - Set up Asset rev
     - Accordion component
+    - Added form from project, need to build a dummy form to restyle for jaypack
 
 ## JayCraft todos
     - Add IMAGER to JayCraft
     - Include a DB setup command
-    - Set up external link rel & target include
     - Set up Craft asset rev
