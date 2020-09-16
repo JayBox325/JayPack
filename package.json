@@ -11,7 +11,7 @@
         "url": "https://github.com/JayBox325/JayPack.git"
     },
     "scripts": {
-        "start": "gulp --env development",
+        "watch": "gulp --env development",
         "build": "gulp build --env development",
         "package": "gulp build --env production"
     },
@@ -41,7 +41,6 @@
         "gulp-notify": "^3.2.0",
         "gulp-nunjucks-render": "^2.2.3",
         "gulp-postcss": "^8.0.0",
-        "gulp-rev": "^9.0.0",
         "gulp-sass": "^4.1.0",
         "gulp-sass-glob": "^1.1.0",
         "gulp-sourcemaps": "^2.6.4",

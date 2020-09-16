@@ -1,8 +1,6 @@
 import gulp from 'gulp'
-import notify from 'gulp-notify'
 import browserSync from 'browser-sync'
 import fs from 'fs'
-import gulpif from 'gulp-if'
 
 // Config
 import paths from '../path.config'

@@ -31,9 +31,9 @@ JayPack uses [TailwindCSS](https://tailwindcss.com/), because it rules. To get y
 ## Working
 There are three commands to run for this boilerplate as follows:
 
-* `npm start` - Compile everything then start watching all the source files.
-* `npm build` - Build all your source files, but still in your development environment so sourcemaps will be included and nothing will be minified.
-* `npm package` - Package your project. This will remove all the sourcemaps and minify everything ready for launch.
+* `npm run watch` - Compile everything then start watching all the source files.
+* `npm run build` - Build all your source files, but still in your development environment so sourcemaps will be included and nothing will be minified.
+* `npm run package` - Package your project. This will remove all the sourcemaps and minify everything ready for launch.
 
 ## First run
 After setting up a project for the first time, you will need to run `npm build` so JayPack structures the project directories.
@@ -43,8 +43,11 @@ After setting up a project for the first time, you will need to run `npm build` 
     - Set up site structure to work with Barba.js
     - Update forms templating from D** project
     - Set up base menu and header
+    - Set up Asset rev
+    - Accordion component
 
 ## JayCraft todos
-    - Set up craft css/js template versioning (craft-asset-rev)
     - Add IMAGER to JayCraft
     - Include a DB setup command
+    - Set up external link rel & target include
+    - Set up Craft asset rev
