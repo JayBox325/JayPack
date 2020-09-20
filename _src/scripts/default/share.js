@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 // Open social share links in small new windows.
 
 export default function share() {

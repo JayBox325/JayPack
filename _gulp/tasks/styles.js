@@ -16,11 +16,13 @@ import sourcemaps from 'gulp-sourcemaps'
 import autoprefixer from 'autoprefixer'
 import tailwindcss from 'tailwindcss'
 import postcss from 'gulp-postcss'
+import glob from 'gulp-sass-glob'
 import cssnano from 'cssnano'
 
 gulp.task('styles', () => {
     return gulp.src(paths.sass.src)
         .pipe(development(sourcemaps.init()))
+        .pipe(glob())
         .pipe(sass())
         .on('error', handleErrors)
         .pipe(postcss([

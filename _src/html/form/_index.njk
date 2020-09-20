@@ -1,0 +1,59 @@
+{% set baseInputFields = [
+    'text',
+    'email'
+] %}
+
+{% set optionInputFields = [
+    'checkbox',
+    'radio'
+] %}
+
+{% if loop is defined %}
+    {% set count = loop.index %}
+{% else %}
+    {% set count = 1 %}
+{% endif %}
+
+{% if field.type == 'submit' %}
+    <fieldset class="field field--align-{{ field.position }}">
+{% else %}
+    <fieldset class="field">
+        {% if entry.type == 'radio_group' or entry.type == 'checkbox_group' %}
+            <legend class="field__label" for="{{ field.id }}">{{ field.label }}{% if field.required %} <span class="field__required">*</span>{% endif %}</legend>
+        {% elseif field.type == 'checkbox' %}
+        {% else %}
+            <label class="field__label" for="{{ field.id }}">{{ field.label }}{% if field.required %} <span class="field__required">*</span>{% endif %}</label>
+        {% endif %}
+{% endif %}
+
+    {# Instructions #}
+    {% if field.instructions %}
+        <p class="field__instructions">{{ field.instructions }}</p>
+    {% endif %}
+
+    {# Get field #}
+    {% if field.type == 'text' or field.type == 'email' or field.type == 'number' %}
+        {% include 'freeform/input' %}
+    {% elseif field.type == 'checkbox' %}
+        {% include 'freeform/option' with {
+            type: field.type,
+            count: count,
+            required: field.required,
+            label: field.label,
+            id: field.id,
+            handle: field.id,
+            value: field.value
+        } %}
+    {% elseif field.type == 'checkbox_group' or field.type == 'radio_group' %}
+        {% include 'freeform/option-group' %}
+    {% elseif field.type == 'select' or field.type == 'multiple_select' %}
+        {% include 'freeform/select' %}
+    {% else %}
+        {% include 'freeform/' ~ field.type %}
+    {% endif %}
+
+    {# Errors #}
+    {% if field.renderErrors|length > 0 %}
+        <p class="field__error">{{ field.renderErrors }}</p>
+    {% endif %}
+</fieldset>

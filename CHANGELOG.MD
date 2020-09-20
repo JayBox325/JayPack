@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.1.4 -- DEV
+### Changed
+- Changed licence to an 'unlicence'
+- Updated README
+- Updated Tailwind config
+- Modified Colour vars
+- Changed dev command from `start` to `watch` to mirror Laravel Mix for ease of familiarity
+
+## Added
+- Gulp Sass Glob
+- Darkmode file
+- Njks default markup & macros
+- List Sass file
+
+### Removed
+- Redundant dev packages
+- Asset rev attempts
+- Vendor jQuery
+
+## 2.1.3
+### Changed
+- Fixed JS import errors
+
 ## 2.1.2
 ### Changed
 - Streamlined JS modules
@@ -16,6 +39,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 2.1.2
 ### Changed
 - Fixed Nunjucks move Gulp task
+
+### Added
+- IE stylesheet
 
 ## 2.1.1
 ### Added

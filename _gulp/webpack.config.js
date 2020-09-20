@@ -8,10 +8,6 @@ var production = environments.production
 const env = production() ? 'production' : 'development'
 const isProd = env === 'production'
 
-// Webpack packages
-import TerserPlugin from 'terser-webpack-plugin'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
-
 const config = {
     mode: env,
     devtool: isProd ? false : 'source-map',
@@ -22,9 +18,9 @@ const config = {
         path: path.resolve(__dirname, 'app'),
         filename: 'bundle.js',
     },
-    externals: {
-        jquery: 'jQuery'
-    },
+    // externals: {
+    //     jquery: 'jQuery'
+    // },
     module: {
         rules: [
             {

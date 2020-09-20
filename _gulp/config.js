@@ -12,7 +12,7 @@ const config = {
     type: projectConfig.type,
 
     // Root directory for assets produced in Gulp
-    distRoot: projectConfig.craft ? './build/public/assets' : './build/assets',
+    distRoot: projectConfig.craft ? 'build/public/assets' : 'build/assets',
 
     // Sass variables
     autoprefixerVersions: [

@@ -1,7 +1,7 @@
 {
     "name": "JayPack",
     "description": "Gulp, Webpack and CraftCMS boilerplate",
-    "version": "2.0.3",
+    "version": "2.1.4",
     "main": "_gulp/gulpfile.babel.js",
     "author": "Jay Collett",
     "email": "hello@jaycollett.co",
@@ -11,14 +11,11 @@
         "url": "https://github.com/JayBox325/JayPack.git"
     },
     "scripts": {
-        "start": "gulp --env development",
+        "watch": "gulp --env development",
         "build": "gulp build --env development",
         "package": "gulp build --env production"
     },
     "license": "MIT",
-    "dependencies": {
-        "minimist": "^1.2.5"
-    },
     "devDependencies": {
         "@babel/cli": "^7.11.6",
         "@babel/core": "^7.11.6",
@@ -28,7 +25,6 @@
         "babel-loader": "^8.0.5",
         "browser-sync": "^2.26.12",
         "cssnano": "^4.1.10",
-        "del": "^5.1.0",
         "expose-loader": "^0.7.5",
         "fs": "^0.0.1-security",
         "gsap": "^2.0.2",
@@ -42,26 +38,21 @@
         "gulp-nunjucks-render": "^2.2.3",
         "gulp-postcss": "^8.0.0",
         "gulp-sass": "^4.1.0",
+        "gulp-sass-glob": "^1.1.0",
         "gulp-sourcemaps": "^2.6.4",
         "gulp-svg-symbols": "^3.2.3",
         "gulp-svgmin": "^2.1.0",
         "gulp-uglify": "^3.0.2",
         "gulp-watch": "^5.0.1",
+        "jquery": "^3.5.1",
+        "minimist": "^1.2.5",
         "plyr": "^3.6.2",
-        "rellax": "^1.10.0",
         "require-dir": "^1.2.0",
         "slick-carousel": "^1.8.1",
-        "stylelint": "^11.1.1",
-        "stylelint-config-recommended": "^2.2.0",
         "tailwindcss": "^1.8.9",
-        "tailwindcss-transforms": "^2.1.0",
-        "tailwindcss-transitions": "^2.0.1",
-        "terser-webpack-plugin": "^1.4.5",
         "webfontloader": "^1.6.28",
         "webpack": "^4.44.1",
-        "webpack-bundle-analyzer": "^3.8.0",
         "webpack-cli": "^3.3.12",
-        "webpack-stream": "^5.2.1",
-        "zenscroll": "^4.0.2"
+        "webpack-stream": "^5.2.1"
     }
 }

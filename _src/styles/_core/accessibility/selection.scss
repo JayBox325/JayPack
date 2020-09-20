@@ -1,7 +1,7 @@
 ::-moz-selection { /* Code for Firefox */
-    background: transparentize(color('primary'),.7);
+    background: color('primary');
 }
 
 ::selection {
-    background: transparentize(color('primary'),.7);
+    background: color('primary');
 }

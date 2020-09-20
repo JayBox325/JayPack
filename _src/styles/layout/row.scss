@@ -1,0 +1,50 @@
+.row {
+    $r: &;
+    position: relative;
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        z-index: 0;
+    }
+    
+    @apply py-6;
+
+    @screen sm {
+        @apply py-16;
+    }
+    @screen md {
+        @apply py-20;
+    }
+    @screen lg {
+        @apply py-24;
+    }
+    @screen xl {
+        @apply py-32;
+    }
+
+    @each $name, $hex in $colors {
+        &--#{$name} {
+            // Setting the text colour based on how dark/light the bg is.
+            // @debug "Hex: #{$hex}";
+            // color: set-text-color($hex);
+            
+            &:before {
+                background-color: $hex;
+            }
+
+            + .row--#{$name} {
+                padding-top: 0;
+            }
+        }
+    }
+}

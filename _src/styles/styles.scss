@@ -1,24 +1,26 @@
-// Importing Tailwind
-// @import 'tailwindcss/base.css';
-// @import 'tailwindcss/components.css';
-// @import 'tailwindcss/utilities.css';
-
 // Tailwind
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 // Core
-@import '_core/_index';
+// @import '_core/_index';
+@import '_core/**/*';
 
 // Base
-@import 'base/_index';
+@import 'base/**/*';
 
 // Typography
-@import 'typography/_index';
+@import 'typography/**/*';
 
 // Layout
-@import 'layout/_index';
+@import 'layout/**/*';
 
 // Components
-@import 'components/_index';
+@import 'components/**/*';
+
+// Form
+@import 'form/**/*';
+
+// Elements
+@import 'elements/**/*';

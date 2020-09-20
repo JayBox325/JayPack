@@ -1,0 +1,87 @@
+.field {
+    display: block;
+    width: 100%;
+    appearance: none;
+    border: 0;
+    padding: 0;
+
+    @screen lg {
+        &--align-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &--align-spread {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__label {
+        display: block;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+
+    &__input {
+        border: 1px solid color('black');
+        border-radius: .5rem;
+        width: 100%;
+        padding: 0 1rem;
+        height: 3rem;
+        display: block;
+        appearance: none;
+        margin-top: .5rem;
+
+        &--textarea {
+            min-height: 6rem;
+        }
+    }
+
+    &__select-wrap {
+        position: relative;
+        width: 100%;
+        display: block;
+
+        &:after {
+            pointer-events: none;
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            display: block;
+            height: .6rem;
+            width: .6rem;
+            transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+            transform: translate3d(.2rem,-60%,0) rotate(45deg);
+            content: '';
+            border-right: 2px solid color('black');
+            border-bottom: 2px solid color('black');
+        }
+    }
+
+    &__instructions {
+        font-size: .8rem;
+        line-height: 1.25;
+        margin-top: .2rem;
+    }
+
+    &__error {
+        font-size: .8rem;
+        line-height: 1.1;
+        margin-top: .2rem;
+        color: color('red');
+        font-weight: bold;
+    }
+
+    &__required {
+        color: color('red');
+    }
+
+    &-options {
+        &__option {
+            margin-top: .5rem;
+        }
+    }
+}

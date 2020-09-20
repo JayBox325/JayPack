@@ -1,0 +1,22 @@
+<div class="field-options">
+
+    {% for option in field.options %}
+        {% if field.type == 'checkbox_group' %}
+            {% set type = 'checkbox' %}
+        {% elseif field.type == 'radio_group' %}
+            {% set type = 'radio' %}
+        {% endif %}
+
+        <div class="field-options__option">
+            {% include 'freeform/option' with {
+                type: type,
+                count: loop.index,
+                required: field.required,
+                label: option.label,
+                id: field.id,
+                handle: field.id,
+                value: option.value
+            } %}
+        </div>
+    {% endfor %}
+</div>
