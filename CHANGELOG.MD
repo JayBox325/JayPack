@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 2.1.5 -- DEV
 ### Changed
 - Fixed typos in changelog
+- Sass import fix
 
 ## 2.1.4
 ### Changed
