@@ -1,7 +1,7 @@
 {
     "name": "JayPack",
     "description": "Gulp, Webpack and CraftCMS boilerplate",
-    "version": "2.1.4",
+    "version": "2.1.5",
     "main": "_gulp/gulpfile.babel.js",
     "author": "Jay Collett",
     "email": "hello@jaycollett.co",

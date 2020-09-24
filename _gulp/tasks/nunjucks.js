@@ -21,10 +21,10 @@ gulp.task('nunjucks', () => {
 })
 
 gulp.task('nunjucks-move', (done) => {
-    fs.access('./_src/html/_layout/_base.njk', fs.R_OK, function(err) {
+    fs.access(paths.njks.access, fs.R_OK, function(err) {
         if (err) {
-            return gulp.src('_gulp/html/**', {base: './_gulp'})
-                .pipe(gulp.dest('_src'))
+            return gulp.src(paths.njks.storage, {base: './_gulp'})
+                .pipe(gulp.dest(paths.njks.moveDest))
         }
     })
     done()
