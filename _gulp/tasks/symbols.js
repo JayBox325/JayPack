@@ -16,20 +16,8 @@ import svgSymbols from 'gulp-svg-symbols'
 import extReplace from 'gulp-ext-replace'
 import changed from 'gulp-changed'
 
-
-gulp.task('symbols', () => {
-
-	if (projectConfig.craft) {
-        return gulp.src(paths.assets.svg.src)
-            .pipe(changed(paths.assets.images.src))
-            .pipe(svgSymbols({
-                templates: [`default-svg`]
-            }))
-            .pipe(extReplace('.njk'))
-            .on('error', handleErrors)
-            .pipe(gulp.dest(paths.symbols.dest))
-            .pipe(development(browserSync.reload({ stream: true })))
-    } else {
+if (projectConfig.craft) {
+    gulp.task('symbols', () => {
         return gulp.src(paths.assets.svg.src)
             .pipe(changed(paths.assets.images.src))
             .pipe(svgSymbols({
@@ -39,5 +27,17 @@ gulp.task('symbols', () => {
             .on('error', handleErrors)
             .pipe(gulp.dest(paths.symbols.dest))
             .pipe(development(browserSync.reload({ stream: true })))
-    }
-})
+    })
+} else {
+    gulp.task('symbols', () => {
+        return gulp.src(paths.assets.svg.src)
+            .pipe(changed(paths.assets.images.src))
+            .pipe(svgSymbols({
+                templates: [`default-svg`]
+            }))
+            .pipe(extReplace('.njk'))
+            .on('error', handleErrors)
+            .pipe(gulp.dest(paths.symbols.dest))
+            .pipe(development(browserSync.reload({ stream: true })))
+    })
+}
