@@ -17,7 +17,9 @@ const paths = {
         watch: `_src/html/**/*.njk`,
         data: `_src/html/__data/data.json`,
         dest: `build`,
-        storage: `_gulp/html`
+        moveDest: `_src`,
+        access: `./_src/_html/_layout/_base.njk`,
+        storage: `_gulp/html/**`
     },
 
     twig: {

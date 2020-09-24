@@ -9,36 +9,31 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
         {# SEO #}
-        {% include '_layout/seo.njk' %}
+        {% include '_includes/seo.njk' %}
 
         {# CSS #}
         <link rel="stylesheet" type="text/css" href="./assets/styles/styles.css">
 
         {# Favicons #}
-        {% include '_layout/favicons.njk' %}
+        {% include '_includes/favicons.njk' %}
     </head>
 
-    <body class="min-h-screen min-w-screen">
+    <body class="min-h-screen min-w-screen" data-barba="wrapper">
         {# Insert GTM markup here #}
 
         {# <a class="skip-main btn" href="#main">Skip to main content</a> #}
 
-        <div class="site min-h-screen min-w-screen" id="main">
+        <div class="site min-h-screen min-w-screen" id="main" data-barba="container">
             {% include '_layout/header.njk' %}
             {% block content %}{% endblock %}
             {% include '_layout/footer.njk' %}
         </div>
 
         {# Javascript #}
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="/public/assets/scripts/jQuery.3.3.1.min.js">\x3C/script>')</script>
         <script src="/assets/scripts/bundle.js"></script>
 
         <div class="hidden">
-            {% include '_layout/svg-symbols.njk' %}
+            {% include '_includes/svg-symbols.njk' %}
         </div>
 
     </body>

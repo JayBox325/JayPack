@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 2.1.4 -- DEV
+## 2.1.5
+### Changed
+- Fixed typos in changelog
+- Sass import fix
+- Relocated files to `_includes`
+- Fixed gulp HTML paths
+
+## 2.1.4
 ### Changed
 - Changed licence to an 'unlicence'
 - Updated README
@@ -32,13 +39,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Streamlined JS modules
 - Updated NPM packages
 - Improved README.
+- Fixed Nunjucks move Gulp task
 
 ### Removed
 - Yarn config, NPM does the same job now!
-
-## 2.1.2
-### Changed
-- Fixed Nunjucks move Gulp task
 
 ### Added
 - IE stylesheet
