@@ -41,10 +41,11 @@ After setting up a project for the first time, you will need to run `npm build` 
 ## JayPack todos
     - Add barba.js module
     - Set up base menu and header
-    - Accordion component
+    - Accordion component with JS
     - Added form from project, need to build a dummy form to restyle for jaypack
+    - Add default SEO template
+    - Add Drawer component with JS
 
 ## JayCraft todos
-    - Add IMAGER to JayCraft
     - Include a DB setup command
     - Set up Craft asset rev

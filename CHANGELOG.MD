@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Fixed typos in changelog
 - Sass import fix
+- Relocated files to `_includes`
 
 ## 2.1.4
 ### Changed
