@@ -21,7 +21,9 @@ Composer will then download and install a JayCraft instace from Packagist with a
 4. Import the initial Database located in `/_db` to your local environment.
 
 ### Static
-Once `craft` is set to `false`, you can get started by building the project in the `_src/html` directory. HTML templates will generated and exported to a `build` directory.
+Once `craft` is set to `false`, you can run `npm run watch` or `npm run build` to populate your `_src` directory with a set of Nunjucks templates to get you started. These are moved at this point, because they are not needed in a CraftCMS project.
+
+Work on the project HTML in the `_src/html` directory. HTML templates will generated and exported to the `build` directory.
 
 ## TailwindCSS
 JayPack uses [TailwindCSS](https://tailwindcss.com/), because it rules. To get your project started you will need to set up your project theme colours in the `./_gulp/tailind.config.js` file around line 20.
