@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Todo list from README and moved into GitHub issues
 
+### Added
+- Link to tailwind shade generator
+
 ## 2.1.5
 ### Changed
 - Fixed typos in changelog

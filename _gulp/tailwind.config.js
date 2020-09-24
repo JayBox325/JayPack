@@ -31,6 +31,7 @@ module.exports = {
       instagram: '#c13584',
       linkedin: '#0077b5',
 
+      // Generator: https://javisperez.github.io/tailwindcolorshades/#/
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
