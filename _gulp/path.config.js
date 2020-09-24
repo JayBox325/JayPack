@@ -62,7 +62,7 @@ const paths = {
     },
 
     symbols: {
-        dest: projectConfig.craft ? `build/templates/_layout` : `_src/html/_layout`
+        dest: projectConfig.craft ? `build/templates/_includes` : `_src/html/_includes`
     },
 
     rev: {
