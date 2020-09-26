@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Link to tailwind shade generator
 - Default social links component
 - New FB icon
-- Nunjucks data
+- Gulp-Data + Nunjucks module
 
 ## 2.1.5
 ### Changed
