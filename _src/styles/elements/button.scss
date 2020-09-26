@@ -1,0 +1,14 @@
+.btn {
+    height: 4rem;
+    border-radius: 50%;
+
+    @each $name, $hex in $colors {
+        &--#{$name} {
+            background-color: $hex;
+
+            &:hover {
+                background-color: color(#{$name} + 'D');
+            }
+        }
+    }
+}

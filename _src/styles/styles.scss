@@ -1,7 +1,4 @@
-// Tailwind
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 // Core
 // @import '_core/_index';
@@ -24,3 +21,8 @@
 
 // Elements
 @import 'elements/**/*';
+
+// Tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

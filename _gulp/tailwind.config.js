@@ -25,11 +25,31 @@ module.exports = {
       white: '#fff',
 
       // Social
-      facebook: '#3b5998',
-      twitter: '#1da1f2',
-      pinterest: '#bd081c',
-      instagram: '#c13584',
-      linkedin: '#0077b5',
+      facebook: {
+        'dark': 'red',
+        'base': '#3b5998',
+        'light': '#3b5998'
+      },
+      twitter: {
+        'dark': '#1da1f2',
+        'base': '#1da1f2',
+        'light': '#1da1f2'
+      },
+      pinterest: {
+        'dark': '#bd081c',
+        'base': '#bd081c',
+        'light': '#bd081c'
+      },
+      instagram: {
+        'dark': '#c13584',
+        'base': '#c13584',
+        'light': '#c13584'
+      },
+      linkedin: {
+        'dark': '#0077b5',
+        'base': '#0077b5',
+        'light': '#0077b5'
+      },
 
       // Generator: https://javisperez.github.io/tailwindcolorshades/#/
       gray: {

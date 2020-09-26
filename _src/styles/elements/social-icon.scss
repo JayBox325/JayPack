@@ -6,8 +6,12 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: color('white');
-    background: color('primary');
+    color: color(white);
+    background: color(primary);
+
+    &:hover {
+        background: color(primary, 'dark');
+    }
 
     @screen md {
         height: 3.25rem;

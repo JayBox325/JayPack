@@ -8,23 +8,27 @@
 // Colour map used with color('primary')
 $colors: (
     // Project colours
-    'primary':      theme('colors.orange.500'),
-    'secondary':    theme('colors.blue.500'),
+    primary:        theme('colors.orange.500'),
+    primaryD:       theme('colors.orange.600'),
+    primaryL:       theme('colors.orange.400'),
+    secondary:      theme('colors.blue.500'),
+    secondaryD:     theme('colors.blue.600'),
+    secondaryL:     theme('colors.blue.400'),
 
     // Core colours
-    'white':        theme('colors.white'),
-    'black':        theme('colors.gray.800'),
-    'gray':         theme('colors.gray.200'),
+    white:          theme('colors.white'),
+    black:          theme('colors.gray.800'),
+    gray:           theme('colors.gray.200'),
 
     // Contextual
-    'success':      theme('colors.green.700'),
-    'info':         theme('colors.yellow-600'),
-    'warning':      theme('colors.red.700'),
+    success:        theme('colors.green.700'),
+    info:           theme('colors.yellow-600'),
+    warning:        theme('colors.red.700'),
 );
 
 $social: (
-    'facebook':     theme('colors.facebook'),
-    'twitter':      theme('colors.twitter'),
-    'instagram':    theme('colors.instagram'),
-    'pinterest':    theme('colors.pinterest'),
+    facebook:       theme('colors.facebook.base'),
+    twitter:        theme('colors.twitter.base'),
+    instagram:      theme('colors.instagram.base'),
+    pinterest:      theme('colors.pinterest.base'),
 );

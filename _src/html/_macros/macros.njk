@@ -12,7 +12,7 @@
     <ul class="list list--inline">
         {% for network in networks %}
             <li class="list__item">
-                <a href="{{ network.accountUrl }}" aria-label="{{ network.text }}" class="social-icon social-icon--{{ network.account|lower }}">
+                <a href="{{ network.accountUrl }}" aria-label="{{ network.text }}" class="social-icon bg-{{ network.account|lower }}-base hover:bg-{{ network.account|lower }}-dark">
                     {{ icon(network.icon, 'sm') }}
                 </a>
             </li>
