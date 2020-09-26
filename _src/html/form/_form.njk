@@ -1,0 +1,48 @@
+{{ form.renderTag }}
+{{ craft.snaptcha.field }}
+
+{# Multipage headings #}
+{% if form.pages|length > 1 %}
+    <ul class="freeform-pages">
+        {% for page in form.pages %}
+
+            <li>
+                {% if form.currentPage.index == loop.index0 %}
+                    <a href="javascript:;">{{ page.label }}</a>
+                {% else %}
+                    {{ page.label }}
+                {% endif %}
+            </li>
+
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if form.hasErrors %}
+    <div class="w-content">
+        <p>Error! Please review the form and try submitting again.</p>
+    </div>
+{% endif %}
+
+{# Form #}
+{% for row in form %}
+    <div class="form__row">
+        {% for field in row %}
+
+            <div class="form__col {{ columnClass }}">
+                {% include 'freeform/_index' with {
+                    field: field
+                } %}
+                    
+                {# {{ field.render({
+                    class: field.type != "submit" ? "freeform-input" : "",
+                    labelClass: "freeform-label" ~ (field.inputOnly ? " freeform-input-only-label" : "") ~ (field.required ? " freeform-required" : ""),
+                    errorClass: "freeform-errors",
+                    instructionsClass: "freeform-instructions",
+                }) }} #}
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+
+{{ form.renderClosingTag }}

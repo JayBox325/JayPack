@@ -1,0 +1,12 @@
+{% import '_macros/macros.njk' as macro %}
+
+<footer class="row footer">
+    <div class="container">
+        <div class="mb-6">
+            {{ macro.social(socialAccounts) }}
+        </div>
+        <div class="w-content">
+            <p>{{ now.year }} &copy; {{ siteDetails.title }}.  <a href="https://jaycollett.co" {{ macro.external(true) }}>Site Credits</a></p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,23 @@
+<title>{{ siteDetails.title }} - {{ siteDetails.description }}</title>
+<meta name="description" content="{{ seo.description }}">
+<link rel="canonical" href="https://www.mobilityreuseoutlet.com">
+
+
+{# Twitter #}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{ siteDetails.twitter }}">
+<meta name="twitter:creator" content="@{{ siteDetails.twitter }}">
+<meta name="twitter:title" content="{{ siteDetails.title }}">
+<meta name="twitter:description" content="{{ siteDetails.description }}">
+{% if seo.socialCard|length %}
+    <meta name="twitter:image" content="{{ seo.socialCard }}">
+{% endif %}
+
+{# Facebook #}
+<meta property="og:url" content="#" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ siteDetails.title }}" />
+<meta property="og:description" content="{{ siteDetails.description }}" />
+{% if seo.socialCard|length %}
+    <meta property="og:image" content="{{ seo.socialCard }}">
+{% endif %}

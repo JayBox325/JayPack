@@ -14,11 +14,11 @@ const paths = {
     njks: {
         render: `_src/html`,
         src: `_src/html/pages/*.njk`,
-        watch: `_src/html/**/*.njk`,
-        data: `_src/html/__data/data.json`,
+        watch: `_src/html/**/*`,
+        data: `./_src/data.json`,
         dest: `build`,
         moveDest: `_src`,
-        access: `./_src/_html/_layout/_base.njk`,
+        access: `./_src/html/_layout/_base.njk`,
         storage: `_gulp/html/**`
     },
 

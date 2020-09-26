@@ -1,0 +1,19 @@
+{% set count = count ?? '' %}
+{% set required = required ?? null %}
+{% set label = label ?? null %}
+{% set id = id ?? null %}
+{% set handle = handle ?? null %}
+{% set value = value ?? null %}
+
+<div class="field__option">
+    <input
+        type="{{ type }}"
+        name="{{ handle }}"
+        id="{{ id }}-{{ count }}"
+        {% if value %}
+            value="{{ value }}"
+        {% endif %}
+	    {{ required ? 'required' }}
+    >
+    <label for="{{ id }}-{{ count }}">{{ label }}</label>
+</div>
