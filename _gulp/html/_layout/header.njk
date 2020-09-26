@@ -1,9 +1,32 @@
 <header class="header">
-    <a href="#">
-        {% set icon = {
-            symbol: 'ncp-logo',
-            size: 'lg'
-        } %}
-        {% include 'elements/icon.njk' %}
-    </a>
+	<div class="container header__inner">
+
+
+                {# <div class="grid md:grid-cols-12 gap-6 md:gap-0">
+                    <div class="md:col-span-6 text-white"> #}
+
+
+		<div class="grid grid-cols-4 sm:grid-cols-12 header__grid">
+            <div class="col-span-3 sm:col-span-4">
+                <h1 class="h3">
+    				<a href="/" class="header__logo">JayPack</a>
+                </h1>
+			</div>
+            <div class="col-span-1 sm:col-span-8">
+				<nav class="menu hidden sm:block">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a class="menu__link is-active" href="#">Menu</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#">Menu</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#">Menu</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
 </header>

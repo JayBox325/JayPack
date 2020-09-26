@@ -1,0 +1,17 @@
+.list {
+    $l: &;
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    &--inline {
+        display: inline-flex;
+
+        #{$l}__item {
+            &:not(:last-child) {
+                margin-right: .75rem;
+            }
+        }
+    }
+}

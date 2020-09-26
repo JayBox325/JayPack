@@ -6,6 +6,12 @@
     
 */
 
-@function color($color) {
+@function color($color, $shade: '') {
+    @if $shade == 'dark' {
+        $color: $color + 'D';
+    } @elseif $shade == 'light' {
+        $color: $color + 'L';
+    }
+    
     @return map-get($colors, $color)
 }

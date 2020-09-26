@@ -3,10 +3,10 @@
 <footer class="row footer">
     <div class="container">
         <div class="mb-6">
-            {{ macro.social(siteDetails.socialAccounts) }}
+            {{ macro.social(socialAccounts) }}
         </div>
         <div class="w-content">
-            <p>{{ now.year }} &copy; Project here.  <a href="https://jaycollett.co" {{ macro.external(true) }}>Site Credits</a></p>
+            <p>{{ now.year }} &copy; {{ siteDetails.title }}.  <a href="https://jaycollett.co" {{ macro.external(true) }}>Site Credits</a></p>
         </div>
     </div>
 </footer>

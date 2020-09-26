@@ -1,26 +1,20 @@
-/*
-    MOBILE MENU
-*/
+.menu {
+    &__list {
+        list-style-type: none;
+        text-align: right;
+    }
+    &__item {
+        display: inline-block;
 
-// @media screen and (max-width: 599px) {
-    .menu {
-        @apply fixed shadow top-0 right-0 h-screen w-screen z-40 p-4 bg-blue-300 invisible;
-
-        &__list {
-            @apply list-none;
-        }
-
-        &__item {
-            @apply mb-2
-        }
-
-        &__link {
-            @apply font-bold leading-none text-2xl;
+        &:not(:first-child) {
+            margin-left: .15rem;
         }
     }
-// }
-
-
-// @media screen and (min-width: 600px) {
-
-// }
+    &__link {
+        height: 3rem;
+        padding: 0 1.5rem;
+        border-radius: 1.5rem;
+        display: inline-flex;
+        align-items: center;
+    }
+}

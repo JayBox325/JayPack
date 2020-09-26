@@ -1,0 +1,31 @@
+{
+    "siteDetails": {
+        "title": "JayPack",
+        "description": "Lorem set amet consectutor",
+        "twitter": "JayBox325"
+    },
+    "seo": {
+        "description": "SEO Description here.",
+        "socialCard": ""
+    },
+    "socialAccounts": [
+        {
+            "account": "Twitter",
+            "text": "Follow us on Twitter",
+            "icon": "twitter",
+            "accountUrl": "https://twitter.com/JayBox325"
+        },
+        {
+            "account": "Facebook",
+            "text": "Like us on Facebook",
+            "icon": "facebook-f",
+            "accountUrl": "https://www.facebook.com"
+        },
+        {
+            "account": "Email",
+            "text": "Email us",
+            "icon": "at",
+            "accountUrl": "mailto:hello@jaycollett.co"
+        }
+    ]
+}

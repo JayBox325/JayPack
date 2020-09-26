@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.1.6 -- DEV
+### Removed
+- Todo list from README and moved into GitHub issues
+
+### Changed
+- Fixed symbols extension
+- Moved accessibility Scss to fix variable import oder bug
+
+### Added
+- Link to tailwind shade generator
+- Default social links component
+- New FB icon
+- Gulp-Data + Nunjucks module
+- Njks header component
+- Button component
+- Theming changes to use tailwind classes instead of pre-defined classes
+
 ## 2.1.5
 ### Changed
 - Fixed typos in changelog
