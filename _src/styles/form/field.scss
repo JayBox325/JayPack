@@ -35,6 +35,18 @@
         appearance: none;
         margin-top: .5rem;
 
+        &:not(:placeholder-shown) {
+            &:invalid {
+                border: 1px solid color('warning');
+                outline: none;
+            }
+        }
+
+        &:focus {
+            border: 1px solid color('primary');
+            outline: none;
+        }
+
         &--textarea {
             min-height: 6rem;
         }
