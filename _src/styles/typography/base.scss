@@ -28,11 +28,13 @@ body {
     }
 
     a {
-        @apply text-teal-800;
+        @apply text-orange-500;
         border-bottom: 1px solid;
+        border-spacing: unset;
+        transition: color .2s ease-in-out;
 
         &:hover {
-            @apply bg-blue-200;
+            @apply text-orange-600;
         }
     }
 }

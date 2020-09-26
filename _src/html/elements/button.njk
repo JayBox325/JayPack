@@ -1,0 +1,23 @@
+{% import '_macros/macros.njk' as macro %}
+
+{# Content #}
+{% set title = title|default("Read more") %}
+{% set action = action|default(null) %}
+
+{# Options #}
+{% set type = type|default('link') %}
+{% set target = target|default(false) %}
+{% set full = full|default(false) %}
+{% set classes = classes|default('bg-orange-500 hover:bg-orange-600 text-white') %}
+
+{% if type == 'link' or type == 'download' %}
+    {% set download = true %}
+    {% set type = 'link' %}
+{% endif %}
+
+{% switch type %}
+	{% case 'button' %}
+        <button {{ action }} class="btn {{ classes }}{% if full %} btn--full{% endif %}">{{ title }}</button>
+    {% case 'link' %}
+        <a href="{{ action }}" {{ macro.external(target) }} class="btn {{ classes }}{% if full %} btn--full{% endif %}" {% if download %}download{% endif %}>{{ title }}</a>
+{% endswitch %}
