@@ -23,8 +23,9 @@
 
         {# <a class="skip-main btn" href="#main">Skip to main content</a> #}
 
+        {% include '_layout/header.njk' %}
+
         <div class="site min-h-screen min-w-screen" id="main" data-barba="container">
-            {% include '_layout/header.njk' %}
             {% block content %}{% endblock %}
             {% include '_layout/footer.njk' %}
         </div>

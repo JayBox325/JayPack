@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Default social links component
 - New FB icon
 - Gulp-Data + Nunjucks module
+- Njks header component
+- Button component
+- Theming changes to use tailwind classes instead of pre-defined classes
 
 ## 2.1.5
 ### Changed

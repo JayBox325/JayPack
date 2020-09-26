@@ -32,6 +32,25 @@
         @apply py-32;
     }
 
+    // Add space for header
+    &:first-child {
+        > * {
+            margin-top: 4rem;
+
+            @screen md {
+                margin-top: 6rem;
+            }
+        
+            @screen lg {
+                margin-top: 8rem;
+            }
+        
+            @screen xl {
+                margin-top: 10rem;
+            }
+        }
+    }
+
     @each $name, $hex in $colors {
         &--#{$name} {
             // Setting the text colour based on how dark/light the bg is.
