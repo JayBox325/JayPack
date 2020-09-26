@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Fixed symbols extension
+- Moved accessibility Scss to fix variable import oder bug
 
 ### Added
 - Link to tailwind shade generator
