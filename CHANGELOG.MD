@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 2.1.7 -- DEV
 ### Changed
 - Converted `resp-font-size()` Scss mixin to work with Tailwind font size values
+- Need to convert colour map to match tailwind names for shades
 
 ### Added
 - Mockup body component to test all content styles
+- New method of setting text colour based on the background value
 
 ## 2.1.6
 ### Removed
