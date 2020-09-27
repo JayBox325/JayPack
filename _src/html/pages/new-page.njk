@@ -3,16 +3,57 @@
 {% block content %}
     <section class="row row--gray">
         <div class="container">
-            <div class="w-content">
-                <h1>Another page to show Barba.js is working!</h1>
-                <p>A front end scaffolding framework for static projects using Nunjucks or for CraftCMS sites with JayCraft.</p>
+            <div class="max-w-5xl">
+                <div class="w-content">
+                    <h1>Another page to show Barba.js is working!</h1>
+                    <p>A front end scaffolding framework for static projects using Nunjucks or for CraftCMS sites with JayCraft.</p>
+                </div>
+                <div class="mt-6">
+                    {% set button = {
+                        action: '/',
+                        label: 'Go back home'
+                    } %}
+                    {% include 'elements/button.njk' %}
+                </div>
             </div>
-            <div class="mt-6">
-                {% set button = {
-                    action: '/',
-                    label: 'Go back home'
-                } %}
-                {% include 'elements/button.njk' %}
+        </div>
+    </section>
+
+    <section class="row row--body">
+        <div class="container">
+            <div class="max-w-5xl mx-auto">
+                <div class="w-content">
+                    <h2>This is a body component</h2>
+                    <p>Reprehenderit eiusmod aliqua anim labore sit minim pariatur labore fugiat laborum est labore cillum aliqua. Sit non <strong>officia ipsum exercitation</strong> do. Consectetur anim laborum reprehenderit fugiat id. Nostrud fugiat veniam Lorem et amet est eu tempor.</p>
+                    <h3>Heading 3</h3><p>Fugiat elit ipsum dolore laboris magna laborum commodo voluptate adipisicing tempor enim aliquip mollit proident. Ipsum id ullamco consectetur duis et ipsum.</p>
+                    <ul>
+                        <li>Nostrud sunt nulla veniam velit</li>
+                        <li>Anim dolor tempor anim. Velit <a href="#">laboris labore reprehenderit</a> incididunt</li>
+                        <li>Amet id aliquip do dolor id excepteur adipisicing sint quis ipsum ea fugiat id</li>
+                    </ul>
+                    <p>Exercitation sit ipsum <em>ullamco sint</em> consequat velit proident laboris laborum dolor deserunt. Ipsum sint excepteur quis eu laborum qui.</p>
+                    <h4>Eiusmod excepteur H4 fugiat officia aliquip</h4>
+                    <p>Id velit sit ullamco eiusmod eiusmod ex.</p>
+                    <ol>
+                        <li>Cupidatat nostrud cillum culpa labore</li>
+                        <li>Reprehenderit. Officia do commodo mollit sunt cupidatat dolor esse nostrud duis sunt irure do eu sunt</li>
+                        <li>Occaecat fugiat pariatur sint irure</li>
+                    </ol>
+                    <h5>Consequat H5 anim officia eu esse</h5>
+                    <p>Reprehenderit consequat nostrud. Mollit nostrud quis commodo elit nulla adipisicing sunt commodo. Sint consequat eiusmod tempor culpa tempor aute ea culpa. Ex Lorem eu mollit in.</p>
+                    <blockquote>Elit ex esse eiusmod dolore veniam consequat aliquip id aliquip velit consectetur cillum quis.</blockquote>
+                    <p>Irure veniam nulla aute aute laboris pariatur minim eiusmod et cillum ullamco occaecat veniam.</p>
+                    <h6>Labore commodo exercitation H6 pariatur sit</h6>
+                    <p>Proident cupidatat ipsum culpa. Id do pariatur duis minim mollit cillum reprehenderit minim esse nisi esse. Ex aute minim labore aliquip sint.</p>
+                </div>
+                <div class="mt-6">
+                    {% set button = {
+                        action: '/',
+                        label: 'Go back home',
+                        classes: 'bg-blue-500 hover:bg-blue-600 text-white'
+                    } %}
+                    {% include 'elements/button.njk' %}
+                </div>
             </div>
         </div>
     </section>

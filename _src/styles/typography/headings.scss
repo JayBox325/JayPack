@@ -1,55 +1,29 @@
 h1, .h1 {
-    @apply font-bold leading-none text-5xl font-sans;
-
-    @screen sm {
-        @apply text-6xl;
-    }
-
-    @screen lg {
-        @apply text-7xl;
-    }
+    @apply font-bold leading-none font-sans;
+    @include resp-font-size('5xl','5xl','6xl','7xl');
 }
 
 h2,.h2 {
-    @apply font-bold leading-none text-2xl;
-
-    @screen lg {
-        @apply text-4xl leading-tight;
-    }
+    @apply font-bold leading-none font-sans;
+    @include resp-font-size('2xl','2xl','3xl','4xl','5xl');
 }
 
 h3,.h3 {
-    @apply font-bold leading-tight text-2xl;
-
-    @screen md {
-        @apply text-3xl;
-    }
-
-    @screen lg {
-        @apply text-4xl;
-    }
+    @apply font-bold leading-none font-sans;
+    @include resp-font-size('2xl','2xl','3xl','3xl','4xl');
 }
 
 h4,.h4 {
-    @apply font-bold leading-relaxed text-lg;
-
-    @screen md {
-        @apply text-xl;
-    }
-
-    @screen lg {
-        @apply text-2xl;
-    }
+    @apply font-bold leading-none font-sans;
+    @include resp-font-size('lg','lg','xl','2xl','3xl');
 }
 
 h5,.h5 {
-    @apply font-bold leading-none text-lg;
-
-    @screen lg {
-        @apply text-xl;
-    }
+    @apply font-bold leading-none font-sans;
+    @include resp-font-size('base','lg','lg','xl','xl');
 }
 
 h6,.h6 {
-    @apply font-black leading-none text-base;
+    @apply font-bold leading-none font-sans;
+    @include resp-font-size('base','base','base','base','lg');
 }

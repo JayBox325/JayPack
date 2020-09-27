@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 2.1.6 -- DEV
+## 2.1.7 -- DEV
+### Changed
+- Converted `resp-font-size()` Scss mixin to work with Tailwind font size values
+
+### Added
+- Mockup body component to test all content styles
+
+## 2.1.6
 ### Removed
 - Todo list from README and moved into GitHub issues
 
@@ -20,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Njks header component
 - Button component
 - Theming changes to use tailwind classes instead of pre-defined classes
+- Default BarbaJS module
 
 ## 2.1.5
 ### Changed
