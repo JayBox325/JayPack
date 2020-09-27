@@ -51,15 +51,6 @@
         }
     }
 
-
-    // @debug index($lightColors, 'cheese');
-
-    // @if in_list(cheese, $lightColors) {
-    //     background:red;
-    // } @else {
-    //     @error "$val argument must exist in #{$list}; was '#{$val}'";
-    // }
-
     @each $name, $hex in $colors {
         &--#{$name} {
             @include text-color($name);

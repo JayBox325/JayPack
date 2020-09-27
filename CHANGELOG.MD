@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Mockup body component to test all content styles
 - New method of setting text colour based on the background value
+- New 'primary' and 'secondary' colourschemes as these are usually specific and may not sit inside 'green' or 'red' etc.
 
 ## 2.1.6
 ### Removed
