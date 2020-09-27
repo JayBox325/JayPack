@@ -5,11 +5,14 @@
 
 */
 
+// Configure which colors need black text after testing with an accessibility checker.
+$lightBackgrounds: white, gray;
+
 // Colour map used with color('primary')
 $colors: (
     // Project colours
-    primary:        theme('colors.orange.500'),
-    secondary:      theme('colors.blue.500'),
+    orange:        theme('colors.orange.500'),
+    blue:      theme('colors.blue.500'),
 
     // Core colours
     white:          theme('colors.white'),
@@ -17,9 +20,9 @@ $colors: (
     gray:           theme('colors.gray.200'),
 
     // Contextual
-    success:        theme('colors.green.700'),
-    info:           theme('colors.yellow-600'),
-    warning:        theme('colors.red.700'),
+    green:        theme('colors.green.700'),
+    yellow:           theme('colors.yellow-600'),
+    red:        theme('colors.red.700'),
 );
 
 $social: (

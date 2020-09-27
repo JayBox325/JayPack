@@ -18,7 +18,7 @@
 
 {% switch type %}
 	{% case 'button' %}
-        <button {{ action }} class="btn {{ classes }}{% if full %} btn--full{% endif %}">{{ label }}</button>
+        <button {{ action }} class="btn btn--{{ classes }}{% if full %} btn--full{% endif %}">{{ label }}</button>
     {% case 'link' %}
-        <a href="{{ action }}" {{ macro.external(target) }} class="btn {{ classes }}{% if full %} btn--full{% endif %}" {% if download %}download{% endif %}>{{ label }}</a>
+        <a href="{{ action }}" {{ macro.external(target) }} class="btn btn--{{ classes }}{% if full %} btn--full{% endif %}" {% if download %}download{% endif %}>{{ label }}</a>
 {% endswitch %}

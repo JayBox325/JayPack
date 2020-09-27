@@ -1,16 +1,33 @@
 {% extends "_layout/_base.njk" %}
+{% import '_macros/macros.njk' as macro %}
 
 {% block content %}
     <section class="row row--gray">
         <div class="container">
             <div class="w-content">
                 <h1>Welcome to {{ siteDetails.title }}</h1>
-                <p>A front end scaffolding framework for static projects using Nunjucks or for CraftCMS sites with JayCraft.</p>
+                <p>A front end scaffolding framework with TailwindCSS, Webpack and Gulp. Use with static projects using Nunjucks or with <a href="https://craftcms.com" {{ macro.external(true) }} >CraftCMS</a> sites with <a href="https://github.com/jaybox325/jaycraft" {{ macro.external(true) }} >JayCraft</a>.</p>
             </div>
             <div class="mt-6">
                 {% set button = {
                     action: '/new-page.html',
-                    label: 'Test BarbaJS'
+                    label: 'Test BarbaJS',
+                    classes: 'gray'
+                } %}
+                {% include 'elements/button.njk' %}
+            </div>
+        </div>
+    </section>
+    <section class="row row--orange">
+        <div class="container">
+            <div class="w-content">
+                <h1>Welcome to {{ siteDetails.title }}</h1>
+            </div>
+            <div class="mt-6">
+                {% set button = {
+                    action: '/new-page.html',
+                    label: 'Button theme test',
+                    classes: 'blue'
                 } %}
                 {% include 'elements/button.njk' %}
             </div>

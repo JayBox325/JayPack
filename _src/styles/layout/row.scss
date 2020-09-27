@@ -51,11 +51,18 @@
         }
     }
 
+
+    // @debug index($lightColors, 'cheese');
+
+    // @if in_list(cheese, $lightColors) {
+    //     background:red;
+    // } @else {
+    //     @error "$val argument must exist in #{$list}; was '#{$val}'";
+    // }
+
     @each $name, $hex in $colors {
         &--#{$name} {
-            // Setting the text colour based on how dark/light the bg is.
-            // @debug "Hex: #{$hex}";
-            // color: set-text-color($hex);
+            @include text-color($name);
             
             &:before {
                 background-color: $hex;
