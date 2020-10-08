@@ -18,12 +18,15 @@ import tailwindcss from 'tailwindcss'
 import postcss from 'gulp-postcss'
 import glob from 'gulp-sass-glob'
 import cssnano from 'cssnano'
+import purgecss from 'gulp-purgecss'
 
 gulp.task('styles', () => {
     return gulp.src(paths.sass.src)
         .pipe(development(sourcemaps.init()))
         .pipe(glob())
-        .pipe(sass())
+        .pipe(sass({
+            includePaths: ['node_modules']
+        }))
         .on('error', handleErrors)
         .pipe(postcss([
             tailwindcss('./_gulp/tailwind.config.js'),

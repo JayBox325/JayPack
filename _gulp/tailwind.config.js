@@ -3,7 +3,12 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: {
+    enabled: true,
+    content: [
+      './build/**/*.twig'
+    ]
+  },
   target: 'relaxed',
   prefix: '',
   important: false,
