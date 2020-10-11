@@ -1,15 +1,20 @@
-import $ from 'jquery'
 import Plyr from 'plyr'
 
-export default function player() {
-    const $video = $('.js-player')
+// Play videos with HTML Plyr: https://plyr.io/
 
-    if ($video.length) {
-        $video.each(function(i, el) {
-            const player = new Plyr(el, {
-                controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-                clickToPlay: false
-            })
+export default function player() {
+    const videoElements = document.querySelectorAll('[data-player]')
+
+    if (videoElements.length) {
+        videoElements.forEach(video => {
+            player(video)
+        })
+    }
+
+    function player(el) {
+        const player = new Plyr(el, {
+            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+            clickToPlay: false
         })
     }
 }

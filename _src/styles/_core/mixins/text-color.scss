@@ -1,8 +1,7 @@
-@function set-text-color($color) {
-    // @debug "color: #{$color}";
-    @if (lightness($color) > 80) {
-        @return color('black');
+@mixin text-color($name) {
+    @if (index($lightBackgrounds, $name) != null) {
+        @apply text-black;
     } @else {
-        @return color('white');
+        @apply text-white;
     }
 }

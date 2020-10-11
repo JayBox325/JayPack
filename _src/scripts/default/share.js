@@ -1,15 +1,15 @@
-import $ from 'jquery'
-
 // Open social share links in small new windows.
 
 export default function share() {
-    if ($('[data-share]').length > 0) {
-        const $socialWindow = $('[data-social]')
+    const shareElements = document.querySelectorAll('[data-share]')
 
-        $socialWindow.on('click', function(e) {
+    if (shareElements.length) {
+        const $shareBtn = document.querySelector('[data-share]')
+
+        $shareBtn.addEventListener('click', function(e) {
             e.preventDefault()
-            window.open(this.href, 'Social', 'width=800, height=600')
-            return false;
+            window.open(this.href, 'Share', 'width=800, height=600')
+            return false
         })
     }
 }

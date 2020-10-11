@@ -23,7 +23,9 @@ gulp.task('styles', () => {
     return gulp.src(paths.sass.src)
         .pipe(development(sourcemaps.init()))
         .pipe(glob())
-        .pipe(sass())
+        .pipe(sass({
+            includePaths: ['node_modules']
+        }))
         .on('error', handleErrors)
         .pipe(postcss([
             tailwindcss('./_gulp/tailwind.config.js'),

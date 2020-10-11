@@ -1,13 +1,6 @@
 body {
     @apply text-black leading-relaxed text-base font-sans;
-
-    @screen md {
-        @apply text-lg;
-    }
-
-    @screen lg {
-        @apply text-xl;
-    }
+    @include resp-font-size('base','base','lg','lg','xl');
 }
 
 .w-content {
@@ -37,4 +30,23 @@ body {
             @apply text-orange-600;
         }
     }
+
+	blockquote {
+        @apply text-orange-500 border-orange-500 font-bold italic;
+		padding: 1rem 2rem;
+        margin-left: 0;
+		border-left: 4px solid;
+    }
+    
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: count;
+    }
+
+	ul, ol {
+		padding-left: 3rem;
+	}
 }

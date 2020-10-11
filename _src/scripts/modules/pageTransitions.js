@@ -1,11 +1,8 @@
 import barba from '@barba/core';
 
 export default function pageTransitions() {
-    console.log('BARBA')
 
-    barba.init({
-
-    })
+    barba.init()
 
     // Trigger page analytics
     barba.hooks.after(() => {

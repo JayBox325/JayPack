@@ -53,9 +53,7 @@
 
     @each $name, $hex in $colors {
         &--#{$name} {
-            // Setting the text colour based on how dark/light the bg is.
-            // @debug "Hex: #{$hex}";
-            // color: set-text-color($hex);
+            @include text-color($name);
             
             &:before {
                 background-color: $hex;

@@ -19,7 +19,7 @@ const paths = {
         dest: `build`,
         moveDest: `_src`,
         access: `./_src/html/_layout/_base.njk`,
-        storage: `_gulp/html/**`
+        storage: `_gulp/html/**/*.*`
     },
 
     twig: {
@@ -29,7 +29,6 @@ const paths = {
     js: {
         app: `./_src/scripts/app.js`,
         watch: `_src/scripts/**/*.js`,
-        vendor: `./_src/scripts/vendor/*.js`,
         dest: `${assets}/scripts`
     },
 

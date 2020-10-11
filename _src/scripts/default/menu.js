@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import setFocus from './keyboardTrap'
+import setFocus from '../_tools/keyboard-trap'
 import { TimelineLite, TweenLite } from 'gsap'
 
 // Main menu JS

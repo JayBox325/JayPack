@@ -19,10 +19,21 @@
 
     @each $name, $hex in $colors {
         &--#{$name} {
-            background-color: $hex;
+            @include text-color($name);
 
-            &:hover {
-                background-color: color(#{$name} + 'D');
+            @if ($name != white and $name != black) {
+                @apply bg-#{$name}-500;
+
+                &:hover {
+                    @apply bg-#{$name}-700;
+                }
+            } @else {
+
+                @apply bg-#{$name};
+
+                &:hover {
+                    @apply bg-#{$name};
+                }
             }
         }
     }

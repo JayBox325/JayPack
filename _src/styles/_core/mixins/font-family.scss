@@ -1,7 +1,0 @@
-@mixin font-family($family) {
-    @if $family == 'display' {
-        font-family: $displayFont;
-    } @else {
-        font-family: $bodyFont;
-    }
-}

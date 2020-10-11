@@ -4,7 +4,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 2.1.6 -- DEV
+## 2.1.7
+### Changed
+- Converted `resp-font-size()` Scss mixin to work with Tailwind font size values
+- Need to convert colour map to match tailwind names for shades
+- Cleaning gulp tasks
+- Removing Jquery from modules in an effort to learn vanilla JS and make smaller bundles!
+
+### Added
+- Mockup body component to test all content styles
+- New method of setting text colour based on the background value
+- New 'primary' and 'secondary' colourschemes as these are usually specific and may not sit inside 'green' or 'red' etc.
+- Default Footer scss file.
+- Sass Gulp Node_modules include path
+- NVM
+- Webpack 5!
+- Gzipping for js bundle for Craft projects (need to add .gz config to JayCraft!)
+
+## 2.1.6
 ### Removed
 - Todo list from README and moved into GitHub issues
 
@@ -20,6 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Njks header component
 - Button component
 - Theming changes to use tailwind classes instead of pre-defined classes
+- Default BarbaJS module
 
 ## 2.1.5
 ### Changed
