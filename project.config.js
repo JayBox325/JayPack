@@ -1,6 +1,10 @@
 const projectConfig = {
-    craft: false, // True or False
-    domain: '' // Custom domain for MAMP if on a Craft project e.g. local.jaypack.com
+    
+    // Craft or static site. True or false.
+    craft: false,
+
+    // Custom domain for MAMP if on a Craft project
+    domain: 'local.jaypack.com'
 }
 
 export default projectConfig
