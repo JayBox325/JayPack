@@ -1,7 +1,10 @@
 import gulp from 'gulp'
-import clean from 'gulp-clean'
 
+// Config
 import config from '../config'
+
+// Assets packages
+import clean from 'gulp-clean'
 
 const production = config.env.production
  

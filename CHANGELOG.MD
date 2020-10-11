@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Converted `resp-font-size()` Scss mixin to work with Tailwind font size values
 - Need to convert colour map to match tailwind names for shades
+- Cleaning gulp tasks
 
 ### Added
 - Mockup body component to test all content styles
@@ -16,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Default Footer scss file.
 - Sass Gulp Node_modules include path
 - NVM
+- Webpack 5!
+- Gzipping for js bundle for Craft projects (need to add .gz config to JayCraft!)
 
 ## 2.1.6
 ### Removed

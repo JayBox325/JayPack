@@ -1,5 +1,4 @@
 import gulp from 'gulp'
-import notify from 'gulp-notify'
 import browserSync from 'browser-sync'
 
 // Config
@@ -9,13 +8,12 @@ import handleErrors from '../utils/handleErrors'
 
 // Environment config
 const development = config.env.development
-const production = config.env.production
 
-// Image packages
+// Assets packages
 import imagemin from 'gulp-imagemin'
 import changed from 'gulp-changed'
 
-// minify and move images
+// Minify and move images
 gulp.task('images', () => {
     return gulp.src(paths.assets.images.src)
         .pipe(changed(paths.assets.images.src))

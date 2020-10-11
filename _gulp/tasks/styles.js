@@ -18,7 +18,6 @@ import tailwindcss from 'tailwindcss'
 import postcss from 'gulp-postcss'
 import glob from 'gulp-sass-glob'
 import cssnano from 'cssnano'
-import purgecss from 'gulp-purgecss'
 
 gulp.task('styles', () => {
     return gulp.src(paths.sass.src)

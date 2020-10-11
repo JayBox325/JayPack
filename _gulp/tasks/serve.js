@@ -3,7 +3,7 @@ import gulp from 'gulp'
 // Config
 import config from '../config'
 
-// Server package
+// Server packages
 import browsersync from 'browser-sync'
 
 // Serve Browsersync

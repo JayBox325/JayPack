@@ -29,7 +29,6 @@ const paths = {
     js: {
         app: `./_src/scripts/app.js`,
         watch: `_src/scripts/**/*.js`,
-        vendor: `./_src/scripts/vendor/*.js`,
         dest: `${assets}/scripts`
     },
 
