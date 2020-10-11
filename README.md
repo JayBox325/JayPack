@@ -3,8 +3,11 @@ A CraftCMS & Frontend boilterplate using Webpack & Gulp 4.
 
 JayPack is the front end framework for use with [JayCraft](https://packagist.org/packages/jaybox325/jaycraft) or as a static site builder with Nunjucks.
 
+## Node Version Manager
+To keep things simple, this project uses nvm to manage the node version for your projects. If you haven't got nvm installed, go and install that first.
+
 ## Installation
-Simply run `npm i` to install all the front end dependencies in the root directory.
+Run `nvm use` to configure your node version then simply run `npm i` to install all the front end dependencies in the root directory.
 
 ## Setup
 Configure the project in `./project.config.js`. Set `craft` to true or false depending on your needs.
