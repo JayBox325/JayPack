@@ -1,5 +1,7 @@
 import $ from 'jquery'
 
+// HAS JQUERY
+
 // Keep a keyboard user where we want them to be
 
 export default function setFocus($target) {
@@ -17,7 +19,6 @@ export default function setFocus($target) {
 function trapTabKey(obj, evt) {
 
     // Trapped tabbing
-    let focusedElementBeforeModal
     var focusableElementsString = "a[href], area[href], input:not([disabled]), summary, select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]"
 
     // if tab or shift-tab pressed
@@ -32,7 +33,7 @@ function trapTabKey(obj, evt) {
 
         // get currently focused item
         var focusedItem
-        focusedItem = jQuery(':focus')
+        focusedItem = document.activeElement
 
         // get the number of focusable items
         var numberOfFocusableItems

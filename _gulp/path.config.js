@@ -19,7 +19,7 @@ const paths = {
         dest: `build`,
         moveDest: `_src`,
         access: `./_src/html/_layout/_base.njk`,
-        storage: `_gulp/html/**`
+        storage: `_gulp/html/**/*.*`
     },
 
     twig: {
