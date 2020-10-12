@@ -16,8 +16,6 @@ const production = config.env.production
 import webpack from 'webpack'
 import webpackStream from 'webpack-stream'
 import uglify from 'gulp-uglify'
-import gzip from 'gulp-gzip'
-import gulpif from 'gulp-if'
 
 // Compile scripts with Webpack
 gulp.task('scripts', (cb) => {
@@ -27,9 +25,6 @@ gulp.task('scripts', (cb) => {
 
         // Minify for production
         .pipe(production(uglify()))
-
-        // GZip for Craft projects
-        .pipe(gulpif(projectConfig.craft, gzip({append: true})))
 
         .pipe(gulp.dest(paths.js.dest))
         .on('error', handleErrors)
