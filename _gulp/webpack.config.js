@@ -1,7 +1,6 @@
 import paths from './path.config'
 import environments from 'gulp-environments'
 import path from 'path'
-import CompressionWebpackPlugin from 'compression-webpack-plugin'
 
 var production = environments.production
 
@@ -18,12 +17,6 @@ const config = {
         path: path.resolve(__dirname, 'app'),
         filename: 'bundle.js',
     },
-    plugins: [
-        new CompressionWebpackPlugin({
-            algorithm: "gzip",
-            test: /\.js(\?.*)?$/i,
-        }),
-    ],
     module: {
         rules: [
             {
