@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Gzip htaccess file
 - Print stylesheet
+- Print page button JS
 
 ### Changed
 - Worked with gzipping and removed it, server side gzipping is better
