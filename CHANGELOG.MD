@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 2.1.8 -- DEV
 ### Added
 - Gzip htaccess file
+- Print stylesheet
 
 ### Changed
 - Worked with gzipping and removed it, server side gzipping is better
