@@ -1,10 +1,18 @@
+import environments from 'gulp-environments'
+
+var development = environments.development
+var production = environments.production
+
+const env = production() ? 'production' : 'development'
+const isProd = env === 'production'
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
   purge: {
-    enabled: true,
+    enabled: isProd ? true : false,
     content: [
       './build/**/*.twig'
     ]
