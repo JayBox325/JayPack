@@ -8,26 +8,26 @@
 // Configure which colors need black text after testing with an accessibility checker.
 $lightBackgrounds: white, gray;
 
-// Colour map used with color('primary')
+// Colour map used with color('red')
 $colors: (
     // Project colours
-    orange:        theme('colors.orange.500'),
-    blue:      theme('colors.blue.500'),
+    orange:             theme('colors.orange.500'),
+    blue:               theme('colors.blue.500'),
 
     // Core colours
-    white:          theme('colors.white'),
-    black:          theme('colors.gray.800'),
-    gray:           theme('colors.gray.200'),
+    white:              theme('colors.white'),
+    black:              theme('colors.gray.800'),
+    gray:               theme('colors.gray.200'),
 
     // Contextual
-    green:        theme('colors.green.700'),
-    yellow:           theme('colors.yellow-600'),
-    red:        theme('colors.red.700'),
+    green:              theme('colors.green.700'),
+    yellow:             theme('colors.yellow-600'),
+    red:                theme('colors.red.700'),
 );
 
 $social: (
-    facebook:       theme('colors.facebook.500'),
-    twitter:        theme('colors.twitter.500'),
-    instagram:      theme('colors.instagram.500'),
-    pinterest:      theme('colors.pinterest.500'),
+    facebook:           theme('colors.facebook.500'),
+    twitter:            theme('colors.twitter.500'),
+    instagram:          theme('colors.instagram.500'),
+    pinterest:          theme('colors.pinterest.500'),
 );

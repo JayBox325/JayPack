@@ -1,6 +1,6 @@
 import environments from 'gulp-environments'
+import darkMode from 'tailwindcss-dark-mode'
 
-var development = environments.development
 var production = environments.production
 
 const env = production() ? 'production' : 'development'
@@ -14,6 +14,7 @@ module.exports = {
   purge: {
     enabled: isProd ? true : false,
     content: [
+      './node_modules/tailwindcss-dark-mode/prefers-dark.js',
       './build/**/*.twig'
     ]
   },
@@ -29,6 +30,8 @@ module.exports = {
       md: '900px',
       lg: '1200px',
       xl: '1600px',
+      lightMode: { raw: '(prefers-color-scheme: light)' },
+      darkMode: { raw: '(prefers-color-scheme: dark)' }
     },
     colors: {
       transparent: 'transparent',
@@ -36,32 +39,6 @@ module.exports = {
 
       black: '#000',
       white: '#fff',
-
-      // Project colours - https://javisperez.github.io/tailwindcolorshades/#/
-      primary: {
-        50: '#F3F4F3',
-        100: '#E8EAE8',
-        200: '#C5CAC5',
-        300: '#A2AAA2',
-        400: '#5C6B5C',
-        500: '#162B16',
-        600: '#142714',
-        700: '#0D1A0D',
-        800: '#0A130A',
-        900: '#070D07',
-      },
-      secondary: {
-        50: '#FEF6F4',
-        100: '#FCECEA',
-        200: '#F9D0CA',
-        300: '#F5B3AA',
-        400: '#ED7B6B',
-        500: '#E5422B',
-        600: '#CE3B27',
-        700: '#89281A',
-        800: '#671E13',
-        900: '#45140D',
-      },
 
       // Social
       facebook: {

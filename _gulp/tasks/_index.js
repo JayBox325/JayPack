@@ -15,8 +15,8 @@ gulp.task('build', gulp.series(
 		'move-fonts',
 		'move-videos',
 		'images',
-		staticTask('nunjucks')
 	),
+	staticTask('nunjucks'),
 	'clean'
 ))
 

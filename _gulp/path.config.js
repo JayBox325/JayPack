@@ -12,14 +12,14 @@ const paths = {
     },
 
     njks: {
+        storage: `_gulp/html/**/*`,
+        access: `./_src/html/_layout/_base.njk`,
         render: `_src/html`,
         src: `_src/html/pages/*.njk`,
         watch: `_src/html/**/*`,
-        data: `./_src/data.json`,
+        data: `_src/html/__data/data.json`,
         dest: `build`,
         moveDest: `_src`,
-        access: `./_src/html/_layout/_base.njk`,
-        storage: `_gulp/html/**/*.*`
     },
 
     twig: {

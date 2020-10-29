@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Print page button JS
 
 ### Changed
+- Improved gulp move task
+- Adjusted Sass colours more to suit Tailwind
 - Worked with gzipping and removed it, server side gzipping is better
 
 ## 2.1.7

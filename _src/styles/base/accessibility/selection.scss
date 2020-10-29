@@ -1,7 +1,15 @@
 ::-moz-selection { /* Code for Firefox */
-    background: color('primary');
+    @apply bg-orange-500 text-black;
+
+    // .dark-mode & {
+    //     @apply text-orange-500;
+    // }
 }
 
 ::selection {
-    background: color('primary');
+    @apply bg-orange-500 text-black;
+
+    // .dark-mode & {
+    //     @apply text-gray-700;
+    // }
 }
