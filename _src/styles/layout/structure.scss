@@ -9,21 +9,3 @@ body {
         @apply overflow-hidden;
     }
 }
-
-.site {
-
-    &__inner {
-        opacity: 0;
-        transition: opacity .5s ease-in-out;
-
-        .no-js & {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
-
-        &.is-visible {
-            transition-delay: .1s;
-            opacity: 1;
-        }
-    }
-}

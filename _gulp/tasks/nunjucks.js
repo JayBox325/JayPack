@@ -12,9 +12,7 @@ import fs from 'fs'
 
 // Compile source nunjucks into built html files
 gulp.task('nunjucks', (done) => {
-    console.log('COMPILE NUNJUCKS');
     if (fs.existsSync(paths.njks.access)) {
-        console.log('FILE EXISTS');
         return gulp.src(paths.njks.src)
             .on('error', handleErrors)
             .pipe(nunjucksRender({
@@ -35,10 +33,4 @@ gulp.task('nunjucks-move', (done) => {
             .pipe(gulp.dest(paths.njks.moveDest))
     }
     done()
-})
-
-// Delete the html dir now it's moved to src
-gulp.task('nunjucks-clean', () => {
-    gulp.src(paths.njks.storage)
-        .pipe(clean())
 })
