@@ -1,0 +1,20 @@
+{% extends "_layout/_base.njk" %}
+
+{% block content %}
+    <section class="row row--gray">
+        <div class="container">
+            <div class="w-content">
+                <h1>Welcome to {{ siteDetails.title }}</h1>
+                <p>A front end scaffolding framework for static projects using Nunjucks or for CraftCMS sites with JayCraft.</p>
+            </div>
+            <div class="mt-6">
+                {% set button = {
+                    action: 'https://google.com',
+                    title: 'This is a button',
+                    classes: 'bg-red-600 hover:bg-red-700 text-white'
+                } %}
+                {% include 'elements/button.njk' %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

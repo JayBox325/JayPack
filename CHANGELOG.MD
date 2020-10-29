@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Brotli htaccess file
 - Print stylesheet
 - Print page button JS
+- Missing Njks files
 
 ### Changed
 - Improved gulp move task

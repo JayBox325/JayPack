@@ -16,25 +16,4 @@
         height: 3.5rem;
         border-radius: 1.75rem;
     }
-
-    @each $name, $hex in $colors {
-        &--#{$name} {
-            @include text-color($name);
-
-            @if ($name != white and $name != black) {
-                @apply bg-#{$name}-500;
-
-                &:hover {
-                    @apply bg-#{$name}-700;
-                }
-            } @else {
-
-                @apply bg-#{$name};
-
-                &:hover {
-                    @apply bg-#{$name};
-                }
-            }
-        }
-    }
 }

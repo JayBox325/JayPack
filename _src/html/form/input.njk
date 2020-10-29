@@ -1,0 +1,14 @@
+<input
+    class="field__input"
+    name="{{ field.handle }}"
+    id="{{ field.id }}"
+    type="{{ field.type }}"
+    placeholder="{{ field.placeholder }}"
+
+    {% if field.required %}
+        required
+    {% endif %}
+    {% if field.value %}
+        value="{{ field.value }}"
+    {% endif %}
+/>
