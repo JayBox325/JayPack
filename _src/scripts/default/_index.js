@@ -1,11 +1,16 @@
-import fontLoader from './fontLoader'
+// import menu from './menu'
+// import pageTransitions from './pageTransitions'
+import player from './player'
+import header from './header'
 import share from './share'
-import menu from './menu'
 import printPage from './print-page'
 
 export default function defaultJS() {
-    fontLoader()
-    menu()
+    // menu()
+    // pageTransitions()
+
+    player()
+    header()
     share()
     printPage()
 }

@@ -1,7 +1,7 @@
 import config from './config'
 import projectConfig from '../project.config'
 
-const assets = config.distRoot
+const assets = `${config.distRoot}/assets`
 
 const paths = {
 	sass: {
@@ -18,12 +18,12 @@ const paths = {
         src: `_src/html/pages/*.njk`,
         watch: `_src/html/**/*`,
         data: `_src/html/__data/data.json`,
-        dest: `build`,
+        dest: `${config.distRoot}`,
         moveDest: `_src`,
     },
 
     twig: {
-        watch: `build/templates/**/*.twig`
+        watch: `${config.distRoot}/templates/**/*.twig`
     },
 
     js: {
@@ -61,7 +61,7 @@ const paths = {
     },
 
     symbols: {
-        dest: projectConfig.craft ? `build/templates/_includes` : `_src/html/_includes`
+        dest: projectConfig.craft ? `${config.distRoot}/templates/_includes` : `_src/html/_includes`
     },
 
     rev: {

@@ -1,6 +1,8 @@
-import Plyr from 'plyr'
+/*
+    HTML5 Video player from https://plyr.io/
+*/
 
-// Play videos with HTML Plyr: https://plyr.io/
+import Plyr from 'plyr'
 
 export default function player() {
     const videoElements = document.querySelectorAll('[data-player]')
@@ -13,7 +15,15 @@ export default function player() {
 
     function player(el) {
         const player = new Plyr(el, {
-            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+            controls: [
+                'play-large',
+                'play',
+                'progress',
+                'current-time',
+                'mute',
+                'volume',
+                'fullscreen'
+            ],
             clickToPlay: false
         })
     }

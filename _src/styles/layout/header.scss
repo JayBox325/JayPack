@@ -16,20 +16,21 @@
 
     &.is-scrolled {
         &:before {
-            @apply bg-white;
+            opacity: 1;
         }
     }
 
     &:before {
-        transition: background .2s ease-in-out;
+        @apply bg-white shadow;
+        transition: opacity .2s ease-in-out;
         content: '';
         position: absolute;
         z-index: 1;
         width: calc(100% + 4rem);
         height: 100%;
         top: 0;
+        opacity: 0;
         left: 0;
-        background: transparent;
         transform: translateX(-2rem);
     }
 

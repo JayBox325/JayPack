@@ -1,18 +1,20 @@
 import environments from 'gulp-environments'
 import projectConfig from '../project.config'
 
+const distRoot = '_project/_frontend'
+
 // Config rules
 const config = {
-    // Environment variables - can be 'development' or 'production'
     env: {
         production: environments.production,
         development: environments.development
     },
 
+    // Craft or static?
     type: projectConfig.type,
 
-    // Root directory for assets produced in Gulp
-    distRoot: projectConfig.craft ? 'build/public/assets' : 'build/assets',
+    // Build directory
+    distRoot: distRoot,
 
     // Sass variables
     autoprefixerVersions: [
@@ -31,7 +33,7 @@ const config = {
         notify: false
     } : {
         server: {
-            baseDir: './build'
+            baseDir: distRoot
         }
     }
 }

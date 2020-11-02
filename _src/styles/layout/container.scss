@@ -4,6 +4,10 @@
 
     @screen xs {
         max-width: 1400px;
+
+        &--slim {
+            max-width: 900px;
+        }
     }
 
     @screen md {

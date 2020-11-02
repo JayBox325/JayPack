@@ -1,3 +1,7 @@
+/*
+    Barba.js page transitions
+*/
+
 import barba from '@barba/core'
 
 export default function pageTransitions() {

@@ -1,29 +1,29 @@
 h1, .h1 {
-    @apply font-bold leading-none font-sans;
-    @include resp-font-size('5xl','5xl','6xl','7xl');
+    @apply font-bold leading-none font-sans text-2xl;
+    @include resp-font-size('4xl','5xl','6xl','7xl','7xl');
 }
 
 h2,.h2 {
-    @apply font-bold leading-none font-sans;
-    @include resp-font-size('2xl','2xl','3xl','4xl','5xl');
+    @apply font-bold leading-none font-sans text-xl;
+    @include resp-font-size('2xl','3xl','4xl','5xl','6xl');
 }
 
 h3,.h3 {
-    @apply font-bold leading-none font-sans;
-    @include resp-font-size('2xl','2xl','3xl','3xl','4xl');
+    @apply font-bold leading-none font-sans text-lg;
+    @include resp-font-size('xl','2xl','3xl','3xl','4xl');
 }
 
 h4,.h4 {
-    @apply font-bold leading-none font-sans;
-    @include resp-font-size('lg','lg','xl','2xl','3xl');
+    @apply font-bold leading-none font-sans text-lg;
+    @include resp-font-size('xl','xl','2xl','2xl','3xl');
 }
 
 h5,.h5 {
-    @apply font-bold leading-none font-sans;
-    @include resp-font-size('base','lg','lg','xl','xl');
+    @apply font-bold leading-none font-sans text-base;
+    @include resp-font-size('lg','lg','xl','xl','2xl');
 }
 
 h6,.h6 {
-    @apply font-bold leading-none font-sans;
-    @include resp-font-size('base','base','base','base','lg');
+    @apply font-bold leading-none font-sans text-base;
+    @include resp-font-size('base','lg','lg','lg','xl');
 }

@@ -1,14 +1,31 @@
-// Source: https://github.com/kenwheeler/slick
+/*
+    Slider with Slick from https://github.com/kenwheeler/slick
+*/
+
 import $ from 'jquery'
 import slick from 'slick-carousel'
 
-// This may not work first time, need to confirm
-
 export default function slider() {
-    const $slider = $('[data-slick]')
-    if ($slider.length) {
-        $slider.each(function(i, el) {
-            el.slick({})
+    const sliders = document.querySelectorAll('[data-slick]')
+
+    if (sliders.length) {
+        slider.forEach(el => {
+            let type = el.getAttribute('data-slick') || 'slider'
+            
+            if (type == 'slider') {
+                $(el).slick({
+                    infinite: true,
+                    fade: true,
+
+                    // Navigation
+                    dots: true,
+                    arrows: false,
+                    dotsClass: 'slider__dots',
+
+                    // Grow to show taller images
+                    adaptiveHeight: true
+                })
+            }
         })
     }
 }
