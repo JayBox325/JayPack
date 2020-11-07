@@ -2,7 +2,8 @@
     "siteDetails": {
         "title": "JayPack",
         "description": "Lorem set amet consectutor",
-        "twitter": "JayBox325"
+        "twitter": "JayBox325",
+        "url": ""
     },
     "seo": {
         "description": "SEO Description here.",

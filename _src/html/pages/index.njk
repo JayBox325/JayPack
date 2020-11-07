@@ -62,4 +62,52 @@
             </div>
         </div>
     </section>
+
+    <section class="row row--white">
+        <div class="container container--slim">
+
+            <form class="max-w-lg">
+
+                <div class="grid grid-cols-4 md:grid-cols-12 gap-2 md:gap-3">
+                    <div class="col-span-4 md:col-span-12">
+                        {% set field = {
+                            label: 'Name',
+                            placeholder: 'John Doe',
+                            type: 'text',
+                            id: 'name'
+                        } %}
+                        {% include 'form/field.njk' %}
+                    </div>
+
+                    <div class="col-span-4 md:col-span-12">
+                        {% set field = {
+                            label: 'Email address',
+                            placeholder: 'example@email.com',
+                            type: 'email',
+                            id: 'email'
+                        } %}
+                        {% include 'form/field.njk' %}
+                    </div>
+
+                    <div class="col-span-4 md:col-span-12">
+                        {% set field = {
+                            label: 'You agree to our <a href="#privacy" class="ul-hover">privacy policy</a>',
+                            type: 'checkbox',
+                            id: 'checkbox'
+                        } %}
+                        {% include 'form/field.njk' %}
+                    </div>
+
+                    <div class="col-span-4 md:col-span-12">
+                        {% set field = {
+                            label: 'Subscribe',
+                            type: 'submit'
+                        } %}
+                        {% include 'form/field.njk' %}
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section>
 {% endblock %}

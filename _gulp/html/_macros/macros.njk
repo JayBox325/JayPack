@@ -19,3 +19,9 @@
         {% endfor %}
     </ul>
 {% endmacro %}
+
+{% macro required(state) %}
+    {% if state == true %}
+        <span> *</span>
+    {% endif %}
+{% endmacro %}

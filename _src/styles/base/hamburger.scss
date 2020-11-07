@@ -1,65 +1,22 @@
 .hamburger {
-    $h: &;
-    @apply top-0 h-16;
+    @apply h-5 w-5 block absolute right-0;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
 
-    @screen md {
-        @apply h-24;
-    }
-
-    &__checkbox {
-        @apply absolute block z-50 right-0 mr-4 h-8 w-8 appearance-none;
-        top: 50%;
-        transform: translate3d(0,-50%,0);
-
-        &:checked {
-            + #{$h}__icon {
-                #{$h}__bar {
-                    &:nth-child(1) {
-                        top: 50%;
-                        transform: translate3d(-50%, -50%, 0) rotate(45deg);
-                    }
-                    &:nth-child(2) {
-                        @apply w-0;
-                    }
-                    &:nth-child(3) {
-                        top: 50%;
-                        transform: translate3d(-50%, -50%, 0) rotate(-45deg);
-                    }
-                }
-            }
-            .no-js & {
-                ~ .menu {
-                    @apply visible;
-                }
-            }
-        }
-    }
-
-    &__icon {
-        @apply absolute block z-50 right-0 mr-4 h-8 w-8;
-        top: 50%;
-        transform: translate3d(0,-50%,0);
-        cursor: pointer;
-    }
-
-    &__bar {
-        @apply absolute w-5 bg-gray-800;
+    span {
+        @apply absolute w-full bg-gray-800;
         height: 2px;
         left: 50%;
-        transition: width .2s ease-in-out, transform .2s ease-in-out, top .2s ease-in-out;
-        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+        transform: translate3d(-50%, -50%, 0);
+        transition: background .2s ease-in-out, opacity .2s ease-in-out, top .2s ease-in-out, transform .2s ease-in-out;
+    }
 
-        @screen md {
-            @apply w-6;
-            height: 3px;
-        }
+    span {
+        transform-origin: center;
 
         &:nth-child(1) {
-            top: 33.3333%;
-
-            @screen md {
-                top: 29%;
-            }
+            top: 10%;
+            transition: background .2s ease-in-out, opacity .2s ease-in-out, top .2s ease-in-out .1s, transform .2s ease-in-out 0s;
         }
 
         &:nth-child(2) {
@@ -67,10 +24,32 @@
         }
 
         &:nth-child(3) {
-            top: 66.6666%;
+            bottom: 10%;
+            transform: translate3d(-50%, 50%, 0);
+            transition: background .2s ease-in-out, opacity .2s ease-in-out, top .2s ease-in-out .1s, transform .2s ease-in-out 0s;
+        }
+    }
 
-            @screen md {
-                top: 71%;
+    .is-active & {
+        span {
+            &:nth-child(1),
+            &:nth-child(3) {
+                top: 50%;
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(1) {
+                transform: translate3d(-50%, -50%, 0) rotate(45deg);
+                transition: background .2s ease-in-out, opacity .2s ease-in-out, top .2s ease-in-out 0s, transform .2s ease-in-out .1s;
+                
+            }
+
+            &:nth-child(3) {
+                transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+                transition: background .2s ease-in-out, opacity .2s ease-in-out, top .2s ease-in-out 0s, transform .2s ease-in-out .1s;
             }
         }
     }
