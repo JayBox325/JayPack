@@ -11,12 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Print page button JS
 - Missing Njks files
 - Header style JS
+- Form markup
+- Tailwind dark mode
 
 ### Changed
 - Improved gulp move task
 - Adjusted Sass colours more to suit Tailwind
 - Worked with gzipping and removed it, server side gzipping is better
 - Adjusted gulp paths
+- Heading alternative classes
+- Updated gulp notifications
 
 ## 2.1.7
 ### Changed

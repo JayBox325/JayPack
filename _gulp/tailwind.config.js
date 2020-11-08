@@ -24,14 +24,15 @@ module.exports = {
   separator: ':',
 
   theme: {
+    darkSelector: '.dark-mode',
     screens: {
       xs: '400px',
       sm: '600px',
       md: '900px',
       lg: '1200px',
       xl: '1600px',
-      lightMode: { raw: '(prefers-color-scheme: light)' },
-      darkMode: { raw: '(prefers-color-scheme: dark)' }
+      lightMode: {raw: '(prefers-color-scheme: light)'},
+      darkMode: {raw: '(prefers-color-scheme: dark)'}
     },
     colors: {
       transparent: 'transparent',
@@ -787,7 +788,7 @@ module.exports = {
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
     backgroundClip: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
     backgroundImage: ['responsive'],
     gradientColorStops: ['responsive', 'hover', 'focus'],
     backgroundOpacity: ['responsive', 'hover', 'focus'],
@@ -795,7 +796,7 @@ module.exports = {
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'hover', 'focus'],
+    borderColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
     borderOpacity: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
@@ -858,7 +859,7 @@ module.exports = {
     strokeWidth: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: ['responsive', 'hover', 'focus'],
+    textColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
     textOpacity: ['responsive', 'hover', 'focus'],
     textDecoration: ['responsive', 'hover', 'focus'],
     textTransform: ['responsive'],
@@ -892,5 +893,7 @@ module.exports = {
     animation: ['responsive'],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+    darkMode()
+  ],
 }

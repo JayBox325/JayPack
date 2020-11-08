@@ -1,0 +1,11 @@
+{# Design should be 'inline' or 'stacked' #}
+{% set design = buttonList.design|default('inline') %}
+{% set buttons = buttonList.buttons %}
+
+<div class="btn-list btn-list--{{ design }}">
+    {% for button in buttons %}
+        <div class="">
+            {% include 'elements/button.njk' %}
+        </div>
+    {% endfor %}
+</div>

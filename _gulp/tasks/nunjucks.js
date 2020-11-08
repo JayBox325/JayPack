@@ -1,5 +1,6 @@
 import gulp from 'gulp'
 import browserSync from 'browser-sync'
+import notify from 'gulp-notify'
 
 // Config
 import paths from '../path.config'
@@ -7,7 +8,6 @@ import handleErrors from '../utils/handleErrors'
 
 // Nunjucks packages
 import nunjucksRender from 'gulp-nunjucks-render'
-import clean from 'gulp-clean'
 import fs from 'fs'
 
 // Compile source nunjucks into built html files
@@ -22,6 +22,12 @@ gulp.task('nunjucks', (done) => {
             .on('error', handleErrors)
             .pipe(gulp.dest(paths.njks.dest))
             .pipe(browserSync.reload({ stream: true }))
+            .on('end', function() {
+                notify({
+                    title: '✅ Nunjucks compiled',
+                    message: 'JayPack Reloaded'
+                }).write('')
+            })
     }
     done()
 })

@@ -1,12 +1,12 @@
 import gulp from 'gulp'
 import browserSync from 'browser-sync'
+import notify from 'gulp-notify'
 
 // Config
 import paths from '../path.config'
 import config from '../config'
 import webpackConfig from '../webpack.config'
 import handleErrors from '../utils/handleErrors'
-import projectConfig from '../../project.config'
 
 // Environment config
 const development = config.env.development
@@ -29,6 +29,12 @@ gulp.task('scripts', (cb) => {
         .pipe(gulp.dest(paths.js.dest))
         .on('error', handleErrors)
         
-        .pipe(development(browserSync.reload({ stream: true })));
+        .pipe(development(browserSync.reload({ stream: true })))
+        .on('end', function() {
+            notify({
+                title: '✅ Scripts compiled',
+                message: 'JayPack Reloaded'
+            }).write('')
+        })
     cb()
 })

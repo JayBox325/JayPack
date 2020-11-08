@@ -1,19 +1,34 @@
 .btn {
-    height: 3rem;
-    border-radius: 1.5em;
-    padding: 0 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    font-weight: bold;
+    $b: &;
+
+    @apply leading-none inline-flex items-center justify-center font-bold px-6 rounded-full h-12;
     transition: color .2s ease-in-out, background .2s ease-in-out;
 
     @screen sm {
-        padding: 0 2rem;
+        @apply px-8;
     }
 
     @screen lg {
-        padding: 0 2.5rem;
-        height: 3.5rem;
-        border-radius: 1.75rem;
+        @apply px-10;
+    }
+
+    &-list {
+        &--inline {
+            @screen sm {
+                @apply flex;
+
+                > div {
+                    &:not(:last-child) {
+                        @apply mr-2 mb-0;
+                    }
+                }
+            }
+        }
+
+        > div {
+            &:not(:last-child) {
+                @apply mb-2;
+            }
+        }
     }
 }

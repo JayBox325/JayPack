@@ -1,5 +1,6 @@
 import gulp from 'gulp'
 import browserSync from 'browser-sync'
+import notify from 'gulp-notify'
 
 // Config
 import paths from '../path.config'
@@ -78,4 +79,10 @@ gulp.task('svg', () => {
         .pipe(gulp.dest(paths.assets.svg.dest))
         .on('error', handleErrors)
         .pipe(development(browserSync.reload({ stream: true })))
+        .on('end', function() {
+            notify({
+                title: '✅ SVGs compiled',
+                message: 'JayPack Reloaded'
+            }).write('')
+        })
 })

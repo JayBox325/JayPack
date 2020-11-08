@@ -1,10 +1,12 @@
 import gulp from 'gulp'
 import browserSync from 'browser-sync'
+import notify from 'gulp-notify'
 
 // Config
 import paths from '../path.config'
 import config from '../config'
 import handleErrors from '../utils/handleErrors'
+import notifyEnd from '../utils/notifyEnd'
 
 // Environment config
 const development = config.env.development
@@ -42,5 +44,11 @@ gulp.task('styles', () => {
 
         .pipe(gulp.dest(paths.sass.dest))
         .on('error', handleErrors)
-        .pipe(development(browserSync.reload({ stream: true })))
+        .pipe(development(browserSync.reload({stream: true})))
+        .on('end', function() {
+            notify({
+                title: '✅ Styles compiled',
+                message: 'JayPack Reloaded'
+            }).write('')
+        })
 })

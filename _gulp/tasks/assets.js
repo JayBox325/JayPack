@@ -1,5 +1,6 @@
 import gulp from 'gulp'
 import browserSync from 'browser-sync'
+import notify from 'gulp-notify'
 
 // Config
 import paths from '../path.config'
@@ -22,6 +23,12 @@ gulp.task('images', () => {
         .pipe(gulp.dest(paths.assets.images.dest))
         .on('error', handleErrors)
         .pipe(development(browserSync.reload({ stream: true })))
+        .on('end', function() {
+            notify({
+                title: '✅ Images compiled',
+                message: 'JayPack Reloaded'
+            }).write('')
+        })
 })
 
 // Move videos
