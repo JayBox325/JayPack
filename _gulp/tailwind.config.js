@@ -1,5 +1,6 @@
 import environments from 'gulp-environments'
 import darkMode from 'tailwindcss-dark-mode'
+import config from './config'
 
 var production = environments.production
 
@@ -15,7 +16,8 @@ module.exports = {
     enabled: isProd ? true : false,
     content: [
       './node_modules/tailwindcss-dark-mode/prefers-dark.js',
-      './build/**/*.twig'
+      `${config.distRoot}/**/*.twig`,
+      `${config.distRoot}/**/*.html`,
     ]
   },
   target: 'relaxed',
