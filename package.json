@@ -12,6 +12,7 @@
     },
     "scripts": {
         "watch": "gulp --env development",
+        "production": "gulp --env production",
         "build": "gulp build --env development",
         "package": "gulp build --env production"
     },
