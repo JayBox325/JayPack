@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Header style JS
 - Form markup
 - Tailwind dark mode
+- Production watch script
 
 ### Changed
 - Improved gulp move task
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Adjusted gulp paths
 - Heading alternative classes
 - Updated gulp notifications
+- Tailwind CSS to purge HTML from Nunjucks compilation
 
 ## 2.1.7
 ### Changed
