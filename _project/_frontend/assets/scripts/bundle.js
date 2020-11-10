@@ -115,23 +115,24 @@ Object(_modules_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return defaultJS; });
-/* harmony import */ var _player__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./player */ "./_src/scripts/default/player.js");
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ "./_src/scripts/default/header.js");
-/* harmony import */ var _share__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./share */ "./_src/scripts/default/share.js");
-/* harmony import */ var _print_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./print-page */ "./_src/scripts/default/print-page.js");
-// import menu from './menu'
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu */ "./_src/scripts/default/menu.js");
+/* harmony import */ var _player__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./player */ "./_src/scripts/default/player.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./_src/scripts/default/header.js");
+/* harmony import */ var _share__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./share */ "./_src/scripts/default/share.js");
+/* harmony import */ var _print_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./print-page */ "./_src/scripts/default/print-page.js");
 // import pageTransitions from './pageTransitions'
 
 
 
 
+
 function defaultJS() {
-  // menu()
   // pageTransitions()
-  Object(_player__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  Object(_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  Object(_share__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  Object(_print_page__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_menu__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_player__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Object(_header__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  Object(_share__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_print_page__WEBPACK_IMPORTED_MODULE_4__["default"])();
 }
 
 /***/ }),
@@ -184,6 +185,50 @@ function header() {
 
 /***/ }),
 
+/***/ "./_src/scripts/default/menu.js":
+/*!**************************************!*\
+  !*** ./_src/scripts/default/menu.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return menu; });
+/*
+    Menu. Not much more to say.
+*/
+function menu() {
+  // Elements
+  var hamburger = document.querySelector('[data-hamburger]');
+  var menu = document.querySelector('[data-menu]');
+  var body = document.querySelector('body'); // Classes
+
+  var activeClass = 'is-active';
+  var hiddenClass = 'is-hidden';
+  hamburger.addEventListener('click', function () {
+    if (hamburger.classList.contains(activeClass)) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+
+    function closeMenu() {
+      hamburger.classList.remove(activeClass);
+      menu.classList.remove(activeClass);
+      body.classList.remove(hiddenClass);
+    }
+
+    function openMenu() {
+      hamburger.classList.add(activeClass);
+      menu.classList.add(activeClass);
+      body.classList.add(hiddenClass);
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./_src/scripts/default/player.js":
 /*!****************************************!*\
   !*** ./_src/scripts/default/player.js ***!
@@ -203,7 +248,7 @@ __webpack_require__.r(__webpack_exports__);
 function player() {
   var videoElements = document.querySelectorAll('[data-player]');
 
-  if (videoElements.length) {
+  if (videoElements) {
     videoElements.forEach(function (video) {
       player(video);
     });
@@ -235,11 +280,13 @@ __webpack_require__.r(__webpack_exports__);
     Use: Add a button with a data-print-page attribute
 */
 function printPage() {
-  var printPageBtn = document.querySelector('[data-print-page]');
+  var printPageBtns = document.querySelectorAll('[data-print-page]');
 
-  if (printPageBtn) {
-    printPageBtn.addEventListener('click', function (e) {
-      window.print();
+  if (printPageBtns) {
+    printPageBtns.forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        window.print();
+      });
     });
   }
 }
@@ -262,13 +309,15 @@ __webpack_require__.r(__webpack_exports__);
     Use: Add the data-share attibute to buttons that have a social media share href
 */
 function share() {
-  var shareBtn = document.querySelector('[data-share]');
+  var shareBtns = document.querySelectorAll('[data-share]');
 
-  if (shareBtn.length) {
-    shareBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      window.open(this.href, 'Share', 'width=800, height=600');
-      return false;
+  if (shareBtns) {
+    shareBtns.forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.open(this.href, 'Share', 'width=800, height=600');
+        return false;
+      });
     });
   }
 }
@@ -315,8 +364,8 @@ __webpack_require__.r(__webpack_exports__);
 function slider() {
   var sliders = document.querySelectorAll('[data-slick]');
 
-  if (sliders.length) {
-    slider.forEach(function (el) {
+  if (sliders) {
+    sliders.forEach(function (el) {
       var type = el.getAttribute('data-slick') || 'slider';
 
       if (type == 'slider') {

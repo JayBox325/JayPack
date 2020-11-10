@@ -5,11 +5,13 @@
 */
 
 export default function printPage() {
-    const printPageBtn = document.querySelector('[data-print-page]')
+    const printPageBtns = document.querySelectorAll('[data-print-page]')
 
-    if (printPageBtn) {
-        printPageBtn.addEventListener('click', function(e) {
-            window.print()
+    if (printPageBtns) {
+        printPageBtns.forEach(el => {
+            el.addEventListener('click', function(e) {
+                window.print()
+            })
         })
     }
 }

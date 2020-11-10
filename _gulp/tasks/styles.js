@@ -6,7 +6,6 @@ import notify from 'gulp-notify'
 import paths from '../path.config'
 import config from '../config'
 import handleErrors from '../utils/handleErrors'
-import notifyEnd from '../utils/notifyEnd'
 
 // Environment config
 const development = config.env.development

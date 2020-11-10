@@ -1,13 +1,30 @@
 .menu {
+    @apply hidden fixed text-white top-0 left-0 w-screen h-screen bg-black items-center justify-center;
+    z-index: 950;
+
+    &.is-active {
+        @apply flex;
+    }
+
+    @screen sm {
+        @apply block;
+    }
+
     &__list {
+        @apply flex flex-col;
         list-style-type: none;
-        text-align: right;
+
+        @screen sm {
+            text-align: right;
+        }
     }
     &__item {
         display: inline-block;
 
-        &:not(:first-child) {
-            margin-left: .15rem;
+        @screen sm {
+            &:not(:first-child) {
+                @apply ml-4
+            }
         }
     }
     &__link {

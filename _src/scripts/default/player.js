@@ -7,7 +7,7 @@ import Plyr from 'plyr'
 export default function player() {
     const videoElements = document.querySelectorAll('[data-player]')
 
-    if (videoElements.length) {
+    if (videoElements) {
         videoElements.forEach(video => {
             player(video)
         })

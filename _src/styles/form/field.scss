@@ -1,12 +1,12 @@
 .field {
     @apply inline-flex h-full w-full flex-col items-start justify-end;
 
-    &:not(:last-child) {
-        @apply mb-6;
-    }
-
     &__label {
         @apply block mb-1;
+
+        &--option {
+            @apply inline-block ml-3 mb-0;
+        }
     }
 
     &__option {
@@ -19,6 +19,10 @@
 
         &--base {
             @apply w-full h-10 px-2;
+        }
+
+        &--textarea {
+            @apply w-full px-2 py-1;
         }
 
         &--option {

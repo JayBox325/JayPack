@@ -8,8 +8,8 @@ import slick from 'slick-carousel'
 export default function slider() {
     const sliders = document.querySelectorAll('[data-slick]')
 
-    if (sliders.length) {
-        slider.forEach(el => {
+    if (sliders) {
+        sliders.forEach(el => {
             let type = el.getAttribute('data-slick') || 'slider'
             
             if (type == 'slider') {
