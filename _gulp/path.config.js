@@ -5,21 +5,21 @@ const assets = `${config.distRoot}/assets`
 
 const paths = {
 	sass: {
-        src: `_src/styles/*.scss`,
-        watch: `_src/styles/**/*.scss`,
+        src: `${config.srcRoot}/styles/*.scss`,
+        watch: `${config.srcRoot}/styles/**/*.scss`,
         dest: `${assets}/styles`,
         tailwind: '_gulp/tailwind.config.js'
     },
 
     njks: {
         storage: `_gulp/html/**/*`,
-        access: `./_src/html/_layout/_base.njk`,
-        render: `_src/html`,
-        src: `_src/html/pages/*.njk`,
-        watch: `_src/html/**/*`,
-        data: `_src/html/__data/data.json`,
+        access: `./${config.srcRoot}/html/_layout/_base.njk`,
+        render: `${config.srcRoot}/html`,
+        src: `${config.srcRoot}/html/pages/*.njk`,
+        watch: `${config.srcRoot}/html/**/*`,
+        data: `${config.srcRoot}/html/__data/data.json`,
         dest: `${config.distRoot}`,
-        moveDest: `_src`,
+        moveDest: `${config.srcRoot}`,
     },
 
     twig: {
@@ -27,41 +27,41 @@ const paths = {
     },
 
     js: {
-        app: `./_src/scripts/app.js`,
-        watch: `_src/scripts/**/*.js`,
+        app: `./${config.srcRoot}/scripts/app.js`,
+        watch: `${config.srcRoot}/scripts/**/*.js`,
         dest: `${assets}/scripts`
     },
 
     assets: {
         images: {
-            src: `_src/assets/images/*.{png,gif,jpg,jpeg,svg}`,
-            watch: `_src/assets/images/*.{png,gif,jpg,jpeg,svg}`,
+            src: `${config.srcRoot}/assets/images/*.{png,gif,jpg,jpeg,svg}`,
+            watch: `${config.srcRoot}/assets/images/*.{png,gif,jpg,jpeg,svg}`,
             dest: `${assets}/images`
         },
         videos: {
-            src: `_src/assets/videos/*.{mp4,.webm}`,
-            watch: `_src/assets/videos/*.{mp4,.webm}`,
+            src: `${config.srcRoot}/assets/videos/*.{mp4,.webm}`,
+            watch: `${config.srcRoot}/assets/videos/*.{mp4,.webm}`,
             dest: `${assets}/videos`
         },
         favicons: {
-            src: `_src/assets/favicons/*.*`,
-            watch: `_src/assets/favicons/*.*`,
+            src: `${config.srcRoot}/assets/favicons/*.*`,
+            watch: `${config.srcRoot}/assets/favicons/*.*`,
             dest: `${assets}/favicons`
         },
         svg: {
-            src: `_src/assets/svg/*.svg`,
-            watch: `_src/assets/svg/*.svg`,
+            src: `${config.srcRoot}/assets/svg/*.svg`,
+            watch: `${config.srcRoot}/assets/svg/*.svg`,
             dest: `${assets}/svg`
         },
         fonts: {
-            src: `_src/assets/fonts/*.*`,
-            watch: `_src/assets/fonts/*.*`,
+            src: `${config.srcRoot}/assets/fonts/*.*`,
+            watch: `${config.srcRoot}/assets/fonts/*.*`,
             dest: `${assets}/fonts`
         }
     },
 
     symbols: {
-        dest: projectConfig.craft ? `${config.distRoot}/templates/_includes` : `_src/html/_includes`
+        dest: projectConfig.craft ? `${config.distRoot}/templates/_includes` : `${config.srcRoot}/html/_includes`
     },
 
     rev: {

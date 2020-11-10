@@ -13,7 +13,7 @@
         {% for network in networks %}
             <li class="list__item">
                 <a href="{{ network.accountUrl }}" aria-label="{{ network.text }}" class="social-icon bg-{{ network.account|lower }}-500 hover:bg-{{ network.account|lower }}-600">
-                    {{ icon(network.icon, 'xs') }}
+                    {{ icon('social-' ~ network.icon, 'xs') }}
                 </a>
             </li>
         {% endfor %}

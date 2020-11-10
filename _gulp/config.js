@@ -1,7 +1,8 @@
 import environments from 'gulp-environments'
 import projectConfig from '../project.config'
 
-const distRoot = '_project/_frontend'
+const distRoot = 'build'
+const srcRoot = '_src'
 
 // Config rules
 const config = {
@@ -15,6 +16,7 @@ const config = {
 
     // Build directory
     distRoot: distRoot,
+    srcRoot: srcRoot,
 
     // Sass variables
     autoprefixerVersions: [

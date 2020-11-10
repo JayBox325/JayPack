@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated gulp notifications
 - Tailwind CSS to purge HTML from Nunjucks compilation
 - Updated social icon paths
+- Source directory root conf
 
 ## 2.1.7
 ### Changed
