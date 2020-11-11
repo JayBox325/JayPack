@@ -61,7 +61,7 @@ const paths = {
     },
 
     symbols: {
-        dest: projectConfig.craft ? `${config.distRoot}/templates/_includes` : `${config.srcRoot}/html/_includes`
+        dest: projectConfig.cms ? `${config.distRoot}/templates/_includes` : `${config.srcRoot}/html/_includes`
     },
 
     rev: {

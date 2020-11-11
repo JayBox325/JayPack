@@ -23,11 +23,11 @@ gulp.task('symbols', () => {
             templates: [`default-svg`]
         }))
 
-        // Save to Twig if craft project
-        .pipe(gulpif(projectConfig.craft, extReplace('.twig')))
+        // Save to Twig if CMS project
+        .pipe(gulpif(projectConfig.cms, extReplace(projectConfig.cmsTemplateExt)))
 
         // Save to Nunjucks if static project
-        .pipe(gulpif(!projectConfig.craft, extReplace('.njk')))
+        .pipe(gulpif(!projectConfig.cms, extReplace('.njk')))
 
         .on('error', handleErrors)
         .pipe(gulp.dest(paths.symbols.dest))

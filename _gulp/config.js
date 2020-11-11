@@ -8,8 +8,8 @@ const config = {
         development: environments.development
     },
 
-    // Craft or static?
-    type: projectConfig.type,
+    // CMS or static?
+    type: projectConfig.cms ? 'cms' : 'static',
 
     // Build directory
     distRoot: projectConfig.distRoot,
@@ -24,7 +24,7 @@ const config = {
     ],
 
     // Browsersync
-    browserSync: projectConfig.craft ? {
+    browserSync: projectConfig.cms ? {
         open: 'external',
         host: projectConfig.domain,
         proxy: projectConfig.domain,

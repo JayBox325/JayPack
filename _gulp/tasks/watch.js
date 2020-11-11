@@ -19,13 +19,13 @@ gulp.task('watch', () => {
 	// Watch scripts
 	gulp.watch(paths.js.watch, gulp.series('scripts'))
 
-	// Watch Twig
-	if (projectConfig.craft) {
-		gulp.watch(paths.twig.watch, gulp.series('twig'))
+	// Watch Twig if CMS project
+	if (projectConfig.cms) {
+		gulp.watch(paths.twig.watch, gulp.series(projectConfig.cmsTemplateExt))
 	}
 
-	// Watch Nunjucks
-	if (projectConfig.craft == false) {
+	// Watch Nunjucks if static project
+	if (projectConfig.cms == false) {
 		gulp.watch(paths.njks.watch, gulp.series('nunjucks'))
 	}
 	

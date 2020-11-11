@@ -1,14 +1,14 @@
 /*
-    Run this task if this is a craft project
+    Run this task if this is NOT a cms project
 */
 
 import gulp from 'gulp'
 import projectConfig from '../../project.config'
 
 export default function staticTask(task) {
-    task = gulp.series(task) // make sure we have a function that takes callback as first argument
+    task = gulp.series(task)
     return function (cb) {
-        if (!projectConfig.craft) {
+        if (!projectConfig.cms) {
             task(cb)
         } else {
             cb()
