@@ -5,9 +5,9 @@ const assets = `${config.distRoot}/assets`
 
 const paths = {
 	sass: {
-        src: `${config.srcRoot}/styles/*.scss`,
-        watch: `${config.srcRoot}/styles/**/*.scss`,
+        src: `${config.srcRoot}/styles/styles.scss`,
         utils: `${config.srcRoot}/styles/utilities.scss`,
+        watch: `${config.srcRoot}/styles/**/*.scss`,
         dest: `${assets}/styles`,
         tailwind: '_gulp/tailwind.config.js'
     },
