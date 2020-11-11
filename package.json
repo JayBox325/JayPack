@@ -12,6 +12,7 @@
     },
     "scripts": {
         "watch": "gulp --env development",
+        "production": "gulp --env production",
         "build": "gulp build --env development",
         "package": "gulp build --env production"
     },
@@ -53,13 +54,14 @@
         "slick-carousel": "^1.8.1",
         "tailwindcss": "^1.8.13",
         "webfontloader": "^1.6.28",
-        "webpack": "^5.0.0-rc.6",
+        "webpack": "^4.44.1",
         "webpack-cli": "^3.3.12",
         "webpack-stream": "^5.2.1"
     },
     "dependencies": {
         "@barba/core": "^2.9.7",
         "gulp-data": "^1.3.1",
-        "gulp-if": "^3.0.0"
+        "gulp-if": "^3.0.0",
+        "tailwindcss-dark-mode": "^1.1.7"
     }
 }

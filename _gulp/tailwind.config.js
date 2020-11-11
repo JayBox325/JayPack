@@ -1,12 +1,23 @@
+import environments from 'gulp-environments'
+import darkMode from 'tailwindcss-dark-mode'
+import config from './config'
+
+var production = environments.production
+
+const env = production() ? 'production' : 'development'
+const isProd = env === 'production'
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
   purge: {
-    enabled: true,
+    enabled: isProd ? true : false,
     content: [
-      './build/**/*.twig'
+      './node_modules/tailwindcss-dark-mode/prefers-dark.js',
+      `${config.distRoot}/**/*.twig`,
+      `${config.distRoot}/**/*.html`,
     ]
   },
   target: 'relaxed',
@@ -15,12 +26,15 @@ module.exports = {
   separator: ':',
 
   theme: {
+    darkSelector: '.dark-mode',
     screens: {
       xs: '400px',
       sm: '600px',
       md: '900px',
       lg: '1200px',
       xl: '1600px',
+      lightMode: {raw: '(prefers-color-scheme: light)'},
+      darkMode: {raw: '(prefers-color-scheme: dark)'}
     },
     colors: {
       transparent: 'transparent',
@@ -28,32 +42,6 @@ module.exports = {
 
       black: '#000',
       white: '#fff',
-
-      // Project colours - https://javisperez.github.io/tailwindcolorshades/#/
-      primary: {
-        50: '#F3F4F3',
-        100: '#E8EAE8',
-        200: '#C5CAC5',
-        300: '#A2AAA2',
-        400: '#5C6B5C',
-        500: '#162B16',
-        600: '#142714',
-        700: '#0D1A0D',
-        800: '#0A130A',
-        900: '#070D07',
-      },
-      secondary: {
-        50: '#FEF6F4',
-        100: '#FCECEA',
-        200: '#F9D0CA',
-        300: '#F5B3AA',
-        400: '#ED7B6B',
-        500: '#E5422B',
-        600: '#CE3B27',
-        700: '#89281A',
-        800: '#671E13',
-        900: '#45140D',
-      },
 
       // Social
       facebook: {
@@ -249,6 +237,10 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
+      '72': '18rem',
+      '80': '20rem',
+      '88': '26rem',
+      '96': '32rem',
       '1/2': '50%',
       '1/3': '33.33333%',
       '2/3': '66.66667%',
@@ -798,7 +790,7 @@ module.exports = {
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
     backgroundClip: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
     backgroundImage: ['responsive'],
     gradientColorStops: ['responsive', 'hover', 'focus'],
     backgroundOpacity: ['responsive', 'hover', 'focus'],
@@ -806,7 +798,7 @@ module.exports = {
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'hover', 'focus'],
+    borderColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
     borderOpacity: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
@@ -869,7 +861,7 @@ module.exports = {
     strokeWidth: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: ['responsive', 'hover', 'focus'],
+    textColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
     textOpacity: ['responsive', 'hover', 'focus'],
     textDecoration: ['responsive', 'hover', 'focus'],
     textTransform: ['responsive'],
@@ -903,5 +895,7 @@ module.exports = {
     animation: ['responsive'],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+    darkMode()
+  ],
 }

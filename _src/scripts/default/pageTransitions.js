@@ -1,7 +1,10 @@
-import barba from '@barba/core';
+/*
+    Barba.js page transitions
+*/
+
+import barba from '@barba/core'
 
 export default function pageTransitions() {
-
     barba.init()
 
     // Trigger page analytics

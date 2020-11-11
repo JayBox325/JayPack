@@ -1,35 +1,37 @@
 .header {
-    height: 4rem;
-    width: 100%;
+    @apply h-16 w-full;
     position: fixed;
     top: 0;
-    z-index: 900;
     left: 0;
+    z-index: 900;
     transition: height .2s ease-in-out;
 
-    @screen md {
-        height: 6rem;
-    }
-
     @screen lg {
-        height: 8rem;
+        @apply h-24;
+
+        &.is-scrolled {
+            @apply h-16;
+        }
     }
 
-    @screen xl {
-        height: 10rem;
+    &.is-scrolled {
+        &:before {
+            opacity: 1;
+        }
     }
 
     &:before {
-        @apply bg-white;
+        @apply bg-white shadow;
+        transition: opacity .2s ease-in-out;
         content: '';
         position: absolute;
         z-index: 1;
         width: calc(100% + 4rem);
         height: 100%;
         top: 0;
+        opacity: 0;
         left: 0;
         transform: translateX(-2rem);
-        box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
     }
 
     &__inner {

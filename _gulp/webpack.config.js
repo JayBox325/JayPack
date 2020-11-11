@@ -2,7 +2,6 @@ import paths from './path.config'
 import environments from 'gulp-environments'
 import path from 'path'
 
-var development = environments.development
 var production = environments.production
 
 const env = production() ? 'production' : 'development'
@@ -33,7 +32,7 @@ const config = {
                 ]
             },
         ],
-    }
+    },
 }
 
 module.exports = config

@@ -1,9 +1,9 @@
 // JS Breakpoints from https://stackoverflow.com/a/11387513/5789332
 
 export default function isBreakpoint(bp) {
-    var bps = [480, 768, 1024],
-        w = window.innerWidth
-        min, max
+    var bps = [320, 480, 768, 1024]
+    var w = window.innerWidth
+    var min, max
 
     for (var i = 0, l = bps.length; i < l; i++) {
         if (bps[i] === bp) {

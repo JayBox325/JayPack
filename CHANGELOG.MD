@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.1.8 -- DEV
+### Added
+- Brotli htaccess file
+- Print stylesheet
+- Print page button JS
+- Missing Njks files
+- Header style JS
+- Form markup
+- Tailwind dark mode
+- Production watch script
+
+### Changed
+- Improved gulp move task
+- Adjusted Sass colours more to suit Tailwind
+- Worked with gzipping and removed it, server side gzipping is better
+- Adjusted gulp paths
+- Heading alternative classes
+- Updated gulp notifications
+- Tailwind CSS to purge HTML from Nunjucks compilation
+- Updated social icon paths
+- Source directory root conf
+
 ## 2.1.7
 ### Changed
 - Converted `resp-font-size()` Scss mixin to work with Tailwind font size values

@@ -22,31 +22,26 @@
     @screen sm {
         @apply py-16;
     }
+
     @screen md {
         @apply py-20;
     }
+
     @screen lg {
         @apply py-24;
     }
+
     @screen xl {
         @apply py-32;
     }
 
     // Add space for header
-    &:first-child {
+    &:first-of-type {
         > * {
-            margin-top: 4rem;
+            @apply mt-16;
 
-            @screen md {
-                margin-top: 6rem;
-            }
-        
             @screen lg {
-                margin-top: 8rem;
-            }
-        
-            @screen xl {
-                margin-top: 10rem;
+                @apply mt-24;
             }
         }
     }

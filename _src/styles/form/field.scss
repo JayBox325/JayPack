@@ -1,99 +1,47 @@
 .field {
-    display: block;
-    width: 100%;
-    appearance: none;
-    border: 0;
-    padding: 0;
+    @apply inline-flex h-full w-full flex-col items-start justify-end;
 
-    @screen lg {
-        &--align-right {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-        }
+    &__label {
+        @apply block mb-1;
 
-        &--align-spread {
-            flex: 1;
-            display: flex;
-            justify-content: space-between;
+        &--option {
+            @apply inline-block ml-3 mb-0;
         }
     }
 
-    &__label {
-        display: block;
-        font-weight: 700;
-        line-height: 1.1;
+    &__option {
+        @apply flex h-10 items-center;
     }
 
     &__input {
-        border: 1px solid color('black');
-        border-radius: .5rem;
-        width: 100%;
-        padding: 0 1rem;
-        height: 3rem;
-        display: block;
+        @apply border border-black block;
         appearance: none;
-        margin-top: .5rem;
 
-        &:not(:placeholder-shown) {
-            &:invalid {
-                border: 1px solid color('warning');
-                outline: none;
-            }
-        }
-
-        &:focus {
-            border: 1px solid color('primary');
-            outline: none;
+        &--base {
+            @apply w-full h-10 px-2;
         }
 
         &--textarea {
-            min-height: 6rem;
+            @apply w-full px-2 py-1;
+        }
+
+        &--option {
+            @apply w-6 h-6;
+
+            &:checked {
+                + .field__checkmark {
+                    opacity: 1;
+                }
+            }
         }
     }
 
-    &__select-wrap {
-        position: relative;
-        width: 100%;
-        display: block;
-
-        &:after {
-            pointer-events: none;
-            position: absolute;
-            top: 50%;
-            right: 1rem;
-            display: block;
-            height: .6rem;
-            width: .6rem;
-            transition: transform .2s ease-in-out, opacity .2s ease-in-out;
-            transform: translate3d(.2rem,-60%,0) rotate(45deg);
-            content: '';
-            border-right: 2px solid color('black');
-            border-bottom: 2px solid color('black');
-        }
-    }
-
-    &__instructions {
-        font-size: .8rem;
-        line-height: 1.25;
-        margin-top: .2rem;
-    }
-
-    &__error {
-        font-size: .8rem;
-        line-height: 1.1;
-        margin-top: .2rem;
-        color: color('red');
-        font-weight: bold;
-    }
-
-    &__required {
-        color: color('red');
-    }
-
-    &-options {
-        &__option {
-            margin-top: .5rem;
-        }
+    &__checkmark {
+        @apply absolute w-4 h-4;
+        opacity: 0;
+        transition: .1s ease-in-out;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-50%,0);
     }
 }
