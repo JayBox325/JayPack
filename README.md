@@ -42,3 +42,7 @@ There are three commands to run for this boilerplate as follows:
 
 ## First run
 After setting up a project for the first time, you will need to run `npm build` so JayPack structures the project directories.
+
+## Updating packages
+
+To update dev packages, run `npm update --save-dev`.
