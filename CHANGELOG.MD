@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated packages
 - Fixed dependency vulnerabilities
 - Fixed name error in package.json
+- Moved the README content into a GitHub Wiki
 
 ## 2.1.8
 ### Added
