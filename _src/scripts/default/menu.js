@@ -12,23 +12,25 @@ export default function menu() {
     const activeClass = 'is-active'
     const hiddenClass = 'is-hidden'
 
-    hamburger.addEventListener('click', function() {
-        if (hamburger.classList.contains(activeClass)) {
-            closeMenu()
-        } else {
-            openMenu()
-        }
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            if (hamburger.classList.contains(activeClass)) {
+                closeMenu()
+            } else {
+                openMenu()
+            }
 
-        function closeMenu() {
-            hamburger.classList.remove(activeClass)
-            menu.classList.remove(activeClass)
-            body.classList.remove(hiddenClass)
-        }
+            function closeMenu() {
+                hamburger.classList.remove(activeClass)
+                menu.classList.remove(activeClass)
+                body.classList.remove(hiddenClass)
+            }
 
-        function openMenu() {
-            hamburger.classList.add(activeClass)
-            menu.classList.add(activeClass)
-            body.classList.add(hiddenClass)
-        }
-    })
+            function openMenu() {
+                hamburger.classList.add(activeClass)
+                menu.classList.add(activeClass)
+                body.classList.add(hiddenClass)
+            }
+        })
+    }
 }
