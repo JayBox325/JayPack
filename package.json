@@ -1,5 +1,5 @@
 {
-    "name": "JayPack",
+    "name": "jaypack",
     "description": "Gulp, Webpack and CraftCMS boilerplate",
     "version": "2.1.8",
     "main": "_gulp/gulpfile.babel.js",

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Updated packages
 - Fixed dependency vulnerabilities
+- Fixed name error in package.json
 
 ## 2.1.8
 ### Added
