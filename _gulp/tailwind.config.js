@@ -1,11 +1,13 @@
 import environments from 'gulp-environments'
 import darkMode from 'tailwindcss-dark-mode'
 import config from './config'
+import projectConfig from '../project.config'
 
 var production = environments.production
 
 const env = production() ? 'production' : 'development'
 const isProd = env === 'production'
+const tailwindPurgeTemplates = projectConfig.cms ? `${config.distRoot}/**/*.${projectConfig.cmsTemplateExt}` : `${config.distRoot}/**/*.html`
 
 module.exports = {
   future: {
@@ -16,8 +18,7 @@ module.exports = {
     enabled: isProd ? true : false,
     content: [
       './node_modules/tailwindcss-dark-mode/prefers-dark.js',
-      `${config.distRoot}/**/*.twig`,
-      `${config.distRoot}/**/*.html`,
+      tailwindPurgeTemplates,
     ]
   },
   target: 'relaxed',
@@ -40,7 +41,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
 
-      black: '#000',
+      black: '#2B2B2B',
       white: '#fff',
 
       // Social
@@ -129,15 +130,16 @@ module.exports = {
         900: '#742a2a',
       },
       orange: {
-        100: '#fffaf0',
-        200: '#feebc8',
-        300: '#fbd38d',
-        400: '#f6ad55',
-        500: '#ed8936',
-        600: '#dd6b20',
-        700: '#c05621',
-        800: '#9c4221',
-        900: '#7b341e',
+        50: '#FEF6F4',
+        100: '#FCECEA',
+        200: '#F9D0CA',
+        300: '#F5B3AA',
+        400: '#ED7B6B',
+        500: '#E5422B',
+        600: '#CE3B27',
+        700: '#89281A',
+        800: '#671E13',
+        900: '#45140D',
       },
       yellow: {
         100: '#fffff0',
@@ -151,15 +153,16 @@ module.exports = {
         900: '#744210',
       },
       green: {
-        100: '#f0fff4',
-        200: '#c6f6d5',
-        300: '#9ae6b4',
-        400: '#68d391',
-        500: '#48bb78',
-        600: '#38a169',
-        700: '#2f855a',
-        800: '#276749',
-        900: '#22543d',
+        50: '#F3F4F3',
+        100: '#E8EAE8',
+        200: '#C5CAC5',
+        300: '#A2AAA2',
+        400: '#5C6B5C',
+        500: '#162B16',
+        600: '#142714',
+        700: '#0D1A0D',
+        800: '#0A130A',
+        900: '#070D07',
       },
       teal: {
         100: '#e6fffa',
@@ -376,8 +379,9 @@ module.exports = {
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
       ],
-      serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      serif: ['bely','Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+      display: ['bely-display', 'bely','Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
     },
     fontSize: {
       xs: '0.75rem',
@@ -791,7 +795,7 @@ module.exports = {
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
     backgroundClip: ['responsive'],
-    backgroundColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
+    backgroundColor: ['dark', 'dark-hover','responsive', 'hover', 'focus'],
     backgroundImage: ['responsive'],
     gradientColorStops: ['responsive', 'hover', 'focus'],
     backgroundOpacity: ['responsive', 'hover', 'focus'],
@@ -799,7 +803,7 @@ module.exports = {
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
+    borderColor: ['dark', 'dark-hover','responsive', 'hover', 'focus'],
     borderOpacity: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
@@ -862,7 +866,7 @@ module.exports = {
     strokeWidth: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: ['dark', 'dark-hover', 'responsive', 'hover', 'focus'],
+    textColor: ['dark', 'dark-hover','responsive', 'hover', 'focus'],
     textOpacity: ['responsive', 'hover', 'focus'],
     textDecoration: ['responsive', 'hover', 'focus'],
     textTransform: ['responsive'],

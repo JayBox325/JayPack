@@ -61,5 +61,8 @@
         "webpack": "^4.44.1",
         "webpack-cli": "^3.3.12",
         "webpack-stream": "^5.2.1"
+    },
+    "dependencies": {
+        "sass-loader": "^10.1.0"
     }
 }
