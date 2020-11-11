@@ -7,7 +7,7 @@
     }
 
     @screen sm {
-        @apply block;
+        @apply absolute bg-transparent relative block text-black h-auto w-auto;
     }
 
     &__list {
@@ -15,6 +15,7 @@
         list-style-type: none;
 
         @screen sm {
+            @apply block;
             text-align: right;
         }
     }
