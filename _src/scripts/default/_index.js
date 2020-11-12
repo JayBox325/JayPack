@@ -1,16 +1,19 @@
-// import pageTransitions from './pageTransitions'
+// import pageTransitions from './page-transitions'
+// import slider from './slider'
+// import player from './player'
+// import printPageBtn from './print-page-btn'
+// import shareBtns from './share-btns'
+
 import menu from './menu'
-import player from './player'
-import header from './header'
-import share from './share'
-import printPage from './print-page'
+import headerScroll from './header-scroll'
 
 export default function defaultJS() {
     // pageTransitions()
+    // slider()
+    // player()
+    // printPageBtn()
+    // shareBtns()
 
     menu()
-    player()
-    header()
-    share()
-    printPage()
+    headerScroll()
 }

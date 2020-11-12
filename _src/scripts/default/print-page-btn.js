@@ -4,7 +4,7 @@
     Use: Add a button with a data-print-page attribute
 */
 
-export default function printPage() {
+export default function printPageBtn() {
     const printPageBtns = document.querySelectorAll('[data-print-page]')
 
     if (printPageBtns) {

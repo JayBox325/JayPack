@@ -4,7 +4,7 @@
     Use: Add the data-share attibute to buttons that have a social media share href
 */
 
-export default function share() {
+export default function shareBtns() {
     const shareBtns = document.querySelectorAll('[data-share]')
 
     if (shareBtns) {
