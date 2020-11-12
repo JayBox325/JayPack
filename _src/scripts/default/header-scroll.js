@@ -1,8 +1,10 @@
 /*
+
     Adjust the header styling on scroll
+
 */
 
-export default function header() {
+export default function headerScroll() {
     const activeClass = 'is-scrolled'
     const header = document.querySelector('.header')
     let scrollpos = window.scrollY
