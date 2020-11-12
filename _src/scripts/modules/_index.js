@@ -1,5 +1,5 @@
-import slider from './slider'
+// import slider from './slider'
 
 export default function modulesJS() {
-    slider()
+    // slider()
 }

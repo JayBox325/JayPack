@@ -51,7 +51,7 @@ gulp.task('styles', () => {
             }).write('')
         })
 })
-gulp.task('utility-styles', () => {
+gulp.task('util-styles', () => {
     return gulp.src(paths.sass.utils)
         .pipe(development(sourcemaps.init()))
         .pipe(glob())

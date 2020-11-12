@@ -1,5 +1,7 @@
 /*
     Slider with Slick from https://github.com/kenwheeler/slick
+
+    This requires jQuery, find an alternative or try the vanilla version of Slick: https://github.com/ubergeoff/flingo/blob/master/apps/flingo/src/vendor/slick/slick.js
 */
 
 import $ from 'jquery'
