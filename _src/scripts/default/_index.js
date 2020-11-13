@@ -2,6 +2,7 @@
 // import slider from './slider'
 // import player from './player'
 // import printPageBtn from './print-page-btn'
+// import darkModeBtn from './dark-mode-btn'
 // import shareBtns from './share-btns'
 
 import menu from './menu'
@@ -12,6 +13,7 @@ export default function defaultJS() {
     // slider()
     // player()
     // printPageBtn()
+    // darkModeBtn()
     // shareBtns()
 
     menu()

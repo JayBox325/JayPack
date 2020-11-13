@@ -7,10 +7,10 @@
 - [ ] Add `lang` attribute on the `<html>` element
 - [ ] Appropriate `<title>` tags per page
 - [ ] Confirm that viewport zoom is not disabled
-- [ ] Confirm approropriate landmark elements are used (`<header>`, `<footer>` etc)
+- [ ] Confirm appropriate landmark elements are used (`<header>`, `<footer>` etc)
 - [ ] Remove all `autofocus` attributes
 - [ ] Remove session timeouts (if applicable)
-- [ ] Remove `title=` attributes
+- [ ] Remove `title` attributes
 - [ ] Confirm `<meta name="robots" content="noindex, nofollow">` doesn't exist
 - [ ] Confirm print stylesheet is working
 
