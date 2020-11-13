@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added -- DEV
 - Webpack JS audit
 - JS improvement
+- Darkmode button JS
 
 ## 2.1.9
 ### Added
