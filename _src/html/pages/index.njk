@@ -1,0 +1,130 @@
+{% extends "_layout/_base.njk" %}
+
+{% block content %}
+    <section class="row row--gray">
+        <div class="container">
+            <div class="w-content">
+                <h1>Welcome to {{ siteDetails.title }}</h1>
+                <p>A front end scaffolding framework for static projects using Nunjucks or for CraftCMS sites with JayCraft.</p>
+            </div>
+            <div class="mt-6">
+                {% set button = {
+                    action: 'https://google.com',
+                    title: 'This is a button',
+                    classes: 'bg-red-600 hover:bg-red-700 text-white'
+                } %}
+                {% include 'elements/button.njk' %}
+            </div>
+        </div>
+    </section>
+    <section class="row row--orange">
+        <div class="container">
+            {% set buttonList = {
+                design: 'stacked',
+                buttons: [
+                    {
+                        action: 'https://google.com',
+                        title: 'This is a button',
+                        classes: 'bg-red-600 hover:bg-red-700 text-white'
+                    },
+                    {
+                        action: 'https://google.com',
+                        title: 'Button',
+                        classes: 'bg-green-600 hover:bg-green-700 text-white'
+                    }
+                ]
+            } %}
+            {% include 'components/button-list.njk' %}
+        </div>
+    </section>
+    <section class="row row--white">
+        <div class="container container--slim">
+            <div class="w-content">
+                <h1>Wysiwyg content (h1)</h1>
+                <p>Quis nostrud commodo Lorem adipisicing fugiat et anim excepteur duis. Est cupidatat reprehenderit amet cillum cillum sint enim occaecat ipsum proident.</p>
+                <p>Veniam magna laborum consectetur ullamco dolore quis laboris esse. In eu magna labore eu velit duis laborum nostrud. Commodo officia tempor officia sint irure.</p>
+                <h2>Heading 2</h2>
+                <p>Do ex esse ad irure ea non consequat mollit. Aute magna proident Lorem aute excepteur. Voluptate deserunt consequat est laborum duis sunt commodo ad adipisicing.</p>
+                <p>Veniam magna laborum consectetur ullamco dolore quis laboris esse. In eu magna labore eu velit duis laborum nostrud. Commodo officia tempor officia sint irure.</p>
+                <h3>Heading 3</h3>
+                <p>Do ex esse ad irure ea non consequat mollit. Aute magna proident Lorem aute excepteur. Voluptate deserunt consequat est laborum duis sunt commodo ad adipisicing.</p>
+                <p>Veniam magna laborum consectetur ullamco dolore quis laboris esse. In eu magna labore eu velit duis laborum nostrud. Commodo officia tempor officia sint irure.</p>
+                <h4>Heading 4</h4>
+                <p>Do ex esse ad irure ea non consequat mollit. Aute magna proident Lorem aute excepteur. Voluptate deserunt consequat est laborum duis sunt commodo ad adipisicing.</p>
+                <p>Veniam magna laborum consectetur ullamco dolore quis laboris esse. In eu magna labore eu velit duis laborum nostrud. Commodo officia tempor officia sint irure.</p>
+                <h5>Heading 5</h5>
+                <p>Do ex esse ad irure ea non consequat mollit. Aute magna proident Lorem aute excepteur. Voluptate deserunt consequat est laborum duis sunt commodo ad adipisicing.</p>
+                <p>Veniam magna laborum consectetur ullamco dolore quis laboris esse. In eu magna labore eu velit duis laborum nostrud. Commodo officia tempor officia sint irure.</p>
+                <h6>Heading 6</h6>
+                <p>Do ex esse ad irure ea non consequat mollit. Aute magna proident Lorem aute excepteur. Voluptate deserunt consequat est laborum duis sunt commodo ad adipisicing.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="row row--white">
+        <div class="container container--slim">
+
+            <form class="max-w-lg">
+
+                <div class="grid grid-cols-4 md:grid-cols-12 gap-x-2 gap-y-3 md:gap-3">
+                    <div class="col-span-4 md:col-span-12">
+                        {% set field = {
+                            label: 'Name',
+                            placeholder: 'John Doe',
+                            type: 'text',
+                            id: 'name'
+                        } %}
+                        {% include 'form/field.njk' %}
+                    </div>
+
+                    <div class="col-span-4 md:col-span-12">
+                        {% set field = {
+                            label: 'Email address',
+                            placeholder: 'example@email.com',
+                            type: 'email',
+                            id: 'email'
+                        } %}
+                        {% include 'form/field.njk' %}
+                    </div>
+
+                    <div class="col-span-4 md:col-span-12">
+                        {% set field = {
+                            label: 'Telephone',
+                            placeholder: '+44 1234 567 890',
+                            type: 'tel',
+                            id: 'telephone'
+                        } %}
+                        {% include 'form/field.njk' %}
+                    </div>
+
+                    <div class="col-span-4 md:col-span-12">
+                        {% set field = {
+                            label: 'Message',
+                            type: 'textarea',
+                            id: 'message'
+                        } %}
+                        {% include 'form/field.njk' %}
+                    </div>
+
+                    <div class="col-span-4 md:col-span-12">
+                        {% set field = {
+                            label: 'You agree to our <a href="#privacy">privacy policy</a>',
+                            type: 'checkbox',
+                            id: 'checkbox'
+                        } %}
+                        {% include 'form/field.njk' %}
+                    </div>
+
+                    <div class="col-span-4 md:col-span-12">
+                        {% set field = {
+                            label: 'Subscribe',
+                            type: 'submit'
+                        } %}
+                        {% include 'form/field.njk' %}
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

@@ -1,3 +1,5 @@
+import setFocus from '../_tools/keyboard-trap.js'
+
 /*
     Menu. Not much more to say.
 */
@@ -30,6 +32,7 @@ export default function menu() {
                 hamburger.classList.add(activeClass)
                 menu.classList.add(activeClass)
                 body.classList.add(hiddenClass)
+                setFocus(menu)
             }
         })
     }

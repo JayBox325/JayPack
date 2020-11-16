@@ -1,64 +1,62 @@
-import $ from 'jquery'
+/*
+    Keep a keyboard user where we want them to be
+*/
 
-// HAS JQUERY
+let focusableItems
+let numberOfFocusableItems
+let focusedItemIndex
+let focusedItem
+let items
 
-// Keep a keyboard user where we want them to be
+const focusableElementsString = 'a[href], area[href], input:not([disabled]), summary, select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]'
 
-export default function setFocus($target) {
+export default function setFocus(target) {
     setTimeout(function() {
-        const $focusElement = $target.find('a,input,button').eq(0).filter(':visible:first')
-        $focusElement.focus()
+        // Focus on the first element
+        const focusElement = target.querySelectorAll('a,input,button')[0]
+        focusElement.focus()
     }, 0)
 
-    $target.keydown(function(e) {
-        trapTabKey($(this), e)
+    // Start listening for tab key
+    target.addEventListener('keydown', function(e) {
+        trapTabKey(target, e)
     })
 }
 
-
-function trapTabKey(obj, evt) {
-
-    // Trapped tabbing
-    var focusableElementsString = "a[href], area[href], input:not([disabled]), summary, select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]"
+function trapTabKey(target, evt) {
 
     // if tab or shift-tab pressed
     if (evt.which == 9) {
 
-        // get list of all children elements in given object
-        var o = obj.find('*')
-
-        // get list of focusable items
-        var focusableItems
-        focusableItems = o.filter(focusableElementsString).filter(':visible')
-
-        // get currently focused item
-        var focusedItem
-        focusedItem = document.activeElement
+        // get list of all focusable children elements in given target
+        items = target.querySelectorAll(focusableElementsString)
 
         // get the number of focusable items
-        var numberOfFocusableItems
-        numberOfFocusableItems = focusableItems.length
+        numberOfFocusableItems = items.length
+        
+        // get currently focused item
+        focusedItem = document.activeElement
 
         // get the index of the currently focused item
-        var focusedItemIndex
-        focusedItemIndex = focusableItems.index(focusedItem)
+        focusedItemIndex = Array.prototype.indexOf.call(items, focusedItem)
 
+        // back tab
+        console.log(evt)
         if (evt.shiftKey) {
-            //back tab
             // if focused on first item and user preses back-tab, go to the last focusable item
             if (focusedItemIndex == 0) {
-                focusableItems.get(numberOfFocusableItems - 1).focus()
+                items[numberOfFocusableItems - 1].focus()
                 evt.preventDefault()
             }
 
+        // forward tab
         } else {
-            //forward tab
+            console.log('forwards')
             // if focused on the last item and user preses tab, go to the first focusable item
             if (focusedItemIndex == numberOfFocusableItems - 1) {
-                focusableItems.get(0).focus()
+                items[0].focus()
                 evt.preventDefault()
             }
         }
     }
-
 }
