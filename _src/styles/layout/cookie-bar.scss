@@ -1,0 +1,21 @@
+.cookie-bar {
+    @apply fixed bottom-0 left-0 bg-black p-4 text-white w-full;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s ease-in-out 0s, visibility .0s ease .3s;
+
+    &.is-active {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .2s ease .0001s, visibility .0s ease .0s;
+    }
+    
+    @screen xs {
+        @apply px-6;
+    }
+
+    @screen sm {
+        @apply flex items-center justify-between px-8 py-6;
+    }
+}

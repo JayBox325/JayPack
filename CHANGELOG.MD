@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Webpack JS audit
 - JS improvement
 - Darkmode button JS
+- Cookie bar JS
 
 ### Changed
 - Converted keyboard trapping to non jQuery
