@@ -19,6 +19,7 @@ import tailwindcss from 'tailwindcss'
 import postcss from 'gulp-postcss'
 import glob from 'gulp-sass-glob'
 import cssnano from 'cssnano'
+import concat from 'gulp-concat'
 
 gulp.task('styles', () => {
     return gulp.src(paths.sass.src)
@@ -46,7 +47,7 @@ gulp.task('styles', () => {
         .pipe(development(browserSync.reload({stream: true})))
         .on('end', function() {
             notify({
-                title: '✅ Styles compiled',
+                title: '👍 Styles compiled',
                 message: 'JayPack Reloaded'
             }).write('')
         })

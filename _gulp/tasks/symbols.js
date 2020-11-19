@@ -17,8 +17,8 @@ import gulpif from 'gulp-if'
 import changed from 'gulp-changed'
 
 gulp.task('symbols', () => {
-    return gulp.src(paths.assets.svg.src)
-        .pipe(changed(paths.assets.images.src))
+    return gulp.src(paths.symbols.src)
+        .pipe(changed(paths.symbols.src))
         .pipe(svgSymbols({
             templates: [`default-svg`]
         }))

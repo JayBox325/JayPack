@@ -32,7 +32,7 @@ gulp.task('scripts', (cb) => {
         .pipe(development(browserSync.reload({ stream: true })))
         .on('end', function() {
             notify({
-                title: '✅ Scripts compiled',
+                title: '👍 Scripts compiled',
                 message: 'JayPack Reloaded'
             }).write('')
         })

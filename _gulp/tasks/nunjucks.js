@@ -24,7 +24,7 @@ gulp.task('nunjucks', (done) => {
             .pipe(browserSync.reload({ stream: true }))
             .on('end', function() {
                 notify({
-                    title: '✅ Nunjucks compiled',
+                    title: '👍 Nunjucks compiled',
                     message: 'JayPack Reloaded'
                 }).write('')
             })

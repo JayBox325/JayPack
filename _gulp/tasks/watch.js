@@ -14,7 +14,7 @@ gulp.task('watch', () => {
 	gulp.watch(paths.assets.images.watch, gulp.series('images'))
 
 	// Watch svgs
-	gulp.watch(paths.assets.svg.watch, gulp.series(['svg', 'symbols']))
+	gulp.watch(paths.symbols.watch, gulp.series('symbols'))
 
 	// Watch scripts
 	gulp.watch(paths.js.watch, gulp.series('scripts'))

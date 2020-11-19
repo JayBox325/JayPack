@@ -25,7 +25,7 @@ gulp.task('images', () => {
         .pipe(development(browserSync.reload({ stream: true })))
         .on('end', function() {
             notify({
-                title: '✅ Images compiled',
+                title: '👍 Images compiled & moved',
                 message: 'JayPack Reloaded'
             }).write('')
         })

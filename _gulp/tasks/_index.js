@@ -10,7 +10,6 @@ gulp.task('build', gulp.series(
 		'util-styles',
 		'styles',
 		'scripts',
-		'svg',
 		'symbols',
 		'move-favicons',
 		'move-fonts',

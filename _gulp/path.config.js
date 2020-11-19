@@ -49,11 +49,6 @@ const paths = {
             watch: `${config.srcRoot}/assets/favicons/*.*`,
             dest: `${assets}/favicons`
         },
-        svg: {
-            src: `${config.srcRoot}/assets/svg/*.svg`,
-            watch: `${config.srcRoot}/assets/svg/*.svg`,
-            dest: `${assets}/svg`
-        },
         fonts: {
             src: `${config.srcRoot}/assets/fonts/*.*`,
             watch: `${config.srcRoot}/assets/fonts/*.*`,
@@ -62,13 +57,9 @@ const paths = {
     },
 
     symbols: {
-        dest: projectConfig.cms ? `${config.distRoot}/templates/_includes` : `${config.srcRoot}/html/_includes`
-    },
-
-    rev: {
-        styles: `${assets}/**/*.css`,
-        scripts: `${assets}/**/*.js`,
-        dist: `${assets}`,
+        src: `${config.srcRoot}/assets/svg/*.svg`,
+        dest: projectConfig.cms ? `${config.distRoot}/templates/_includes` : `${config.srcRoot}/html/_includes`,
+        watch: `${config.srcRoot}/assets/svg/*.svg`
     }
 }
 
