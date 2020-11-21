@@ -8,10 +8,10 @@
     }
 
     &__body {
-        display: none;
+        @apply hidden;
 
         .is-active & {
-            display: block;
+            @apply block;
         }
     }
 }
