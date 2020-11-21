@@ -7,12 +7,10 @@
 
 {% block component %}
 
-    <div class="btn-list btn-list--{{ design }}">
-        {% for button in buttons %}
-            <div class="">
-                {% include 'elements/button.njk' %}
-            </div>
-        {% endfor %}
-    </div>
+    {% set buttons = {
+        design: design,
+        buttons: buttons
+    } %}
+    {% include 'elements/button-list.njk' %}
 
 {% endblock %}

@@ -7,7 +7,7 @@
     }
 
     @screen sm {
-        @apply absolute bg-transparent relative block text-black h-auto w-auto;
+        @apply absolute bg-transparent relative block text-current h-auto w-auto;
     }
 
     &__list {

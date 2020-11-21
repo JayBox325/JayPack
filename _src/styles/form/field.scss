@@ -14,11 +14,21 @@
     }
 
     &__input {
-        @apply border border-black block bg-white;
+        @apply border-2 transition-colors rounded-lg border-gray-300 block bg-white hover:border-gray-400 focus:border-gray-600;
         appearance: none;
 
+        &:invalid {
+            @apply border-red-500;
+        }
+
+        &:valid {
+            &:focus {
+                @apply border-green-500;
+            }
+        }
+
         &--base {
-            @apply w-full h-10 px-2;
+            @apply w-full h-12 px-3;
         }
 
         &--textarea {

@@ -1,22 +1,21 @@
 {% extends "_layout/_base.njk" %}
 
+{% set headerInitTheme = 'text-white' %}
+
 {% block content %}
-    <section class="row bg-red-500 text-white">
-        <div class="container">
-            <div class="w-content">
-                <h1>Welcome to {{ siteDetails.title }}</h1>
-                <p>A front end scaffolding framework for static projects using Nunjucks or for CraftCMS sites with JayCraft.</p>
-            </div>
-            <div class="mt-6">
-                {% set button = {
-                    action: 'https://google.com',
-                    title: 'This is a button',
-                    classes: 'bg-green-600 hover:bg-green-700 text-white'
-                } %}
-                {% include 'elements/button.njk' %}
-            </div>
-        </div>
-    </section>
+    {% set feature = {
+        rowClass: 'bg-red-500 text-white',
+        title: 'Welcome to JayPack',
+        extract: 'A front end scaffolding framework for static projects using Nunjucks or for CraftCMS sites with JayCraft.',
+        buttons: [
+            {
+                action: 'https://google.com',
+                title: 'This is a button',
+                classes: 'bg-indigo-500 hover:bg-indigo-600 text-white'
+            }
+        ]
+    } %}
+    {% include 'components/feature.njk' %}
 
     {% set buttonList = {
         rowClass: 'bg-white',
