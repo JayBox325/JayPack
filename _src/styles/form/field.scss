@@ -14,7 +14,7 @@
     }
 
     &__input {
-        @apply border-2 transition-colors rounded-lg border-gray-300 block bg-white hover:border-gray-400 focus:border-gray-600;
+        @apply border-2 transition-colors text-black rounded-lg border-gray-300 block bg-white hover:border-gray-400 focus:border-gray-600;
         appearance: none;
 
         &:invalid {

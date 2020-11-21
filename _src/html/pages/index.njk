@@ -107,8 +107,47 @@
     } %}
     {% include 'components/body.njk' %}
 
+
+    {% set accordions = {
+        rowClass: 'bg-gray-100',
+        items: [
+            {
+                title: 'This is an accordion',
+                contentElements: [
+                    {
+                        type: 'p',
+                        content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+                    },
+                    {
+                        type: 'p',
+                        content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+                    }
+                ]
+            },
+            {
+                title: 'Another accordion',
+                contentElements: [
+                    {
+                        type: 'p',
+                        content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+                    }
+                ]
+            },
+            {
+                title: 'Another accordion',
+                contentElements: [
+                    {
+                        type: 'p',
+                        content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+                    }
+                ]
+            }
+        ]
+    } %}
+    {% include 'components/accordions.njk' %}
+
     {% set form = {
-        rowClass: 'bg-gray-100 pt-0',
+        rowClass: 'bg-indigo-500 text-white',
         action: 'form-action-here',
         fields: [
             {

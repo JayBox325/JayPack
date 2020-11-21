@@ -180,14 +180,16 @@ Object(_modules_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return defaultJS; });
-/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu */ "./_src/scripts/default/menu.js");
-/* harmony import */ var _header_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header-scroll */ "./_src/scripts/default/header-scroll.js");
+/* harmony import */ var _accordions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./accordions */ "./_src/scripts/default/accordions.js");
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ "./_src/scripts/default/menu.js");
+/* harmony import */ var _header_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header-scroll */ "./_src/scripts/default/header-scroll.js");
 // import pageTransitions from './page-transitions'
 // import slider from './slider'
 // import player from './player'
 // import printPageBtn from './print-page-btn'
 // import darkModeBtn from './dark-mode-btn'
 // import shareBtns from './share-btns'
+
 
 
 function defaultJS() {
@@ -197,8 +199,50 @@ function defaultJS() {
   // printPageBtn()
   // darkModeBtn()
   // shareBtns()
-  Object(_menu__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  Object(_header_scroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Object(_menu__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Object(_accordions__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_header_scroll__WEBPACK_IMPORTED_MODULE_2__["default"])();
+}
+
+/***/ }),
+
+/***/ "./_src/scripts/default/accordions.js":
+/*!********************************************!*\
+  !*** ./_src/scripts/default/accordions.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return accordions; });
+function accordions() {
+  var accordions = document.querySelectorAll('[data-accordion]');
+  var accordionTitles = document.querySelectorAll('[data-accordion-title]');
+  var activeClass = 'is-active';
+
+  if (accordions) {
+    accordionTitles.forEach(function (accordionTitle) {
+      accordionTitle.addEventListener('click', function (el) {
+        if (this.parentElement.classList.contains(activeClass)) {
+          closeAccordion(this);
+        } else {
+          openAccordion(this);
+        }
+      });
+    });
+  }
+
+  function openAccordion(title) {
+    accordions.forEach(function (accordion) {
+      accordion.classList.remove(activeClass);
+    });
+    title.parentElement.classList.add(activeClass);
+  }
+
+  function closeAccordion(title) {
+    title.parentElement.classList.remove(activeClass);
+  }
 }
 
 /***/ }),

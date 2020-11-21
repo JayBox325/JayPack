@@ -1,0 +1,17 @@
+.accordion {
+    &__title {
+        @apply p-4 text-white bg-indigo-500 rounded-lg;
+
+        .is-active & {
+            @apply bg-red-500;
+        }
+    }
+
+    &__body {
+        display: none;
+
+        .is-active & {
+            display: block;
+        }
+    }
+}

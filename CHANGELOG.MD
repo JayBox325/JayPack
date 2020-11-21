@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Darkmode button JS
 - Cookie bar JS
 - Tailwind 2
+- Form styling
 
 ### Changed
 - Converted keyboard trapping to non jQuery

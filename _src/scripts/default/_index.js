@@ -4,6 +4,7 @@
 // import printPageBtn from './print-page-btn'
 // import darkModeBtn from './dark-mode-btn'
 // import shareBtns from './share-btns'
+import accordions from './accordions'
 
 import menu from './menu'
 import headerScroll from './header-scroll'
@@ -17,5 +18,6 @@ export default function defaultJS() {
     // shareBtns()
 
     menu()
+    accordions()
     headerScroll()
 }

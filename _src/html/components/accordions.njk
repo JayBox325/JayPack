@@ -1,0 +1,22 @@
+{% extends "components/_index.njk" %}
+
+{% set items = accordions.items|default(null) %}
+
+{% block component %}
+    <ul class="accordion-wrap">
+
+        {% for item in items %}
+            {% set contentElements = item.contentElements %}
+            <li class="accordion" data-accordion>
+                <div class="accordion__title" data-accordion-title>
+                    <h2 class="title-5">{{ item.title }}<h2>
+                </div>
+                <div class="accordion__body" data-accordion-body>
+                    <div class="w-content">
+                        {% include 'elements/w-content.njk' %}
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
