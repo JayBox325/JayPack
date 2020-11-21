@@ -1,0 +1,19 @@
+<div class="field__select-wrap">
+    <select
+        id="{{ field.id }}"
+        name="{{ field.handle }}"
+        class="field__input field__input--select"
+
+        {% if entry.type == 'multiple_select' %}
+            multiple
+        {% endif %}
+
+        {% if field.required %}
+            required
+        {% endif %}
+    >
+        {% for option in field.options %}
+            <option value="{{ option.value }}">{{ option.label }}</option>
+        {% endfor %}
+    </select>
+</div>

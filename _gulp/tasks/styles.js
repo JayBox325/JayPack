@@ -19,19 +19,29 @@ import tailwindcss from 'tailwindcss'
 import postcss from 'gulp-postcss'
 import glob from 'gulp-sass-glob'
 import cssnano from 'cssnano'
-import concat from 'gulp-concat'
+import cssImport from 'postcss-import'
 
 gulp.task('styles', () => {
     return gulp.src(paths.sass.src)
         .pipe(development(sourcemaps.init()))
         .pipe(glob())
+        .on('error', handleErrors)
+
+        // Sass
         .pipe(sass({
             includePaths: ['node_modules']
         }))
         .on('error', handleErrors)
+
+        // Import Tailwind
         .pipe(postcss([
-            tailwindcss('./_gulp/tailwind.config.js'),
-            autoprefixer({overrideBrowserslist: config.autoprefixerVersions})
+            tailwindcss('./_gulp/tailwind.config.js')
+        ]))
+        .on('error', handleErrors)
+
+        // Autoprefix
+        .pipe(postcss([
+            autoprefixer({overrideBrowserslist: config.autoprefixerVersions}),
         ]))
 
         // Minify in production
@@ -62,6 +72,7 @@ gulp.task('util-styles', () => {
             tailwindcss('./_gulp/tailwind.config.js'),
             autoprefixer({overrideBrowserslist: config.autoprefixerVersions})
         ]))
+        .on('error', handleErrors)
 
         // Minify in production
         .pipe(production(postcss([cssnano])))

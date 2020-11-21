@@ -1,9 +1,9 @@
 .form {
     &-wrap {
+        @apply bg-white;
         max-width: 800px;
         border-radius: .5rem;
         margin: auto;
-        background: color('cream');
         padding: 1rem;
 
         + .form-wrap {

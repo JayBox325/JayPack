@@ -1,0 +1,48 @@
+{% extends "components/_index.njk" %}
+
+{% set contentElements = body.contentElements|default(null) %}
+{% set rowClass = body.rowClass|default('bg-white') %}
+{% set slimContainer = true %}
+
+{% block component %}
+    <div class="w-content">
+        {% for el in contentElements %}
+
+            {# Body #}
+            {% if el.type == 'p' %}
+                <p>{{ el.content|safe }}</p>
+
+            {# Headings #}
+            {% elseif el.type == 'h1' %}
+                <h1 class="title-2">{{ el.content|safe }}</h1>
+            {% elseif el.type == 'h2' %}
+                <h2>{{ el.content|safe }}</h2>
+            {% elseif el.type == 'h3' %}
+                <h3>{{ el.content|safe }}</h3>
+            {% elseif el.type == 'h4' %}
+                <h4>{{ el.content|safe }}</h4>
+            {% elseif el.type == 'h5' %}
+                <h5>{{ el.content|safe }}</h5>
+            {% elseif el.type == 'h6' %}
+                <h6>{{ el.content|safe }}</h6>
+
+            {# Lists #}
+            {% elseif el.type == 'list' %}
+                {% set format = el.format|default('ul') %}
+                <{{ format }}>
+                    {% for item in el.content %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </{{ format }}>
+
+            {# Blockquote #}
+            {% elseif el.type == 'blockquote' %}
+                <figure >
+                    <blockquote>
+                        <p>{{ el.content }}</p>
+                    </blockquote>
+                </figure>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -45,18 +45,4 @@
             }
         }
     }
-
-    @each $name, $hex in $colors {
-        &--#{$name} {
-            @include text-color($name);
-            
-            &:before {
-                background-color: $hex;
-            }
-
-            + .row--#{$name} {
-                padding-top: 0;
-            }
-        }
-    }
 }

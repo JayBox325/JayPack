@@ -14,7 +14,7 @@
     }
 
     &__input {
-        @apply border border-black block;
+        @apply border border-black block bg-white;
         appearance: none;
 
         &--base {
@@ -43,5 +43,6 @@
         top: 50%;
         left: 50%;
         transform: translate3d(-50%,-50%,0);
+        pointer-events: none;
     }
 }
