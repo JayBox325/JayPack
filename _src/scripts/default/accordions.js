@@ -21,9 +21,11 @@ export default function accordions() {
             accordion.classList.remove(activeClass)
         })
         title.parentElement.classList.add(activeClass)
+        title.setAttribute('aria-expanded', true)
     }
 
     function closeAccordion(title) {
         title.parentElement.classList.remove(activeClass)
+        title.setAttribute('aria-expanded', false)
     }
 }

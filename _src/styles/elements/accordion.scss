@@ -1,9 +1,15 @@
 .accordion {
+
+    + .accordion {
+        @apply mt-4;
+    }
+
     &__title {
-        @apply p-4 text-white bg-indigo-500 rounded-lg;
+        @apply p-4 text-white bg-indigo-500 rounded-lg hover:bg-indigo-600 transition-colors;
+        cursor: pointer;
 
         .is-active & {
-            @apply bg-red-500;
+            @apply bg-red-500 hover:bg-red-600;
         }
     }
 
