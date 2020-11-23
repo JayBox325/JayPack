@@ -21,7 +21,7 @@ export default function accordions() {
         thisGroup = thisGroup.querySelectorAll('[data-accordion]')
 
         thisGroup.forEach(accordion => {
-            accordion.classList.remove(activeClass)
+            closeAccordion(accordion.querySelector('[data-accordion-title]'))
         })
 
         title.parentElement.classList.add(activeClass)
