@@ -2,7 +2,7 @@ export default function accordions() {
     const accordions = document.querySelectorAll('[data-accordion]')
     const accordionTitles = document.querySelectorAll('[data-accordion-title]')
     const activeClass = 'is-active'
-
+    let thisGroup
 
     if (accordions) {
         accordionTitles.forEach(accordionTitle => {
@@ -17,9 +17,13 @@ export default function accordions() {
     }
 
     function openAccordion(title) {
-        accordions.forEach(accordion => {
+        thisGroup = title.closest('[data-accordion-wrap]')
+        thisGroup = thisGroup.querySelectorAll('[data-accordion]')
+
+        thisGroup.forEach(accordion => {
             accordion.classList.remove(activeClass)
         })
+
         title.parentElement.classList.add(activeClass)
         title.setAttribute('aria-expanded', true)
     }
