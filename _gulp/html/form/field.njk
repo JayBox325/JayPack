@@ -5,12 +5,14 @@
 {% set id = field.id|default(null) %}
 {% set name = field.name|default(field.id) %}
 {% set required = field.required|default(true) %}
+{% set classes = field.classes|default(null) %}
 
 {# Content #}
 {% set placeholder = field.placeholder|default(null) %}
 {% set label = field.label|default(null) %}
 {% set instructions = field.instructions|default(null) %}
 {% set value = field.value|default(null) %}
+{% set autocomplete = field.autocomplete|default(null) %}
 
 {# Core input field types #}
 {% set baseInputFields = [

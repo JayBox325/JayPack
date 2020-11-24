@@ -13,18 +13,21 @@
         {
             "account": "Twitter",
             "text": "Follow us on Twitter",
+            "classes": "bg-twitter-500 text-white hover:bg-twitter-600",
             "icon": "twitter",
             "accountUrl": "https://twitter.com/JayBox325"
         },
         {
             "account": "Facebook",
             "text": "Like us on Facebook",
+            "classes": "bg-facebook-500 text-white hover:bg-facebook-600",
             "icon": "facebook-f",
             "accountUrl": "https://www.facebook.com"
         },
         {
             "account": "Email",
             "text": "Email us",
+            "classes": "bg-orange-500 text-white hover:bg-instagram-600",
             "icon": "at",
             "accountUrl": "mailto:hello@jaycollett.co"
         }

@@ -1,13 +1,10 @@
 <textarea
     class="field__input field__input--textarea"
-    id="{{ field.id }}"
-    name="{{ field.handle }}"
+    id="{{ id }}"
+    name="{{ handle }}"
+    placeholder="{{ placeholder }}"
 
-    {% if field.required %}
+    {% if required %}
         required
     {% endif %}
->
-    {% if field.value %}
-        {{ field.value }}
-    {% endif %}
-</textarea>
+>{% if value %}{{ value }}{% endif %}</textarea>
