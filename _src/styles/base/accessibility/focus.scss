@@ -1,6 +1,10 @@
-*:-moz-focusring,
-button:focus,
-*:focus {
+:focus:not(:focus-visible) {
+    outline: none !important;
+}
+
+:focus-visible {
     outline-offset: 2px;
-    outline: 1px dotted #1a1a1a !important;
+    outline-style: dotted !important;
+    outline-width: 1px !important;
+    outline-color: black !important;
 }

@@ -8,6 +8,7 @@ import accordions from './accordions'
 
 import menu from './menu'
 import headerScroll from './header-scroll'
+import cookieBar from './cookie-bar'
 
 export default function defaultJS() {
     // pageTransitions()
@@ -17,6 +18,7 @@ export default function defaultJS() {
     // darkModeBtn()
     // shareBtns()
 
+    cookieBar()
     menu()
     accordions()
     headerScroll()

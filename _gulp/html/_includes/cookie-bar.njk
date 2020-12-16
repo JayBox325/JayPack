@@ -1,16 +1,16 @@
 {% import '_macros/macros.njk' as macro %}
 
-<div class="cookie-banner" data-cookie-bar>
+<div class="cookie-bar" data-cookie-bar>
     <div class="w-content sm:pr-4">
         <p>We use cookies to ensure you get the best experience on our website. If you remain on the page, you agree to the <a href="https://www.cookiesandyou.com/" {{ macro.external(true) }}>use of cookies.</a>
         </p>
     </div>
     <div class="mt-4 sm:mt-0">
-        <button class="btn text-white" data-cookie-accept>
-            &rarr;
-            <div class="ml-2">
-                <span class="ul-hover ul-hover--hidden">Accept</span>
-            </div>
-        </button>
+        {% set button = {
+            title: 'Accept',
+            action: 'data-cookie-accept',
+            type: 'button'
+        } %}
+        {% include 'elements/button.njk' %}
     </div>
 </div>

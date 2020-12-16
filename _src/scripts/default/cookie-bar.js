@@ -1,11 +1,9 @@
 import Cookies from 'js-cookie'
 
-export default function cookieBanner() {
+export default function cookieBar() {
     const cookieBar = document.querySelector('[data-cookie-bar]')
     const cookieAccept = document.querySelector('[data-cookie-accept]')
     const activeClass = 'is-active'
-
-    console.log(banner)
 
     if (Cookies.get('stp-cookies-accept')) {
         cookieBar.remove()

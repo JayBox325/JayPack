@@ -1,7 +1,7 @@
 import config from './config'
 import projectConfig from '../project.config'
 
-const assets = `${config.distRoot}/assets`
+const assets = projectConfig.cms ? `${config.distRoot}/public/assets` : `${config.distRoot}/assets`
 
 const paths = {
 	sass: {
