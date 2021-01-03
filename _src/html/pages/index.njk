@@ -1,0 +1,195 @@
+{% extends "_layout/_base.njk" %}
+
+{% set headerInitTheme = 'text-white' %}
+
+{% block content %}
+    {% set feature = {
+        rowClass: 'bg-red-500 text-white',
+        title: 'Welcome to JayPack',
+        extract: 'A front end scaffolding framework with Webpack, Gulp and Tailwind for static projects.',
+        buttons: [
+            {
+                action: 'https://google.com',
+                title: 'This is a button',
+                classes: 'bg-indigo-500 hover:bg-indigo-600 text-white'
+            }
+        ]
+    } %}
+    {% include 'components/feature.njk' %}
+
+    {% set buttonList = {
+        rowClass: 'bg-white',
+        design: 'stacked',
+        buttons: [
+            {
+                action: 'https://google.com',
+                title: 'This is a button',
+                classes: 'bg-red-600 hover:bg-red-700 text-white'
+            },
+            {
+                action: 'https://google.com',
+                title: 'Button',
+                classes: 'bg-green-600 hover:bg-green-700 text-white'
+            }
+        ]
+    } %}
+    {% include 'components/button-list.njk' %}
+
+    {% set body = {
+        rowClass: 'bg-gray-100',
+        contentElements: [
+            {
+                type: 'h1',
+                content: 'Wysiwyg content (h1)'
+            },
+            {
+                type: 'p',
+                content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+            },
+            {
+                type: 'h2',
+                content: 'Heading 2'
+            },
+            {
+                type: 'p',
+                content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+            },
+            {
+                type: 'blockquote',
+                content: 'Et dolor cillum fugiat irure mollit. Et ea adipisicing officia mollit deserunt aliquip ex eiusmod. Amet ut exercitation anim irure.'
+            },
+            {
+                type: 'p',
+                content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+            },
+            {
+                type: 'h3',
+                content: 'Heading 3'
+            },
+            {
+                type: 'p',
+                content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+            },
+            {
+                type: 'list',
+                format: 'ol',
+                content: [
+                    'Ordered list items',
+                    'This is an item',
+                    'Another item here'
+                ]
+            },
+            {
+                type: 'h4',
+                content: 'Heading 4'
+            },
+            {
+                type: 'p',
+                content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+            },
+            {
+                type: 'list',
+                content: [
+                    'UL list items are default',
+                    'This is an item',
+                    'Another item here'
+                ]
+            },
+            {
+                type: 'h5',
+                content: 'Heading 5'
+            },
+            {
+                type: 'p',
+                content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+            }
+        ]
+    } %}
+    {% include 'components/body.njk' %}
+
+
+    {% set accordions = {
+        rowClass: 'bg-gray-100',
+        title: 'These are accordions',
+        id: 'accordionGroup',
+        items: [
+            {
+                title: 'This is an accordion',
+                contentElements: [
+                    {
+                        type: 'p',
+                        content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+                    },
+                    {
+                        type: 'p',
+                        content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+                    }
+                ]
+            },
+            {
+                title: 'Another accordion',
+                contentElements: [
+                    {
+                        type: 'p',
+                        content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+                    }
+                ]
+            },
+            {
+                title: 'Another accordion',
+                contentElements: [
+                    {
+                        type: 'p',
+                        content: 'Quis nostrud commodo <strong>Lorem</strong> adipisicing <a href="https://twitter.com/jaybox325" rel="noopener noreferrer" target="_blank">fugiat et anim</a> excepteur duis. Est <em>cupidatat reprehenderit</em> amet cillum cillum sint enim occaecat ipsum proident. Nulla veniam amet duis sint.'
+                    }
+                ]
+            }
+        ]
+    } %}
+    {% include 'components/accordions.njk' %}
+
+    {% set form = {
+        rowClass: 'bg-indigo-500 text-white',
+        action: 'form-action-here',
+        fields: [
+            {
+                label: 'Name',
+                placeholder: 'John Doe',
+                autocomplete: 'name',
+                type: 'text',
+                id: 'name'
+            },
+            {
+                label: 'Email address',
+                placeholder: 'example@email.com',
+                autocomplete: 'email',
+                type: 'email',
+                id: 'email'
+            },
+            {
+                label: 'Telephone',
+                placeholder: '+44 1234 567 890',
+                autocomplete: 'tel',
+                type: 'tel',
+                id: 'telephone'
+            },
+            {
+                label: 'Message',
+                placeholder: 'What do you want to say?',
+                type: 'textarea',
+                id: 'message'
+            },
+            {
+                label: 'You agree to our <a href="#privacy">privacy policy</a>',
+                type: 'checkbox',
+                id: 'checkbox'
+            },
+            {
+                label: 'Subscribe',
+                type: 'submit',
+                classes: 'bg-red-600 hover:bg-red-700 text-white'
+            }
+        ]
+    } %}
+    {% include 'components/form.njk' %}
+{% endblock %}

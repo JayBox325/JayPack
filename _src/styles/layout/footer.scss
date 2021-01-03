@@ -1,15 +1,15 @@
 .footer {
     @apply py-6;
 
-    @screen sm {
+    @screen md {
         @apply py-10;
     }
 
-    @screen md {
+    @screen lg {
         @apply py-16;
     }
 
-    @screen xl {
+    @screen 2xl {
         @apply py-20;
     }
 }

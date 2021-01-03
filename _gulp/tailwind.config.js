@@ -18,11 +18,11 @@ module.exports = {
     theme: {
         extend: {
             screens: {
-                xs: '400px',
-                sm: '600px',
-                md: '900px',
-                lg: '1200px',
-                xl: '1600px'
+                sm: '400px',
+                md: '600px',
+                lg: '900px',
+                xl: '1200px',
+                '2xl': '1600px'
             },
             spacing: {
                 px: '1px',

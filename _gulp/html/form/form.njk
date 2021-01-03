@@ -2,10 +2,10 @@
 {% set fields = form.fields|default(null) %}
 
 <form autocomplete="on" action="{{ action }}" class="max-w-lg">
-    <div class="grid grid-cols-4 md:grid-cols-12 gap-x-2 gap-y-3 md:gap-3">
+    <div class="grid grid-cols-4 xl:grid-cols-12 gap-x-2 gap-y-3 xl:gap-3">
 
         {% for field in fields %}
-            <div class="col-span-4 md:col-span-12">
+            <div class="col-span-4 xl:col-span-12">
                 {% include 'form/field.njk' %}
             </div>
         {% endfor %}

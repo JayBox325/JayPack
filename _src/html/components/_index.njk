@@ -1,0 +1,8 @@
+{% set rowClass = rowClass|default('bg-white') %}
+{% set slimContainer = slimContainer|default(false) %}
+
+<section class="row {{ rowClass }}">
+    <div class="container{% if slimContainer %} container--slim{% endif %}">
+        {% block component %}{% endblock %}
+    </div>
+</section>

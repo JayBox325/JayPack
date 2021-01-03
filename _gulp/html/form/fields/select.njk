@@ -2,7 +2,7 @@
     <select
         id="{{ field.id }}"
         name="{{ field.handle }}"
-        class="field__input field__input--select"
+        class="field__input field__input--base"
 
         {% if entry.type == 'multiple_select' %}
             multiple
@@ -13,7 +13,7 @@
         {% endif %}
     >
         {% for option in field.options %}
-            <option value="{{ option.value }}">{{ option.label }}</option>
+            <option value="{{ option.value }}">{{ option.label|safe }}</option>
         {% endfor %}
     </select>
 </div>

@@ -4,17 +4,17 @@
     @apply leading-none inline-flex items-center justify-center font-bold px-6 rounded-full h-12;
     transition: color .2s ease-in-out, background .2s ease-in-out;
 
-    @screen sm {
+    @screen md {
         @apply px-8;
     }
 
-    @screen lg {
+    @screen xl {
         @apply px-10;
     }
 
     &-list {
         &--inline {
-            @screen sm {
+            @screen md {
                 @apply flex;
 
                 > div {

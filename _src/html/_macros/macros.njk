@@ -1,0 +1,27 @@
+{% macro external(state) %}
+    {% if state == true or state == '_blank' %} target="_blank" rel="noopener noreferrer"{% endif %}
+{% endmacro %}
+
+{% macro icon(symbol, size = 'md') %}
+    <svg role="img" aria-hidden="true" class="icon icon--{{ symbol }} icon--{{ size }}">
+        <use xlink:href="#{{ symbol }}"></use>
+    </svg>
+{% endmacro %}
+
+{% macro social(networks) %}
+    <ul class="list list--inline">
+        {% for network in networks %}
+            <li class="list__item">
+                <a href="{{ network.accountUrl }}" aria-label="{{ network.text }}" class="social-icon {{ network.classes }}">
+                    {{ icon('social-' ~ network.icon, 'xs') }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+{% macro required(state) %}
+    {% if state == true %}
+        <span> *</span>
+    {% endif %}
+{% endmacro %}

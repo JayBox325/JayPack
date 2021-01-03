@@ -1,0 +1,16 @@
+{% extends "components/_index.njk" %}
+
+{# Design should be 'inline' or 'stacked' #}
+{% set design = buttonList.design|default('inline') %}
+{% set buttons = buttonList.buttons %}
+{% set rowClass = buttonList.rowClass|default('bg-white') %}
+
+{% block component %}
+
+    {% set buttons = {
+        design: design,
+        buttons: buttons
+    } %}
+    {% include 'elements/button-list.njk' %}
+
+{% endblock %}

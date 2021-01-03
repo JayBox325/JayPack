@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if lt IE 9 ]><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="ie">    <![endif]-->
+<!--[if IE 9 ]><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="ie9">    <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB"><!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        {# SEO #}
+        {% include '_includes/seo.njk' %}
+
+        {# CSS #}
+        <link rel="stylesheet" href="/assets/styles/styles.css">
+        <link rel="stylesheet" href="/assets/styles/utilities.css">
+
+        {# Favicons #}
+        {% include '_includes/favicons.njk' %}
+    </head>
+
+    <body class="min-h-screen min-w-screen" data-barba="wrapper">
+        {% include '_includes/cookie-bar.njk' %}
+
+        {# <a class="skip-main btn" href="#main">Skip to main content</a> #}
+
+        <div class="site min-h-screen min-w-screen" id="main" data-barba="container">
+            {% include '_layout/header.njk' %}
+            {% block content %}{% endblock %}
+            {% include '_layout/footer.njk' %}
+        </div>
+
+        {# Javascript #}
+        <script src="/assets/scripts/bundle.js"></script>
+
+        <div class="hidden">
+            {% include '_includes/svg-symbols.njk' %}
+        </div>
+
+    </body>
+</html>

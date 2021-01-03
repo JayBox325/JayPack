@@ -2,7 +2,7 @@
     @apply px-4 mx-auto max-w-full;
     min-width: 300px;
 
-    @screen xs {
+    @screen sm {
         max-width: 1400px;
 
         &--slim {
@@ -10,19 +10,19 @@
         }
     }
 
-    @screen sm {
+    @screen md {
         @apply px-6;
     }
 
-    @screen md {
+    @screen lg {
         @apply px-8;
     }
 
-    @screen lg {
+    @screen xl {
         @apply px-10;
     }
 
-    @screen xl {
+    @screen 2xl {
         @apply px-0;
     }
 }

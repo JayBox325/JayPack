@@ -4,7 +4,7 @@
     z-index: 999;
     transform: translate3d(0, -50%, 0);
     
-    @screen sm {
+    @screen md {
         @apply hidden;
     }
 

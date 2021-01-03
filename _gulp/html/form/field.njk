@@ -5,6 +5,7 @@
 {% set id = field.id|default(null) %}
 {% set name = field.name|default(field.id) %}
 {% set required = field.required|default(true) %}
+{% set hiddenLabel = field.hiddenLabel|default(false) %}
 {% set classes = field.classes|default(null) %}
 
 {# Content #}
@@ -36,15 +37,21 @@
     'checkbox_group'
 ] %}
 
-<fieldset class="field">
+{% if type in optionGroupFields %}
+    {% set fieldTag = 'fieldset' %}
+{% else %}
+    {% set fieldTag = 'div' %}
+{% endif %}
+
+<{{ fieldTag }} class="field">
 
     {# Show a legend for option groups, no label for single options and a label for the rest #}
     {% if type in optionGroupFields %}
-        <legend class="field__label" for="{{ id }}">{{ label }}{{ macro.required(required) }}</legend>
+        <legend class="field__label" for="{{ id }}">{{ label|safe }}{{ macro.required(required) }}</legend>
     {% elseif type == 'submit' or type in optionInputFields %}
         {# The label is associated inside the field #}
     {% else %}
-        <label class="field__label" for="{{ id }}">{{ label }}{{ macro.required(required) }}</label>
+        <label class="{% if hiddenLabel %}sr-only m-0{% else %}field__label{% endif %}" for="{{ id }}">{{ label|safe }}{{ macro.required(required) }}</label>
     {% endif %}
 
     {# Instructions #}
@@ -65,4 +72,4 @@
     {% if field.renderErrors|length > 0 %}
         <p class="field__error">{{ field.renderErrors }}</p>
     {% endif %}
-</fieldset>
+</{{ fieldTag }}>

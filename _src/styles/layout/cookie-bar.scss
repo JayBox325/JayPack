@@ -11,11 +11,11 @@
         transition: opacity .2s ease .0001s, visibility .0s ease .0s;
     }
     
-    @screen xs {
+    @screen sm {
         @apply px-6;
     }
 
-    @screen sm {
+    @screen md {
         @apply flex items-center justify-between px-8 py-6;
     }
 }

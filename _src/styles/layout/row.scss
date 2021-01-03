@@ -19,30 +19,30 @@
     
     @apply py-6;
 
-    @screen sm {
+    @screen md {
         @apply py-16;
     }
 
-    @screen md {
+    @screen lg {
         @apply py-20;
     }
 
-    @screen lg {
+    @screen xl {
         @apply py-24;
     }
 
-    @screen xl {
+    @screen 2xl {
         @apply py-32;
     }
 
     // Add space for header
     &:first-of-type {
-        @apply pt-0;
+        // @apply pt-0;
         
         > * {
             @apply pt-16;
 
-            @screen lg {
+            @screen xl {
                 @apply pt-24;
             }
         }

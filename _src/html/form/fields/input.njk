@@ -1,0 +1,19 @@
+<input
+    class="field__input field__input--base"
+    type="{{ type }}"
+    name="{{ handle }}"
+    id="{{ id }}"
+    placeholder="{{ placeholder }}"
+
+    {% if autocomplete %}
+        autocomplete="{{ autocomplete }}"
+    {% endif %}
+
+    {% if required %}
+        required
+    {% endif %}
+
+    {% if value %}
+        value="{{ value }}"
+    {% endif %}
+/>

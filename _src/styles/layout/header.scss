@@ -3,11 +3,11 @@
     z-index: 900;
     transition: height .2s ease-in-out, color .2s ease-in-out;
 
-    @screen lg {
+    @screen xl {
         @apply h-32;
 
         &.is-scrolled {
-            @apply h-24;
+            @apply h-24 text-black;
         }
     }
 

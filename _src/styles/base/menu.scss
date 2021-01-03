@@ -6,7 +6,7 @@
         @apply flex;
     }
 
-    @screen sm {
+    @screen md {
         @apply absolute bg-transparent relative block text-current h-auto w-auto;
     }
 
@@ -14,7 +14,7 @@
         @apply flex flex-col;
         list-style-type: none;
 
-        @screen sm {
+        @screen md {
             @apply block;
             text-align: right;
         }
@@ -22,7 +22,7 @@
     &__item {
         display: inline-block;
 
-        @screen sm {
+        @screen md {
             &:not(:first-child) {
                 @apply ml-4
             }
