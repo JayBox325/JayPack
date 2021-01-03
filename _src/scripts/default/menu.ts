@@ -1,4 +1,4 @@
-import setFocus from '../_tools/keyboard-trap.js'
+import setFocus from '../_tools/keyboard-trap'
 
 /*
     Menu. Not much more to say.

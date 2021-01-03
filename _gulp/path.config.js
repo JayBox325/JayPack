@@ -28,8 +28,8 @@ const paths = {
     },
 
     js: {
-        app: `./${config.srcRoot}/scripts/app.js`,
-        watch: `${config.srcRoot}/scripts/**/*.js`,
+        app: `./${config.srcRoot}/scripts/app.ts`,
+        watch: `${config.srcRoot}/scripts/**/*.ts`,
         dest: `${assets}/scripts`
     },
 
