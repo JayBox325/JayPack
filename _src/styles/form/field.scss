@@ -13,11 +13,29 @@
         @apply flex h-10 items-center;
     }
 
+    &__select-wrap {
+        @apply w-full block relative;
+
+        &:after {
+            @apply absolute right-0 mr-3;
+            pointer-events: none;
+            top: 50%;
+            transform: translate3d(0,-50%,0);
+            content: '↓',
+        }
+    }
+
     &__input {
-        @apply border-2 transition-colors text-black rounded-lg border-gray-300 block bg-white hover:border-gray-400 focus:border-gray-600;
+        @apply border-2 transition-colors text-black rounded-lg border-gray-300 block bg-white;
         appearance: none;
 
+        &:hover {
+            @apply border-gray-800;
+        }
+
         &:focus {
+            @apply border-gray-600;
+
             &:valid {
                 @apply border-green-500;
             }

@@ -5,19 +5,23 @@
     }
 
     &__title {
-        @apply p-4 text-white bg-indigo-500 rounded-lg hover:bg-indigo-600 transition-colors;
+        @apply p-4 text-white bg-indigo-500 rounded-lg transition-colors block w-full text-left;
         cursor: pointer;
 
-        .is-active & {
-            @apply bg-red-500 hover:bg-red-600;
+        &:hover,
+        &:focus {
+            @apply bg-indigo-600;
         }
     }
 
     &__body {
-        @apply hidden;
+        @apply overflow-hidden;
+        transition: height .4s ease-in-out;
+        visible: visible;
 
-        .is-active & {
-            @apply block;
+        .is-hidden & {
+            visible: hidden;
+            height: 0;
         }
     }
 }

@@ -5,8 +5,8 @@
 }
 
 // @include resp-font-size('sm', 'lg', 'xl, '4xl');
-@mixin resp-font-size($xs, $sm: $xs, $md: $sm, $lg: $md, $xl: $lg) {
-    @each $break, $size in (xs: $xs, sm: $sm, md: $md, lg: $lg, xl: $xl) {
+@mixin resp-font-size($sm, $md: $sm, $lg: $md, $xl: $lg, $xxl: $xl) {
+    @each $break, $size in (sm: $sm, md: $md, lg: $lg, xl: $xl, 2xl: $xxl) {
         @screen #{$break} {
             @apply text-#{$size};
         }

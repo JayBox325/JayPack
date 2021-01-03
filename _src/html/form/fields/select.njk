@@ -12,6 +12,9 @@
             required
         {% endif %}
     >
+        {% if placeholder %}
+            <option selected disabled>{{ placeholder }}</option>
+        {% endif %}
         {% for option in field.options %}
             <option value="{{ option.value }}">{{ option.label|safe }}</option>
         {% endfor %}

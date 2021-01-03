@@ -21,8 +21,8 @@ body {
     }
 
     a {
-        @apply border-b border-current;
-        border-spacing: unset;
+        @apply underline;
+        text-underline-offset: 2px;
         transition: color .2s ease-in-out;
 
         &:hover {

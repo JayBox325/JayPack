@@ -78,8 +78,8 @@
 
         <div class="site min-h-screen min-w-screen" id="main" data-barba="container">
             <header class="header text-white">
-	<div class="container header__inner">
-		<div class="grid grid-cols-4 md:grid-cols-12 header__grid">
+	<div class="container relative h-full z-10">
+		<div class="grid grid-cols-4 md:grid-cols-12 items-center h-full">
             <div class="col-span-3 md:col-span-4">
                 <h1 class="header__logo title-3">
     				<a href="/">JayPack</a>
@@ -402,9 +402,9 @@
         
             
             <li class="accordion" data-accordion>
-                <div class="accordion__title" id="accordionGroup-1" data-accordion-title aria-expanded="false" aria-controls="accordionGroup-1">
+                <button class="accordion__title" id="accordionGroup-1" data-accordion-title aria-expanded="false" aria-controls="accordionGroup-1">
                     <h3 class="title-5">This is an accordion<h3>
-                </div>
+                </button>
                 <div class="accordion__body" aria-labelledby="accordionGroup-1"  data-accordion-body id="accordionGroup-1">
                     <div class="pt-4 px-5 pb-10">
                         
@@ -434,9 +434,9 @@
         
             
             <li class="accordion" data-accordion>
-                <div class="accordion__title" id="accordionGroup-2" data-accordion-title aria-expanded="false" aria-controls="accordionGroup-2">
+                <button class="accordion__title" id="accordionGroup-2" data-accordion-title aria-expanded="false" aria-controls="accordionGroup-2">
                     <h3 class="title-5">Another accordion<h3>
-                </div>
+                </button>
                 <div class="accordion__body" aria-labelledby="accordionGroup-2"  data-accordion-body id="accordionGroup-2">
                     <div class="pt-4 px-5 pb-10">
                         
@@ -458,9 +458,9 @@
         
             
             <li class="accordion" data-accordion>
-                <div class="accordion__title" id="accordionGroup-3" data-accordion-title aria-expanded="false" aria-controls="accordionGroup-3">
+                <button class="accordion__title" id="accordionGroup-3" data-accordion-title aria-expanded="false" aria-controls="accordionGroup-3">
                     <h3 class="title-5">Another accordion<h3>
-                </div>
+                </button>
                 <div class="accordion__body" aria-labelledby="accordionGroup-3"  data-accordion-body id="accordionGroup-3">
                     <div class="pt-4 px-5 pb-10">
                         
@@ -634,6 +634,82 @@
 
     
 />
+    
+
+    
+    
+</div>
+            </div>
+        
+            <div class="col-span-4 xl:col-span-12">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+<div class="field">
+
+    
+    
+        <label class="field__label" for="name">Select field
+    
+        <span> *</span>
+    
+</label>
+    
+
+    
+    
+
+    
+    
+        <div class="field__select-wrap">
+    <select
+        id="name"
+        name=""
+        class="field__input field__input--base"
+
+        
+
+        
+    >
+        
+            <option selected disabled>This is the placeholder</option>
+        
+        
+            <option value="option-1">Option 1</option>
+        
+            <option value="option-2">Option 2</option>
+        
+            <option value="option-3">Option 3</option>
+        
+    </select>
+</div>
     
 
     

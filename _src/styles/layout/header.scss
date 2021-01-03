@@ -25,17 +25,4 @@
         width: calc(100% + 4rem);
         transform: translateX(-2rem);
     }
-
-    &__inner {
-        @apply relative h-full;
-        z-index: 2;
-    }
-
-    &__grid {
-        @apply items-center h-full;
-    }
-
-    &__logo {
-        @apply italic;
-    }
 }

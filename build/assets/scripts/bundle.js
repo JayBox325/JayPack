@@ -81,14 +81,14 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./_src/scripts/app.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./_src/scripts/app.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./_src/scripts/_tools/keyboard-trap.js":
+/***/ "./_src/scripts/_tools/keyboard-trap.ts":
 /*!**********************************************!*\
-  !*** ./_src/scripts/_tools/keyboard-trap.js ***!
+  !*** ./_src/scripts/_tools/keyboard-trap.ts ***!
   \**********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -99,80 +99,91 @@ __webpack_require__.r(__webpack_exports__);
 /*
     Keep a keyboard user where we want them to be
 */
-var focusableItems;
-var numberOfFocusableItems;
-var focusedItemIndex;
-var focusedItem;
-var items;
-var focusableElementsString = 'a[href], area[href], input:not([disabled]), summary, select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
-function setFocus(target) {
-  setTimeout(function () {
-    // Focus on the first element
-    var focusElement = target.querySelectorAll('a,input,button')[0];
-    focusElement.focus();
-  }, 0); // Start listening for tab key
 
-  target.addEventListener('keydown', function (e) {
-    trapTabKey(target, e);
-  });
+let focusableItems
+let numberOfFocusableItems
+let focusedItemIndex
+let focusedItem
+let items
+
+const focusableElementsString = 'a[href], area[href], input:not([disabled]), summary, select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]'
+
+function setFocus(target) {
+    setTimeout(function() {
+        // Focus on the first element
+        const focusElement = target.querySelectorAll('a,input,button')[0]
+        focusElement.focus()
+    }, 0)
+
+    // Start listening for tab key
+    target.addEventListener('keydown', function(e) {
+        trapTabKey(target, e)
+    })
 }
 
 function trapTabKey(target, evt) {
-  // if tab or shift-tab pressed
-  if (evt.which == 9) {
-    // get list of all focusable children elements in given target
-    items = target.querySelectorAll(focusableElementsString); // get the number of focusable items
 
-    numberOfFocusableItems = items.length; // get currently focused item
+    // if tab or shift-tab pressed
+    if (evt.which == 9) {
 
-    focusedItem = document.activeElement; // get the index of the currently focused item
+        // get list of all focusable children elements in given target
+        items = target.querySelectorAll(focusableElementsString)
 
-    focusedItemIndex = Array.prototype.indexOf.call(items, focusedItem); // back tab
+        // get the number of focusable items
+        numberOfFocusableItems = items.length
+        
+        // get currently focused item
+        focusedItem = document.activeElement
 
-    console.log(evt);
+        // get the index of the currently focused item
+        focusedItemIndex = Array.prototype.indexOf.call(items, focusedItem)
 
-    if (evt.shiftKey) {
-      // if focused on first item and user preses back-tab, go to the last focusable item
-      if (focusedItemIndex == 0) {
-        items[numberOfFocusableItems - 1].focus();
-        evt.preventDefault();
-      } // forward tab
+        // back tab
+        console.log(evt)
+        if (evt.shiftKey) {
+            // if focused on first item and user preses back-tab, go to the last focusable item
+            if (focusedItemIndex == 0) {
+                items[numberOfFocusableItems - 1].focus()
+                evt.preventDefault()
+            }
 
-    } else {
-      console.log('forwards'); // if focused on the last item and user preses tab, go to the first focusable item
-
-      if (focusedItemIndex == numberOfFocusableItems - 1) {
-        items[0].focus();
-        evt.preventDefault();
-      }
+        // forward tab
+        } else {
+            console.log('forwards')
+            // if focused on the last item and user preses tab, go to the first focusable item
+            if (focusedItemIndex == numberOfFocusableItems - 1) {
+                items[0].focus()
+                evt.preventDefault()
+            }
+        }
     }
-  }
 }
 
 /***/ }),
 
-/***/ "./_src/scripts/app.js":
+/***/ "./_src/scripts/app.ts":
 /*!*****************************!*\
-  !*** ./_src/scripts/app.js ***!
+  !*** ./_src/scripts/app.ts ***!
   \*****************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _default_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./default/_index.js */ "./_src/scripts/default/_index.js");
-/* harmony import */ var _modules_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/_index.js */ "./_src/scripts/modules/_index.js");
+/* harmony import */ var _default_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./default/_index */ "./_src/scripts/default/_index.ts");
+/* harmony import */ var _modules_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/_index */ "./_src/scripts/modules/_index.ts");
 // Loaded once on initial page load
 
 
-Object(_default_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
-Object(_modules_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+
+Object(_default_index__WEBPACK_IMPORTED_MODULE_0__["default"])()
+Object(_modules_index__WEBPACK_IMPORTED_MODULE_1__["default"])()
 
 /***/ }),
 
-/***/ "./_src/scripts/default/_index.js":
+/***/ "./_src/scripts/default/_index.ts":
 /*!****************************************!*\
-  !*** ./_src/scripts/default/_index.js ***!
+  !*** ./_src/scripts/default/_index.ts ***!
   \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -180,10 +191,10 @@ Object(_modules_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return defaultJS; });
-/* harmony import */ var _accordions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./accordions */ "./_src/scripts/default/accordions.js");
-/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ "./_src/scripts/default/menu.js");
-/* harmony import */ var _header_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header-scroll */ "./_src/scripts/default/header-scroll.js");
-/* harmony import */ var _cookie_bar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cookie-bar */ "./_src/scripts/default/cookie-bar.js");
+/* harmony import */ var _accordions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./accordions */ "./_src/scripts/default/accordions.ts");
+/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ "./_src/scripts/default/menu.ts");
+/* harmony import */ var _header_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header-scroll */ "./_src/scripts/default/header-scroll.ts");
+/* harmony import */ var _cookie_bar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cookie-bar */ "./_src/scripts/default/cookie-bar.ts");
 // import pageTransitions from './page-transitions'
 // import slider from './slider'
 // import player from './player'
@@ -194,24 +205,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 function defaultJS() {
-  // pageTransitions()
-  // slider()
-  // player()
-  // printPageBtn()
-  // darkModeBtn()
-  // shareBtns()
-  Object(_cookie_bar__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  Object(_menu__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  Object(_accordions__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  Object(_header_scroll__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    // pageTransitions()
+    // slider()
+    // player()
+    // printPageBtn()
+    // darkModeBtn()
+    // shareBtns()
+
+    Object(_cookie_bar__WEBPACK_IMPORTED_MODULE_3__["default"])()
+    Object(_menu__WEBPACK_IMPORTED_MODULE_1__["default"])()
+    Object(_accordions__WEBPACK_IMPORTED_MODULE_0__["default"])()
+    Object(_header_scroll__WEBPACK_IMPORTED_MODULE_2__["default"])()
 }
 
 /***/ }),
 
-/***/ "./_src/scripts/default/accordions.js":
+/***/ "./_src/scripts/default/accordions.ts":
 /*!********************************************!*\
-  !*** ./_src/scripts/default/accordions.js ***!
+  !*** ./_src/scripts/default/accordions.ts ***!
   \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -220,44 +234,61 @@ function defaultJS() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return accordions; });
 function accordions() {
-  var accordions = document.querySelectorAll('[data-accordion]');
-  var accordionTitles = document.querySelectorAll('[data-accordion-title]');
-  var activeClass = 'is-active';
-  var thisGroup;
+    const accordions = document.querySelectorAll('[data-accordion]')
+    const accordionTitles = document.querySelectorAll('[data-accordion-title]')
+    const hiddenClass = 'is-hidden'
+    let thisGroup
+    let accordionBody
+    let accordionHeight
 
-  if (accordions) {
-    accordionTitles.forEach(function (accordionTitle) {
-      accordionTitle.addEventListener('click', function (el) {
-        if (this.parentElement.classList.contains(activeClass)) {
-          closeAccordion(this);
-        } else {
-          openAccordion(this);
-        }
-      });
-    });
-  }
+    if (accordions) {
+        accordionTitles.forEach(accordionTitle => {
+            accordionBody = accordionTitle.nextElementSibling
+            accordionHeight = accordionBody.offsetHeight
+            accordionBody.dataset.height = accordionHeight
+            accordionTitle.parentElement.classList.add('is-hidden')
 
-  function openAccordion(title) {
-    thisGroup = title.closest('[data-accordion-wrap]');
-    thisGroup = thisGroup.querySelectorAll('[data-accordion]');
-    thisGroup.forEach(function (accordion) {
-      closeAccordion(accordion.querySelector('[data-accordion-title]'));
-    });
-    title.parentElement.classList.add(activeClass);
-    title.setAttribute('aria-expanded', true);
-  }
+            accordionTitle.addEventListener('click', function(el) {
+                if (!this.parentElement.classList.contains(hiddenClass)) {
+                    closeAccordion(this)
+                } else {
+                    openAccordion(this)
+                }
+            })
+        })
+    }
 
-  function closeAccordion(title) {
-    title.parentElement.classList.remove(activeClass);
-    title.setAttribute('aria-expanded', false);
-  }
+    function openAccordion(title) {
+        // Enable this to close other accordions when one is opened.
+        // closeOthers(title)
+        accordionHeight = title.nextElementSibling.dataset.height
+        console.log(accordionHeight)
+        title.nextElementSibling.style.height = `${accordionHeight}px`
+        title.parentElement.classList.remove(hiddenClass)
+        title.setAttribute('aria-expanded', true)
+    }
+
+    function closeAccordion(title) {
+        title.parentElement.classList.add(hiddenClass)
+        title.nextElementSibling.style.height = null
+        title.setAttribute('aria-expanded', false)
+    }
+
+    function closeOthers(title) {
+        thisGroup = title.closest('[data-accordion-wrap]')
+        thisGroup = thisGroup.querySelectorAll('[data-accordion]')
+
+        thisGroup.forEach(accordion => {
+            closeAccordion(accordion.querySelector('[data-accordion-title]'))
+        })
+    }
 }
 
 /***/ }),
 
-/***/ "./_src/scripts/default/cookie-bar.js":
+/***/ "./_src/scripts/default/cookie-bar.ts":
 /*!********************************************!*\
-  !*** ./_src/scripts/default/cookie-bar.js ***!
+  !*** ./_src/scripts/default/cookie-bar.ts ***!
   \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -268,35 +299,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_0__);
 
+
 function cookieBar() {
-  var cookieBar = document.querySelector('[data-cookie-bar]');
-  var cookieAccept = document.querySelector('[data-cookie-accept]');
-  var activeClass = 'is-active';
+    const cookieBar = document.querySelector('[data-cookie-bar]')
+    const cookieAccept = document.querySelector('[data-cookie-accept]')
+    const activeClass = 'is-active'
 
-  if (js_cookie__WEBPACK_IMPORTED_MODULE_0___default.a.get('stp-cookies-accept')) {
-    cookieBar.remove();
-  } else {
-    cookieBar.classList.add(activeClass);
-    cookieAccept.addEventListener('click', acceptCookies.bind(this));
-  }
+    if (js_cookie__WEBPACK_IMPORTED_MODULE_0___default.a.get('stp-cookies-accept')) {
+        cookieBar.remove()
+    } else {
+        cookieBar.classList.add(activeClass)
+        cookieAccept.addEventListener('click', acceptCookies.bind(this))
+    }
 
-  function acceptCookies() {
-    js_cookie__WEBPACK_IMPORTED_MODULE_0___default.a.set('stp-cookies-accept', true, {
-      expires: 730
-    });
-    cookieBar.classList.remove(activeClass);
-  }
+    function acceptCookies() {
+        js_cookie__WEBPACK_IMPORTED_MODULE_0___default.a.set('stp-cookies-accept', true, { expires: 730 })
+        cookieBar.classList.remove(activeClass)
+    }
 
-  function resetCookie() {
-    js_cookie__WEBPACK_IMPORTED_MODULE_0___default.a.remove('stp-cookies-accept');
-  }
+    function resetCookie() {
+        js_cookie__WEBPACK_IMPORTED_MODULE_0___default.a.remove('stp-cookies-accept')
+    }
 }
+
 
 /***/ }),
 
-/***/ "./_src/scripts/default/header-scroll.js":
+/***/ "./_src/scripts/default/header-scroll.ts":
 /*!***********************************************!*\
-  !*** ./_src/scripts/default/header-scroll.js ***!
+  !*** ./_src/scripts/default/header-scroll.ts ***!
   \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -309,47 +340,50 @@ __webpack_require__.r(__webpack_exports__);
     Adjust the header styling on scroll
 
 */
+
 function headerScroll() {
-  var activeClass = 'is-scrolled';
-  var header = document.querySelector('.header');
-  var scrollpos = window.scrollY;
+    const activeClass = 'is-scrolled'
+    const header = document.querySelector('.header')
+    let scrollpos = window.scrollY
 
-  if (header) {
-    // Add active class
-    var makeActive = function makeActive() {
-      header.classList.add(activeClass);
-    }; // Remove active class
+    if (header) {
+        // Add active class
+        function makeActive() {
+            header.classList.add(activeClass)
+        }
 
+        // Remove active class
+        function makeInactive() {
+            header.classList.remove(activeClass)
+        }
 
-    var makeInactive = function makeInactive() {
-      header.classList.remove(activeClass);
-    }; // Scroll position function
+        // Scroll position function
+        function getScroll() {
+            scrollpos = window.scrollY
 
+            if (scrollpos > 40) {
+                makeActive()
+            }
+            else {
+                makeInactive()
+            }
+        }
 
-    var getScroll = function getScroll() {
-      scrollpos = window.scrollY;
+        // Checking position on scroll
+        window.addEventListener('scroll', function() {
+            getScroll()
+        })
 
-      if (scrollpos > 40) {
-        makeActive();
-      } else {
-        makeInactive();
-      }
-    }; // Checking position on scroll
-
-
-    window.addEventListener('scroll', function () {
-      getScroll();
-    }); // Check scroll position on load
-
-    getScroll();
-  }
+        // Check scroll position on load
+        getScroll()
+    }
 }
 
 /***/ }),
 
-/***/ "./_src/scripts/default/menu.js":
+/***/ "./_src/scripts/default/menu.ts":
 /*!**************************************!*\
-  !*** ./_src/scripts/default/menu.js ***!
+  !*** ./_src/scripts/default/menu.ts ***!
   \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -357,50 +391,52 @@ function headerScroll() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return menu; });
-/* harmony import */ var _tools_keyboard_trap_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_tools/keyboard-trap.js */ "./_src/scripts/_tools/keyboard-trap.js");
+/* harmony import */ var _tools_keyboard_trap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_tools/keyboard-trap */ "./_src/scripts/_tools/keyboard-trap.ts");
+
 
 /*
     Menu. Not much more to say.
 */
 
 function menu() {
-  // Elements
-  var hamburger = document.querySelector('[data-hamburger]');
-  var menu = document.querySelector('[data-menu]');
-  var body = document.querySelector('body'); // Classes
+    // Elements
+    const hamburger = document.querySelector('[data-hamburger]')
+    const menu = document.querySelector('[data-menu]')
+    const body = document.querySelector('body')
 
-  var activeClass = 'is-active';
-  var hiddenClass = 'is-hidden';
+    // Classes
+    const activeClass = 'is-active'
+    const hiddenClass = 'is-hidden'
 
-  if (hamburger) {
-    hamburger.addEventListener('click', function () {
-      if (hamburger.classList.contains(activeClass)) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            if (hamburger.classList.contains(activeClass)) {
+                closeMenu()
+            } else {
+                openMenu()
+            }
 
-      function closeMenu() {
-        hamburger.classList.remove(activeClass);
-        menu.classList.remove(activeClass);
-        body.classList.remove(hiddenClass);
-      }
+            function closeMenu() {
+                hamburger.classList.remove(activeClass)
+                menu.classList.remove(activeClass)
+                body.classList.remove(hiddenClass)
+            }
 
-      function openMenu() {
-        hamburger.classList.add(activeClass);
-        menu.classList.add(activeClass);
-        body.classList.add(hiddenClass);
-        Object(_tools_keyboard_trap_js__WEBPACK_IMPORTED_MODULE_0__["default"])(menu);
-      }
-    });
-  }
+            function openMenu() {
+                hamburger.classList.add(activeClass)
+                menu.classList.add(activeClass)
+                body.classList.add(hiddenClass)
+                Object(_tools_keyboard_trap__WEBPACK_IMPORTED_MODULE_0__["default"])(menu)
+            }
+        })
+    }
 }
 
 /***/ }),
 
-/***/ "./_src/scripts/modules/_index.js":
+/***/ "./_src/scripts/modules/_index.ts":
 /*!****************************************!*\
-  !*** ./_src/scripts/modules/_index.js ***!
+  !*** ./_src/scripts/modules/_index.ts ***!
   \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -409,7 +445,9 @@ function menu() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return modulesJS; });
 // import function from './file'
-function modulesJS() {// function()
+
+function modulesJS() {
+    // function()
 }
 
 /***/ }),

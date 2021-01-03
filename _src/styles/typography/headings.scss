@@ -1,29 +1,29 @@
-h1,.title-1 {
+h1, .title-1 {
     @apply font-bold leading-none font-sans text-2xl;
     @include resp-font-size('4xl','5xl','6xl','7xl','7xl');
 }
 
-h2,.title-2 {
+h2, .title-2 {
     @apply font-bold leading-none font-sans text-xl;
     @include resp-font-size('2xl','3xl','4xl','5xl','6xl');
 }
 
-h3,.title-3 {
+h3, .title-3 {
     @apply font-bold leading-none font-sans text-lg;
     @include resp-font-size('xl','2xl','3xl','3xl','4xl');
 }
 
-h4,.title-4 {
+h4, .title-4 {
     @apply font-bold leading-none font-sans text-lg;
     @include resp-font-size('xl','xl','2xl','2xl','3xl');
 }
 
-h5,.title-5 {
+h5, .title-5 {
     @apply font-bold leading-none font-sans text-base;
     @include resp-font-size('lg','lg','xl','xl','2xl');
 }
 
-h6,.title-6 {
+h6, .title-6 {
     @apply font-bold leading-none font-sans text-base;
     @include resp-font-size('base','lg','lg','lg','xl');
 }
