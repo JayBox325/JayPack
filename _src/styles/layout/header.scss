@@ -1,49 +1,41 @@
 .header {
-    @apply h-16 w-full;
-    position: fixed;
-    top: 0;
-    left: 0;
+    @apply h-16 w-full fixed top-0 left-0;
     z-index: 900;
     transition: height .2s ease-in-out, color .2s ease-in-out;
 
     @screen lg {
-        @apply h-24;
+        @apply h-32;
 
         &.is-scrolled {
-            @apply h-16;
+            @apply h-24;
         }
     }
 
     &.is-scrolled {
-        @apply text-black;
-
         &:before {
-            opacity: 1;
+            @apply opacity-100;
         }
     }
 
     &:before {
-        @apply bg-white shadow;
+        @apply bg-white shadow absolute h-full top-0 left-0 opacity-0;
         transition: opacity .2s ease-in-out;
         content: '';
-        position: absolute;
         z-index: 1;
         width: calc(100% + 4rem);
-        height: 100%;
-        top: 0;
-        opacity: 0;
-        left: 0;
         transform: translateX(-2rem);
     }
 
     &__inner {
-        position: relative;
+        @apply relative h-full;
         z-index: 2;
-        height: 100%;
     }
 
     &__grid {
-        height: 100%;
-        align-items: center;
+        @apply items-center h-full;
+    }
+
+    &__logo {
+        @apply italic;
     }
 }

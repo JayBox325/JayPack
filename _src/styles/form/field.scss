@@ -17,13 +17,12 @@
         @apply border-2 transition-colors text-black rounded-lg border-gray-300 block bg-white hover:border-gray-400 focus:border-gray-600;
         appearance: none;
 
-        &:invalid {
-            @apply border-red-500;
-        }
-
-        &:valid {
-            &:focus {
+        &:focus {
+            &:valid {
                 @apply border-green-500;
+            }
+            &:invalid {
+                @apply border-red-500;
             }
         }
 

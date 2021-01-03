@@ -37,11 +37,13 @@
 
     // Add space for header
     &:first-of-type {
+        @apply pt-0;
+        
         > * {
-            @apply mt-16;
+            @apply pt-16;
 
             @screen lg {
-                @apply mt-24;
+                @apply pt-24;
             }
         }
     }
