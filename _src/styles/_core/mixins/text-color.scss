@@ -1,7 +1,0 @@
-@mixin text-color($name) {
-    @if (index($lightBackgrounds, $name) != null) {
-        @apply text-black;
-    } @else {
-        @apply text-white;
-    }
-}

@@ -1,10 +1,12 @@
-:focus:not(:focus-visible) {
-    outline: none !important;
+:focus:not(:focus-visible),
+.js-focus-visible :focus:not(.focus-visible) {
+    outline: none;
 }
 
-:focus-visible {
+:focus-visible,
+.js-focus-visible .focus-visible {
     outline-offset: 2px;
-    outline-style: dotted !important;
-    outline-width: 1px !important;
-    outline-color: black !important;
+    outline-style: dotted;
+    outline-width: 1px;
+    outline-color: black;
 }
