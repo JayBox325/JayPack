@@ -16,13 +16,13 @@ const config = {
         app: paths.js.app,
     },
     output: {
-        path: path.resolve(__dirname, 'app'),
+        path: path.resolve(__dirname, 'app.ts'),
         filename: 'bundle.js',
     },
     module: {
         rules: [
             {
-                test: /\.(js)$/,
+                test: /\.(tsx)$/,
                 exclude: /(node_modules)/,
                 use: [
                     {
@@ -34,6 +34,9 @@ const config = {
                 ]
             },
         ],
+    },
+    resolve: {
+        extensions: [".tsx", ".ts", ".js"]
     },
     plugins: [
         // new BundleAnalyzerPlugin() // Enable this for a JS audit
