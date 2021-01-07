@@ -16,12 +16,12 @@
 
     &__body {
         @apply overflow-hidden;
-        transition: height .4s ease-in-out;
-        visible: visible;
+        transition: max-height .4s ease-in-out;
+        max-height: 0px;
 
-        .is-hidden & {
-            visible: hidden;
-            height: 0;
+        .is-active & {
+            max-height: 1500px;
+            transition: max-height .8s ease-in-out;
         }
     }
 }

@@ -30,7 +30,8 @@ const paths = {
     js: {
         app: `./${config.srcRoot}/scripts/app.ts`,
         watch: `${config.srcRoot}/scripts/**/*.ts`,
-        dest: `${assets}/scripts`
+        dest: `${assets}/scripts`,
+        bundle: `${assets}/scripts/bundle.js`
     },
 
     assets: {

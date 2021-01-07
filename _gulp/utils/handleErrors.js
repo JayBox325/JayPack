@@ -6,7 +6,7 @@ export default function() {
     // Send error to notification center with gulp-notify
     notify.onError({
         title: "❌ JayPack - error",
-        message: "<%= error.message %>"
+        message: "<%= error %>"
     }).apply(this, args)
 
     // Keep gulp from hanging on this task

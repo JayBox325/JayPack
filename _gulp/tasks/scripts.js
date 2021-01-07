@@ -23,9 +23,6 @@ gulp.task('scripts', (cb) => {
         .pipe(webpackStream(webpackConfig), webpack)
         .on('error', handleErrors)
 
-        // Minify for production
-        .pipe(production(uglify()))
-
         .pipe(gulp.dest(paths.js.dest))
         .on('error', handleErrors)
         

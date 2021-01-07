@@ -1,9 +1,0 @@
-{% extends "components/_index.njk" %}
-
-{% set contentElements = body.contentElements|default(null) %}
-{% set rowClass = body.rowClass|default('bg-white') %}
-{% set slimContainer = true %}
-
-{% block component %}
-    {% include 'elements/w-content.njk' %}
-{% endblock %}
