@@ -81,11 +81,13 @@ module.exports = {
                 gray: colors.trueGray,
                 blue: colors.blue,
                 indigo: colors.indigo,
-                red: colors.rose,
+                red: colors.red,
                 yellow: colors.amber,
                 green: colors.emerald,
                 purple: colors.violet,
                 pink: colors.pink,
+
+                // Project colours - https://javisperez.github.io/tailwindcolorshades/#/
 
                 // Social media where 500 is default brand color
                 facebook: {
