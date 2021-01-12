@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 3.0.2 -- DEV
 - Removed unused mixins
 - Added visible-focus polyfill
+- Checking assets directories before running tasks
 
 ## 3.0.1
 - Converted JS to Typescript
