@@ -1,29 +1,25 @@
 {% import '_macros/macros.njk' as macro %}
 
 {# Content #}
-{% set title = button.title|default("Read more") %}
+{% set label = button.label|default("Read more") %}
 {% set action = button.action|default(null) %}
 
 {# Options #}
 {% set type = button.type|default('link') %}
+{% set download = '' %}
 {% set target = button.target|default(false) %}
 {% set full = button.full|default(false) %}
 {% set classes = button.classes|default('bg-orange-500 hover:bg-orange-600 text-white') %}
 
 {# Append the download attribute to the link type #}
-{% if type == 'link' or type == 'download' %}
-    {% set download = true %}
+{% if type == 'download' %}
+    {% set download = 'download' %}
     {% set type = 'link' %}
-{% endif %}
-
-{# Add the full class if required #}
-{% if full %}
-    {% set classes = classes + ' btn--full' %}
 {% endif %}
 
 {% switch type %}
 	{% case 'button' %}
-        <button {{ action }} class="btn {{ classes }}">{{ title }}</button>
+        <button {{ action }} class="btn {{ classes }}">{{ label }}</button>
     {% case 'link' %}
-        <a href="{{ action }}" {{ macro.external(target) }} class="btn {{ classes }}" {% if download %}download{% endif %}>{{ title }}</a>
+        <a href="{{ action }}" {{ macro.external(target) }} class="btn {{ classes }}" {{ download }}>{{ label }}</a>
 {% endswitch %}
