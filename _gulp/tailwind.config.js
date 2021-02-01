@@ -8,12 +8,13 @@ var production = environments.production
 const env = production() ? 'production' : 'development'
 const isProd = env === 'production'
 
-const tailwindPurgeTemplates = projectConfig.cms ? `${config.distRoot}/**/*.${projectConfig.cmsTemplateExt}` : `${config.distRoot}/**/*.html`
+const tailwindPurgeTemplates = projectConfig.cms ? [`${config.distRoot}/**/*.${projectConfig.cmsTemplateExt}`] : [`${config.distRoot}/**/*.html`]
 
 module.exports = {
-    purge: [
-        tailwindPurgeTemplates
-    ],
+    purge: {
+        enabled: isProd ? true : false,
+        content: tailwindPurgeTemplates
+    },
     darkMode: 'media', // or 'media' or 'class'
     theme: {
         extend: {

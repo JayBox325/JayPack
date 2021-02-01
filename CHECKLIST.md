@@ -21,6 +21,7 @@
 
 ### Media
 - [ ] All `<img>` elements to have `alt` attribute (Empty for decorative images)
+- [ ] Add `loading="lazy"` to all images below the 'fold'
 - [ ] Add text alternatives (image caption) for complex images (charts, graphs & maps)
 - [ ] Confirm images with text have appropriate `alt` descriptions
 - [ ] Remove all `autoplay` attributes
