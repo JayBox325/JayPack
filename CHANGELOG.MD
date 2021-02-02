@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 3.1.1-- DEV
 - Fixed gulp del import
+- Removed clean task for now
 
 ## 3.1.0
 - Added three-way development: nunjucks, CraftCMS or shopify.

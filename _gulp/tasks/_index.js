@@ -16,8 +16,7 @@ gulp.task('build', gulp.series(
 		'move-videos',
 		'images',
 	),
-	staticTask('nunjucks'),
-	'clean'
+	staticTask('nunjucks')
 ))
 
 // Build then watch, but this doesn't move or optimise assets such as images, videos etc.
