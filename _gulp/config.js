@@ -2,7 +2,6 @@ import environments from 'gulp-environments'
 import projectConfig from '../project.config'
 
 let projectVariables
-let isBwu
 
 // Project framework variables
 if (projectConfig.framework == 'nunjucks') {
@@ -27,7 +26,7 @@ if (projectConfig.framework == 'nunjucks') {
         localCms: true,
 
         // Project structure
-        distRoot: isBwu ? '../_craft/' : 'build',
+        distRoot: projectConfig.isBwu ? '../_craft/' : 'build',
 
         // booleans for ternary operators
         craft: true,
@@ -43,7 +42,7 @@ if (projectConfig.framework == 'nunjucks') {
         localCms: false,
 
         // Project structure
-        distRoot: isBwu ? '../_shopify/' : 'shopify',
+        distRoot: projectConfig.isBwu ? '../_shopify/' : 'shopify',
 
         // booleans for ternary operators
         craft: false,
