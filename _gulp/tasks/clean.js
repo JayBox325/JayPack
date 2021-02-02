@@ -4,7 +4,7 @@ import gulp from 'gulp'
 import config from '../config'
 
 // Assets packages
-import clean from 'gulp-clean'
+import del from 'del'
  
 // Remove sourcemaps on package
 gulp.task('clean', function () {
