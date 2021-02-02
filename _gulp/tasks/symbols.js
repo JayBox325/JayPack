@@ -5,7 +5,6 @@ import browserSync from 'browser-sync'
 import paths from '../path.config'
 import config from '../config'
 import handleErrors from '../utils/handleErrors'
-import projectConfig from '../../project.config'
 
 // Environment config
 const development = config.env.development
@@ -13,7 +12,6 @@ const development = config.env.development
 // Symbols packages
 import svgSymbols from 'gulp-svg-symbols'
 import extReplace from 'gulp-ext-replace'
-import gulpif from 'gulp-if'
 import changed from 'gulp-changed'
 
 gulp.task('symbols', () => {
