@@ -3,19 +3,25 @@ import config from './config'
 
 let assets
 let symbolsDist
+let templateExt
 
 if (config.framework == 'craft') {
     assets = `${config.distRoot}/public/assets`
     symbolsDist = `${config.distRoot}/templates/_includes`
+    templateExt = '.twig'
 } else if (config.framework == 'nunjucks') {
     assets = `${config.distRoot}/assets`
     symbolsDist = `${config.srcRoot}/html/_includes`
+    templateExt = '.njk'
 } else if (config.framework == 'shopify') {
     assets = `${config.distRoot}/assets`
     symbolsDist = `${config.distRoot}/snippets`
+    templateExt = '.liquid'
 }
 
 const paths = {
+    templateExt: templateExt,
+
 	sass: {
         src: `${config.srcRoot}/styles/styles.scss`,
         utils: `${config.srcRoot}/styles/utilities.scss`,

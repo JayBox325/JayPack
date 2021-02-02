@@ -24,10 +24,7 @@ gulp.task('symbols', () => {
         }))
 
         // Save to Twig if CMS project
-        .pipe(gulpif(projectConfig.cms, extReplace(projectConfig.cmsTemplateExt)))
-
-        // Save to Nunjucks if static project
-        .pipe(gulpif(!projectConfig.cms, extReplace('.njk')))
+        .pipe(extReplace(paths.templateExt))
 
         .on('error', handleErrors)
         .pipe(gulp.dest(paths.symbols.dest))
