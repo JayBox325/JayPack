@@ -1,14 +1,26 @@
-import config from './config'
 import projectConfig from '../project.config'
+import config from './config'
 
-const assets = projectConfig.cms ? `${config.distRoot}/public/assets` : `${config.distRoot}/assets`
+let assets
+let symbolsDist
+
+if (config.framework == 'craft') {
+    assets = `${config.distRoot}/public/assets`
+    symbolsDist = `${config.distRoot}/templates/_includes`
+} else if (config.framework == 'nunjucks') {
+    assets = `${config.distRoot}/assets`
+    symbolsDist = `${config.srcRoot}/html/_includes`
+} else if (config.framework == 'shopify') {
+    assets = `${config.distRoot}/assets`
+    symbolsDist = `${config.distRoot}/snippets`
+}
 
 const paths = {
 	sass: {
         src: `${config.srcRoot}/styles/styles.scss`,
         utils: `${config.srcRoot}/styles/utilities.scss`,
         watch: `${config.srcRoot}/styles/**/*.scss`,
-        dest: `${assets}/styles`,
+        dest: config.shopify ? assets : `${assets}/styles`,
         tailwind: '_gulp/tailwind.config.js'
     },
 
@@ -30,7 +42,7 @@ const paths = {
     js: {
         app: `./${config.srcRoot}/scripts/app.ts`,
         watch: `${config.srcRoot}/scripts/**/*.ts`,
-        dest: `${assets}/scripts`,
+        dest: config.shopify ? assets : `${assets}/scripts`,
         bundle: `${assets}/scripts/bundle.js`
     },
 
@@ -38,28 +50,28 @@ const paths = {
         images: {
             src: `${config.srcRoot}/assets/images/*.{png,gif,jpg,jpeg,svg}`,
             watch: `${config.srcRoot}/assets/images/*.{png,gif,jpg,jpeg,svg}`,
-            dest: `${assets}/images`
+            dest: config.shopify ? assets : `${assets}/images`
         },
         videos: {
             src: `${config.srcRoot}/assets/videos/*.{mp4,.webm}`,
             watch: `${config.srcRoot}/assets/videos/*.{mp4,.webm}`,
-            dest: `${assets}/videos`
+            dest: config.shopify ? assets : `${assets}/videos`
         },
         favicons: {
             src: `${config.srcRoot}/assets/favicons/*.*`,
             watch: `${config.srcRoot}/assets/favicons/*.*`,
-            dest: `${assets}/favicons`
+            dest: config.shopify ? assets : `${assets}/favicons`
         },
         fonts: {
             src: `${config.srcRoot}/assets/fonts/*.*`,
             watch: `${config.srcRoot}/assets/fonts/*.*`,
-            dest: `${assets}/fonts`
+            dest: config.shopify ? assets : `${assets}/fonts`
         }
     },
 
     symbols: {
         src: `${config.srcRoot}/assets/svg/*.svg`,
-        dest: projectConfig.cms ? `${config.distRoot}/templates/_includes` : `${config.srcRoot}/html/_includes`,
+        dest: symbolsDist,
         watch: `${config.srcRoot}/assets/svg/*.svg`
     }
 }

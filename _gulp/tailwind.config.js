@@ -1,14 +1,21 @@
 import environments from 'gulp-environments'
 import config from './config'
-import projectConfig from '../project.config'
 import colors from 'tailwindcss/colors'
+
+let tailwindPurgeTemplates
 
 var production = environments.production
 
 const env = production() ? 'production' : 'development'
 const isProd = env === 'production'
 
-const tailwindPurgeTemplates = projectConfig.cms ? [`${config.distRoot}/**/*.${projectConfig.cmsTemplateExt}`] : [`${config.distRoot}/**/*.html`]
+if (config.framework == 'nunjucks') {
+    tailwindPurgeTemplates = `${config.distRoot}/**/*.html`
+} else if (config.framework == 'craft') {
+    tailwindPurgeTemplates = `${config.distRoot}/**/*.twig`
+} else if (config.framework == 'shopify') {
+    tailwindPurgeTemplates = `${config.distRoot}/**/*.liquid`
+}
 
 module.exports = {
     purge: {

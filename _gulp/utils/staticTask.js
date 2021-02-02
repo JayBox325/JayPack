@@ -1,14 +1,14 @@
 /*
-    Run this task if this is NOT a cms project
+    Run this task if this is a Nunjucks project ONLY
 */
 
 import gulp from 'gulp'
-import projectConfig from '../../project.config'
+import projectVariables from '../../project.config'
 
 export default function staticTask(task) {
     task = gulp.series(task)
     return function (cb) {
-        if (!projectConfig.cms) {
+        if (projectVariables.nunjucks) {
             task(cb)
         } else {
             cb()

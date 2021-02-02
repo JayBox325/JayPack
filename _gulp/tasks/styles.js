@@ -23,23 +23,18 @@ import cssImport from 'postcss-import'
 
 gulp.task('styles', () => {
     return gulp.src(paths.sass.src)
+    // Process Scss
         .pipe(development(sourcemaps.init()))
         .pipe(glob())
         .on('error', handleErrors)
-
-        // Sass
         .pipe(sass({
             includePaths: ['node_modules']
         }))
         .on('error', handleErrors)
-
-        // Import Tailwind
         .pipe(postcss([
             tailwindcss('./_gulp/tailwind.config.js')
         ]))
         .on('error', handleErrors)
-
-        // Autoprefix
         .pipe(postcss([
             autoprefixer({overrideBrowserslist: config.autoprefixerVersions}),
         ]))
@@ -52,9 +47,14 @@ gulp.task('styles', () => {
         .pipe(development(sourcemaps.init({loadMaps: true})))
         .pipe(development(sourcemaps.write('./')))
 
+        // Save out
         .pipe(gulp.dest(paths.sass.dest))
         .on('error', handleErrors)
+
+        // Reload browser
         .pipe(development(browserSync.reload({stream: true})))
+
+        // Notify
         .on('end', function() {
             notify({
                 title: '👍 Styles compiled',
@@ -64,6 +64,7 @@ gulp.task('styles', () => {
 })
 gulp.task('util-styles', () => {
     return gulp.src(paths.sass.utils)
+        // Process Scss
         .pipe(development(sourcemaps.init()))
         .pipe(glob())
         .pipe(sass())
@@ -82,7 +83,10 @@ gulp.task('util-styles', () => {
         .pipe(development(sourcemaps.init({loadMaps: true})))
         .pipe(development(sourcemaps.write('./')))
 
+        // Save out
         .pipe(gulp.dest(paths.sass.dest))
         .on('error', handleErrors)
+
+        // Reload browser
         .pipe(development(browserSync.reload({stream: true})))
 })

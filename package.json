@@ -66,6 +66,7 @@
         "webpack-stream": "^5.2.1"
     },
     "dependencies": {
+        "del": "^6.0.0",
         "focus-visible": "^5.2.0",
         "postcss-import": "^13.0.0"
     }
