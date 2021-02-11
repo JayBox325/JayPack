@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed gulp del import
 - Removed clean task for now
 - Fixed symbols generation
+- Added custom tailwind font size variables to remove line heights
 
 ## 3.1.0
 - Added three-way development: nunjucks, CraftCMS or shopify.
