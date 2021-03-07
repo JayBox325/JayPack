@@ -31,9 +31,11 @@ gulp.task('styles', () => {
             includePaths: ['node_modules']
         }))
         .on('error', handleErrors)
+
         .pipe(postcss([
             tailwindcss('./_gulp/tailwind.config.js')
         ]))
+
         .on('error', handleErrors)
         .pipe(postcss([
             autoprefixer({overrideBrowserslist: config.autoprefixerVersions}),
@@ -75,8 +77,8 @@ gulp.task('util-styles', () => {
         ]))
         .on('error', handleErrors)
 
-        // Minify in production
         .pipe(production(postcss([cssnano])))
+        .on('error', handleErrors)
 
         // Sourcemaps for development
         .pipe(development(sourcemaps.write({includeContent: false})))

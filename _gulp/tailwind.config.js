@@ -7,9 +7,18 @@ var production = environments.production
 const env = production() ? 'production' : 'development'
 const isProd = env === 'production'
 
+if (config.framework == 'nunjucks') {
+    tailwindPurgeTemplates = `${config.distRoot}/**/*.html`
+} else if (config.framework == 'craft') {
+    tailwindPurgeTemplates = `${config.distRoot}/**/*.twig`
+} else if (config.framework == 'shopify') {
+    tailwindPurgeTemplates = `${config.distRoot}/**/*.liquid`
+}
+
 module.exports = {
     purge: {
-        enabled: false
+        enabled: isProd ? true : false,
+        content: [tailwindPurgeTemplates]
     },
     darkMode: 'media', // or 'media' or 'class'
     theme: {
