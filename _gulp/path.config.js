@@ -4,19 +4,23 @@ import config from './config'
 let assets
 let symbolsDist
 let templateExt
+let purge
 
 if (config.framework == 'craft') {
     assets = `${config.distRoot}/public/assets`
     symbolsDist = `${config.distRoot}/templates/_includes`
+    purge = `${config.distRoot}/**/*.twig`
     templateExt = '.twig'
 } else if (config.framework == 'nunjucks') {
     assets = `${config.distRoot}/assets`
     symbolsDist = `${config.srcRoot}/html/_includes`
+    purge = `${config.distRoot}/**/*.html`
     templateExt = '.njk'
 } else if (config.framework == 'shopify') {
     assets = `${config.distRoot}/assets`
     symbolsDist = `${config.distRoot}/snippets`
     templateExt = '.liquid'
+    purge = `${config.distRoot}/**/*.liquid`
 }
 
 const paths = {
@@ -27,7 +31,8 @@ const paths = {
         utils: `${config.srcRoot}/styles/utilities.scss`,
         watch: `${config.srcRoot}/styles/**/*.scss`,
         dest: config.shopify ? assets : `${assets}/styles`,
-        tailwind: '_gulp/tailwind.config.js'
+        tailwind: '_gulp/tailwind.config.js',
+        purge: purge
     },
 
     njks: {

@@ -2,25 +2,14 @@ import environments from 'gulp-environments'
 import config from './config'
 import colors from 'tailwindcss/colors'
 
-let tailwindPurgeTemplates
-
 var production = environments.production
 
 const env = production() ? 'production' : 'development'
 const isProd = env === 'production'
 
-if (config.framework == 'nunjucks') {
-    tailwindPurgeTemplates = `${config.distRoot}/**/*.html`
-} else if (config.framework == 'craft') {
-    tailwindPurgeTemplates = `${config.distRoot}/**/*.twig`
-} else if (config.framework == 'shopify') {
-    tailwindPurgeTemplates = `${config.distRoot}/**/*.liquid`
-}
-
 module.exports = {
     purge: {
-        enabled: isProd ? true : false,
-        content: tailwindPurgeTemplates
+        enabled: false
     },
     darkMode: 'media', // or 'media' or 'class'
     theme: {
@@ -180,6 +169,9 @@ module.exports = {
                 'in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',
                 'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
                 'in-out-expo': 'cubic-bezier(0.86, 0, 0.07, 1)'
+            },
+            transitionProperty: {
+                'width': 'width'
             }
         },
     },
