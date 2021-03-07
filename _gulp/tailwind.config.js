@@ -175,10 +175,17 @@ module.exports = {
                     800: '#003651',
                     900: '#002436',
                 },
+            },
+            transitionTimingFunction: {
+                'in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',
+                'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
+                'in-out-expo': 'cubic-bezier(0.86, 0, 0.07, 1)'
             }
         },
     },
-    variants: {},
+    variants: {
+        translate: ['group-hover'],
+    },
     plugins: [
         function({ addBase, theme }) {
             function extractColorVars(colorObj, colorGroup = '') {

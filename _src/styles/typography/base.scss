@@ -3,18 +3,6 @@ body {
     @include resp-font-size('base','base','lg','lg','xl');
 }
 
-a {
-    &:not(.btn) {
-        @apply underline;
-        text-underline-offset: 2px;
-        transition: color .2s ease-in-out;
-
-        &:hover {
-            @apply text-red-600;
-        }
-    }
-}
-
 .w-content {
     > * {
         @apply mb-4;
@@ -25,6 +13,18 @@ a {
 
         &:last-child {
             @apply mb-0
+        }
+    }
+
+    a {
+        &:not(.btn) {
+            @apply underline;
+            text-underline-offset: 2px;
+            transition: color .2s ease-in-out;
+    
+            &:hover {
+                @apply text-red-600;
+            }
         }
     }
 
