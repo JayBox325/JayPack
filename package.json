@@ -1,7 +1,7 @@
 {
     "name": "jaypack",
     "description": "Gulp and Webpack boilerplate",
-    "version": "3.1.0",
+    "version": "3.1.1",
     "main": "_gulp/gulpfile.babel.js",
     "author": "Jay Collett",
     "email": "hello@jaycollett.co",
