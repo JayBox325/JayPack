@@ -4,6 +4,7 @@ import colors from 'tailwindcss/colors'
 
 var production = environments.production
 
+let tailwindPurgeTemplates
 const env = production() ? 'production' : 'development'
 const isProd = env === 'production'
 

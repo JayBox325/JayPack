@@ -3,7 +3,7 @@ import notify from 'gulp-notify'
 
 // Config
 import paths from '../path.config'
-import projectConfig from '../../project.config'
+import config from '../config'
 
 gulp.task('watch', () => {
 
@@ -20,12 +20,12 @@ gulp.task('watch', () => {
 	gulp.watch(paths.js.watch, gulp.series('scripts'))
 
 	// Watch Twig if CMS project
-	if (projectConfig.cms) {
+	if (config.framework == 'craft') {
 		gulp.watch(paths.twig.watch, gulp.series(projectConfig.cmsTemplateExt))
 	}
 
 	// Watch Nunjucks if static project
-	if (projectConfig.cms == false) {
+	if (config.framework == 'nunjucks') {
 		gulp.watch(paths.njks.watch, gulp.series('nunjucks'))
 	}
 	
