@@ -10,7 +10,7 @@ if (projectConfig.framework == 'nunjucks') {
         localCms: false,
 
         // Project structure
-        distRoot: 'build',
+        distRoot: projectConfig.isBwu ? '../_public/' : 'build',
 
         // booleans for ternary operators
         craft: false,

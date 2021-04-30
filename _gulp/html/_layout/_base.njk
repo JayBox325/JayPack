@@ -12,22 +12,24 @@
         {% include '_includes/seo.njk' %}
 
         {# CSS #}
-        <link rel="stylesheet" href="/assets/styles/styles.css">
         <link rel="stylesheet" href="/assets/styles/utilities.css">
+        <link rel="stylesheet" href="/assets/styles/styles.css">
 
         {# Favicons #}
         {% include '_includes/favicons.njk' %}
     </head>
 
     <body class="min-h-screen min-w-screen" data-barba="wrapper">
-        {% include '_includes/cookie-bar.njk' %}
+        <div class="site-wrap">
+            {% include '_includes/cookie-bar.njk' %}
 
-        {# <a class="skip-main btn" href="#main">Skip to main content</a> #}
+            {# <a class="skip-main btn" href="#main">Skip to main content</a> #}
 
-        <div class="site min-h-screen min-w-screen" id="main" data-barba="container">
-            {% include '_layout/header.njk' %}
-            {% block content %}{% endblock %}
-            {% include '_layout/footer.njk' %}
+            <div class="site min-h-screen min-w-screen" id="main" data-barba="container">
+                {% include '_layout/header.njk' %}
+                {% block content %}{% endblock %}
+                {% include '_layout/footer.njk' %}
+            </div>
         </div>
 
         {# Javascript #}

@@ -1,6 +1,10 @@
 body {
     @apply text-black leading-relaxed text-base font-sans;
-    @include resp-font-size('base','base','lg','lg','xl');
+}
+
+.site-wrap {
+    @apply text-base;
+    @include resp-font-size('base','lg','lg','xl','xl');
 }
 
 .w-content {

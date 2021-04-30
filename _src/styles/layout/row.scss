@@ -1,21 +1,6 @@
 .row {
     $r: &;
     position: relative;
-
-    > * {
-        position: relative;
-        z-index: 1;
-    }
-
-    &:before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        content: '';
-        z-index: 0;
-    }
     
     @apply py-6;
 
@@ -33,18 +18,5 @@
 
     @screen 2xl {
         @apply py-32;
-    }
-
-    // Add space for header
-    &:first-of-type {
-        // @apply pt-0;
-        
-        > * {
-            @apply pt-16;
-
-            @screen xl {
-                @apply pt-24;
-            }
-        }
     }
 }
