@@ -1,0 +1,11 @@
+html {
+    scroll-behavior: smooth
+}
+    
+body {
+    overflow-x: hidden;
+    
+    &.is-hidden {
+        @apply overflow-hidden;
+    }
+}

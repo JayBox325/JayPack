@@ -1,0 +1,15 @@
+.footer {
+    @apply py-6;
+
+    @screen md {
+        @apply py-10;
+    }
+
+    @screen lg {
+        @apply py-16;
+    }
+
+    @screen 2xl {
+        @apply py-20;
+    }
+}

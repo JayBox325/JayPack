@@ -1,0 +1,75 @@
+.field {
+    @apply inline-flex h-full w-full flex-col items-start justify-end;
+
+    &__label {
+        @apply block mb-1;
+
+        &--option {
+            @apply inline-block ml-3 mb-0;
+        }
+    }
+
+    &__option {
+        @apply flex h-10 items-center;
+    }
+
+    &__select-wrap {
+        @apply w-full block relative;
+
+        &:after {
+            @apply absolute right-0 mr-3;
+            pointer-events: none;
+            top: 50%;
+            transform: translate3d(0,-50%,0);
+            content: '↓',
+        }
+    }
+
+    &__input {
+        @apply border-2 transition-colors text-black rounded-lg border-gray-300 block bg-white;
+        appearance: none;
+
+        &:hover {
+            @apply border-gray-800;
+        }
+
+        &:focus {
+            @apply border-gray-600;
+
+            &:valid {
+                @apply border-green-500;
+            }
+            &:invalid {
+                @apply border-red-500;
+            }
+        }
+
+        &--base {
+            @apply w-full h-12 px-3;
+        }
+
+        &--textarea {
+            @apply w-full px-2 py-1;
+        }
+
+        &--option {
+            @apply w-6 h-6;
+
+            &:checked {
+                + .field__checkmark {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__checkmark {
+        @apply absolute w-4 h-4;
+        opacity: 0;
+        transition: .1s ease-in-out;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-50%,0);
+        pointer-events: none;
+    }
+}

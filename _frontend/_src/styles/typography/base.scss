@@ -1,0 +1,57 @@
+body {
+    @apply text-black leading-relaxed text-base font-sans;
+}
+
+.site-wrap {
+    @apply text-base;
+    @include resp-font-size('base','lg','lg','xl','xl');
+}
+
+.w-content {
+    > * {
+        @apply mb-4;
+
+        &:first-child {
+            @apply mt-0
+        }
+
+        &:last-child {
+            @apply mb-0
+        }
+    }
+
+    a {
+        &:not(.btn) {
+            @apply underline;
+            text-underline-offset: 2px;
+            transition: color .2s ease-in-out;
+    
+            &:hover {
+                @apply text-red-600;
+            }
+        }
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        @apply mt-8;
+    }
+
+	blockquote {
+        @apply text-red-500 border-red-500 font-bold italic;
+		padding: 1rem 2rem;
+        margin-left: 0;
+		border-left: 4px solid;
+    }
+    
+    ul {
+        list-style-type: disc;
+    }
+
+    ol {
+        list-style-type: count;
+    }
+
+	ul, ol {
+		padding-left: 3rem;
+	}
+}

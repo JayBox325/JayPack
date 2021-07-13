@@ -1,0 +1,45 @@
+{% import '_macros/macros.njk' as macro %}
+
+{#
+
+    Position options:
+        - bottom
+        - bottom-left
+        - bottom-right
+        - bottom-middle
+
+#}
+
+{% set position = 'bottom-middle' %}
+
+{% if position == 'bottom' %}
+    {% set textClasses = 'col-span-6 md:col-span-4 xl:col-span-5' %}
+    {% set buttonClasses = 'col-span-6 md:col-span-2 xl:col-span-1 md:flex md:justify-end' %}
+{% elseif position == 'bottom-middle' %}
+    {% set textClasses = 'col-span-6 lg:col-span-4' %}
+    {% set buttonClasses = 'col-span-6 lg:col-span-2 lg:flex lg:justify-end' %}
+{% else %}
+    {% set textClasses = 'col-span-6' %}
+    {% set buttonClasses = 'col-span-6' %}
+{% endif %}
+
+<div class="cookie-bar cookie-bar--{{ position }}" data-cookie-bar>
+    <div class="container container--wide">
+        <div class="grid grid-cols-6 gap-6 xl:gap-10 items-center">
+            <div class="{{ textClasses }}">
+                <div class="w-content text-sm sm:text-base">
+                    <p>We use cookies to ensure you get the best experience on our website. If you remain on the page, you agree to the <a href="https://www.cookiesandyou.com/" {{ macro.external(true) }}>use of cookies.</a>
+                    </p>
+                </div>
+            </div>
+            <div class="{{ buttonClasses }}">
+                {% set button = {
+                    title: 'Accept',
+                    action: 'data-cookie-accept',
+                    type: 'button'
+                } %}
+                {% include 'elements/button.njk' %}
+            </div>
+        </div>
+    </div>
+</div>

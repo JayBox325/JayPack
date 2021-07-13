@@ -1,0 +1,27 @@
+{% extends "components/_index.njk" %}
+
+{# Design should be 'inline' or 'stacked' #}
+{% set title = feature.title|default(null) %}
+{% set extract = feature.extract|default(null) %}
+{% set buttons = feature.buttons %}
+{% set rowClass = feature.rowClass|default('bg-white') %}
+
+{% block component %}
+    <div class="w-content">
+        {% if title %}
+            <h1>{{ title }}</h1>
+        {% endif %}
+        {% if extract %}
+            <p>{{ extract|safe }}</p>
+        {% endif %}
+    </div>
+    {% if buttons %}
+        <div class="mt-6">
+            {% set buttons = {
+                design: 'inline',
+                buttons: buttons
+            } %}
+            {% include 'elements/button-list.njk' %}
+        </div>
+    {% endif %}
+{% endblock %}

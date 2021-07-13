@@ -1,0 +1,38 @@
+.menu {
+    @apply hidden fixed text-white top-0 left-0 w-screen h-screen bg-black items-center justify-center;
+    z-index: 950;
+
+    &.is-active {
+        @apply flex;
+    }
+
+    @screen md {
+        @apply absolute bg-transparent relative block text-current h-auto w-auto;
+    }
+
+    &__list {
+        @apply flex flex-col;
+        list-style-type: none;
+
+        @screen md {
+            @apply block;
+            text-align: right;
+        }
+    }
+    &__item {
+        display: inline-block;
+
+        @screen md {
+            &:not(:first-child) {
+                @apply ml-4
+            }
+        }
+    }
+    &__link {
+        height: 3rem;
+        padding: 0 1.5rem;
+        border-radius: 1.5rem;
+        display: inline-flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,25 @@
+.container {
+    @apply px-4 mx-auto max-w-full;
+    min-width: 300px;
+
+    @screen sm {
+        @apply px-6;
+        max-width: 1400px;
+
+        &--slim {
+            max-width: 900px;
+        }
+    }
+
+    @screen lg {
+        @apply px-8;
+    }
+
+    @screen xl {
+        @apply px-10;
+    }
+
+    @screen 2xl {
+        @apply px-0;
+    }
+}

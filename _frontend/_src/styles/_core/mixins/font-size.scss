@@ -1,0 +1,14 @@
+// @include font-size(18);
+@mixin font-size($size, $base: 10) {
+    font-size: #{$size}px; // fallback for old browsers
+    font-size: ($size / $base) * 1rem;
+}
+
+// @include resp-font-size('sm', 'lg', 'xl, '4xl');
+@mixin resp-font-size($sm, $md: $sm, $lg: $md, $xl: $lg, $xxl: $xl) {
+    @each $break, $size in (sm: $sm, md: $md, lg: $lg, xl: $xl, 2xl: $xxl) {
+        @screen #{$break} {
+            @apply text-#{$size};
+        }
+    }
+}

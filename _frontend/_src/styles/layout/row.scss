@@ -1,0 +1,22 @@
+.row {
+    $r: &;
+    position: relative;
+    
+    @apply py-6;
+
+    @screen md {
+        @apply py-16;
+    }
+
+    @screen lg {
+        @apply py-20;
+    }
+
+    @screen xl {
+        @apply py-24;
+    }
+
+    @screen 2xl {
+        @apply py-32;
+    }
+}
