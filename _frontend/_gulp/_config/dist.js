@@ -1,7 +1,7 @@
-import config from './_index.js'
-let distRoot
+import projectConfig from '../../project.config'
+let distRoot = ''
 
-switch(config.framework) {
+switch(projectConfig.framework) {
     case 'nunjucks':
         distRoot = '../_build/'
         break

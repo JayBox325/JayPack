@@ -1,10 +1,5 @@
-const projectConfig = {
+export default projectConfig = {
     // Choose your structure
-    // framework: 'nunjucks',
-    framework: 'craft',
-    // framework: 'shopify',
-
-    domain: 'local.jaypack.com',
+    framework: 'shopify',
+    domain: 'kdsfjkdsjfdksfjdsfdf'
 }
-
-export default projectConfig

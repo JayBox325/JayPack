@@ -1,10 +1,9 @@
 import environments from 'gulp-environments'
-
 import projectConfig from '../../project.config'
 import distRoot from './dist.js'
 
 const config = {
-    framework: projectConfig.framework,
+    framework: 'shopify',
     
     env: {
         production: environments.production,
