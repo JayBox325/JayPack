@@ -1,5 +1,5 @@
 export default projectConfig = {
     // Choose your structure
-    framework: 'shopify',
-    domain: 'kdsfjkdsjfdksfjdsfdf'
+    framework: 'static',
+    domain: 'local.jaycraft.com'
 }
