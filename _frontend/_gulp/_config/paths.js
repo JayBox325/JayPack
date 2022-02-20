@@ -5,21 +5,28 @@ let symbolsDist
 let templateExt
 let purge
 
-if (config.framework == 'craft') {
-    assets = `${config.distRoot}/public/assets`
-    symbolsDist = `${config.distRoot}/templates/_includes`
-    purge = `${config.distRoot}/**/*.twig`
-    templateExt = '.twig'
-} else if (config.framework == 'nunjucks') {
-    assets = `${config.distRoot}/assets`
-    symbolsDist = `${config.srcRoot}/html/_includes`
-    purge = `${config.distRoot}/**/*.html`
-    templateExt = '.njk'
-} else if (config.framework == 'shopify') {
-    assets = `${config.distRoot}/assets`
-    symbolsDist = `${config.distRoot}/snippets`
-    templateExt = '.liquid'
-    purge = `${config.distRoot}/**/*.liquid`
+switch (config.framework) {
+    case 'craft':
+        assets = `${config.distRoot}/public/assets`
+        symbolsDist = `${config.distRoot}/templates/_includes`
+        purge = `${config.distRoot}/**/*.twig`
+        templateExt = '.twig'
+        break;
+    
+    case 'static':
+        assets = `${config.distRoot}/assets`
+        symbolsDist = `${config.srcRoot}/html/_includes`
+        purge = `${config.distRoot}/**/*.html`
+        templateExt = '.njk'
+
+    case 'shopify':
+        assets = `${config.distRoot}/assets`
+        symbolsDist = `${config.distRoot}/snippets`
+        templateExt = '.liquid'
+        purge = `${config.distRoot}/**/*.liquid`
+
+    default:
+        break;
 }
 
 const paths = {
@@ -27,7 +34,6 @@ const paths = {
 
 	sass: {
         src: `${config.srcRoot}/styles/styles.scss`,
-        utils: `${config.srcRoot}/styles/utilities.scss`,
         watch: `${config.srcRoot}/styles/**/*.scss`,
         dest: config.shopify ? assets : `${assets}/styles`,
         tailwind: './tailwind.config.js',

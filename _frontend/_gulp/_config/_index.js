@@ -3,7 +3,7 @@ import projectConfig from '../../project.config'
 import distRoot from './dist.js'
 
 const config = {
-    framework: 'shopify',
+    framework: projectConfig.framework,
     
     env: {
         production: environments.production,

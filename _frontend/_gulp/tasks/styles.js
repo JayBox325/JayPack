@@ -12,14 +12,16 @@ const development = config.env.development
 const production = config.env.production
 
 // Styles packages
-import sass from 'gulp-sass'
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps'
 import autoprefixer from 'autoprefixer'
 import tailwindcss from 'tailwindcss'
 import postcss from 'gulp-postcss'
 import glob from 'gulp-sass-glob'
 import cssnano from 'cssnano'
-import cssImport from 'postcss-import'
+
+const sass = gulpSass(dartSass);
 
 gulp.task('styles', () => {
     return gulp.src(paths.sass.src)
@@ -63,32 +65,4 @@ gulp.task('styles', () => {
                 message: 'JayPack Reloaded'
             }).write('')
         })
-})
-gulp.task('util-styles', () => {
-    return gulp.src(paths.sass.utils)
-        // Process Scss
-        .pipe(development(sourcemaps.init()))
-        .pipe(glob())
-        .pipe(sass())
-        .on('error', handleErrors)
-        .pipe(postcss([
-            tailwindcss(paths.sass.tailwind),
-            autoprefixer({overrideBrowserslist: config.autoprefixerVersions})
-        ]))
-        .on('error', handleErrors)
-
-        .pipe(production(postcss([cssnano])))
-        .on('error', handleErrors)
-
-        // Sourcemaps for development
-        .pipe(development(sourcemaps.write({includeContent: false})))
-        .pipe(development(sourcemaps.init({loadMaps: true})))
-        .pipe(development(sourcemaps.write('./')))
-
-        // Save out
-        .pipe(gulp.dest(paths.sass.dest))
-        .on('error', handleErrors)
-
-        // Reload browser
-        .pipe(development(browserSync.reload({stream: true})))
 })

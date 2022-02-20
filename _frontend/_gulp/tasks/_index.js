@@ -8,7 +8,6 @@ requireDir('./', {recurse: true})
 gulp.task('build', gulp.series(
 	staticTask('nunjucks-move'),
 	gulp.parallel(
-		'util-styles',
 		'styles',
 		'scripts',
 		'symbols',

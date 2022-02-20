@@ -1,5 +1,5 @@
 // Tailwind
-@import 'tailwindcss/dist/base';
+@tailwind base;
 
 // Core
 @import '_core/**/*';
@@ -21,3 +21,6 @@
 
 // Elements
 @import 'elements/**/*';
+
+// Utilities
+@tailwind utilities;

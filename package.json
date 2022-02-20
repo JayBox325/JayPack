@@ -1,27 +1,17 @@
 {
   "name": "jaypack",
-  "version": "1.0.0",
-  "main": "jaypack.js",
-  "license": "MIT",
-  "bin": {
-    "jaypack": "jaypack.js"
-  },
-  "dependencies": {
-    "chalk": "^4.1.1",
-    "child_process": "^1.0.2",
-    "figlet": "^1.5.0"
-  },
-  "description": "A Frontend boilterplate using Webpack & Gulp 4. Read the docs in the [JayPack Wiki](https://github.com/JayBox325/JayPack/wiki).",
-  "devDependencies": {
-    "inquirer": "^8.1.2"
-  },
+  "description": "Gulp and Webpack boilerplate",
+  "version": "3.1.1",
+  "main": "_gulp/gulpfile.babel.js",
+  "author": "Jay Collett",
+  "email": "hello@jaycollett.co",
+  "url": "//jaycollett.co",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JayBox325/JayPack.git"
+      "type": "git",
+      "url": "https://github.com/JayBox325/JayPack.git"
   },
-  "author": "",
-  "bugs": {
-    "url": "https://github.com/JayBox325/JayPack/issues"
-  },
-  "homepage": "https://github.com/JayBox325/JayPack#readme"
+  "scripts": {
+      "dev": "npm run dev --prefix _frontend",
+      "setup": "npm i --prefix _frontend"
+  }
 }

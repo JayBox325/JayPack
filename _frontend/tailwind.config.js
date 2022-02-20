@@ -8,65 +8,71 @@ let tailwindPurgeTemplates
 const env = production() ? 'production' : 'development'
 const isProd = env === 'production'
 
-if (config.framework == 'nunjucks') {
-    tailwindPurgeTemplates = `${config.distRoot}/**/*.html`
-} else if (config.framework == 'craft') {
-    tailwindPurgeTemplates = `${config.distRoot}/**/*.twig`
-} else if (config.framework == 'shopify') {
-    tailwindPurgeTemplates = `${config.distRoot}/**/*.liquid`
+switch (config.framework) {
+    case 'static':
+        tailwindPurgeTemplates = `${config.distRoot}/**/*.html`
+        break;
+
+    case 'craft':
+        tailwindPurgeTemplates = `${config.distRoot}/**/*.twig`
+        break;
+
+    case 'shopify':
+        tailwindPurgeTemplates = `${config.distRoot}/**/*.liquid`
+        break;
+
+    default:
+        break;
 }
 
 module.exports = {
-    purge: {
-        enabled: isProd ? true : false,
-        content: [tailwindPurgeTemplates]
-    },
-    darkMode: 'media', // or 'media' or 'class'
+    mode: 'jit',
+    content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+    safelist: ['fill-current', 'gap-2', 'items-center'],
     theme: {
         extend: {
-
-            // PROJECT TWEAKS
-
-            // Calculate REM sizes to match design: https://offroadcode.com/rem-calculator/
-            fontSize: {
-                xs: '0.75rem',      // 12px
-                sm: '0.875rem',     // 14px
-                base: '1rem',       // 16px
-                lg: '1.125rem',     // 18px
-                xl: '1.25rem',      // 20px
-                '2xl': '1.5rem',    // 24px
-                '3xl': '1.875rem',  // 30px
-                '4xl': '2.25rem',   // 36px
-                '5xl': '3rem',      // 48px
-                '6xl': '3.75rem',   // 60px
-                '7xl': '4.5rem',    // 72px
-                '8xl': '6rem',      // 96px
-                '9xl': '8rem',      // 128px
+            screens: {
+                sm: '400px',
+                md: '600px',
+                lg: '900px',
+                xl: '1200px',
+                '2xl': '1600px',
             },
 
             fontFamily: {
-                'sans': ['founders-grotesk', 'Helvetica', 'sans-serif'],
-                'display': ['RightGrotesk', 'Impact', 'Helvetica', 'sans-serif']
+                display: ['rinseheadline', 'impact', 'sans-serif'],
+                sans: ['Moderat-Regular', 'sans-serif'],
+                bold: ['Moderat-Bold', 'sans-serif'],
+                light: ['Moderat-light', 'sans-serif'],
+            },
+
+            gridTemplateColumns: {
+                24: 'repeat(24, minmax(0, 1fr))',
+            },
+
+            gridColumn: {
+                'span-13': 'span 13 / span 13',
+                'span-14': 'span 14 / span 14',
+                'span-15': 'span 15 / span 15',
+                'span-16': 'span 16 / span 16',
+                'span-17': 'span 17 / span 17',
+                'span-18': 'span 18 / span 18',
+                'span-19': 'span 19 / span 19',
+                'span-20': 'span 20 / span 20',
+                'span-21': 'span 21 / span 21',
+                'span-22': 'span 22 / span 22',
+                'span-23': 'span 23 / span 23',
+                'span-24': 'span 24 / span 24',
             },
 
             lineHeight: {
-                'display': '0.85',
+                display: '0.85',
             },
 
             colors: {
-                // Tailwind themes
-                white: colors.white,
-                black: colors.black,
-                gray: colors.trueGray,
-                blue: colors.blue,
-                indigo: colors.indigo,
-                red: colors.red,
-                yellow: colors.amber,
-                green: colors.emerald,
-                purple: colors.violet,
-                pink: colors.pink,
-
-                // Project colours - https://javisperez.github.io/tailwindcolorshades/#/
+                'true-black': '#000000',
+                black: '#231f20',
+                white: '#ffffff',
 
                 // Social media where 500 is default brand color
                 facebook: {
@@ -129,11 +135,64 @@ module.exports = {
                     800: '#003651',
                     900: '#002436',
                 },
+                soundcloud: {
+                    50: '#FFF3E5',
+                    100: '#FFE7CC',
+                    200: '#FFCF99',
+                    300: '#FFB866',
+                    400: '#FFA033',
+                    500: '#FF8800',
+                    600: '#CC6D00',
+                    700: '#995200',
+                    800: '#663600',
+                    900: '#331B00',
+                },
+                spotify: {
+                    50: '#4feb86',
+                    100: '#45e17c',
+                    200: '#3bd772',
+                    300: '#31cd68',
+                    400: '#27c35e',
+                    500: '#1db954',
+                    600: '#13af4a',
+                    700: '#09a540',
+                    800: '#009b36',
+                    900: '#00912c',
+                },
+                youtube: {
+                    50: '#FFE5E5',
+                    100: '#FFCCCC',
+                    200: '#FF9999',
+                    300: '#FF6666',
+                    400: '#FF3333',
+                    500: '#FF0000',
+                    600: '#CC0000',
+                    700: '#990000',
+                    800: '#660000',
+                    900: '#330000',
+                },
             },
 
-            // DEFAULTS
+            // Calculate REM sizes to match design: https://nekocalc.com/px-to-rem-converter
+            fontSize: {
+                xxs: '0.688rem', // 11px
+                xs: '0.75rem', // 12px
+                sm: '0.875rem', // 14px
+                base: '1rem', // 16px
+                lg: '1.125rem', // 18px
+                xl: '1.25rem', // 20px
+                '2xl': '1.375rem', // 22px
+                '3xl': '1.5rem', // 24px
+                '4xl': '1.875rem', // 30px
+                '5xl': '2.25rem', // 36px
+                '6xl': '3rem', // 48px
+                '7xl': '3.75rem', // 60px
+                '8xl': '4.5rem', // 72px
+                '9xl': '6rem', // 96px
+                '10xl': '8rem', // 128px
+            },
+
             spacing: {
-                '88': '22rem',
                 '1/2': '50%',
                 '1/3': '33.33333%',
                 '2/3': '66.66667%',
@@ -160,47 +219,20 @@ module.exports = {
                 '9/12': '75%',
                 '10/12': '83.33333%',
                 '11/12': '91.66667%',
-                'full': '100%'
+                full: '100%',
+                'screen-80': '80vh',
             },
 
-            screens: {
-                sm: '400px',
-                md: '600px',
-                lg: '900px',
-                xl: '1200px',
-                '2xl': '1600px'
-            },
-            transitionTimingFunction: {
-                'in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',
-                'out-expo': 'cubic-bezier(0.19, 1, 0.22, 1)',
-                'in-out-expo': 'cubic-bezier(0.86, 0, 0.07, 1)'
-            },
-            transitionProperty: {
-                'width': 'width',
-                'height': 'height'
-            }
+            minHeight: (theme) => ({
+                ...theme('spacing'),
+            }),
         },
     },
     variants: {
         extend: {
-            translate: ['group-hover', 'group-focus']
-        }
-    },
-    plugins: [
-        function({ addBase, theme }) {
-            function extractColorVars(colorObj, colorGroup = '') {
-                return Object.keys(colorObj).reduce((vars, colorKey) => {
-                    const value = colorObj[colorKey]
-        
-                    const newVars = typeof value === 'string' ? {[`--color${colorGroup}-${colorKey}`]: value} : extractColorVars(value, `-${colorKey}`)
-        
-                    return { ...vars, ...newVars }
-                }, {})
-            }
-      
-            addBase({
-                ':root': extractColorVars(theme('colors')),
-            })
+            borderWidth: ['first'],
+            height: ['group-hover'],
+            backgroundColor: ['first', 'odd', 'even'],
         },
-    ],
-}
+    },
+};
