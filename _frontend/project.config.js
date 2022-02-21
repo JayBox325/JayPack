@@ -1,7 +1,7 @@
 const projectConfig = {
-    name: 'lagoon',
+    name: 'test',
     framework: 'craft', // static, craft or shopify
-    domain: 'local.lagoon.com',
+    domain: 'local.test.com',
     init: true
 }
 
