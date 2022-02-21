@@ -1,10 +1,13 @@
 const projectConfig = {
 
+    // Project name
+    name: 'PROJECT-NAME',
+
     // Local Environment (static, craft or shopify)
-    framework: 'static',
+    framework: 'FRAMEWORK',
 
     // Local Dev Domain
-    domain: 'local.jaycraft.com'
+    domain: 'DOMAIN'
 }
 
 export default projectConfig

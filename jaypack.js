@@ -148,8 +148,6 @@ function installNewPkg(pkgs) {
 function populateConfig(confType, confString) {
     var result
 
-    console.log('Populate conf loop ')
-
     fs.readFile(projectConf, 'utf8', function (err,data) {
         if (err) {
             return console.log(err)
@@ -157,7 +155,7 @@ function populateConfig(confType, confString) {
 
         switch(confType) {
             case 'project_name':
-                result = data.replace(/domain: '.*'/g, `domain: '${confString.toLowerCase()}'`);
+                result = data.replace(/name: '.*'/g, `name: '${confString.toLowerCase()}'`);
                 break
             case 'project_framework':
                 result = data.replace(/framework: '.*'/g, `framework: '${confString.toLowerCase()}'`);

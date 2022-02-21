@@ -6,12 +6,24 @@
   "author": "Jay Collett",
   "email": "hello@jaycollett.co",
   "url": "//jaycollett.co",
+  "type": "module",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/JayBox325/JayPack.git"
+    "type": "git",
+    "url": "https://github.com/JayBox325/JayPack.git"
   },
   "scripts": {
-      "dev": "npm run dev --prefix _frontend",
-      "setup": "npm i --prefix _frontend"
+    "dev": "npm run dev --prefix _frontend",
+    "install": "npm i --prefix _frontend",
+    "setup": "node _setup/index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/register": "^7.17.0",
+    "babel-loader": "^8.2.3",
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.2.0",
+    "replace-in-file": "^6.3.2"
   }
 }
