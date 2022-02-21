@@ -35,21 +35,21 @@ Promise.resolve()
             }
         )
     )
-    .then(() =>
-        question(
-            {
-                type: 'list',
-                name: 'framework',
-                message: 'Select your project framework:',
-                choices: [
-                    'Static',
-                    'Shopify',
-                    'Craft'
-                ],
-                default: projectConfig['framework']
-            }
-        )
-    )
+    // .then(() =>
+    //     question(
+    //         {
+    //             type: 'list',
+    //             name: 'framework',
+    //             message: 'Select your project framework:',
+    //             choices: [
+    //                 'Static',
+    //                 'Shopify',
+    //                 'Craft'
+    //             ],
+    //             default: projectConfig['framework']
+    //         }
+    //     )
+    // )
     .then(() =>
         provision()
     )
