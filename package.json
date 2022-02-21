@@ -22,6 +22,8 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.17.0",
     "babel-loader": "^8.2.3",
+    "chalk": "^5.0.0",
+    "child_process": "^1.0.2",
     "fs": "^0.0.1-security",
     "inquirer": "^8.2.0",
     "replace-in-file": "^6.3.2"

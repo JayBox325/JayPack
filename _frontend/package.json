@@ -6,6 +6,7 @@
     "author": "Jay Collett",
     "email": "hello@jaycollett.co",
     "url": "//jaycollett.co",
+    "type": "module",
     "repository": {
         "type": "git",
         "url": "https://github.com/JayBox325/JayPack.git"
