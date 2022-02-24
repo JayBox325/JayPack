@@ -17,8 +17,6 @@
 
     "setup": "node _setup/index.js",
 
-    "provision": "node _setup/provision.js",
-
     "dev": "npm run dev --prefix _frontend",
     "production": "npm run production --prefix _frontend",
     "build": "npm run build --prefix _frontend",

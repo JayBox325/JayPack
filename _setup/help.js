@@ -17,11 +17,7 @@ function help() {
         chalk.yellow('\nsetup'),
         '\t\t',
         'Setup the project.config file, install front-end dependencies and provision the project (CraftCMS/Shopify/Static).',
-
-        chalk.yellow('\nprovision'),
-        '\t',
-        'Provision the project (CraftCMS/Shopify/Static) if you skipped this during the setup',
-
+        
         chalk.yellow('\ndev'),
         '\t\t',
         'Boot a local development gulp instance and watch for changes.',

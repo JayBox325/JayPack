@@ -76,6 +76,4 @@ async function provision() {
     })
 }
 
-provision()
-
 export default provision

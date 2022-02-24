@@ -8,6 +8,7 @@ import projectConfig from '../_frontend/project.config.js'
 Promise.resolve()
     .then(() => {
         // Install the project if it hasn't been yet.
+        console.log(projectConfig.init)
         if (!projectConfig.init) {
             install()
             setInitTrue()
