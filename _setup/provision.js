@@ -1,9 +1,9 @@
 import inquirer from 'inquirer'
 import run from './run.js'
-import { exec } from 'child_process'
 import projectConfig from '../_frontend/project.config.js'
 
-async function provision(options) {
+async function provision() {
+    console.log('provision')
     return await new Promise((resolve, reject) => {
         const answer = inquirer
             .prompt([
@@ -35,23 +35,23 @@ async function provision(options) {
                         case 'Craft':
                             Promise.resolve()
 
-                            // Create project from scaffold repo
-                            .then(() => 
-                                run('composer', ['create-project', 'JayBox325/JayCraft', 'craft'])
-                            )
+                                // Create project from scaffold repo
+                                .then(() => 
+                                    run('composer', ['create-project', 'JayBox325/JayCraft', 'craft'])
+                                )
 
-                            // Create security key
-                            .then(() => 
-                                run('craft/craft', ['setup/security-key'])
-                            )
+                                // Create security key
+                                .then(() => 
+                                    run('craft/craft', ['setup/security-key'])
+                                )
 
-                            // Build in Nitro
-                            .then(() => 
-                                run('nitro', ['add', 'craft'])
-                            )
-                            // .then(() => 
-                            //     run('nitro', ['db', 'import', 'DATABASE FILE'])
-                            // )
+                                // Build in Nitro
+                                .then(() => 
+                                    run('nitro', ['add', 'craft'])
+                                )
+                                // .then(() => 
+                                //     run('nitro', ['db', 'import', 'DATABASE FILE'])
+                                // )
                             break;
 
                         case 'Static':
@@ -63,6 +63,7 @@ async function provision(options) {
                             break;
                     }
                 }
+                resolve()
             })
             .catch((error) => console.log(error))
 
@@ -74,5 +75,7 @@ async function provision(options) {
         */
     })
 }
+
+provision()
 
 export default provision

@@ -14,7 +14,8 @@
   "scripts": {
     "dev": "npm run dev --prefix _frontend",
     "install": "npm i --prefix _frontend",
-    "setup": "node _setup/index.js"
+    "setup": "node _setup/index.js",
+    "provision": "node _setup/provision.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.3",
