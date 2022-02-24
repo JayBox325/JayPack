@@ -35,37 +35,20 @@ async function provision(options) {
                         case 'Craft':
                             Promise.resolve()
 
-                                // THIS IS IN PROGRESS, BUT cd-ing into ./_craft doesn't work
+                            // Create project from scaffold repo
+                            .then(() => 
+                                run('composer', ['create-project', 'JayBox325/JayCraft', 'craft'])
+                            )
 
-                                // Make Craft directory
-                                .then(() =>
-                                    run('take', ['_craft'])
-                                )
+                            // Create security key
+                            .then(() => 
+                                run('craft/craft', ['setup/security-key'])
+                            )
 
-                                // // CD into _craft
-                                // .then(() =>
-                                //     exec('_craft', function (error, stdout, stderr) {
-                                //         if (error) {
-                                //             console.error(`exec error: ${error}`);
-                                //             return;
-                                //         }
-                                //     })
-                                // )
-
-                            // // Create project from scaffold repo
-                            // .then(() => 
-                            //     run('composer', ['create-project', 'JayBox325/JayCraft', '.'])
-                            // )
-
-                            // // Create security key
-                            // .then(() => 
-                            //     run('php', ['craft', 'setup/security-key'])
-                            // )
-
-                            // // Build in Nitro
-                            // .then(() => 
-                            //     run('nitro', ['add'])
-                            // )
+                            // Build in Nitro
+                            .then(() => 
+                                run('nitro', ['add', 'craft'])
+                            )
                             // .then(() => 
                             //     run('nitro', ['db', 'import', 'DATABASE FILE'])
                             // )

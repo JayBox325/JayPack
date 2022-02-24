@@ -1,7 +1,7 @@
 const projectConfig = {
-    name: 'test',
+    name: 'jaypack',
     framework: 'craft', // static, craft or shopify
-    domain: 'local.test.com',
+    domain: 'local.jaypack.com',
     init: true
 }
 
