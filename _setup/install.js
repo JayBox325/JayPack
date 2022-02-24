@@ -7,4 +7,6 @@ async function install() {
     })
 }
 
+install()
+
 export default install

@@ -12,10 +12,19 @@
     "url": "https://github.com/JayBox325/JayPack.git"
   },
   "scripts": {
-    "dev": "npm run dev --prefix _frontend",
     "install": "npm i --prefix _frontend",
+    "i": "npm i --prefix _frontend",
+
     "setup": "node _setup/index.js",
-    "provision": "node _setup/provision.js"
+
+    "provision": "node _setup/provision.js",
+
+    "dev": "npm run dev --prefix _frontend",
+    "production": "npm run production --prefix _frontend",
+    "build": "npm run build --prefix _frontend",
+    "package": "npm run package --prefix _frontend",
+
+    "help": "node _setup/help.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.3",
@@ -25,6 +34,7 @@
     "babel-loader": "^8.2.3",
     "chalk": "^5.0.0",
     "child_process": "^1.0.2",
+    "figlet": "^1.5.2",
     "fs": "^0.0.1-security",
     "inquirer": "^8.2.0",
     "replace-in-file": "^6.3.2"
