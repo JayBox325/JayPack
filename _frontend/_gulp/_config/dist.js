@@ -1,15 +1,15 @@
-import projectConfig from '../../project.config'
+import projectConfig from '../../project.config.js'
 let distRoot = ''
 
 switch(projectConfig.framework) {
     case 'nunjucks':
-        distRoot = '../_build/'
+        distRoot = '../build'
         break
     case 'shopify':
-        distRoot = '../_shopify/'
+        distRoot = '../shopify'
         break
     case 'craft':
-        distRoot = '../_craft/'
+        distRoot = '../craft'
         break
 }
 

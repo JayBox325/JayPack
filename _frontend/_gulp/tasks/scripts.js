@@ -15,7 +15,6 @@ const production = config.env.production
 // Scripts packages
 import webpack from 'webpack'
 import webpackStream from 'webpack-stream'
-import uglify from 'gulp-uglify'
 
 // Compile scripts with Webpack
 gulp.task('scripts', (cb) => {
@@ -23,10 +22,19 @@ gulp.task('scripts', (cb) => {
         .pipe(webpackStream(webpackConfig), webpack)
         .on('error', handleErrors)
 
+        // .pipe(
+        //     notify({
+        //         title: 'SCRIPTS',
+        //         message: `${paths.assetsPath}`
+        //     }).write('')
+        // )
+
         .pipe(gulp.dest(paths.js.dest))
         .on('error', handleErrors)
         
         .pipe(development(browserSync.reload({ stream: true })))
+        .on('error', handleErrors)
+
         .on('end', function() {
             notify({
                 title: '👍 Scripts compiled',

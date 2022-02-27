@@ -17,14 +17,19 @@ import changed from 'gulp-changed'
 gulp.task('symbols', () => {
     return gulp.src(paths.symbols.src)
         .pipe(changed(paths.symbols.src))
+
         .pipe(svgSymbols({
             templates: [`default-svg`]
         }))
+        .on('error', handleErrors)
 
         // Save to Twig if CMS project
         .pipe(extReplace(paths.templateExt))
-
         .on('error', handleErrors)
+
+        // .pipe(gulp.dest(paths.symbols.dest))
         .pipe(gulp.dest(paths.symbols.dest))
+        .on('error', handleErrors)
+
         .pipe(development(browserSync.reload({ stream: true })))
 })

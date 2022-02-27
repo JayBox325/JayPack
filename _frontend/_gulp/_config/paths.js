@@ -15,7 +15,7 @@ switch (config.framework) {
     
     case 'static':
         assets = `${config.distRoot}/assets`
-        symbolsDist = `${config.srcRoot}/html/_includes`
+        symbolsDist = `${config.distRoot}/html/_includes`
         purge = `${config.distRoot}/**/*.html`
         templateExt = '.njk'
 
@@ -35,7 +35,7 @@ const paths = {
 	sass: {
         src: `${config.srcRoot}/styles/styles.scss`,
         watch: `${config.srcRoot}/styles/**/*.scss`,
-        dest: config.shopify ? assets : `${assets}/styles`,
+        dest: config.framework == 'shopify' ? assets : `${assets}/styles`,
         tailwind: './tailwind.config.js',
         purge: purge
     },
@@ -43,7 +43,7 @@ const paths = {
     js: {
         app: `./${config.srcRoot}/scripts/app.ts`,
         watch: `${config.srcRoot}/scripts/**/*.ts`,
-        dest: config.shopify ? assets : `${assets}/scripts`,
+        dest: `${assets}/scripts`,
         bundle: `${assets}/scripts/bundle.js`
     },
 
@@ -92,7 +92,6 @@ const paths = {
     twig: {
         watch: `${config.distRoot}/templates/**/*.twig`
     },
-
 
 }
 

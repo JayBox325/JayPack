@@ -2,11 +2,10 @@
     "name": "jaypack",
     "description": "Gulp and Webpack boilerplate",
     "version": "3.1.1",
-    "main": "_gulp/gulpfile.babel.js",
+    "main": "gulpfile.babel.js",
     "author": "Jay Collett",
     "email": "hello@jaycollett.co",
     "url": "//jaycollett.co",
-    "type": "module",
     "repository": {
         "type": "git",
         "url": "https://github.com/JayBox325/JayPack.git"
