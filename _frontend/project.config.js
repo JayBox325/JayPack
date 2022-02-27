@@ -1,8 +1,8 @@
 const projectConfig = {
-    name: 'jaypack',
-    framework: 'craft', // static, craft or shopify
-    domain: 'local.jaypack',
-    init: true
+    name: '',
+    framework: '', // static, craft or shopify
+    domain: '',
+    init: false
 }
 
 export default projectConfig
