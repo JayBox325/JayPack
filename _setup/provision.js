@@ -49,9 +49,9 @@ async function provision() {
                                 .then(() => 
                                     run('nitro', ['add', 'craft'])
                                 )
-                                // .then(() => 
-                                //     run('nitro', ['db', 'import', 'DATABASE FILE'])
-                                // )
+                                .then(() => 
+                                    run('nitro', ['db', 'import', 'craft/_db/db-2022-02-27.sql'])
+                                )
                             break;
 
                         case 'Static':
