@@ -49,6 +49,8 @@ async function provision() {
                                 .then(() => 
                                     run('nitro', ['add', 'craft'])
                                 )
+
+                                // Import the DB
                                 .then(() => 
                                     run('nitro', ['db', 'import', 'craft/_db/db-2022-02-27.sql'])
                                 )
