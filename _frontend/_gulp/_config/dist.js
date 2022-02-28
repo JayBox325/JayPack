@@ -1,4 +1,4 @@
-import projectConfig from '../../project.config.js'
+import projectConfig from '../../project.config.mjs'
 let distRoot = ''
 
 switch(projectConfig.framework) {

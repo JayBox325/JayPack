@@ -6,7 +6,7 @@ function write(key, value, resolve) {
     const newValue = `${key}: '${value.toLowerCase()}'`
 
     const options = {
-        files: './_frontend/project.config.js',
+        files: './_frontend/project.config.mjs',
 
         from: oldValue,
         to: newValue

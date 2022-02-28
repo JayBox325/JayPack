@@ -5,7 +5,7 @@ const inquirer = require('inquirer')
 const fs = require('fs')
 const { spawnSync } = require('child_process')
 
-const projectConf = './_frontend/project.config.js'
+const projectConf = './_frontend/project.config.mjs'
 
 var framework = ''
 var projectName = ''

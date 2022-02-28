@@ -4,7 +4,7 @@ function setInitTrue() {
     console.log('setting init to true')
 
     const options = {
-        files: './_frontend/project.config.js',
+        files: './_frontend/project.config.mjs',
 
         from: new RegExp(`init: false`),
         to: `init: true`

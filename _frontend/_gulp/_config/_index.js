@@ -1,5 +1,5 @@
 import environments from 'gulp-environments'
-import projectConfig from '../../project.config.js'
+import projectConfig from '../../project.config.mjs'
 import distRoot from './dist.js'
 
 const config = {

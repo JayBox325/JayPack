@@ -3,7 +3,7 @@ import install from './install.js'
 import provision from './provision.js'
 import chalk from 'chalk'
 import setInitTrue from './setInitTrue.js'
-import projectConfig from '../_frontend/project.config.js'
+import projectConfig from '../_frontend/project.config.mjs'
 
 Promise.resolve()
     .then(() => {

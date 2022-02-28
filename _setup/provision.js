@@ -1,6 +1,6 @@
 import inquirer from 'inquirer'
 import run from './run.js'
-import projectConfig from '../_frontend/project.config.js'
+import projectConfig from '../_frontend/project.config.mjs'
 
 async function provision() {
     console.log('provision')
