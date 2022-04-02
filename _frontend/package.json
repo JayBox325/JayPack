@@ -52,7 +52,7 @@
         "gulp-watch": "^5.0.1",
         "jquery": "^3.6.0",
         "js-cookie": "^3.0.1",
-        "minimist": "^1.2.5",
+        "minimist": "^1.2.6",
         "plyr": "^3.6.8",
         "postcss": "^8.3.5",
         "postcss-import": "^14.0.2",
