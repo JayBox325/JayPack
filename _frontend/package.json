@@ -23,7 +23,7 @@
         "@babel/register": "^7.14.5",
         "@barba/core": "^2.9.7",
         "autoprefixer": "^10.3.0",
-        "babel-loader": "^8.2.2",
+        "babel-loader": "^8.3.0",
         "browser-sync": "^2.27.4",
         "cssnano": "^5.0.17",
         "del": "^6.0.0",
